@@ -1,0 +1,10 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_global-error/page.js")
+R.c("server/chunks/ssr/2c056_next_9fd83130._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__96aa8c2c._.js")
+R.c("server/chunks/ssr/2c056_next_dist_6d275fe9._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__7c1863f4._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__99e89bbd._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__bb542b89._.js")
+R.c("server/chunks/ssr/clinica-ansiedad__next-internal_server_app__global-error_page_actions_fecd7ed8.js")
+R.m(50984)
+module.exports=R.m(50984).exports

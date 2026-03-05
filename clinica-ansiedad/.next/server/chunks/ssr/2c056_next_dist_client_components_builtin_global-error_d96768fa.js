@@ -1,0 +1,3 @@
+module.exports=[58243,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(69064);a.n(d("[project]/clinica-ansiedad/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},8675,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(69064);a.n(d("[project]/clinica-ansiedad/node_modules/next/dist/client/components/builtin/global-error.js"))},5058,a=>{"use strict";a.i(58243);var b=a.i(8675);a.n(b)}];
+
+//# sourceMappingURL=2c056_next_dist_client_components_builtin_global-error_d96768fa.js.map
