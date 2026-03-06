@@ -8,9 +8,19 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+# Next.js
+.next/
+out/
+build/
+.tsbuildinfo
+
+# Coverage
+coverage
+
+# dev-dist (Vite, common)
+dev-dist
 dist
 dist-ssr
-*.local
 
 # Editor directories and files
 .vscode/*

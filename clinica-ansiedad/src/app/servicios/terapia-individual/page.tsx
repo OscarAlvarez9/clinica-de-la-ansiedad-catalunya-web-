@@ -3,7 +3,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@heroui/react';
 import Link from 'next/link';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ShieldCheck, Brain, Leaf, Quote } from 'lucide-react';
 import BookingOptions from '@/components/servicios/BookingOptions';
 import FAQSection from '@/components/sections/FAQSection';
 
@@ -76,6 +76,90 @@ export default function TerapiaIndividualPage() {
                     </div>
 
                 </div>
+
+                {/* Authority Section */}
+                <div className="text-center bg-navy text-white p-6 md:p-16 rounded-3xl shadow-glass mb-12 md:mb-16 relative overflow-hidden">
+                    {/* Background glow */}
+                    <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-sage/20 rounded-full blur-[80px] -z-10"></div>
+                    <div className="absolute bottom-0 left-0 w-48 md:w-64 h-48 md:h-64 bg-gold/10 rounded-full blur-[80px] -z-10"></div>
+
+                    <h2 className="font-serif text-2xl md:text-3xl font-bold mb-8 md:mb-6 text-white">Guiados por la Experiencia Clínica</h2>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
+                        <div className="flex flex-col md:flex-row items-center gap-3 md:gap-4 max-w-sm text-center md:text-left">
+                            <div className="font-serif text-5xl md:text-6xl font-extrabold text-gold opacity-80">+25</div>
+                            <p className="text-white/80 leading-snug text-sm md:text-base">Años de experiencia en psicoterapia y psicoanálisis directo.</p>
+                        </div>
+                        <div className="hidden md:block w-px h-16 bg-white/20"></div>
+                        <div className="w-24 h-px bg-white/20 md:hidden"></div>
+                        <div className="flex flex-col md:flex-row items-center gap-3 md:gap-4 max-w-sm text-center md:text-left">
+                            <div className="font-serif text-5xl md:text-6xl font-extrabold text-sage opacity-80">+1K</div>
+                            <p className="text-white/80 leading-snug text-sm md:text-base">Pacientes acompañados hacia una vida libre de ansiedad y dependencias.</p>
+                        </div>
+                    </div>
+                    <p className="mt-10 md:mt-12 text-white/70 max-w-2xl mx-auto italic text-sm md:text-base px-2">
+                        "El síntoma es solo el mensajero continuo. Nuestro trabajo clínico es descifrar el mensaje en compañía del paciente para que deje de gritar a través de la ansiedad."
+                        <br /><span className="not-italic font-bold text-gold mt-4 md:mt-6 block text-sm md:text-base">— Joan Ramon Soto Cifuente</span>
+                    </p>
+                </div>
+
+                {/* Beneficios Profundos */}
+                <section className="py-16 md:py-20 bg-cream relative">
+                    <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+                        <div className="text-center mb-10 md:mb-16">
+                            <h2 className="font-serif text-3xl md:text-5xl font-bold text-navy mb-4">
+                                Una Transformación <span className="text-gold italic font-light">Estructural</span>
+                            </h2>
+                            <p className="text-base md:text-lg text-navy/70 max-w-2xl mx-auto font-light">
+                                Nuestro objetivo no es enseñarte a convivir con la ansiedad, sino construir los cimientos psíquicos para que no necesites recurrir a ella.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center sm:text-left">
+                            <div className="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-glass border border-navy/5 hover:border-gold/30 transition-all hover:-translate-y-1">
+                                <ShieldCheck className="w-10 h-10 text-gold mb-4 md:mb-6 mx-auto sm:mx-0" />
+                                <h3 className="font-serif text-xl md:text-2xl font-bold text-navy mb-3 md:mb-4">Autonomía Emocional</h3>
+                                <p className="text-navy/70 leading-relaxed font-light text-sm md:text-base">
+                                    Dejarás de depender de técnicas de evitación o analgésicos mentales. Desarrollarás una fortaleza interna real frente a las adversidades.
+                                </p>
+                            </div>
+                            <div className="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-glass border border-navy/5 hover:border-gold/30 transition-all hover:-translate-y-1">
+                                <Brain className="w-10 h-10 text-gold mb-4 md:mb-6 mx-auto sm:mx-0" />
+                                <h3 className="font-serif text-xl md:text-2xl font-bold text-navy mb-3 md:mb-4">Claridad Mental</h3>
+                                <p className="text-navy/70 leading-relaxed font-light text-sm md:text-base">
+                                    Al desactivar los conflictos inconscientes, la rumiación obsesiva y el ruido mental disminuyen drásticamente, permitiendo mayor enfoque y paz.
+                                </p>
+                            </div>
+                            <div className="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-glass border border-navy/5 hover:border-gold/30 transition-all hover:-translate-y-1">
+                                <Leaf className="w-10 h-10 text-gold mb-4 md:mb-6 mx-auto sm:mx-0" />
+                                <h3 className="font-serif text-xl md:text-2xl font-bold text-navy mb-3 md:mb-4">Relaciones Sanas</h3>
+                                <p className="text-navy/70 leading-relaxed font-light text-sm md:text-base">
+                                    Aprenderás a transitar el vínculo con los demás desde la seguridad personal, estableciendo límites sin culpa ni miedo al abandono.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Promesa de Valor / Filosofía */}
+                <section className="py-16 md:py-24 bg-navy text-white relative overflow-hidden selection:bg-gold/30 selection:text-white">
+                    <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-gold/10 rounded-full blur-[100px] pointer-events-none"></div>
+                    <div className="absolute bottom-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-sage/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div className="container mx-auto px-4 md:px-8 max-w-4xl text-center relative z-10">
+                        <Quote className="w-12 h-12 md:w-16 md:h-16 text-gold/50 mx-auto mb-6 md:mb-8" />
+                        <h2 className="font-serif text-2xl md:text-5xl font-medium leading-normal md:leading-tight mb-6 md:mb-8 text-white px-2">
+                            "Dar el primer paso y pedir ayuda indica un acto de valentía extraordinario. Nuestro compromiso es recibir ese acto con rigor clínico y confidencialidad absoluta."
+                        </h2>
+                        <div className="flex flex-col items-center justify-center">
+                            <div className="w-8 md:w-12 h-1 bg-gold mb-4"></div>
+                            <p className="font-sans font-bold tracking-widest uppercase text-xs md:text-sm text-gold/90">
+                                Tu Espacio Seguro
+                            </p>
+                            <p className="text-white/80 text-base md:text-xl mt-4 max-w-lg mx-auto font-light leading-relaxed px-4">
+                                En la primera sesión no te someteremos a cuestionarios fríos ni tests mecánicos. Tendremos una conversación clínica profunda para entender tu visión y el origen de tu malestar.
+                            </p>
+                        </div>
+                    </div>
+                </section>
 
                 {/* Reserva Section */}
                 <BookingOptions />

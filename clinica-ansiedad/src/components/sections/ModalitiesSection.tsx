@@ -1,195 +1,186 @@
 "use client";
-import { MapPin, Globe, CheckCircle2, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { MapPin, Globe, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@heroui/react";
+import { useRef } from "react";
+import SafeImage from "@/components/ui/SafeImage";
 
 export default function ModalitiesSection() {
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"]
+    });
+
+    const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+    const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
+    const modalities = [
+        {
+            id: "presencial",
+            title: "Consulta",
+            titleAccent: "Presencial",
+            description: "Te recibimos en nuestro espacio diseñado para la pausa y la contención en el centro de Canet de Mar. Un entorno íntimo, seguro y confidencial.",
+            icon: MapPin,
+            image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
+            features: [
+                "Centro propio en Canet de Mar",
+                "Fácil acceso desde el Maresme",
+                "A 35 min de Barcelona ciudad"
+            ],
+            buttonText: "Agendar Cita Presencial",
+            theme: "gold",
+            gradient: "from-gold/20 via-transparent to-transparent"
+        },
+        {
+            id: "online",
+            title: "Sesión",
+            titleAccent: "Online",
+            description: "La distancia no es una barrera para el inconsciente. Ofrecemos el mismo rigor clínico con la comodidad y privacidad de tu propio espacio.",
+            icon: Globe,
+            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop",
+            features: [
+                "Cobertura en toda España",
+                "Sin desplazamientos físicos",
+                "Plataformas de alta seguridad"
+            ],
+            buttonText: "Solicitar Sesión Online",
+            theme: "sage",
+            gradient: "from-sage/20 via-transparent to-transparent"
+        }
+    ];
+
     return (
-        <section className="bg-navy py-24 md:py-32 relative overflow-hidden text-white border-t border-white/5">
-            {/* Background elements */}
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 rounded-full blur-[120px] mix-blend-screen opacity-50 -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-sage/5 rounded-full blur-[120px] mix-blend-screen opacity-50 translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+        <section ref={containerRef} className="bg-[#0B1D26] py-24 md:py-40 relative overflow-hidden text-white">
+            {/* Ambient Background Lights */}
+            <div className="absolute top-0 left-1/4 w-[1000px] h-[1000px] bg-gold/10 rounded-full blur-[150px] pointer-events-none opacity-40 animate-pulse-slow" />
+            <div className="absolute bottom-0 right-1/4 w-[1000px] h-[1000px] bg-navy-light/10 rounded-full blur-[150px] pointer-events-none opacity-40" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="text-center mb-20 md:mb-32">
+                {/* Section Header */}
+                <div className="text-center mb-24 lg:mb-32">
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6"
+                        className="flex items-center justify-center gap-2 mb-6"
                     >
-                        <span className="text-xs font-bold tracking-widest text-gold uppercase">Cobertura Total</span>
+                        <span className="w-12 h-px bg-gold/50" />
+                        <span className="text-xs font-bold tracking-[0.3em] text-gold uppercase flex items-center gap-2">
+                            <Sparkles className="w-3 h-3" /> Canales de Atención
+                        </span>
+                        <span className="w-12 h-px bg-gold/50" />
                     </motion.div>
+
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6"
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight"
                     >
-                        Elige tu formato de atención
+                        Diferentes caminos, <br />
+                        <span className="text-gold italic font-light">la misma profundidad</span>
                     </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-light"
-                    >
-                        El mismo rigor clínico y compromiso terapéutico, adaptado a tu ubicación y estilo de vida para garantizar resultados.
-                    </motion.p>
                 </div>
 
-                <div className="flex flex-col gap-24 md:gap-32">
-
-                    {/* Terapia Presencial - Split Layout */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                {/* Modalities Cards */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                    {modalities.map((item, index) => (
                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            key={item.id}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="relative aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+                            transition={{ duration: 0.8, delay: index * 0.2 }}
+                            style={{ y: index === 0 ? y1 : y2 }}
+                            className="group relative"
                         >
-                            <img
-                                src="https://images.unsplash.com/photo-1579208575657-c595a05383b7?q=80&w=1200&auto=format&fit=crop"
-                                alt="Clínica Presencial"
-                                className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-1000 scale-105 hover:scale-100"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-tr from-navy/80 via-transparent to-transparent"></div>
-                            <div className="absolute bottom-8 left-8">
-                                <div className="w-16 h-16 rounded-full bg-navy/80 backdrop-blur-md flex items-center justify-center border border-white/20">
-                                    <MapPin className="w-8 h-8 text-gold" />
+                            {/* Card Background (Glassmorphism) */}
+                            <div className="relative h-full bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[40px] overflow-hidden p-8 md:p-12 transition-all duration-500 group-hover:bg-white/10 group-hover:border-white/20 shadow-2xl">
+
+                                {/* Background Image with Parallax & Hover Effect */}
+                                <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none">
+                                    <SafeImage
+                                        src={item.image}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100"
+                                    />
+                                    <div className={`absolute inset-0 bg-gradient-to-t from-[#0B1D26] via-[#0B1D26]/60 to-transparent`} />
+                                </div>
+
+                                <div className="relative z-10 flex flex-col h-full">
+                                    {/* Icon Header */}
+                                    <div className="mb-12 flex justify-between items-start">
+                                        <div className={`w-16 h-16 rounded-2xl bg-${item.theme === 'gold' ? 'gold' : 'navy'}/20 flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-500`}>
+                                            <item.icon className={`w-8 h-8 text-${item.theme === 'gold' ? 'gold' : 'white'}`} />
+                                        </div>
+                                        <span className="text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase vertical-text">
+                                            {item.id} mode
+                                        </span>
+                                    </div>
+
+                                    <h3 className="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">
+                                        {item.title} <br />
+                                        <span className="text-gold italic font-light">{item.titleAccent}</span>
+                                    </h3>
+
+                                    <p className="text-white/60 text-lg mb-10 leading-relaxed font-light max-w-sm">
+                                        {item.description}
+                                    </p>
+
+                                    {/* Features */}
+                                    <div className="space-y-4 mb-12">
+                                        {item.features.map((feature, fIndex) => (
+                                            <div key={fIndex} className="flex items-center gap-3">
+                                                <div className="w-5 h-5 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
+                                                    <CheckCircle2 className="w-3 h-3 text-gold" />
+                                                </div>
+                                                <span className="text-sm text-white/70 font-medium">{feature}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Dynamic Button */}
+                                    <div className="mt-auto">
+                                        <Button
+                                            as="a"
+                                            href="#contacto"
+                                            className={`
+                                                w-full py-8 rounded-2xl flex items-center justify-between px-8 text-lg font-bold transition-all duration-300
+                                                ${item.theme === 'gold'
+                                                    ? 'bg-gold text-navy hover:bg-gold-light'
+                                                    : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'}
+                                            `}
+                                        >
+                                            <span>{item.buttonText}</span>
+                                            <div className={`w-10 h-10 rounded-full flex items-center justify-center ${item.theme === 'gold' ? 'bg-navy/10' : 'bg-white/10'}`}>
+                                                <ArrowRight className="w-5 h-5" />
+                                            </div>
+                                        </Button>
+                                    </div>
                                 </div>
                             </div>
+
+                            {/* Decorative Glow */}
+                            <div className={`absolute -inset-1 rounded-[42px] bg-gradient-to-r ${item.theme === 'gold' ? 'from-gold/20 to-transparent' : 'from-navy-light/20 to-transparent'} blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
                         </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="flex flex-col"
-                        >
-                            <h3 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-                                Consulta <span className="text-gold italic font-light">Presencial</span>
-                            </h3>
-                            <p className="text-white/70 text-lg md:text-xl mb-8 leading-relaxed font-light">
-                                Te recibimos en nuestro espacio diseñado para la pausa y la contención en el centro de Canet de Mar. Un entorno íntimo, seguro y confidencial donde podrás desconectar del ruido exterior.
-                            </p>
-
-                            <ul className="space-y-5 mb-10">
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 className="w-4 h-4 text-gold" />
-                                    </div>
-                                    <span className="text-lg text-white/90">Instalaciones propias en el centro de <strong className="text-white font-normal">Canet de Mar</strong></span>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 className="w-4 h-4 text-gold" />
-                                    </div>
-                                    <span className="text-lg text-white/90">Excelente conexión y fácil acceso desde todo el <strong className="text-white font-normal">Maresme</strong></span>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 className="w-4 h-4 text-gold" />
-                                    </div>
-                                    <span className="text-lg text-white/90">A solo 35 minutos de <strong className="text-white font-normal">Barcelona ciudad</strong></span>
-                                </li>
-                            </ul>
-
-                            <div>
-                                <Button
-                                    as="a"
-                                    href="#contacto"
-                                    size="lg"
-                                    className="bg-gold hover:bg-gold-light text-navy font-bold px-8 py-6 rounded-full text-lg shadow-[0_10px_30px_rgba(201,169,110,0.2)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
-                                    endContent={<ArrowRight className="w-5 h-5" />}
-                                >
-                                    Agendar Cita Presencial
-                                </Button>
-                            </div>
-                        </motion.div>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-
-                    {/* Terapia Online - Split Layout (Reversed) */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="flex flex-col lg:order-1 order-2"
-                        >
-                            <div className="inline-block px-4 py-2 rounded-full bg-sage/20 border border-sage/30 w-fit mb-6">
-                                <span className="text-xs font-bold tracking-widest text-sage-light uppercase">Misma Eficacia Clínica</span>
-                            </div>
-                            <h3 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-                                Sesión <span className="text-gold italic font-light">Online</span>
-                            </h3>
-                            <p className="text-white/70 text-lg md:text-xl mb-8 leading-relaxed font-light">
-                                La distancia no es una barrera para el inconsciente. Llevamos más de 25 años perfeccionando el abordaje terapéutico a distancia con resultados clínicos totalmente homologables al formato presencial.
-                            </p>
-
-                            <ul className="space-y-5 mb-10">
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 className="w-4 h-4 text-gold" />
-                                    </div>
-                                    <span className="text-lg text-white/90">Cobertura total para pacientes en toda <strong className="text-white font-normal">Catalunya y España</strong></span>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 className="w-4 h-4 text-gold" />
-                                    </div>
-                                    <span className="text-lg text-white/90">Flexibilidad horaria y <strong className="text-white font-normal">sin desplazamientos físicos</strong></span>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 className="w-4 h-4 text-gold" />
-                                    </div>
-                                    <span className="text-lg text-white/90">Plataformas de videollamada de <strong className="text-white font-normal">alta seguridad y privacidad</strong></span>
-                                </li>
-                            </ul>
-
-                            <div>
-                                <Button
-                                    as="a"
-                                    href="#contacto"
-                                    size="lg"
-                                    className="bg-transparent border border-white/30 hover:bg-white/5 text-white font-bold px-8 py-6 rounded-full text-lg hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
-                                    endContent={<ArrowRight className="w-5 h-5" />}
-                                >
-                                    Solicitar Sesión Online
-                                </Button>
-                            </div>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="relative aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/10 lg:order-2 order-1"
-                        >
-                            <img
-                                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
-                                alt="Terapia Online"
-                                className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-1000 scale-105 hover:scale-100"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-bl from-navy/80 via-transparent to-transparent"></div>
-                            <div className="absolute top-8 right-8">
-                                <div className="w-16 h-16 rounded-full bg-navy/80 backdrop-blur-md flex items-center justify-center border border-white/20">
-                                    <Globe className="w-8 h-8 text-gold" />
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
-
+                    ))}
                 </div>
+
+                {/* Footer Insight */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1 }}
+                    className="mt-32 text-center"
+                >
+                    <p className="text-white/30 text-xs font-bold uppercase tracking-[0.5em] mb-4">Integridad Clínica</p>
+                    <p className="text-white/60 font-serif italic max-w-xl mx-auto">
+                        "En el espacio analítico, la palabra circula libre de barreras físicas. Lo esencial es el deseo de saber sobre uno mismo."
+                    </p>
+                </motion.div>
             </div>
         </section>
     );

@@ -44,6 +44,7 @@ export default function Navbar() {
             ]
         },
         { name: "Enfoque", href: "/enfoque" },
+        { name: "Blog", href: "/blog" },
         { name: "Contacto", href: "/#contacto" },
     ];
 

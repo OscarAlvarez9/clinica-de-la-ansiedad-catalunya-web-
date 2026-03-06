@@ -47,7 +47,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="es" className={`${playfair.variable} ${inter.variable} scroll-smooth`}>
+        <html lang="es" className={`${playfair.variable} ${inter.variable} scroll-smooth`} suppressHydrationWarning>
             <head>
                 <Script id="schema-clinic" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicSchema) }} />
                 <Script id="schema-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
