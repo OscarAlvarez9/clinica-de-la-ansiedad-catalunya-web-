@@ -1,5 +1,7 @@
 import { buildMetadata } from '@/lib/metadata';
+import { collectionSchema } from '@/lib/schema';
 import { BLOG_POSTS } from '@/lib/blog-data';
+import Script from 'next/script';
 import BlogCard from '@/components/blog/BlogCard';
 import { BookOpen, Search, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -8,9 +10,18 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata = buildMetadata({
-  title: 'Blog de Psicoanálisis y Ansiedad | Clínica de la Ansiedad',
-  description: 'Artículos, reflexiones y recursos sobre el tratamiento de la ansiedad, psicoanálisis y salud mental por Joan Ramon Soto.',
-  path: '/blog'
+  title: 'Blog Psicoanálisis y Ansiedad | Artículos Clínica de la Ansiedad',
+  description: 'Artículos y reflexiones sobre psicoterapia psicoanalítica, tratamiento de ansiedad, depresión y salud mental. Recursos clínicos del Dr. Joan Ramon Soto.',
+  path: '/blog',
+  keywords: [
+    'blog psicoanálisis',
+    'artículos ansiedad',
+    'psicoterapia recursos',
+    'salud mental psicoanálisis',
+    'blog psicología',
+    'tratamiento ansiedad articulos',
+    'psicología clínica Barcelona'
+  ]
 });
 
 export default function BlogPage() {

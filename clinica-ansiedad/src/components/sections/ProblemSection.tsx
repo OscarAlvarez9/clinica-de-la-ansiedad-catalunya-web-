@@ -13,57 +13,68 @@ const situations = [
 
 export default function ProblemSection() {
     return (
-        <section className="bg-cream py-24 px-6">
-            <div className="max-w-4xl mx-auto text-center mb-16">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="text-3xl md:text-5xl font-serif text-navy font-bold mb-4 text-balance"
-                >
-                    ¿Reconoces alguna de estas situaciones?
-                </motion.h2>
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="w-24 h-1 bg-gold mx-auto"
-                />
-            </div>
+        <section className="bg-cream py-32 px-6 relative overflow-hidden">
+            {/* Background Accent */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
 
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {situations.map((situation, i) => (
-                    <motion.div
-                        key={i}
+            <div className="relative z-10 max-w-7xl mx-auto">
+                <div className="max-w-4xl mx-auto text-center mb-20">
+                    <motion.span
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        className="text-gold font-bold text-[10px] tracking-[0.3em] uppercase mb-4 block"
+                    >
+                        Comprender el sufrimiento
+                    </motion.span>
+                    <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-50px" }}
-                        transition={{ delay: i * 0.1 }}
+                        viewport={{ once: true }}
+                        className="text-4xl md:text-5xl lg:text-6xl font-serif text-navy font-bold mb-6 text-balance"
                     >
-                        <Card className="glass-panel h-full border-none">
-                            <CardBody className="py-10 px-6 text-center flex items-center justify-center">
-                                <p className="text-navy font-bold text-lg leading-snug">
+                        ¿Reconoces alguna de estas situaciones?
+                    </motion.h2>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="w-20 h-1 bg-gold mx-auto"
+                    />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {situations.map((situation, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.05 }}
+                        >
+                            <div className="group bg-white border border-navy/5 p-10 rounded-3xl hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500 h-full flex items-center justify-center text-center relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-1 h-0 bg-gold group-hover:h-full transition-all duration-500" />
+                                <p className="text-navy font-bold text-xl leading-snug group-hover:text-gold transition-colors duration-300">
                                     {situation}
                                 </p>
-                            </CardBody>
-                        </Card>
-                    </motion.div>
-                ))}
-            </div>
-
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6 }}
-                className="max-w-3xl mx-auto mt-24 text-center"
-            >
-                <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-gold/20 shadow-sm inline-block">
-                    <p className="text-xl md:text-2xl font-serif text-navy font-bold italic text-balance">
-                        "No estás solo/a. Lo que sientes tiene nombre y tiene solución terapéutica."
-                    </p>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
-            </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="max-w-4xl mx-auto mt-24 text-center"
+                >
+                    <div className="bg-navy rounded-[2.5rem] p-12 md:p-16 relative overflow-hidden shadow-2xl shadow-navy/20">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[60px] rounded-full" />
+                        <p className="text-2xl md:text-3xl lg:text-4xl font-serif text-white font-medium italic leading-relaxed text-balance relative z-10">
+                            "No estás solo/a. Lo que sientes tiene un sentido que <span className="text-gold">podemos descifrar</span> para encontrar una solución duradera."
+                        </p>
+                    </div>
+                </motion.div>
+            </div>
         </section>
     );
 }

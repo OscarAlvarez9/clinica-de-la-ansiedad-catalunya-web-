@@ -1,9 +1,18 @@
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Tratamiento de la Ansiedad | Dr. Joan Ramon Soto',
-  description: 'Especialistas en el tratamiento profundo de la ansiedad. Comprende y resuelve las causas reales de tu angustia.',
-  path: '/ansiedad'
+  title: 'Tratamiento Ansiedad Barcelona | Psicólogo Especialista',
+  description: 'Tratamiento ansiedad generalizada y angustia en Barcelona. Psicoterapia psicoanalítica para resolver las causas profundas. Dr. Joan Ramon Soto, 31 años de experiencia.',
+  path: '/ansiedad',
+  keywords: [
+    'tratamiento ansiedad Barcelona',
+    'psicólogo ansiedad',
+    'ansiedad generalizada tratamiento',
+    'terapia ansiedad psicoanalítica',
+    'psicólogo ansiedad Maresme',
+    'cómo superar la ansiedad',
+    'tratamiento ansiedad online'
+  ]
 });
 
 export default function Page() {

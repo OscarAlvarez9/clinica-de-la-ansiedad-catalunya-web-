@@ -1,6 +1,6 @@
 'use client';
 
-import type { Metadata } from 'next';
+// Metadata is now defined in ./metadata.ts (required for Server Component)
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import BookingOptions from '@/components/servicios/BookingOptions';

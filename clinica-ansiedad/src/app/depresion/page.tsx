@@ -1,9 +1,18 @@
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Tratamiento de la Depresión | Clínica de la Ansiedad',
-  description: 'Intervención psicoanalítica para superar la depresión. Un espacio para entender el origen de la tristeza y recuperar el deseo.',
-  path: '/depresion'
+  title: 'Tratamiento Depresión Barcelona | Psicólogo Especialista',
+  description: 'Tratamiento depresión en Barcelona. Psicoterapia psicoanalítica para superar la tristeza y la angustia. Dr. Joan Ramon Soto, especialista en salud mental.',
+  path: '/depresion',
+  keywords: [
+    'tratamiento depresión Barcelona',
+    'psicólogo depresión',
+    'depresión psicoanálisis',
+    'terapia depresión psicoanalítica',
+    'superar la depresión',
+    'psicólogo depresión Catalunya',
+    'tratamiento depresión online'
+  ]
 });
 
 export default function Page() {

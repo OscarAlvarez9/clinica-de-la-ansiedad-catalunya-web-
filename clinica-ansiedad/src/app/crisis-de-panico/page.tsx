@@ -1,9 +1,18 @@
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Tratamiento de Crisis de Pánico | Clínica de Catalunya',
-  description: 'Ayuda especializada para las crisis de pánico y angustia extrema. Detén el ciclo del miedo a través de un abordaje de raíz.',
-  path: '/crisis-de-panico'
+  title: 'Crisis de Pánico Barcelona | Tratamiento Especializado',
+  description: 'Tratamiento crisis de pánico en Barcelona. Psicoterapia psicoanalítica para ataques de pánico. Dr. Joan Ramon Soto, Clínica de la Ansiedad Catalunya.',
+  path: '/crisis-de-panico',
+  keywords: [
+    'crisis de pánico Barcelona',
+    'tratamiento crisis pánico',
+    'ataque de pánico psicólogo',
+    'psicólogo crisis de pánico',
+    'cómo superar crisis de pánico',
+    'terapia pánico psicoanalítica',
+    'síntomas crisis de pánico'
+  ]
 });
 
 export default function Page() {

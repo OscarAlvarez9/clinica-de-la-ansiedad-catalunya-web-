@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { buildMetadata } from '@/lib/metadata';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import AboutHero from '@/components/sobre-mi/AboutHero';
@@ -8,14 +8,22 @@ import EducationTimeline from '@/components/sobre-mi/EducationTimeline';
 import PublicationsSection from '@/components/sobre-mi/PublicationsSection';
 import FAQSection from '@/components/sections/FAQSection';
 
-export const metadata: Metadata = {
-    title: 'Sobre Mí | Dr. Joan Ramon Soto | Clínica de la Ansiedad',
-    description: 'Conoce a Joan Ramon Soto Cifuente, Fundador del Espacio Psicoanálisis Directo Online, Doctorado en Psicología Psicoanalítica y experto en comunicación no verbal.',
-    openGraph: {
-        title: 'Sobre Mí | Dr. Joan Ramon Soto',
-        description: 'Conoce al experto detrás de la Clínica de la Ansiedad.',
-    }
-};
+export const metadata = buildMetadata({
+    title: 'Dr. Joan Ramon Soto | Psicólogo Psicoanalítico Barcelona',
+    description: 'Dr. Joan Ramon Soto, psicólogo con 31 años de experiencia en psicoterapia psicoanalítica. Fundador de Clínica de la Ansiedad Catalunya. Especialista en ansiedad y depresión.',
+    path: '/sobre-mi',
+    keywords: [
+        'Dr. Joan Ramon Soto',
+        'psicólogo psicoanalítico Barcelona',
+        'psicólogo ansiedad especialista',
+        'Joan Ramon Soto psicólogo',
+        'psicoterapia psicoanalítica',
+        'psicólogo experiencia',
+        'fundador clínica ansiedad'
+    ],
+    image: 'https://clinicadelansiedad.com/images/joan-ramon-soto.png',
+    imageAlt: 'Dr. Joan Ramon Soto - Psicólogo Psicoanalítico'
+});
 
 export default function SobreMiPage() {
     return (
