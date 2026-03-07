@@ -18,6 +18,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://clinicadelansiedad.com'),
     title: 'Clínica de la Ansiedad Catalunya | Dr. Joan Ramon Soto',
     description: 'Tratamiento especializado de la ansiedad en Barcelona y Catalunya. Psicoterapia psicoanalítica para resolver las causas profundas. Sesiones presenciales en Canet de Mar y online para toda España.',
     keywords: ['psicólogo ansiedad Barcelona', 'tratamiento ansiedad Catalunya', 'psicoterapia psicoanalítica', 'Dr. Joan Ramon Soto', 'terapia ansiedad online', 'crisis de pánico Barcelona', 'clínica ansiedad Canet de Mar'],
