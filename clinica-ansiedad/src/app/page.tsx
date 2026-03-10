@@ -11,6 +11,7 @@ import FAQSection from '@/components/sections/FAQSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/layout/Footer';
+import StickyBookingButton from '@/components/servicios/StickyBookingButton';
 
 export default function Home() {
     return (
@@ -28,6 +29,7 @@ export default function Home() {
                 <ProcessSection />
                 <ContactSection />
                 <FAQSection />
+                <StickyBookingButton />
             </main>
             <Footer />
         </div>

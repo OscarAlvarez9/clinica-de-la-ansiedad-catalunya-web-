@@ -40,9 +40,14 @@
 }
 
 @layer base {
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-cream text-text font-sans antialiased selection:bg-gold/20 selection:text-navy;
     scroll-behavior: smooth;
+    overflow-x: hidden;
     background-image: radial-gradient(circle at 50% 0%, rgba(44, 110, 138, 0.04) 0%, transparent 50%);
   }
 

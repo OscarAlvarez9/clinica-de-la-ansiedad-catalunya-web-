@@ -3,8 +3,9 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@heroui/react';
 import Link from 'next/link';
-import { HeartHandshake, MessageCircle, Flame, Scale, Quote } from 'lucide-react';
+import { HeartHandshake, MessageCircle, Flame, Scale } from 'lucide-react';
 import BookingOptions from '@/components/servicios/BookingOptions';
+import StickyBookingButton from '@/components/servicios/StickyBookingButton';
 import FAQSection from '@/components/sections/FAQSection';
 
 export const metadata: Metadata = {
@@ -29,7 +30,10 @@ export default function TerapiaDeParejaPage() {
                     <p className="text-xl text-navy/80 font-medium leading-relaxed mb-8">
                         Un acompañamiento especializado diseñado para resolver dinámicas de conflicto, bloqueos en la comunicación y desconexión afectiva.
                     </p>
+                </div>
 
+                {/* Early CTA - Positioned after hero */}
+                <div className="container mx-auto px-4 md:px-8 max-w-4xl">
                     <div className="text-left bg-white/50 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white shadow-glass mb-16">
                         <h2 className="font-serif text-3xl font-bold text-navy mb-6">¿Cuándo acudir a Terapia de Pareja?</h2>
                         <p className="text-text/80 leading-relaxed mb-6 text-lg">
@@ -147,31 +151,13 @@ export default function TerapiaDeParejaPage() {
                 </div>
             </section>
 
-            {/* Promesa de Valor / Filosofía */}
-            <section className="py-16 md:py-24 bg-navy text-white relative overflow-hidden selection:bg-gold/30 selection:text-white">
-                <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-gold/10 rounded-full blur-[100px] pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-sage/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-                <div className="container mx-auto px-4 md:px-8 max-w-4xl text-center relative z-10">
-                    <Quote className="w-12 h-12 md:w-16 md:h-16 text-gold/50 mx-auto mb-6 md:mb-8" />
-                    <h2 className="font-serif text-2xl md:text-5xl font-medium leading-normal md:leading-tight mb-6 md:mb-8 text-white px-2">
-                        "En la clínica no hay ni jueces ni culpables. Nuestro rol es traducir el dolor de cada parte para proteger el vínculo mutuo y desenredar la hostilidad."
-                    </h2>
-                    <div className="flex flex-col items-center justify-center">
-                        <div className="w-8 md:w-12 h-1 bg-gold mb-4"></div>
-                        <p className="font-sans font-bold tracking-widest uppercase text-xs md:text-sm text-gold/90">
-                            Un Terreno Neutral
-                        </p>
-                        <p className="text-white/80 text-base md:text-xl mt-4 max-w-lg mx-auto font-light leading-relaxed px-4">
-                            Ofrecemos un espacio de equidad estricta. Nos aseguramos de que ninguna de las partes se sienta juzgada, acorralada ni aliada con el terapeuta.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
             {/* Reserva Section */}
             <BookingOptions />
             <FAQSection />
+
+            {/* Sticky Booking Button */}
+            <StickyBookingButton />
+
             <Footer />
         </div>
     );

@@ -6,6 +6,7 @@ import CredentialsSection from '@/components/sobre-mi/CredentialsSection';
 import ExperienceSection from '@/components/sobre-mi/ExperienceSection';
 import EducationTimeline from '@/components/sobre-mi/EducationTimeline';
 import PublicationsSection from '@/components/sobre-mi/PublicationsSection';
+import StickyBookingButton from '@/components/servicios/StickyBookingButton';
 import FAQSection from '@/components/sections/FAQSection';
 
 export const metadata = buildMetadata({
@@ -36,6 +37,7 @@ export default function SobreMiPage() {
                 <EducationTimeline />
                 <PublicationsSection />
                 <FAQSection />
+                <StickyBookingButton />
             </main>
             <Footer />
         </div>

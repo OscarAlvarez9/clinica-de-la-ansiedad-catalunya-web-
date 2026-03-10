@@ -6,7 +6,6 @@ import {
     NavbarBrand,
     NavbarContent,
     NavbarItem,
-    NavbarMenuToggle,
     NavbarMenu,
     NavbarMenuItem,
     Button,
@@ -17,7 +16,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown, Phone } from "lucide-react";
+import { ChevronDown, Phone, Menu, X } from "lucide-react";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -52,39 +51,47 @@ export default function Navbar() {
         <HeroNavbar
             onMenuOpenChange={setIsMenuOpen}
             isMenuOpen={isMenuOpen}
-            className={`fixed top-0 w-full transition-all duration-500 z-50 ${isScrolled
-                ? "bg-white/95 backdrop-blur-3xl border-b border-navy/5 shadow-sm py-1"
-                : "bg-transparent py-4"
+            className={`fixed top-0 w-full transition-all duration-500 z-50 px-2 sm:px-4 ${isScrolled
+                ? "bg-white/95 backdrop-blur-3xl border-b border-navy/5 shadow-sm py-2 sm:py-1"
+                : "bg-transparent py-3 sm:py-4"
                 }`}
-            maxWidth="xl"
+            maxWidth="full"
             position="sticky"
         >
-            <NavbarContent>
-                <NavbarMenuToggle
+            <NavbarContent className="sm:hidden">
+                <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="text-navy p-2 hover:text-gold transition-colors"
                     aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
-                    className="sm:hidden text-navy"
-                />
-                <NavbarBrand as={Link} href="/" className="flex items-center gap-0">
-                    <img
-                        src="/images/logo.png"
-                        alt="Clínica de la Ansiedad Catalunya"
-                        className="h-10 md:h-12 w-auto object-contain brightness-0"
-                    />
-                </NavbarBrand>
+                >
+                    {isMenuOpen ? (
+                        <X className="w-6 h-6" />
+                    ) : (
+                        <Menu className="w-6 h-6" />
+                    )}
+                </button>
             </NavbarContent>
 
-            <NavbarContent className="hidden sm:flex gap-10" justify="center">
+            <NavbarBrand as={Link} href="/" className="flex items-center gap-0 flex-1 sm:flex-none">
+                <img
+                    src="/images/logo.png"
+                    alt="Clínica de la Ansiedad Catalunya"
+                    className="h-9 sm:h-10 md:h-12 w-auto object-contain brightness-0"
+                />
+            </NavbarBrand>
+
+            <NavbarContent className="hidden sm:flex gap-4 md:gap-8 lg:gap-10" justify="center">
                 {menuItems.map((item) => (
-                    <NavbarItem key={item.name}>
+                    <NavbarItem key={item.name} className="text-xs md:text-sm lg:text-base">
                         {item.subItems ? (
                             <DropdownMenu>
-                                <DropdownMenuTrigger className="flex items-center gap-1.5 text-navy hover:text-gold transition-colors font-sans text-[11px] tracking-[0.2em] uppercase font-bold outline-none cursor-pointer">
-                                    {item.name} <ChevronDown className="w-3.5 h-3.5 opacity-50" />
+                                <DropdownMenuTrigger className="flex items-center gap-1 text-navy hover:text-gold transition-colors font-sans text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.2em] uppercase font-bold outline-none cursor-pointer">
+                                    {item.name} <ChevronDown className="w-3 h-3 opacity-50" />
                                 </DropdownMenuTrigger>
-                                <DropdownMenuContent className="bg-white/98 backdrop-blur-xl border border-navy/5 shadow-2xl rounded-2xl p-2 min-w-[240px] mt-4">
+                                <DropdownMenuContent className="bg-white/98 backdrop-blur-xl border border-navy/5 shadow-2xl rounded-2xl p-2 min-w-[200px] md:min-w-[240px] mt-2">
                                     {item.subItems.map(subItem => (
                                         <DropdownMenuItem key={subItem.name} asChild className="cursor-pointer hover:bg-navy/5 rounded-xl focus:bg-navy/5 focus:text-navy data-[highlighted]:bg-navy/5 transition-all">
-                                            <Link href={subItem.href} className="w-full text-navy font-semibold text-xs py-3 px-4 block">
+                                            <Link href={subItem.href} className="w-full text-navy font-semibold text-xs py-2 px-3 block">
                                                 {subItem.name}
                                             </Link>
                                         </DropdownMenuItem>
@@ -94,7 +101,7 @@ export default function Navbar() {
                         ) : (
                             <Link
                                 href={item.href}
-                                className="text-navy hover:text-gold transition-colors font-sans text-[11px] tracking-[0.2em] uppercase font-bold"
+                                className="text-navy hover:text-gold transition-colors font-sans text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.2em] uppercase font-bold"
                             >
                                 {item.name}
                             </Link>
@@ -103,7 +110,7 @@ export default function Navbar() {
                 ))}
             </NavbarContent>
 
-            <NavbarContent justify="end" className="gap-6">
+            <NavbarContent justify="end" className="gap-2 sm:gap-3 md:gap-4 lg:gap-6">
                 <NavbarItem className="hidden lg:flex items-center gap-2">
                     <Phone className="w-4 h-4 text-gold" />
                     <span className="text-navy font-bold text-xs">93 226 14 12</span>
@@ -112,26 +119,26 @@ export default function Navbar() {
                     <Button
                         as="a"
                         href="#contacto"
-                        className="bg-navy text-white font-bold rounded-xl px-8 py-6 hover:bg-navy/90 shadow-xl shadow-navy/10 transition-all text-xs uppercase tracking-widest"
+                        className="bg-navy text-white font-bold rounded-lg sm:rounded-xl px-3 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 hover:bg-navy/90 shadow-lg shadow-navy/10 transition-all text-[10px] sm:text-xs md:text-xs uppercase tracking-wider md:tracking-widest"
                     >
-                        Cita Previa
+                        Cita
                     </Button>
                 </NavbarItem>
             </NavbarContent>
 
-            <NavbarMenu className="bg-cream/98 backdrop-blur-xl pt-10 px-8 gap-6">
+            <NavbarMenu className="bg-cream/98 backdrop-blur-xl pt-6 px-4 gap-4">
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item.name}-${index}`} className="w-full block">
                         {item.subItems ? (
                             <div className="flex flex-col py-2 w-full">
-                                <span className="w-full text-navy/40 text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
+                                <span className="w-full text-navy/40 text-[9px] font-bold tracking-[0.15em] uppercase mb-3">
                                     {item.name}
                                 </span>
-                                <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-3">
                                     {item.subItems.map(subItem => (
                                         <Link
                                             key={subItem.name}
-                                            className="w-full text-navy text-2xl font-serif font-bold hover:text-gold transition-colors"
+                                            className="w-full text-navy text-lg sm:text-xl font-serif font-bold hover:text-gold transition-colors"
                                             href={subItem.href}
                                             onClick={() => setIsMenuOpen(false)}
                                         >
@@ -142,7 +149,7 @@ export default function Navbar() {
                             </div>
                         ) : (
                             <Link
-                                className="w-full text-navy text-3xl font-serif font-bold py-2 block"
+                                className="w-full text-navy text-2xl sm:text-3xl font-serif font-bold py-2 block"
                                 href={item.href}
                                 onClick={() => setIsMenuOpen(false)}
                             >
@@ -151,11 +158,11 @@ export default function Navbar() {
                         )}
                     </NavbarMenuItem>
                 ))}
-                <NavbarMenuItem className="mt-12">
+                <NavbarMenuItem className="mt-8">
                     <Button
                         as="a"
                         href="#contacto"
-                        className="w-full bg-navy text-white font-bold rounded-2xl py-8 text-lg"
+                        className="w-full bg-navy text-white font-bold rounded-2xl py-6 sm:py-8 text-base sm:text-lg"
                         onClick={() => setIsMenuOpen(false)}
                     >
                         Solicitar Valoración

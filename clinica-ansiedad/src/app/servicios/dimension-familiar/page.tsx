@@ -3,8 +3,9 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@heroui/react';
 import Link from 'next/link';
-import { Users, Network, Anchor, RefreshCw, Quote } from 'lucide-react';
+import { Users, Network, Anchor, RefreshCw } from 'lucide-react';
 import BookingOptions from '@/components/servicios/BookingOptions';
+import StickyBookingButton from '@/components/servicios/StickyBookingButton';
 import FAQSection from '@/components/sections/FAQSection';
 
 export const metadata: Metadata = {
@@ -29,7 +30,10 @@ export default function DimensionFamiliarPage() {
                     <p className="text-xl text-navy/80 font-medium leading-relaxed mb-8">
                         Abordamos la sintomatología emocional que aparece y se manifiesta dentro de la red de vínculos familiares para facilitar un entorno más sano de convivencia.
                     </p>
+                </div>
 
+                {/* Early CTA - Positioned after hero */}
+                <div className="container mx-auto px-4 md:px-8 max-w-4xl">
                     <div className="text-left bg-white/50 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white shadow-glass mb-16">
                         <h2 className="font-serif text-3xl font-bold text-navy mb-6">¿Cuándo plantear una intervención sistémica?</h2>
                         <p className="text-text/80 leading-relaxed mb-6 text-lg">
@@ -117,31 +121,12 @@ export default function DimensionFamiliarPage() {
                     </div>
                 </section>
 
-                {/* Promesa de Valor / Filosofía */}
-                <section className="py-16 md:py-24 bg-navy text-white relative overflow-hidden selection:bg-gold/30 selection:text-white">
-                    <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-gold/10 rounded-full blur-[100px] pointer-events-none"></div>
-                    <div className="absolute bottom-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-sage/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-                    <div className="container mx-auto px-4 md:px-8 max-w-4xl text-center relative z-10">
-                        <Quote className="w-12 h-12 md:w-16 md:h-16 text-gold/50 mx-auto mb-6 md:mb-8" />
-                        <h2 className="font-serif text-2xl md:text-5xl font-medium leading-normal md:leading-tight mb-6 md:mb-8 text-white px-2">
-                            "Un síntoma de ansiedad extremo en un hijo o de dolor en un progenitor a menudo es la expresión de un malestar que pertenece a todo el ecosistema vivo."
-                        </h2>
-                        <div className="flex flex-col items-center justify-center">
-                            <div className="w-8 md:w-12 h-1 bg-gold mb-4"></div>
-                            <p className="font-sans font-bold tracking-widest uppercase text-xs md:text-sm text-gold/90">
-                                Empatía Sistémica
-                            </p>
-                            <p className="text-white/80 text-base md:text-xl mt-4 max-w-lg mx-auto font-light leading-relaxed px-4">
-                                Trabajamos desde la comprensión más profunda, asumiendo que cada miembro actúa como mejor sabe con los recursos que tiene. Transformamos la culpa en responsabilidad compartida.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
                 {/* Reserva Section */}
                 <BookingOptions />
                 <FAQSection />
+
+                {/* Sticky Booking Button */}
+                <StickyBookingButton />
             </main>
             <Footer />
         </div>
