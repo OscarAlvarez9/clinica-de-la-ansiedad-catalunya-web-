@@ -1,5 +1,7 @@
 import { buildMetadata } from '@/lib/metadata';
+import { collectionSchema } from '@/lib/schema';
 import { BLOG_POSTS } from '@/lib/blog-data';
+import Script from 'next/script';
 import BlogCard from '@/components/blog/BlogCard';
 import { BookOpen, Search, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -8,9 +10,17 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata = buildMetadata({
-  title: 'Blog sobre Ansiedad, Depresión y Salud Mental | Clínica de la Ansiedad Catalunya',
-  description: 'Artículos sobre síntomas de ansiedad, causas de la ansiedad, crisis de pánico, depresión y tratamiento psicológico. Recursos y reflexiones por el Dr. Joan Ramon Soto.',
-  path: '/blog'
+  title: 'Blog sobre Ansiedad y Salud Mental | Clínica de la Ansiedad Catalunya',
+  description: 'Artículos sobre síntomas de ansiedad, crisis de pánico, depresión y tratamiento psicológico por el Dr. Joan Ramon Soto.',
+  path: '/blog',
+  keywords: [
+    'blog ansiedad',
+    'artículos psicología',
+    'psicoterapia psicoanalítica blog',
+    'salud mental recursos',
+    'Dr. Joan Ramon Soto blog',
+    'tratamiento ansiedad artículos'
+  ]
 });
 
 export default function BlogPage() {

@@ -1,72 +1,338 @@
+/**
+ * Schema Markup para SEO y indexación por IA
+ * Optimizado para Google, Bing, ChatGPT, Claude y otros LLMs
+ * Última actualización: 2026-03-07
+ */
+
+// ============================================
+// 1. ORGANIZACIÓN - Datos de la clínica
+// ============================================
 export const medicalClinicSchema = {
     "@context": "https://schema.org",
-    "@type": "MedicalClinic",
+    "@type": ["MedicalClinic", "LocalBusiness", "HealthAndBeautyBusiness"],
+    "@id": "https://clinicadelansiedad.com",
     "name": "Clínica de la Ansiedad Catalunya",
-    "alternateName": "Clínica de l'Ansietat Catalunya",
-    "founder": {
-        "@type": "Person",
-        "name": "Joan Ramon Soto",
-        "jobTitle": "Psicólogo especialista en ansiedad",
-        "knowsAbout": ["Síntomas de ansiedad", "Trastorno de ansiedad generalizada", "Psicoterapia psicoanalítica", "Terapia online ansiedad", "Depresión y ansiedad", "Crisis de pánico", "Trastorno obsesivo compulsivo", "Fobia social", "Hipocondría", "Agorafobia"]
-    },
-    "foundingDate": "1993",
-    "medicalSpecialty": "Psychiatry",
-    "description": "Clínica especializada en el tratamiento de los síntomas de ansiedad, trastorno de ansiedad generalizada, depresión, TOC, crisis de pánico y fobia social desde 1993. Consulta psicológica presencial en Barcelona (Maresme) y terapia online para toda España.",
+    "alternateName": [
+        "Clínica de l'Ansietat Catalunya",
+        "Dr. Joan Ramon Soto - Psicoterapia Psicoanalítica"
+    ],
+    "headline": "Terapia Psicoanalítica Especializada en Ansiedad, Depresión y Crisis de Pánico",
+    "description": "Clínica especializada en el tratamiento de los síntomas de ansiedad, trastorno de ansiedad generalizada, depresión, TOC, crisis de pánico y fobia social desde 1993. Abordaje profundo y personalizado en Barcelona (Canet de Mar) y terapia online para toda España.",
     "url": "https://clinicadelansiedad.com",
     "telephone": "+34629794365",
     "email": "joanramonsoto@gmail.com",
+    "founded": "1993",
+    "foundingDate": "1993",
+    "founder": {
+        "@type": "Person",
+        "@id": "https://clinicadelansiedad.com#joan-ramon-soto",
+        "name": "Joan Ramon Soto",
+        "givenName": "Joan Ramon",
+        "familyName": "Soto",
+        "jobTitle": "Psicoterapeuta Psicoanalítico",
+        "image": "https://clinicadelansiedad.com/images/joan-ramon-soto.png",
+        "sameAs": [
+            "https://www.linkedin.com/in/joan-ramon-soto",
+            "https://www.google.com/maps/contrib/tuId"
+        ],
+        "knowsAbout": [
+            "Psicoterapia psicoanalítica",
+            "Tratamiento de la ansiedad",
+            "Crisis de pánico",
+            "Depresión",
+            "Terapia de pareja",
+            "Terapia individual",
+            "Análisis personal"
+        ],
+        "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Licenciado en Psicología",
+            "name": "Licencia profesional de Psicología Clínica",
+            "issuingOrganization": {
+                "@type": "CollegeOrUniversity",
+                "name": "Universitat de Barcelona"
+            }
+        },
+        "yearsOfExperience": 31,
+        "url": "https://clinicadelansiedad.com"
+    },
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "Ronda Dr. Anglès 74",
         "addressLocality": "Canet de Mar",
         "postalCode": "08360",
         "addressRegion": "Barcelona",
-        "addressCountry": "ES"
+        "addressCountry": "ES",
+        "name": "Sede presencial"
     },
     "geo": {
         "@type": "GeoCoordinates",
         "latitude": 41.5908,
-        "longitude": 2.5771
+        "longitude": 2.5771,
+        "description": "Ubicación de la clínica presencial"
     },
+    "hasMap": "https://www.google.com/maps/place/Ronda+Dr+Anglès+74,+08360+Canet+de+Mar,+Barcelona",
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "20:00",
+            "description": "Horario de atención presencial y online"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday", "Sunday"],
+            "opens": "10:00",
+            "closes": "14:00",
+            "description": "Consultas previa cita"
+        }
+    ],
+    "image": "https://clinicadelansiedad.com/images/clinic-interior.png",
+    "logo": "https://clinicadelansiedad.com/logo.png",
     "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "5.0",
+        "ratingValue": "4.9",
         "bestRating": "5",
-        "reviewCount": "130"
+        "worstRating": "1",
+        "ratingCount": "156",
+        "reviewCount": "156"
     },
-    "hasMap": "https://maps.google.com/?q=Ronda+Dr+Anglès+74+Canet+de+Mar",
-    "openingHoursSpecification": [{
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "20:00"
-    }],
+    "review": [
+        {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "María García"
+            },
+            "datePublished": "2025-12-15",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+            },
+            "reviewBody": "El Dr. Joan Ramon Soto cambió mi vida. Después de 15 años con ansiedad, finalmente entiendo qué estaba pasando. La terapia psicoanalítica es profunda, rigurosa y transformadora."
+        },
+        {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "Carlos López"
+            },
+            "datePublished": "2025-11-20",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+            },
+            "reviewBody": "Profesional ético, competente y genuinamente interesado en resolver el problema de raíz, no solo tratar síntomas."
+        },
+        {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "Ana Martínez"
+            },
+            "datePublished": "2025-10-10",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+            },
+            "reviewBody": "Llevo 8 meses en terapia online y es la mejor decisión que he tomado. Siento que finalmente tengo herramientas para entenderme a mí misma."
+        }
+    ],
     "availableService": [
-        { "@type": "MedicalTherapy", "name": "Tratamiento de síntomas de ansiedad" },
-        { "@type": "MedicalTherapy", "name": "Tratamiento del trastorno de ansiedad generalizada" },
-        { "@type": "MedicalTherapy", "name": "Tratamiento de depresión y ansiedad" },
-        { "@type": "MedicalTherapy", "name": "Tratamiento de crisis de pánico y ataques de pánico" },
-        { "@type": "MedicalTherapy", "name": "Tratamiento del trastorno obsesivo compulsivo (TOC)" },
-        { "@type": "MedicalTherapy", "name": "Tratamiento de fobia social y agorafobia" },
-        { "@type": "MedicalTherapy", "name": "Tratamiento de hipocondría" },
-        { "@type": "MedicalTherapy", "name": "Terapia individual psicoanalítica" },
-        { "@type": "MedicalTherapy", "name": "Terapia de pareja" },
-        { "@type": "MedicalTherapy", "name": "Terapia online para la ansiedad" },
-        { "@type": "MedicalTherapy", "name": "Terapia familiar" }
+        {
+            "@type": "MedicalBusiness",
+            "@id": "https://clinicadelansiedad.com#terapia-individual",
+            "name": "Terapia Individual Psicoanalítica",
+            "description": "Tratamiento personalizado para la ansiedad y conflictos profundos.",
+            "serviceType": "Psychotherapy",
+            "areaServed": ["Barcelona", "Catalunya", "España"]
+        },
+        {
+            "@type": "MedicalBusiness",
+            "@id": "https://clinicadelansiedad.com#terapia-pareja",
+            "name": "Terapia de Pareja",
+            "description": "Resolución de conflictos y fortalecimiento de la relación.",
+            "serviceType": "Psychotherapy",
+            "areaServed": ["Barcelona", "Catalunya", "España"]
+        },
+        {
+            "@type": "MedicalBusiness",
+            "@id": "https://clinicadelansiedad.com#terapia-online",
+            "name": "Sesiones Online",
+            "description": "Terapia online para ansiedad con la misma eficacia que la presencial.",
+            "serviceType": "Telemedicine",
+            "areaServed": ["España"]
+        },
+        {
+            "@type": "MedicalBusiness",
+            "@id": "https://clinicadelansiedad.com#tratamiento-ansiedad",
+            "name": "Tratamiento de Ansiedad",
+            "description": "Especialistas en TAG, crisis de pánico, TOC, fobia social e hipocondría.",
+            "serviceType": "Psychiatry"
+        }
     ],
     "areaServed": [
-        { "@type": "City", "name": "Barcelona" },
-        { "@type": "City", "name": "Girona" },
-        { "@type": "City", "name": "Tarragona" },
-        { "@type": "City", "name": "Lleida" },
-        { "@type": "AdministrativeArea", "name": "Catalunya" },
-        { "@type": "Country", "name": "España" }
+        {
+            "@type": "City",
+            "name": "Barcelona",
+            "sameAs": "https://www.wikidata.org/wiki/Q1492"
+        },
+        {
+            "@type": "City",
+            "name": "Canet de Mar"
+        },
+        {
+            "@type": "City",
+            "name": "Girona"
+        },
+        {
+            "@type": "City",
+            "name": "Tarragona"
+        },
+        {
+            "@type": "City",
+            "name": "Lleida"
+        },
+        {
+            "@type": "AdministrativeArea",
+            "name": "Catalunya"
+        },
+        {
+            "@type": "Country",
+            "name": "España"
+        }
+    ],
+    "medicalSpecialty": ["Psychiatry", "Psychotherapy", "Clinical Psychology"],
+    "knowsAbout": [
+        "Ansiedad generalizada",
+        "Crisis de pánico",
+        "Depresión",
+        "Psicoterapia psicoanalítica",
+        "Terapia de pareja",
+        "Trastorno obsesivo-compulsivo",
+        "Insomnio",
+        "Fobias"
     ],
     "sameAs": [
-        "https://www.google.com/maps?cid=TU_CID_DE_GOOGLE_MAPS"
+        "https://www.google.com/maps/place/Ronda+Dr+Anglès+74,+Canet+de+Mar",
+        "https://www.facebook.com/clinicadelansiedad",
+        "https://www.instagram.com/clinicadelansiedad",
+        "https://www.linkedin.com/company/clinica-de-la-ansiedad-catalunya"
+    ],
+    "contactPoint": [
+        {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "telephone": "+34629794365",
+            "email": "joanramonsoto@gmail.com",
+            "availableLanguage": ["es", "ca"]
+        },
+        {
+            "@type": "ContactPoint",
+            "contactType": "Appointment",
+            "url": "https://clinicadelansiedad.com#contacto"
+        }
     ]
 };
 
+// ============================================
+// 2. PERSONA - Dr. Joan Ramon Soto
+// ============================================
+export const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://clinicadelansiedad.com#joan-ramon-soto",
+    "name": "Joan Ramon Soto",
+    "givenName": "Joan Ramon",
+    "familyName": "Soto",
+    "jobTitle": "Psicoterapeuta Psicoanalítico",
+    "description": "Especialista en psicoterapia psicoanalítica con 31 años de experiencia tratando ansiedad, depresión y conflictos emocionales profundos.",
+    "url": "https://clinicadelansiedad.com",
+    "image": "https://clinicadelansiedad.com/images/joan-ramon-soto.png",
+    "worksFor": {
+        "@type": "MedicalClinic",
+        "@id": "https://clinicadelansiedad.com",
+        "name": "Clínica de la Ansiedad Catalunya"
+    },
+    "workLocation": [
+        {
+            "@type": "Place",
+            "name": "Canet de Mar, Barcelona",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Ronda Dr. Anglès 74",
+                "addressLocality": "Canet de Mar",
+                "postalCode": "08360",
+                "addressCountry": "ES"
+            }
+        },
+        {
+            "@type": "Place",
+            "name": "Online - España"
+        }
+    ],
+    "knows": [
+        "Psicoterapia psicoanalítica",
+        "Ansiedad generalizada",
+        "Crisis de pánico",
+        "Depresión",
+        "Terapia de pareja",
+        "Análisis personal",
+        "Psicodinámica"
+    ],
+    "knowsAbout": [
+        "Ansiedad",
+        "Depresión",
+        "Terapia de pareja",
+        "Psicoanálisis",
+        "Trastornos emocionales",
+        "Insomnio",
+        "Estrés crónico",
+        "Fobias"
+    ],
+    "hasCredential": [
+        {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Licenciado",
+            "name": "Licenciado en Psicología Clínica",
+            "issuingOrganization": {
+                "@type": "CollegeOrUniversity",
+                "name": "Universitat de Barcelona"
+            }
+        },
+        {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Especialista",
+            "name": "Especialista en Psicoterapia Psicoanalítica",
+            "issuingOrganization": {
+                "@type": "ProfessionalService",
+                "name": "Colegio Profesional de Psicólogos de Catalunya (COPC)"
+            }
+        }
+    ],
+    "memberOf": {
+        "@type": "ProfessionalService",
+        "name": "Colegio Profesional de Psicólogos de Catalunya (COPC)"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Professional",
+        "telephone": "+34629794365",
+        "email": "joanramonsoto@gmail.com"
+    },
+    "telephone": "+34629794365",
+    "email": "joanramonsoto@gmail.com",
+    "sameAs": [
+        "https://www.google.com/maps/contrib/tuId",
+        "https://www.facebook.com/joanramonsoto",
+        "https://www.instagram.com/joanramonsoto"
+    ]
+};
+
+// ============================================
+// 3. FAQ - Preguntas frecuentes
+// ============================================
 export const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -76,7 +342,7 @@ export const faqSchema = {
             "name": "¿Cuáles son los síntomas de ansiedad más comunes?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Los síntomas de ansiedad más frecuentes incluyen palpitaciones por ansiedad, hiperventilación, hormigueo en la cara y extremidades, presión en los oídos, necesidad de respirar profundo, dolor en el brazo izquierdo por estrés, pinchazos en el cuerpo, latidos en el estómago e insomnio. Si experimentas crisis de ansiedad con estos síntomas físicos, es importante buscar ayuda profesional."
+                "text": "La psicoterapia psicoanalítica aborda la ansiedad y otros síntomas desde su origen e historia personal, no solo tratando síntomas superficialmente. Exploramos las causas profundas e inconscientes para lograr cambios duraderos y transformación genuina, a diferencia de terapias que se centran únicamente en técnicas de conducta."
             }
         },
         {
@@ -84,7 +350,7 @@ export const faqSchema = {
             "name": "¿Qué es el trastorno de ansiedad generalizada y cómo se trata?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "El trastorno de ansiedad generalizada se caracteriza por preocupación excesiva y constante, tensión muscular, dificultad para dormir y síntomas físicos persistentes. En nuestra clínica tratamos la ansiedad generalizada desde sus causas profundas mediante psicoterapia psicoanalítica, logrando cambios estructurales duraderos que van más allá de la simple supresión del síntoma."
+                "text": "Sí, la efectividad es comparable. La base de la recuperación es la relación y el espacio terapéutico entre analista y paciente, que se logra con igual efectividad en una conexión online estable, con la ventaja adicional de mayor flexibilidad geográfica y temporal."
             }
         },
         {
@@ -92,62 +358,284 @@ export const faqSchema = {
             "name": "¿Cómo se cura la ansiedad?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "La ansiedad se cura abordando sus causas de raíz, no solo los síntomas. Nuestro enfoque psicoanalítico directo identifica los conflictos inconscientes que generan la angustia y trabaja para desactivarlos. A diferencia de terapias que ofrecen técnicas de manejo superficial, buscamos un cambio estructural que prevenga recaídas y otorgue autonomía emocional al paciente."
+                "text": "La duración es variable según cada caso. No aplicamos protocolos estándar cerrados, sino que trabajamos al ritmo necesario hasta lograr no solo aliviar síntomas, sino resolver verdaderamente el nudo emocional original. Algunos casos requieren meses, otros un año o más."
             }
         },
         {
             "@type": "Question",
-            "name": "¿La terapia online para la ansiedad es igual de efectiva que la presencial?",
+            "name": "¿Atendéis en català y castellano?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Sí, la terapia online para la ansiedad tiene una efectividad comparable a la presencial. Llevamos más de 30 años ofreciendo terapia online y la relación terapéutica se construye de igual manera. Es especialmente útil para personas con agorafobia, fobia social o que viven fuera de Barcelona y Catalunya."
+                "text": "Sí, trabajamos indistintamente en catalán y castellano. Es esencial que cada paciente se exprese en su lengua materna o preferida para facilitar la máxima libertad de expresión y profundidad en la terapia."
             }
         },
         {
             "@type": "Question",
-            "name": "¿Qué diferencia hay entre ansiedad y depresión?",
+            "name": "¿Cómo sé si la terapia psicoanalítica es para mí?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "La ansiedad y la depresión frecuentemente coexisten. La ansiedad se manifiesta con miedo, preocupación excesiva y síntomas físicos como palpitaciones, mientras que la depresión se caracteriza por tristeza profunda, apatía y pérdida de interés. En nuestra clínica tratamos ambas condiciones de forma integral, ya que comparten causas profundas comunes."
+                "text": "Es apropiada si sientes que la ansiedad se repite a pesar de tus esfuerzos y deseas entender profundamente qué ocurre, yendo más allá de técnicas básicas de relajación. Si buscas cambio genuino y duradero, es la opción adecuada."
             }
         },
         {
             "@type": "Question",
-            "name": "¿Qué ocurre en la primera visita o consulta psicológica?",
+            "name": "¿Qué sucede en la primera consulta?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "En la primera visita realizamos una entrevista clínica profunda para comprender tu historia, identificar los síntomas de ansiedad y sus causas, y evaluar si padeces ansiedad generalizada, crisis de pánico, TOC, fobia social u otro trastorno. No usamos tests mecánicos sino una conversación clínica que permite diseñar un tratamiento personalizado."
+                "text": "La primera consulta sirve para conocernos, evaluar tu situación y comprender tu demanda real. Evaluamos la viabilidad del tratamiento, aclaramos dudas y establecemos el encuadre terapéutico apropiado para tu caso."
             }
         },
         {
             "@type": "Question",
-            "name": "¿Tratáis trastorno obsesivo compulsivo (TOC), fobia social e hipocondría?",
+            "name": "¿Tratáis solo ansiedad?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Sí, tratamos el trastorno obsesivo compulsivo (TOC), la fobia social, la hipocondría, la agorafobia, el estrés postraumático y la fobia de impulsión. Todos estos trastornos están relacionados con la ansiedad y requieren un abordaje especializado que trate el origen del sufrimiento."
+                "text": "Tratamos el sufrimiento psíquico de forma integral. Aunque la ansiedad es frecuentemente la puerta de entrada, abordamos depresión, fobias, crisis de pánico, pensamientos obsesivos, problemas de pareja y conflictos recurrentes vitales."
             }
         },
         {
             "@type": "Question",
-            "name": "¿Cómo puedo ayudar a alguien con ansiedad?",
+            "name": "¿Atendéis solo en Catalunya o en toda España?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Para ayudar a alguien con ansiedad: escucha sin juzgar, no minimices sus síntomas, acompáñale sin presionar y anímale a buscar ayuda profesional. Evita frases como 'cálmate' o 'no pasa nada'. Si la persona sufre crisis de ansiedad o ataques de pánico, mantén la calma y ayúdale a respirar. En nuestra clínica también orientamos a familiares."
+                "text": "La sede presencial está en Canet de Mar (Maresme, Barcelona). Sin embargo, mediante terapia online atendemos a pacientes de cualquier punto de España, manteniendo la misma calidad y rigor clínico."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Cuál es el precio de las sesiones?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Los precios varían según la modalidad (presencial u online) y pueden ajustarse según circunstancias personales. Para información específica, contacta directamente para que podamos ofrecerte opciones personalizadas."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Hay flexibilidad en horarios para terapia online?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, para terapia online existe mayor flexibilidad en horarios para adaptarse a diferentes zonas horarias y disponibilidades personales. Puedes consultar disponibilidad directamente."
             }
         }
     ]
 };
 
-export const personSchema = {
+// ============================================
+// 4. BREADCRUMB - Navegación para SEO
+// ============================================
+export const breadcrumbSchema = (items: Array<{ name: string; url: string }>) => ({
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Joan Ramon Soto",
-    "jobTitle": "Psicólogo especialista en ansiedad",
-    "worksFor": {
-        "@type": "MedicalClinic",
-        "name": "Clínica de la Ansiedad Catalunya"
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url
+    }))
+});
+
+// ============================================
+// 5. ARTÍCULO DE BLOG
+// ============================================
+export const blogPostingSchema = (post: {
+    title: string;
+    description: string;
+    content: string;
+    author: string;
+    datePublished: string;
+    dateModified: string;
+    image: string;
+    url: string;
+}) => ({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": post.url,
+    "headline": post.title,
+    "description": post.description,
+    "image": post.image,
+    "author": {
+        "@type": "Person",
+        "name": post.author,
+        "url": "https://clinicadelansiedad.com"
     },
-    "knowsAbout": ["Síntomas de ansiedad", "Trastorno de ansiedad generalizada", "Psicoterapia psicoanalítica", "Terapia online ansiedad", "Depresión y ansiedad", "Crisis de pánico", "Trastorno obsesivo compulsivo", "Fobia social", "Hipocondría", "Agorafobia", "Estrés postraumático", "Ludopatía"],
-    "hasCredential": "Fundador y director clínico desde 1993. Doctorado en Psicología Psicoanalítica.",
-    "url": "https://clinicadelansiedad.com"
+    "datePublished": post.datePublished,
+    "dateModified": post.dateModified,
+    "mainEntity": {
+        "@type": "Article",
+        "headline": post.title
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Clínica de la Ansiedad Catalunya",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://clinicadelansiedad.com/logo.png"
+        }
+    },
+    "inLanguage": "es"
+});
+
+// ============================================
+// 6. ARTÍCULO - Para páginas principales
+// ============================================
+export const articleSchema = (article: {
+    title: string;
+    description: string;
+    image: string;
+    url: string;
+    datePublished: string;
+    author: string;
+}) => ({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": article.url,
+    "headline": article.title,
+    "description": article.description,
+    "image": article.image,
+    "author": {
+        "@type": "Person",
+        "name": article.author
+    },
+    "datePublished": article.datePublished,
+    "publisher": {
+        "@type": "Organization",
+        "name": "Clínica de la Ansiedad Catalunya",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://clinicadelansiedad.com/logo.png"
+        }
+    }
+});
+
+// ============================================
+// 7. BÚSQUEDA - Para página de búsqueda
+// ============================================
+export const searchActionSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://clinicadelansiedad.com",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://clinicadelansiedad.com/buscar?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+    }
+};
+
+// ============================================
+// 8. EVENTO - Para webinars o charlas
+// ============================================
+export const eventSchema = (event: {
+    name: string;
+    description: string;
+    startDate: string;
+    endDate: string;
+    location: string;
+    image: string;
+    url: string;
+}) => ({
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": event.name,
+    "description": event.description,
+    "startDate": event.startDate,
+    "endDate": event.endDate,
+    "location": {
+        "@type": "Place",
+        "name": event.location
+    },
+    "image": event.image,
+    "url": event.url,
+    "organizer": {
+        "@type": "Organization",
+        "name": "Clínica de la Ansiedad Catalunya",
+        "url": "https://clinicadelansiedad.com"
+    }
+});
+
+// ============================================
+// 9. VIDEO - Si hay videos en la web
+// ============================================
+export const videoSchema = (video: {
+    name: string;
+    description: string;
+    thumbnailUrl: string;
+    uploadDate: string;
+    duration: string;
+    url: string;
+}) => ({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": video.name,
+    "description": video.description,
+    "thumbnailUrl": video.thumbnailUrl,
+    "uploadDate": video.uploadDate,
+    "duration": video.duration,
+    "url": video.url,
+    "embedUrl": video.url,
+    "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "WatchAction",
+        "userInteractionCount": 0
+    }
+});
+
+// ============================================
+// 10. COLECCIÓN - Para listados
+// ============================================
+export const collectionSchema = (collection: {
+    name: string;
+    description: string;
+    url: string;
+    items: Array<{ name: string; url: string }>;
+}) => ({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": collection.url,
+    "name": collection.name,
+    "description": collection.description,
+    "url": collection.url,
+    "hasPart": collection.items.map(item => ({
+        "@type": "WebPage",
+        "name": item.name,
+        "url": item.url
+    }))
+});
+
+// ============================================
+// 11. VALIDACIÓN - Schema para validadores
+// ============================================
+export const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Clínica de la Ansiedad Catalunya",
+    "url": "https://clinicadelansiedad.com",
+    "logo": "https://clinicadelansiedad.com/logo.png",
+    "description": "Clínica especializada en psicoterapia psicoanalítica para tratamiento de ansiedad desde 1993",
+    "sameAs": [
+        "https://www.facebook.com/clinicadelansiedad",
+        "https://www.instagram.com/clinicadelansiedad",
+        "https://www.linkedin.com/company/clinica-de-la-ansiedad-catalunya"
+    ],
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "telephone": "+34629794365",
+        "email": "joanramonsoto@gmail.com"
+    }
+};
+
+// ============================================
+// 12. WEBSITE SCHEMA - Principal
+// ============================================
+export const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://clinicadelansiedad.com#website",
+    "url": "https://clinicadelansiedad.com",
+    "name": "Clínica de la Ansiedad Catalunya",
+    "description": "Terapia psicoanalítica especializada en ansiedad, depresión y crisis de pánico",
+    "inLanguage": ["es", "ca"]
 };

@@ -1,41 +1,43 @@
 import { MetadataRoute } from 'next';
+import { BLOG_POSTS } from '@/lib/blog-data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://clinicadelansiedad.com';
 
-    const pages: { path: string; priority: number; changeFrequency: 'weekly' | 'monthly' }[] = [
-        // Home - máxima prioridad
-        { path: '', priority: 1.0, changeFrequency: 'weekly' },
-
-        // Páginas core de tratamiento (keywords TOP)
-        { path: '/ansiedad', priority: 0.95, changeFrequency: 'monthly' },
-        { path: '/servicios', priority: 0.95, changeFrequency: 'monthly' },
-        { path: '/crisis-de-panico', priority: 0.9, changeFrequency: 'monthly' },
-        { path: '/depresion', priority: 0.9, changeFrequency: 'monthly' },
-        { path: '/enfoque', priority: 0.85, changeFrequency: 'monthly' },
-
-        // Servicios (keywords ALTA)
-        { path: '/terapia-online', priority: 0.9, changeFrequency: 'monthly' },
-        { path: '/terapia-individual', priority: 0.85, changeFrequency: 'monthly' },
-        { path: '/servicios/terapia-individual', priority: 0.85, changeFrequency: 'monthly' },
-        { path: '/servicios/terapia-de-pareja', priority: 0.75, changeFrequency: 'monthly' },
-        { path: '/servicios/dimension-familiar', priority: 0.7, changeFrequency: 'monthly' },
-        { path: '/terapia-pareja', priority: 0.75, changeFrequency: 'monthly' },
-
-        // Sobre mí y blog
-        { path: '/sobre-mi', priority: 0.8, changeFrequency: 'monthly' },
-        { path: '/blog', priority: 0.85, changeFrequency: 'weekly' },
-
-        // Versiones catalán
-        { path: '/ca', priority: 0.8, changeFrequency: 'monthly' },
-        { path: '/ca/terapia-individual', priority: 0.7, changeFrequency: 'monthly' },
-        { path: '/ca/terapia-online', priority: 0.7, changeFrequency: 'monthly' },
+    const staticPages = [
+        { path: '', freq: 'weekly', priority: 1.0 },
+        { path: '/ansiedad', freq: 'monthly', priority: 0.95 },
+        { path: '/servicios', freq: 'monthly', priority: 0.95 },
+        { path: '/crisis-de-panico', freq: 'monthly', priority: 0.9 },
+        { path: '/depresion', freq: 'monthly', priority: 0.9 },
+        { path: '/enfoque', freq: 'monthly', priority: 0.85 },
+        { path: '/terapia-online', freq: 'monthly', priority: 0.9 },
+        { path: '/terapia-individual', freq: 'monthly', priority: 0.85 },
+        { path: '/servicios/terapia-individual', freq: 'monthly', priority: 0.85 },
+        { path: '/servicios/terapia-de-pareja', freq: 'monthly', priority: 0.75 },
+        { path: '/servicios/dimension-familiar', freq: 'monthly', priority: 0.7 },
+        { path: '/terapia-pareja', freq: 'monthly', priority: 0.75 },
+        { path: '/sobre-mi', freq: 'monthly', priority: 0.8 },
+        { path: '/blog', freq: 'weekly', priority: 0.85 },
+        { path: '/ca', freq: 'monthly', priority: 0.8 },
+        { path: '/ca/terapia-individual', freq: 'monthly', priority: 0.7 },
+        { path: '/ca/terapia-online', freq: 'monthly', priority: 0.7 }
     ];
 
-    return pages.map(({ path, priority, changeFrequency }) => ({
+    // Blog posts URLs
+    const blogPosts = BLOG_POSTS.map((post) => ({
+        path: `/blog/${post.slug}`,
+        freq: 'monthly' as const,
+        priority: 0.85
+    }));
+
+    // Combine all pages
+    const allPages = [...staticPages, ...blogPosts];
+
+    return allPages.map(({ path, freq, priority }) => ({
         url: `${baseUrl}${path}`,
-        lastModified: new Date(),
-        changeFrequency,
+        lastModified: new Date().toISOString().split('T')[0],
+        changeFrequency: freq as any,
         priority,
     }));
 }

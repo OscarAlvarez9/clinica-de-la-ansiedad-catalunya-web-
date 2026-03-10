@@ -4,46 +4,51 @@
 
 @layer base {
   :root {
-    /* cream: #F9FBFB */
-    --background: 180 20% 98%;
-    /* navy (Azul Prusia): #2C5F78 */
-    --foreground: 200 46% 32%;
+    /* cream: #F3F7F4 — blanco salvia suave, sereno */
+    --background: 135 20% 96%;
+    /* navy: #2C6E8A — azul calmado, confianza terapéutica */
+    --foreground: 200 52% 36%;
 
-    --card: 180 20% 98%;
-    --card-foreground: 200 46% 32%;
+    --card: 135 20% 96%;
+    --card-foreground: 200 52% 36%;
 
-    --popover: 180 20% 98%;
-    --popover-foreground: 200 46% 32%;
+    --popover: 135 20% 96%;
+    --popover-foreground: 200 52% 36%;
 
-    /* gold (Verde Salvia): #7FB685 */
-    --primary: 127 30% 61%;
+    /* gold → sage green: #6B9E8B — verde sanación, equilibrio */
+    --primary: 157 20% 52%;
     --primary-foreground: 0 0% 100%;
 
-    /* sage (Arena Suave): #E5DACE */
-    --secondary: 31 35% 85%;
-    --secondary-foreground: 200 46% 32%;
+    /* sage: #E5EEE9 — verde salvia suave */
+    --secondary: 140 15% 92%;
+    --secondary-foreground: 200 52% 36%;
 
-    --muted: 204 11% 60%;
-    --muted-foreground: 204 11% 50%;
+    --muted: 200 18% 58%;
+    --muted-foreground: 200 18% 45%;
 
-    --accent: 127 30% 61%;
+    --accent: 157 20% 52%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 204 20% 90%;
-    --input: 204 20% 90%;
-    --ring: 127 30% 61%;
+    --border: 157 15% 88%;
+    --input: 157 15% 88%;
+    --ring: 157 20% 52%;
     --radius: 0.5rem;
   }
 }
 
 @layer base {
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-cream text-text font-sans antialiased selection:bg-gold/20 selection:text-navy;
     scroll-behavior: smooth;
-    background-image: radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.03) 0%, transparent 50%);
+    overflow-x: hidden;
+    background-image: radial-gradient(circle at 50% 0%, rgba(44, 110, 138, 0.04) 0%, transparent 50%);
   }
 
   h1,
@@ -59,14 +64,14 @@
 @layer utilities {
   .glass-panel {
     @apply bg-white/50 backdrop-blur-2xl border border-white transition-all duration-700;
-    box-shadow: 0 4px 24px -2px rgba(44, 95, 120, 0.05);
-    /* Soft Prussian Blue shadow */
+    box-shadow: 0 4px 24px -2px rgba(44, 110, 138, 0.06);
+    /* Calm blue shadow */
   }
 
   .glass-panel:hover {
     @apply bg-white/70 border-sage/40;
-    box-shadow: 0 8px 32px -4px rgba(127, 182, 133, 0.15);
-    /* Soft Sage Green shadow */
+    box-shadow: 0 8px 32px -4px rgba(107, 158, 139, 0.15);
+    /* Sage green shadow */
   }
 
   .text-balance {

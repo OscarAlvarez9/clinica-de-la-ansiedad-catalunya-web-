@@ -1,5 +1,8 @@
 import { getPostBySlug, getRelatedPosts, BLOG_POSTS } from '@/lib/blog-data';
 import { buildMetadata } from '@/lib/metadata';
+import { blogPostingSchema } from '@/lib/schema';
+import { SchemaInjector } from '@/lib/schema-helpers';
+import Script from 'next/script';
 import BlogCard from '@/components/blog/BlogCard';
 import { Calendar, Clock, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 import Link from 'next/link';
@@ -31,7 +34,20 @@ export async function generateMetadata({ params }: PageProps) {
     return buildMetadata({
         title: `${post.title} | Blog Clínica de la Ansiedad`,
         description: post.excerpt,
-        path: `/blog/${slug}`
+        path: `/blog/${slug}`,
+        keywords: [
+            post.category,
+            'psicoanálisis',
+            'ansiedad',
+            'salud mental',
+            'psicoterapia',
+            post.title.toLowerCase().split(' ').slice(0, 3).join(' ')
+        ],
+        image: post.image,
+        imageAlt: post.title,
+        type: 'article',
+        publishedTime: post.date,
+        modifiedTime: post.date
     });
 }
 
@@ -45,8 +61,26 @@ export default async function BlogPostPage({ params }: PageProps) {
 
     const relatedPosts = getRelatedPosts(post.id);
 
+    // Generate BlogPosting schema for SEO
+    const postSchema = blogPostingSchema({
+        title: post.title,
+        description: post.excerpt,
+        content: post.content,
+        author: post.author.name,
+        datePublished: post.date,
+        dateModified: post.date,
+        image: post.image,
+        url: `https://clinicadelansiedad.com/blog/${slug}`
+    });
+
     return (
         <div className="min-h-screen bg-cream">
+            <Script
+                id={`blog-schema-${slug}`}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(postSchema) }}
+                strategy="afterInteractive"
+            />
             <Navbar />
             <main>
                 {/* Post Header */}

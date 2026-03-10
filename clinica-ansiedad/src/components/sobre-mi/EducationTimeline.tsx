@@ -17,12 +17,12 @@ const education = [
     { year: "1995", title: "Máster en Programación Neuro Lingüística" },
     { year: "1993", title: "Máster en Psicología Analógica e Hipnosis Dinámica" },
     { year: "1991", title: "Master en Psicoterapia Integral por el Estudio de Bioinformación" },
-];
+].reverse();
 
 export default function EducationTimeline() {
     return (
-        <section className="py-20 bg-white">
-            <div className="container mx-auto px-4 md:px-8 max-w-4xl">
+        <section className="py-20 bg-gradient-to-b from-white to-cream/30">
+            <div className="container mx-auto px-4 md:px-8 max-w-5xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -32,26 +32,36 @@ export default function EducationTimeline() {
                     <h2 className="font-serif text-3xl md:text-5xl text-navy font-bold mb-4">
                         Trayectoria Académica
                     </h2>
-                    <div className="w-16 h-1 bg-gold mx-auto mb-6"></div>
-                    <p className="text-lg text-text/70">Una vida dedicada al aprendizaje continuo y la especialización terapéutica.</p>
+                    <div className="w-16 h-1 bg-gradient-to-r from-gold via-gold to-sage mx-auto mb-8"></div>
+                    <p className="text-lg text-text/70 max-w-2xl mx-auto">Una vida dedicada al aprendizaje continuo y la especialización terapéutica. Más de 30 años de formación y crecimiento profesional.</p>
                 </motion.div>
 
-                <div className="relative border-l-2 border-sage/30 ml-4 md:ml-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                     {education.map((edu, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: index * 0.05 }}
-                            className="mb-8 ml-8 relative"
+                            transition={{ delay: (index % 2) * 0.08 }}
+                            className="group"
                         >
-                            <div className="absolute -left-[41px] top-1.5 w-5 h-5 bg-white border-4 border-sage rounded-full flex items-center justify-center">
-                                <div className="w-1.5 h-1.5 bg-navy rounded-full"></div>
-                            </div>
-                            <div className="bg-cream/30 p-4 rounded-lg border border-white/50 shadow-sm hover:shadow-md transition-shadow">
-                                <span className="font-bold text-sage block mb-1">{edu.year}</span>
-                                <h3 className="text-navy font-medium text-balance">{edu.title}</h3>
+                            <div className="h-full bg-white backdrop-blur-sm p-6 md:p-7 rounded-2xl border border-sage/20 shadow-sm hover:shadow-xl hover:border-sage/50 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                                {/* Gradient accent top-right */}
+                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-gold/10 to-transparent rounded-full -mr-10 -mt-10 group-hover:from-gold/20 transition-all"></div>
+
+                                <div className="relative z-10 flex items-start gap-4">
+                                    <div className="flex-shrink-0 pt-1">
+                                        <span className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-gold/20 to-gold/10 rounded-xl border border-gold/30 group-hover:border-gold/50 group-hover:from-gold/30 transition-all">
+                                            <span className="font-bold text-gold text-sm text-center">{edu.year}</span>
+                                        </span>
+                                    </div>
+                                    <div className="flex-grow pt-1.5">
+                                        <h3 className="text-navy font-semibold text-balance leading-snug group-hover:text-gold transition-colors duration-300">
+                                            {edu.title}
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     ))}
