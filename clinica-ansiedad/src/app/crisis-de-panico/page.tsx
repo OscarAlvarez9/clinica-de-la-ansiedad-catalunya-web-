@@ -1,8 +1,8 @@
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Tratamiento de Crisis de Pánico | Clínica de Catalunya',
-  description: 'Ayuda especializada para las crisis de pánico y angustia extrema. Detén el ciclo del miedo a través de un abordaje de raíz.',
+  title: 'Ataques de Pánico: Síntomas, Crisis de Ansiedad y Tratamiento | Clínica de la Ansiedad',
+  description: 'Reconoce los síntomas de los ataques de pánico y las crisis de ansiedad. Palpitaciones, hiperventilación, miedo intenso. Tratamiento psicoanalítico para detener el ciclo del pánico desde la raíz.',
   path: '/crisis-de-panico'
 });
 

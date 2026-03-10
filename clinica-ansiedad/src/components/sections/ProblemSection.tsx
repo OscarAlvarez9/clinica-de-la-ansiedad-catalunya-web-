@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import { Card, CardBody } from "@heroui/react";
 
 const situations = [
-    "Crisis de pánico",
-    "Angustia constante",
-    "Pensamientos obsesivos",
-    "Miedo sin causa",
-    "Ansiedad que paraliza",
-    "Insomnio por preocupación",
+    "Crisis de ansiedad y ataques de pánico",
+    "Ansiedad generalizada y angustia constante",
+    "Pensamientos obsesivos (TOC)",
+    "Palpitaciones y síntomas físicos por ansiedad",
+    "Depresión y ansiedad combinadas",
+    "Insomnio, hiperventilación y estrés crónico",
 ];
 
 export default function ProblemSection() {
@@ -21,7 +21,7 @@ export default function ProblemSection() {
                     viewport={{ once: true, margin: "-100px" }}
                     className="text-3xl md:text-5xl font-serif text-navy font-bold mb-4 text-balance"
                 >
-                    ¿Reconoces alguna de estas situaciones?
+                    ¿Reconoces estos síntomas de ansiedad?
                 </motion.h2>
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}

@@ -9,28 +9,36 @@ import {
 
 const faqs = [
     {
-        title: "¿Qué es la psicoterapia psicoanalítica y en qué se diferencia de otras terapias?",
-        content: "La psicoterapia psicoanalítica no busca silenciar el síntoma (la ansiedad) de forma rápida o conductual con parches. Busca entender qué es lo que tu síntoma está intentando comunicar. Trabajamos en el origen inconsciente del conflicto para que, al resolver la causa profunda, el síntoma desaparezca de forma duradera y natural, sin riesgo de recaídas constantes."
+        title: "¿Cuáles son los síntomas de ansiedad más comunes?",
+        content: "Los síntomas de ansiedad más frecuentes incluyen palpitaciones, hiperventilación, hormigueo en la cara, presión en los oídos, necesidad constante de respirar profundo, pinchazos en el cuerpo, latidos en el estómago e insomnio. También pueden aparecer ataques de pánico con miedo intenso, dolor en el brazo izquierdo por estrés y sensación de pérdida de control. Si reconoces estos síntomas, buscar ayuda profesional es el primer paso."
     },
     {
-        title: "¿La terapia online es igual de efectiva que la presencial?",
-        content: "Absolutamente sí. Nuestro equipo fue pionero en implementar la terapia telemática hace más de 25 años, mucho antes de que se popularizara. La eficacia clínica es idéntica; lo fundamental en el psicoanálisis es la palabra y el establecimiento del vínculo terapéutico, lo cual se logra perfectamente a través de un entorno online seguro."
+        title: "¿Qué es el trastorno de ansiedad generalizada?",
+        content: "El trastorno de ansiedad generalizada se caracteriza por preocupación excesiva y difícil de controlar que se mantiene durante meses, acompañada de tensión muscular, fatiga, dificultad de concentración y problemas de sueño. A diferencia de la ansiedad puntual, es un estado persistente que afecta la vida diaria. Nuestro tratamiento aborda las causas profundas de la ansiedad generalizada para lograr cambios estructurales duraderos."
     },
     {
-        title: "¿Cuánto tiempo dura el tratamiento de la ansiedad?",
-        content: "No establecemos protocolos cerrados o mágicos de 'X sesiones'. Dado que trabajamos sobre las causas profundas y personales de la singularidad de cada individuo, la duración del proceso es completamente a medida. Depende de la historia, las defensas y el compromiso de la persona. Lo que sí garantizamos es un abordaje ético sin alargar la terapia más de lo estrictamente necesario."
+        title: "¿Cómo se cura la ansiedad?",
+        content: "La ansiedad se cura abordando sus causas de raíz, no solo gestionando los síntomas. Mediante el Psicoanálisis Directo identificamos los conflictos inconscientes que generan la angustia y trabajamos para desactivarlos. A diferencia de técnicas que solo enseñan a 'convivir' con la ansiedad, nuestro objetivo es que dejes de necesitarla. El tratamiento es personalizado y busca la autonomía emocional completa."
     },
     {
-        title: "¿Atendéis tanto en català como en castellano?",
-        content: "Sí. Todo nuestro equipo, y en especial su fundador Joan Ramon Soto, es completamente bilingüe. Consideramos que la herramienta clave de trabajo es tu propio idioma emocional, por lo que te atenderemos en el idioma en el que te sientas más cómodo/a expresándote, ya sea en castellano o en catalán."
+        title: "¿La terapia online para la ansiedad es efectiva?",
+        content: "Sí, la terapia online para la ansiedad es igual de efectiva que la presencial. Llevamos más de 30 años ofreciendo terapia online, mucho antes de que se popularizara. Es especialmente útil para personas con agorafobia o fobia social, o que viven fuera de Barcelona. El vínculo terapéutico se construye de igual manera a través de videollamada."
     },
     {
-        title: "¿Cómo sé si la terapia psicoanalítica es adecuada para mí?",
-        content: "Si sientes que llevas tiempo lidiando con angustia, miedos o patrones repetitivos que no logras comprender; si has probado otros abordajes que solo te han funcionado superficialmente o te sientes dependiente a medicación sin resolver la base... el psicoanálisis suele ser el enfoque indicado. Trabajar en el 'por qué' real es transformar tu vida desde los cimientos."
+        title: "¿Tratáis depresión, TOC, fobia social e hipocondría?",
+        content: "Sí. Además de la ansiedad, tratamos la depresión y ansiedad combinadas, el trastorno obsesivo compulsivo (TOC), la fobia social, la hipocondría, la agorafobia, el estrés postraumático y la fobia de impulsión. Todos estos trastornos están interrelacionados y requieren un abordaje profundo que trate el origen común del sufrimiento."
     },
     {
-        title: "¿Qué pasa en la primera consulta?",
-        content: "La primera entrevista es una toma de contacto relajada y confidencial. Exploramos qué te trae a consulta, hablamos sobre tu sufrimiento actual y empezamos a esbozar las bases del tratamiento. También aprovechamos para aclarar la metodología, la frecuencia y cualquier duda que tengas antes de comprometerte con el proceso."
+        title: "¿Qué ocurre en la primera visita?",
+        content: "En la primera consulta psicológica realizamos una entrevista clínica profunda — no tests mecánicos. Exploramos tu historia, identificamos los síntomas y sus posibles causas, y evaluamos el tipo de trastorno (ansiedad generalizada, crisis de pánico, depresión, etc.). Es un espacio confidencial donde diseñamos juntos el plan de tratamiento más adecuado para tu caso."
+    },
+    {
+        title: "¿Cómo puedo ayudar a alguien con ansiedad?",
+        content: "Para ayudar a alguien con ansiedad: escucha sin juzgar, no minimices lo que siente, acompáñale sin presionar y anímale a buscar ayuda profesional. Durante una crisis de ansiedad, mantén la calma y ayúdale a regular la respiración. Evita frases como 'cálmate' o 'no es para tanto'. En nuestra clínica también orientamos a familiares sobre cómo acompañar el proceso."
+    },
+    {
+        title: "¿Atendéis en catalán y castellano?",
+        content: "Sí, nuestro equipo es completamente bilingüe. Joan Ramon Soto y todo el equipo atienden indistintamente en catalán y castellano. Es fundamental que te expreses en tu lengua emocional, la que mejor conecta con tu historia de vida, para que la terapia sea lo más profunda y efectiva posible."
     }
 ];
 

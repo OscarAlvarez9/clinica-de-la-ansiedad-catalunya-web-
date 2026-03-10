@@ -1,8 +1,8 @@
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Terapia de Pareja | Clínica de la Ansiedad Catalunya',
-  description: 'Abordaje terapéutico para resolver conflictos de pareja, mejorar la comunicación y superar crisis relacionales.',
+  title: 'Terapia de Pareja en Barcelona y Online | Clínica de la Ansiedad Catalunya',
+  description: 'Terapia de pareja para resolver conflictos de comunicación, desconexión afectiva y crisis relacionales. Enfoque psicoanalítico presencial en Barcelona y online en toda Catalunya.',
   path: '/terapia-pareja'
 });
 

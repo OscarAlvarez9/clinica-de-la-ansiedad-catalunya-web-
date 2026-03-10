@@ -1,8 +1,8 @@
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Tratamiento de la Ansiedad | Dr. Joan Ramon Soto',
-  description: 'Especialistas en el tratamiento profundo de la ansiedad. Comprende y resuelve las causas reales de tu angustia.',
+  title: 'Qué Es la Ansiedad: Síntomas, Causas y Tratamiento | Clínica de la Ansiedad',
+  description: 'Descubre qué es la ansiedad, sus síntomas más comunes (crisis, palpitaciones, hiperventilación) y las causas que la provocan. Tratamiento especializado con más de 30 años de experiencia en Barcelona y online.',
   path: '/ansiedad'
 });
 

@@ -49,7 +49,7 @@ export default function BookingOptions() {
                                     </div>
                                 </div>
                                 <a
-                                    href="https://wa.me/34000000000?text=Hola,%20quisiera%20reservar%20una%20cita%20presencial"
+                                    href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full inline-block text-center bg-navy text-white font-medium rounded-xl py-4 hover:bg-navy/90 transition-all shadow-md"
@@ -82,7 +82,7 @@ export default function BookingOptions() {
                                     </div>
                                 </div>
                                 <a
-                                    href="https://wa.me/34000000000?text=Hola,%20quisiera%20reservar%20una%20cita%20online"
+                                    href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full inline-block text-center bg-white border border-navy text-navy font-medium rounded-xl py-4 hover:bg-navy/5 transition-all shadow-sm"

@@ -1,8 +1,8 @@
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Terapia Online Especializada | Clínica de la Ansiedad',
-  description: 'Psicoterapia psicoanalítica en línea. La misma eficacia clínica que la terapia presencial, accesible desde toda España.',
+  title: 'Terapia Online para la Ansiedad | 30 Años de Experiencia | Clínica de la Ansiedad',
+  description: 'Terapia online especializada en ansiedad desde 1993. La misma eficacia que la terapia presencial, accesible desde toda España. Tratamiento de ansiedad generalizada, crisis de pánico y depresión por videollamada.',
   path: '/terapia-online'
 });
 

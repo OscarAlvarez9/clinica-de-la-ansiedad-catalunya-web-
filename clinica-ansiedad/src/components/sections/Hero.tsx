@@ -53,16 +53,15 @@ export default function Hero() {
                         variants={fadeUpVariant}
                         className="text-navy font-serif leading-[1.05] text-[2.75rem] md:text-6xl lg:text-[4.5rem] font-extrabold mb-6 max-w-3xl tracking-tight text-balance"
                     >
-                        Llevas tiempo cargando con la ansiedad.
-                        <span className="font-light italic text-gold text-4xl md:text-5xl lg:text-6xl mt-1 block">Hay una salida real.</span>
+                        Síntomas de ansiedad: identifícalos y supéralos.
+                        <span className="font-light italic text-gold text-4xl md:text-5xl lg:text-6xl mt-1 block">Tratamiento especializado que funciona.</span>
                     </motion.h1>
 
                     <motion.p
                         variants={fadeUpVariant}
                         className="text-text/80 font-sans text-lg md:text-xl leading-relaxed max-w-xl mb-8 font-light text-balance"
                     >
-                        Desde 1993 ayudamos a comprender y resolver
-                        <strong className="font-bold text-navy"> la raíz del sufrimiento emocional</strong>. Un proceso riguroso y personalizado que te devuelve el timón de tu vida.
+                        Desde 1993 tratamos las <strong className="font-bold text-navy">causas de la ansiedad</strong> con un abordaje profundo y personalizado. Terapia presencial en Barcelona y online para toda España. Reserva tu primera visita.
                     </motion.p>
 
                     <motion.div
@@ -71,7 +70,7 @@ export default function Hero() {
                     >
                         <Button
                             as="a"
-                            href="#contacto"
+                            href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
                             className="w-full sm:w-auto bg-navy hover:bg-navy/90 text-white font-medium px-8 py-7 rounded-full text-[17px] shadow-xl shadow-navy/20 hover:shadow-navy/40 transition-all duration-300 transform hover:-translate-y-1"
                         >
                             Solicitar Valoración

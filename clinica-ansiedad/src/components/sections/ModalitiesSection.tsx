@@ -145,7 +145,7 @@ export default function ModalitiesSection() {
                                     <div className="mt-auto">
                                         <Button
                                             as="a"
-                                            href="#contacto"
+                                            href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
                                             className={`
                                                 w-full py-8 rounded-2xl flex items-center justify-between px-8 text-lg font-bold transition-all duration-300
                                                 ${item.theme === 'gold'

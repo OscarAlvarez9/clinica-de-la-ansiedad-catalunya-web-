@@ -8,8 +8,8 @@ import BookingOptions from '@/components/servicios/BookingOptions';
 import FAQSection from '@/components/sections/FAQSection';
 
 export const metadata: Metadata = {
-    title: 'Terapia Individual en Catalunya | Clínica de la Ansiedad',
-    description: 'Un espacio confidencial para explorar tus angustias personales, entender tus síntomas y construir nuevos recursos emocionales estables.',
+    title: 'Terapia Individual para Ansiedad y Depresión en Catalunya | Consulta Psicológica',
+    description: 'Terapia individual especializada en síntomas de ansiedad, depresión, hipocondría y TOC. Consulta psicológica presencial en Barcelona y online. Reserva tu primera visita y supera la ansiedad desde la raíz.',
 };
 
 export default function TerapiaIndividualPage() {

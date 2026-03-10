@@ -18,9 +18,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: 'Clínica de la Ansiedad Catalunya | Dr. Joan Ramon Soto',
-    description: 'Tratamiento especializado de la ansiedad en Catalunya. Abordaje psicoanalítico para resolver las causas profundas de la angustia y el estrés. Sesiones presenciales en Barcelona y online.',
-    keywords: ['clínica ansiedad', 'psicólogo barcelona', 'ansiedad catalunya', 'tratamiento ansiedad', 'joan ramon soto', 'psicoanálisis'],
+    title: 'Síntomas de Ansiedad y Tratamiento Especializado | Clínica de la Ansiedad Catalunya',
+    description: 'Clínica especializada en el tratamiento de la ansiedad en Barcelona y Catalunya. Identificamos los síntomas de ansiedad, sus causas y ofrecemos terapia presencial y online con más de 30 años de experiencia. Reserva tu primera visita.',
+    keywords: ['síntomas de ansiedad', 'tratamiento ansiedad', 'psicólogo ansiedad', 'clínica ansiedad barcelona', 'terapia online ansiedad', 'causas de la ansiedad', 'trastorno de ansiedad generalizada', 'crisis de ansiedad', 'consulta psicológica', 'psicólogo catalunya'],
     authors: [{ name: 'Joan Ramon Soto' }],
     robots: 'index, follow',
     alternates: {
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
         }
     },
     openGraph: {
-        title: 'Clínica de la Ansiedad Catalunya | Dr. Joan Ramon Soto',
-        description: 'Tratamiento especializado de la ansiedad. Abordaje psicoanalítico para resolver las causas profundas.',
+        title: 'Síntomas de Ansiedad y Tratamiento Especializado | Clínica de la Ansiedad Catalunya',
+        description: 'Clínica especializada en síntomas de ansiedad, trastorno de ansiedad generalizada y depresión. Terapia presencial en Barcelona y online en toda España.',
         type: 'website',
         locale: 'es_ES',
         siteName: 'Clínica de la Ansiedad Catalunya',

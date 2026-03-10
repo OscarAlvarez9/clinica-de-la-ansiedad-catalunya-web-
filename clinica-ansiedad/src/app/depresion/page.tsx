@@ -1,8 +1,8 @@
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Tratamiento de la Depresión | Clínica de la Ansiedad',
-  description: 'Intervención psicoanalítica para superar la depresión. Un espacio para entender el origen de la tristeza y recuperar el deseo.',
+  title: 'Depresión y Ansiedad: Tratamiento Especializado | Clínica de la Ansiedad Catalunya',
+  description: 'Tratamiento de la depresión y la ansiedad desde el origen. Intervención psicoanalítica para superar la tristeza profunda, la apatía y la angustia. Sesiones presenciales en Barcelona y terapia online.',
   path: '/depresion'
 });
 

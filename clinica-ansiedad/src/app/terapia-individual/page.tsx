@@ -1,8 +1,8 @@
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Terapia Individual Psicoanalítica | Clínica de la Ansiedad',
-  description: 'Tratamiento individualizado para superar la ansiedad y el malestar emocional desde la raíz con psicoterapia psicoanalítica.',
+  title: 'Terapia Individual para Ansiedad y Depresión | Psicólogo en Barcelona y Online',
+  description: 'Psicoterapia individual para tratar síntomas de ansiedad, depresión, TOC e hipocondría. Psicólogo especializado en ansiedad con consulta en Barcelona y terapia online.',
   path: '/terapia-individual'
 });
 

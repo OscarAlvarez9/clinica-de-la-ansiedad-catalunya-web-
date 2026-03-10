@@ -6,12 +6,12 @@ export const medicalClinicSchema = {
     "founder": {
         "@type": "Person",
         "name": "Joan Ramon Soto",
-        "jobTitle": "Psicoterapeuta psicoanalítico",
-        "knowsAbout": ["Ansiedad", "Psicoterapia psicoanalítica", "Terapia online", "Depresión", "Crisis de pánico"]
+        "jobTitle": "Psicólogo especialista en ansiedad",
+        "knowsAbout": ["Síntomas de ansiedad", "Trastorno de ansiedad generalizada", "Psicoterapia psicoanalítica", "Terapia online ansiedad", "Depresión y ansiedad", "Crisis de pánico", "Trastorno obsesivo compulsivo", "Fobia social", "Hipocondría", "Agorafobia"]
     },
     "foundingDate": "1993",
     "medicalSpecialty": "Psychiatry",
-    "description": "Espacio de psicoterapia psicoanalítica especializado en el tratamiento de la ansiedad desde 1993. Atención presencial en Canet de Mar (Maresme, Barcelona) y terapia online para toda Catalunya y España.",
+    "description": "Clínica especializada en el tratamiento de los síntomas de ansiedad, trastorno de ansiedad generalizada, depresión, TOC, crisis de pánico y fobia social desde 1993. Consulta psicológica presencial en Barcelona (Maresme) y terapia online para toda España.",
     "url": "https://clinicadelansiedad.com",
     "telephone": "+34629794365",
     "email": "joanramonsoto@gmail.com",
@@ -42,11 +42,17 @@ export const medicalClinicSchema = {
         "closes": "20:00"
     }],
     "availableService": [
+        { "@type": "MedicalTherapy", "name": "Tratamiento de síntomas de ansiedad" },
+        { "@type": "MedicalTherapy", "name": "Tratamiento del trastorno de ansiedad generalizada" },
+        { "@type": "MedicalTherapy", "name": "Tratamiento de depresión y ansiedad" },
+        { "@type": "MedicalTherapy", "name": "Tratamiento de crisis de pánico y ataques de pánico" },
+        { "@type": "MedicalTherapy", "name": "Tratamiento del trastorno obsesivo compulsivo (TOC)" },
+        { "@type": "MedicalTherapy", "name": "Tratamiento de fobia social y agorafobia" },
+        { "@type": "MedicalTherapy", "name": "Tratamiento de hipocondría" },
         { "@type": "MedicalTherapy", "name": "Terapia individual psicoanalítica" },
         { "@type": "MedicalTherapy", "name": "Terapia de pareja" },
-        { "@type": "MedicalTherapy", "name": "Terapia online" },
-        { "@type": "MedicalTherapy", "name": "Tratamiento de la ansiedad" },
-        { "@type": "MedicalTherapy", "name": "Tratamiento de la depresión" }
+        { "@type": "MedicalTherapy", "name": "Terapia online para la ansiedad" },
+        { "@type": "MedicalTherapy", "name": "Terapia familiar" }
     ],
     "areaServed": [
         { "@type": "City", "name": "Barcelona" },
@@ -67,66 +73,66 @@ export const faqSchema = {
     "mainEntity": [
         {
             "@type": "Question",
-            "name": "¿Qué es la psicoterapia psicoanalítica y en qué se diferencia de otras terapias?",
+            "name": "¿Cuáles son los síntomas de ansiedad más comunes?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "La psicoterapia psicoanalítica aborda la ansiedad y otros síntomas desde su origen e historia personal, en lugar de centrarse solo en eliminarlos superficialmente. A diferencia de terapias enfocadas únicamente en la conducta, aquí exploramos las causas profundas e inconscientes para lograr cambios duraderos y una transformación genuina."
+                "text": "Los síntomas de ansiedad más frecuentes incluyen palpitaciones por ansiedad, hiperventilación, hormigueo en la cara y extremidades, presión en los oídos, necesidad de respirar profundo, dolor en el brazo izquierdo por estrés, pinchazos en el cuerpo, latidos en el estómago e insomnio. Si experimentas crisis de ansiedad con estos síntomas físicos, es importante buscar ayuda profesional."
             }
         },
         {
             "@type": "Question",
-            "name": "¿La terapia online es igual de efectiva que la presencial?",
+            "name": "¿Qué es el trastorno de ansiedad generalizada y cómo se trata?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Sí, la efectividad es comparable. La base fundamental de la recuperación es la relación y el espacio terapéutico que se construye entre analista y paciente, y esto se logra de igual manera a través de una conexión online estable, permitiendo además una mayor flexibilidad geográfica."
+                "text": "El trastorno de ansiedad generalizada se caracteriza por preocupación excesiva y constante, tensión muscular, dificultad para dormir y síntomas físicos persistentes. En nuestra clínica tratamos la ansiedad generalizada desde sus causas profundas mediante psicoterapia psicoanalítica, logrando cambios estructurales duraderos que van más allá de la simple supresión del síntoma."
             }
         },
         {
             "@type": "Question",
-            "name": "¿Cuánto tiempo dura el tratamiento de la ansiedad?",
+            "name": "¿Cómo se cura la ansiedad?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "La duración del tratamiento es variable y depende de la singularidad de cada caso. No aplicamos protocolos estándar con tiempos cerrados; trabajamos al ritmo necesario hasta lograr no solo aliviar los síntomas, sino resolver verdaderamente el nudo original."
+                "text": "La ansiedad se cura abordando sus causas de raíz, no solo los síntomas. Nuestro enfoque psicoanalítico directo identifica los conflictos inconscientes que generan la angustia y trabaja para desactivarlos. A diferencia de terapias que ofrecen técnicas de manejo superficial, buscamos un cambio estructural que prevenga recaídas y otorgue autonomía emocional al paciente."
             }
         },
         {
             "@type": "Question",
-            "name": "¿Atendéis tanto en català como en castellano?",
+            "name": "¿La terapia online para la ansiedad es igual de efectiva que la presencial?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Trabajamos indistintamente en catalán y castellano. Es esencial que cada paciente se exprese en la lengua con la que se sienta más cómodo y haya construido su relato de vida, facilitando la máxima libertad de expresión durante la terapia."
+                "text": "Sí, la terapia online para la ansiedad tiene una efectividad comparable a la presencial. Llevamos más de 30 años ofreciendo terapia online y la relación terapéutica se construye de igual manera. Es especialmente útil para personas con agorafobia, fobia social o que viven fuera de Barcelona y Catalunya."
             }
         },
         {
             "@type": "Question",
-            "name": "¿Cómo sé si la terapia psicoanalítica es adecuada para mí?",
+            "name": "¿Qué diferencia hay entre ansiedad y depresión?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Es adecuada si sientes que la ansiedad o el malestar se repiten a pesar de tus esfuerzos. La terapia psicoanalítica es idónea para quienes desean entender profundamente qué les ocurre, yendo más allá de las clásicas técnicas de relajación."
+                "text": "La ansiedad y la depresión frecuentemente coexisten. La ansiedad se manifiesta con miedo, preocupación excesiva y síntomas físicos como palpitaciones, mientras que la depresión se caracteriza por tristeza profunda, apatía y pérdida de interés. En nuestra clínica tratamos ambas condiciones de forma integral, ya que comparten causas profundas comunes."
             }
         },
         {
             "@type": "Question",
-            "name": "¿Qué ocurre en la primera consulta?",
+            "name": "¿Qué ocurre en la primera visita o consulta psicológica?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "La primera consulta sirve para conocernos, evaluar meticulosamente tu situación real y comprender la naturaleza de tu demanda. Evaluamos la viabilidad del tratamiento, clarificamos dudas y determinamos el encuadre adecuado."
+                "text": "En la primera visita realizamos una entrevista clínica profunda para comprender tu historia, identificar los síntomas de ansiedad y sus causas, y evaluar si padeces ansiedad generalizada, crisis de pánico, TOC, fobia social u otro trastorno. No usamos tests mecánicos sino una conversación clínica que permite diseñar un tratamiento personalizado."
             }
         },
         {
             "@type": "Question",
-            "name": "¿Tratáis solo ansiedad o también otros problemas emocionales?",
+            "name": "¿Tratáis trastorno obsesivo compulsivo (TOC), fobia social e hipocondría?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Tratamos el sufrimiento psíquico de forma integral. La ansiedad suele ser la puerta de entrada, pero tratamos la depresión, fobias, crisis de pánico, pensamientos obsesivos, adicciones y conflictos recurrentes vitales o de pareja."
+                "text": "Sí, tratamos el trastorno obsesivo compulsivo (TOC), la fobia social, la hipocondría, la agorafobia, el estrés postraumático y la fobia de impulsión. Todos estos trastornos están relacionados con la ansiedad y requieren un abordaje especializado que trate el origen del sufrimiento."
             }
         },
         {
             "@type": "Question",
-            "name": "¿Tenéis atención para toda España o solo Catalunya?",
+            "name": "¿Cómo puedo ayudar a alguien con ansiedad?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Nuestra sede presencial está en Canet de Mar (Maresme, Barcelona) enfocada al ámbito catalán, pero gracias a la modalidad de terapia online, atendemos a pacientes y acompañamos procesos en cualquier punto de España."
+                "text": "Para ayudar a alguien con ansiedad: escucha sin juzgar, no minimices sus síntomas, acompáñale sin presionar y anímale a buscar ayuda profesional. Evita frases como 'cálmate' o 'no pasa nada'. Si la persona sufre crisis de ansiedad o ataques de pánico, mantén la calma y ayúdale a respirar. En nuestra clínica también orientamos a familiares."
             }
         }
     ]
@@ -136,12 +142,12 @@ export const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Joan Ramon Soto",
-    "jobTitle": "Psicoterapeuta psicoanalítico",
+    "jobTitle": "Psicólogo especialista en ansiedad",
     "worksFor": {
         "@type": "MedicalClinic",
         "name": "Clínica de la Ansiedad Catalunya"
     },
-    "knowsAbout": ["Ansiedad", "Psicoterapia psicoanalítica", "Terapia online", "Depresión", "Crisis de pánico", "Ludopatía"],
-    "hasCredential": "Fundador y director clínico desde 1993",
+    "knowsAbout": ["Síntomas de ansiedad", "Trastorno de ansiedad generalizada", "Psicoterapia psicoanalítica", "Terapia online ansiedad", "Depresión y ansiedad", "Crisis de pánico", "Trastorno obsesivo compulsivo", "Fobia social", "Hipocondría", "Agorafobia", "Estrés postraumático", "Ludopatía"],
+    "hasCredential": "Fundador y director clínico desde 1993. Doctorado en Psicología Psicoanalítica.",
     "url": "https://clinicadelansiedad.com"
 };

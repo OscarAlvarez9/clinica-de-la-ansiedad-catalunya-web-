@@ -8,8 +8,8 @@ import BookingOptions from '@/components/servicios/BookingOptions';
 import FAQSection from '@/components/sections/FAQSection';
 
 export const metadata: Metadata = {
-    title: 'Terapia de Pareja en Catalunya | Clínica de la Ansiedad',
-    description: 'Acompañamiento especializado para resolver dinámicas de conflicto, reproches o desconexión afectiva desde una perspectiva psicoanalítica.',
+    title: 'Terapia de Pareja en Barcelona y Catalunya | Clínica de la Ansiedad',
+    description: 'Terapia de pareja con enfoque psicoanalítico para resolver conflictos, reproches y desconexión afectiva. Sesiones presenciales en Barcelona y online. Reserva tu primera consulta.',
 };
 
 export default function TerapiaDeParejaPage() {
@@ -102,7 +102,7 @@ export default function TerapiaDeParejaPage() {
 
                     <div className="mt-12">
                         <Link
-                            href="/#contacto"
+                            href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
                             className="inline-block bg-navy text-white font-medium rounded-full px-8 py-4 text-lg hover:bg-navy/90 shadow-md transition-all cursor-pointer"
                         >
                             Solicitar Valoración

@@ -8,8 +8,8 @@ import BookingOptions from '@/components/servicios/BookingOptions';
 import FAQSection from '@/components/sections/FAQSection';
 
 export const metadata: Metadata = {
-    title: 'Dimensión Familiar | Clínica de la Ansiedad Catalunya',
-    description: 'Abordaje de la sintomatología que aparece en la red de vínculos familiares, facilitando un entorno más sano de convivencia.',
+    title: 'Terapia Familiar para la Ansiedad | Clínica de la Ansiedad Catalunya',
+    description: 'Terapia familiar especializada en ansiedad y conflictos intergeneracionales. Abordamos la sintomatología emocional dentro del núcleo familiar para facilitar un entorno sano de convivencia.',
 };
 
 export default function DimensionFamiliarPage() {
@@ -73,7 +73,7 @@ export default function DimensionFamiliarPage() {
 
                     <div className="mt-12">
                         <Link
-                            href="/#contacto"
+                            href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
                             className="inline-block bg-navy text-white font-medium rounded-full px-8 py-4 text-lg hover:bg-navy/90 shadow-md transition-all cursor-pointer"
                         >
                             Pedir Cita Familiar
@@ -142,8 +142,8 @@ export default function DimensionFamiliarPage() {
                 {/* Reserva Section */}
                 <BookingOptions />
                 <FAQSection />
-            </main>
+            </main >
             <Footer />
-        </div>
+        </div >
     );
 }

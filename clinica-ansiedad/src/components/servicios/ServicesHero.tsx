@@ -16,20 +16,20 @@ export default function ServicesHero() {
                         Clínica de la Ansiedad Maresme
                     </span>
                     <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-extrabold text-navy tracking-tight mb-8">
-                        Tratamiento de la <span className="italic text-sage">Ansiedad</span>
+                        Tratamiento de la Ansiedad, <span className="italic text-sage">Depresión y TOC</span>
                     </h1>
                     <div className="w-24 h-1 bg-gold mb-10"></div>
 
                     <p className="text-xl md:text-2xl text-navy/80 font-medium leading-relaxed max-w-4xl text-balance mb-6">
-                        En Clínica de la Ansietat Catalunya estamos especializados exclusivamente en el tratamiento de la ansiedad, combinando psicoterapia avanzada, experiencia clínica y métodos basados en la evidencia para lograr resultados sólidos, profundos y duraderos.
+                        En Clínica de la Ansiedad Catalunya estamos especializados en el tratamiento del trastorno de ansiedad generalizada, crisis de pánico, depresión, trastorno obsesivo compulsivo (TOC), fobia social y agorafobia. Combinamos psicoterapia psicoanalítica y métodos basados en la evidencia.
                     </p>
 
                     <p className="text-lg text-text/80 leading-relaxed max-w-3xl text-balance mb-6">
-                        Desde hace más de 25 años acompañamos a personas que buscan recuperar estabilidad emocional y bienestar real, ofreciendo atención presencial y online adaptada a cada situación personal.
+                        Desde hace más de 30 años acompañamos a personas que buscan comprender los síntomas de ansiedad, sus causas y cómo se cura la ansiedad desde la raíz. Ofrecemos consulta psicológica presencial en Barcelona y terapia online para toda España.
                     </p>
 
                     <p className="text-lg text-text/80 leading-relaxed max-w-3xl text-balance">
-                        Nuestro equipo de profesionales especializados trabaja de forma coordinada y altamente personalizada, profundizando en cada caso para diseñar intervenciones eficaces que no solo alivian los síntomas, sino que generan cambios terapéuticos estables y transformadores.
+                        Nuestro equipo diseña intervenciones personalizadas que no solo alivian los síntomas físicos de la ansiedad — palpitaciones, hiperventilación, insomnio — sino que generan cambios estructurales profundos y duraderos.
                     </p>
                 </motion.div>
             </div>

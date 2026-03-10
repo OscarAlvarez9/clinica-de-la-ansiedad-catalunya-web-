@@ -8,11 +8,11 @@ import SpecialtiesSection from '@/components/servicios/SpecialtiesSection';
 import FAQSection from '@/components/sections/FAQSection';
 
 export const metadata: Metadata = {
-    title: 'Tratamiento de la Ansiedad en Catalunya | Psicoterapia Presencial y Online',
-    description: 'Especialistas exclusivos en el tratamiento de la ansiedad con más de 25 años de experiencia. Terapia para depresión, trastorno de pánico y agorafobia en Clínica de la Ansiedad Catalunya.',
+    title: 'Terapia de Ansiedad, Depresión y TOC en Catalunya | Psicoterapia Presencial y Online',
+    description: 'Servicios de psicoterapia para ansiedad generalizada, depresión, trastorno obsesivo compulsivo, agorafobia y fobia social. Terapia individual, de pareja y familiar. Consulta presencial en Barcelona y terapia online en toda España.',
     openGraph: {
-        title: 'Tratamientos y Servicios | Clínica de la Ansiedad Catalunya',
-        description: 'Especialistas exclusivos en el tratamiento de la ansiedad con más de 25 años de experiencia.',
+        title: 'Servicios de Psicoterapia | Clínica de la Ansiedad Catalunya',
+        description: 'Tratamiento especializado para ansiedad generalizada, depresión, TOC, fobia social y agorafobia. Más de 30 años de experiencia.',
     }
 };
 

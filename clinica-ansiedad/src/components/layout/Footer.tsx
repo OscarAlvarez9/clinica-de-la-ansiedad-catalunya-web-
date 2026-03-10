@@ -38,7 +38,7 @@ export default function Footer() {
                             <li><a href="#enfoque" className="hover:text-gold transition-colors">Nuestro enfoque</a></li>
                             <li><a href="#equipo" className="hover:text-gold transition-colors">Joan Ramon Soto</a></li>
                             <li><a href="#faq" className="hover:text-gold transition-colors">Preguntas frecuentes</a></li>
-                            <li><a href="#contacto" className="hover:text-gold transition-colors">Pedir cita</a></li>
+                            <li><a href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp" className="hover:text-gold transition-colors">Pedir cita</a></li>
                         </ul>
                     </div>
 

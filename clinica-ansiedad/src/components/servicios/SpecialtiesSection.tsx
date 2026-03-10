@@ -7,27 +7,27 @@ import { Brain, Activity, Compass, AlertCircle } from 'lucide-react';
 const specialties = [
     {
         icon: <Brain className="w-6 h-6 text-navy" />,
-        title: "Tratamiento de la Depresión",
-        subtitle: "Psicoterapia Especializada en Catalunya",
-        content: "La depresión se caracteriza por un estado de ánimo triste y una pérdida de interés que se mantiene en el tiempo, afectando la energía, la motivación y la capacidad de disfrutar. Puede aparecer cansancio, dificultad para concentrarse, alteraciones del sueño y una visión negativa de sí mismo y futuro."
+        title: "Trastorno de Ansiedad Generalizada",
+        subtitle: "Síntomas, Causas y Tratamiento",
+        content: "El trastorno de ansiedad generalizada se manifiesta con preocupación constante, tensión muscular, dificultad para dormir y síntomas físicos como palpitaciones o hiperventilación. Tratamos las causas de la ansiedad desde su origen para lograr cambios profundos y duraderos."
     },
     {
         icon: <Activity className="w-6 h-6 text-sage" />,
-        title: "Diagnóstico del trastorno de pánico",
-        subtitle: "Evaluación y Tratamiento",
-        content: "Con un diagnóstico correcto, el trastorno de pánico puede tratarse de forma eficaz mediante terapia psicológica especializada, y en algunos casos con apoyo farmacológico. En Clínica de la Ansietat Catalunya trabajamos con tratamientos basados en la evidencia para ayudarte a recuperar seguridad y reducir el miedo a nuevas crisis."
+        title: "Depresión y Ansiedad",
+        subtitle: "Tratamiento Combinado Especializado",
+        content: "La depresión y la ansiedad frecuentemente aparecen juntas, generando tristeza profunda, pérdida de interés, fatiga y angustia constante. Nuestro abordaje psicoanalítico trata ambas condiciones de forma integral, comprendiendo las causas comunes que las alimentan."
     },
     {
         icon: <Compass className="w-6 h-6 text-gold" />,
-        title: "Agorafobia y pérdida de control",
-        subtitle: "Tratamiento Integral",
-        content: "La agorafobia aparece cuando el miedo a sufrir una crisis de ansiedad lleva a evitar transportes, espacios abiertos o lugares concurridos. En Clínica de la Ansietat Catalunya tratamos la agorafobia y el pánico con terapia especializada para recuperar seguridad, movilidad y calidad de vida con apoyo profesional siempre cercano hoy."
+        title: "Trastorno Obsesivo Compulsivo (TOC) y Fobias",
+        subtitle: "TOC, Fobia Social, Agorafobia e Hipocondría",
+        content: "El trastorno obsesivo compulsivo, la fobia social, la agorafobia y la hipocondría son manifestaciones comunes de la ansiedad. Tratamos los pensamientos obsesivos, el miedo social y las conductas de evitación desde la raíz para recuperar la libertad y la calidad de vida."
     },
     {
         icon: <AlertCircle className="w-6 h-6 text-navy" />,
-        title: "Diferenciar el trastorno de pánico",
-        subtitle: "Valoración Clínica Exhaustiva",
-        content: "En Clínica de la Ansietat Catalunya realizamos valoraciones clínicas para identificar correctamente el origen de los síntomas y ofrecer un tratamiento ajustado a cada persona. Una evaluación rigurosa es el primer paso para reducir el miedo y recuperar sensación de control."
+        title: "Crisis de Ansiedad y Ataques de Pánico",
+        subtitle: "Intervención Urgente y Tratamiento de Raíz",
+        content: "Los síntomas de una crisis de ansiedad incluyen palpitaciones, hiperventilación, hormigueo, dolor en el brazo izquierdo y miedo intenso. Realizamos una evaluación clínica exhaustiva para identificar el origen de las crisis y diseñar un tratamiento que detenga el ciclo del pánico."
     }
 ];
 

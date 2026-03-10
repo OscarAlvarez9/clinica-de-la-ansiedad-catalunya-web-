@@ -45,7 +45,7 @@ export default function Navbar() {
         },
         { name: "Enfoque", href: "/enfoque" },
         { name: "Blog", href: "/blog" },
-        { name: "Contacto", href: "/#contacto" },
+        { name: "Contacto", href: "https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp" },
     ];
 
     return (
@@ -107,7 +107,7 @@ export default function Navbar() {
                 <NavbarItem>
                     <Button
                         as="a"
-                        href="#contacto"
+                        href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
                         className="bg-gold text-white font-semibold rounded-full px-6 hover:bg-gold-light shadow-md transition-all"
                     >
                         Pedir cita
@@ -150,7 +150,7 @@ export default function Navbar() {
                 <NavbarMenuItem className="mt-6">
                     <Button
                         as="a"
-                        href="#contacto"
+                        href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
                         className="w-full bg-gold text-white font-medium rounded-full py-6"
                         onClick={() => setIsMenuOpen(false)}
                     >

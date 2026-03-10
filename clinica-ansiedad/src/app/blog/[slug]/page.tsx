@@ -213,7 +213,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center">
                             <Link
-                                href="/#contacto"
+                                href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
                                 className="bg-gold text-white px-10 py-5 rounded-full font-bold hover:bg-gold-light transition-all shadow-lg text-lg uppercase tracking-widest"
                             >
                                 Pedir cita ahora

@@ -8,8 +8,8 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata = buildMetadata({
-  title: 'Blog de Psicoanálisis y Ansiedad | Clínica de la Ansiedad',
-  description: 'Artículos, reflexiones y recursos sobre el tratamiento de la ansiedad, psicoanálisis y salud mental por Joan Ramon Soto.',
+  title: 'Blog sobre Ansiedad, Depresión y Salud Mental | Clínica de la Ansiedad Catalunya',
+  description: 'Artículos sobre síntomas de ansiedad, causas de la ansiedad, crisis de pánico, depresión y tratamiento psicológico. Recursos y reflexiones por el Dr. Joan Ramon Soto.',
   path: '/blog'
 });
 
