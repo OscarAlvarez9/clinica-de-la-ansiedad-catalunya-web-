@@ -55,7 +55,8 @@ export function buildMetadata({
             canonical: `https://clinicadelansiedad.com${path}`,
             languages: {
                 'es': `https://clinicadelansiedad.com${path}`,
-                'ca': `https://clinicadelansiedad.com/ca${path}`
+                'ca': `https://clinicadelansiedad.com/ca${path}`,
+                'x-default': `https://clinicadelansiedad.com${path}`
             }
         },
         openGraph: ogConfig,

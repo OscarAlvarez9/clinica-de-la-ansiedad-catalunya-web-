@@ -1,8 +1,7 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Input, Textarea, Checkbox, Button, RadioGroup, Radio } from "@heroui/react";
-import { Phone, Mail, MapPin, Map, ShieldCheck, Check, AlertCircle, Loader } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Calendar, Mail, MapPin, ShieldCheck, Check, Send, ArrowUpRight, Globe2, Sparkles, ChevronDown } from "lucide-react";
 
 interface FormData {
     nombre: string;
@@ -17,6 +16,16 @@ interface FormErrors {
     [key: string]: string;
 }
 
+const MOTIVOS_CONSULTA = [
+    { id: "ansiedad", label: "Ansiedad" },
+    { id: "depresion", label: "Depresión" },
+    { id: "panico", label: "Crisis de Pánico" },
+    { id: "celos", label: "Celos" },
+    { id: "ludopatia", label: "Ludopatía" },
+    { id: "relaciones", label: "Dificultades Relacionales" },
+    { id: "otro", label: "Otro motivo" }
+];
+
 export default function ContactSection() {
     const [formData, setFormData] = useState<FormData>({
         nombre: "",
@@ -28,81 +37,40 @@ export default function ContactSection() {
     });
 
     const [errors, setErrors] = useState<FormErrors>({});
-    const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+    const [isSelectOpen, setIsSelectOpen] = useState(false);
 
     const validateForm = (): boolean => {
         const newErrors: FormErrors = {};
 
         if (!formData.nombre.trim()) newErrors.nombre = "El nombre es requerido";
         if (!formData.contacto.trim()) newErrors.contacto = "Teléfono o email es requerido";
-        if (!formData.problema) newErrors.problema = "Selecciona un tipo de problema";
-        if (!formData.privacidad) newErrors.privacidad = "Debes aceptar la política de privacidad";
+        if (!formData.problema) newErrors.problema = "Selecciona un motivo";
+        if (!formData.privacidad) newErrors.privacidad = "Debes aceptar la política";
 
-        // Validar formato de email o teléfono
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const phoneRegex = /^[\d\s\+\-\(\)]{9,}$/;
-        if (!emailRegex.test(formData.contacto) && !phoneRegex.test(formData.contacto)) {
-            newErrors.contacto = "Ingresa un email o teléfono válido";
+        if (formData.contacto && !emailRegex.test(formData.contacto) && !phoneRegex.test(formData.contacto)) {
+            newErrors.contacto = "Ingresa un contacto válido";
         }
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value, type } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value
-        }));
-        // Limpiar error cuando el usuario empieza a escribir
-        if (errors[name]) {
-            setErrors(prev => ({ ...prev, [name]: "" }));
-        }
-    };
-
-    const handleProblemaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const { value } = e.target;
-        setFormData(prev => ({ ...prev, problema: value }));
-        if (errors.problema) {
-            setErrors(prev => ({ ...prev, problema: "" }));
-        }
-    };
-
-    const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { value } = e.target;
-        setFormData(prev => ({ ...prev, modalidad: value }));
-    };
-
-    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { checked } = e.target;
-        setFormData(prev => ({ ...prev, privacidad: checked }));
-        if (errors.privacidad) {
-            setErrors(prev => ({ ...prev, privacidad: "" }));
-        }
-    };
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
         if (!validateForm()) return;
 
         setIsLoading(true);
         setSubmitStatus("idle");
 
         try {
-            // Simular envío del formulario (reemplazar con API real)
             await new Promise(resolve => setTimeout(resolve, 1500));
-
-            // Aquí iría la llamada a API real
             console.log("Formulario enviado:", formData);
-
             setSubmitStatus("success");
-            setIsSubmitted(true);
 
-            // Limpiar formulario después de 3 segundos
             setTimeout(() => {
                 setFormData({
                     nombre: "",
@@ -112,8 +80,8 @@ export default function ContactSection() {
                     descripcion: "",
                     privacidad: false
                 });
-                setIsSubmitted(false);
-            }, 3000);
+                setSubmitStatus("idle");
+            }, 5000);
         } catch (error) {
             setSubmitStatus("error");
         } finally {
@@ -121,305 +89,278 @@ export default function ContactSection() {
         }
     };
 
+    const handleSelectOption = (id: string) => {
+        setFormData(prev => ({ ...prev, problema: id }));
+        setIsSelectOpen(false);
+        if (errors.problema) setErrors(prev => ({ ...prev, problema: "" }));
+    };
+
     return (
-        <section id="contacto" className="bg-cream py-24 px-6">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        <section id="contacto" className="relative bg-[#FAFAFA] py-32 lg:py-48 px-6 overflow-hidden">
+            {/* Background Decorations */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] rounded-full bg-primary/10 blur-[120px]" />
+                <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-navy/5 blur-[150px]" />
+            </div>
 
-                {/* Info Column */}
-                <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <div className="mb-10">
-                        <h2 className="text-4xl md:text-5xl font-serif text-navy font-bold mb-4">
-                            Hablemos
-                        </h2>
-                        <div className="w-16 h-1 bg-gold mb-6" />
-                        <p className="text-navy/70 text-lg leading-relaxed max-w-md">
-                            Si la ansiedad está limitando tu vida, no dudes en escribirnos o llamarnos. Estudiaremos tu caso de forma confidencial.
-                        </p>
-                    </div>
+            <div className="max-w-7xl mx-auto relative z-10">
+                {/* Header */}
+                <div className="text-center mb-20 lg:mb-28">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-navy/5 text-navy text-sm font-bold mb-6"
+                    >
+                        <Sparkles className="w-4 h-4 text-primary" />
+                        Atención personalizada y bilingüe
+                    </motion.div>
+                    
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-5xl lg:text-7xl font-serif text-navy font-bold mb-8 tracking-tight"
+                    >
+                        Demos el primer paso <span className="text-primary italic font-light">juntos</span>
+                    </motion.h2>
+                    
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-navy/60 text-xl max-w-2xl mx-auto leading-relaxed"
+                    >
+                        Si la ansiedad está limitando tu vida, estudiaremos tu caso de forma confidencial.
+                    </motion.p>
+                </div>
 
-                    <div className="space-y-8">
-                        <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center shrink-0 border border-gold/30">
-                                <Phone className="w-5 h-5 text-gold" />
-                            </div>
+                {/* Bento Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 items-stretch">
+                    
+                    {/* Form Card */}
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="lg:col-span-4 lg:row-span-2 bg-white p-8 lg:p-16 rounded-[3rem] shadow-[0_32px_80px_-20px_rgba(44,110,138,0.1)] border border-navy/5"
+                    >
+                        <div className="mb-12 flex items-center justify-between flex-wrap gap-4">
                             <div>
-                                <h4 className="text-navy font-bold mb-1">Teléfono Directo</h4>
-                                <a href="tel:+34629794365" className="text-navy/80 hover:text-gold transition-colors text-lg">
-                                    +34 629 79 43 65
-                                </a>
-                                <p className="text-navy/50 text-sm mt-1">Horario de atención: Lunes a Viernes de 9h a 20h.</p>
+                                <h3 className="text-3xl font-serif text-navy font-bold mb-2">Solicitud de contacto</h3>
+                                <p className="text-navy/40 text-sm">Tratamiento estrictamente confidencial</p>
+                            </div>
+                            <div className="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-xs font-bold border border-emerald-100 flex items-center gap-2">
+                                <ShieldCheck className="w-4 h-4" />
+                                CONFIDENCIAL
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center shrink-0 border border-gold/30">
-                                <Mail className="w-5 h-5 text-gold" />
-                            </div>
-                            <div>
-                                <h4 className="text-navy font-bold mb-1">Email Privado</h4>
-                                <a href="mailto:joanramonsoto@gmail.com" className="text-navy/80 hover:text-gold transition-colors text-lg" style={{ wordBreak: 'break-all' }}>
-                                    joanramonsoto@gmail.com
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center shrink-0 border border-gold/30">
-                                <MapPin className="w-5 h-5 text-gold" />
-                            </div>
-                            <div>
-                                <h4 className="text-navy font-bold mb-1">Consulta Presencial</h4>
-                                <p className="text-navy/80 leading-relaxed max-w-xs">
-                                    Ronda Dr. Anglès 74<br />
-                                    08360 Canet de Mar<br />
-                                    Barcelona (Maresme)
-                                </p>
-                                <a
-                                    href="https://goo.gl/maps"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 text-gold text-sm font-bold uppercase tracking-wider mt-2 hover:text-gold-light"
-                                >
-                                    <Map className="w-3 h-3" /> Ver en el mapa
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </motion.div>
-
-                {/* Form Column */}
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                    <div className="bg-white p-8 md:p-10 rounded-3xl shadow-[0_20px_60px_-15px_rgba(44,95,120,0.1)] border border-navy/5 relative overflow-hidden">
-                        {/* Decorative background element */}
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-sage/10 rounded-bl-full -z-0"></div>
-
-                        <div className="relative z-10 flex items-center gap-2 mb-8 bg-sage/10 text-sage-dark w-fit px-4 py-2 rounded-full text-sm font-semibold border border-sage/20">
-                            <ShieldCheck className="w-4 h-4" />
-                            <span>Confidencialidad absoluta</span>
-                        </div>
-
-                        <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
-                            <div>
-                                <Input
-                                    isRequired
-                                    name="nombre"
-                                    value={formData.nombre}
-                                    onChange={handleChange}
-                                    label="Nombre completo"
-                                    labelPlacement="outside"
-                                    placeholder="E.g. María García"
-                                    variant="bordered"
-                                    radius="md"
-                                    size="lg"
-                                    isInvalid={!!errors.nombre}
-                                    color={errors.nombre ? "danger" : "default"}
-                                    classNames={{
-                                        label: "text-navy font-semibold text-sm pb-1",
-                                        inputWrapper: "border-navy/20 hover:border-gold focus-within:!border-gold bg-white shadow-sm transition-colors",
-                                        input: "text-navy placeholder:text-navy/30"
-                                    }}
-                                />
-                                {errors.nombre && (
-                                    <div className="flex items-center gap-1 mt-2 text-danger text-sm">
-                                        <AlertCircle className="w-4 h-4" />
-                                        {errors.nombre}
-                                    </div>
-                                )}
+                        <form onSubmit={handleSubmit} className="space-y-10">
+                            {/* Inputs Row */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                <div className="space-y-3">
+                                    <label className="text-navy font-bold text-sm block ml-1">Nombre completo</label>
+                                    <input 
+                                        type="text"
+                                        placeholder="Tu nombre..."
+                                        value={formData.nombre}
+                                        onChange={(e) => setFormData(p => ({ ...p, nombre: e.target.value }))}
+                                        className={`w-full bg-navy/5 h-16 px-6 rounded-2xl outline-none transition-all border-2 text-navy ${errors.nombre ? 'border-red-200' : 'border-transparent focus:border-primary/20 focus:bg-white'}`}
+                                    />
+                                    {errors.nombre && <p className="text-red-500 text-xs ml-1">{errors.nombre}</p>}
+                                </div>
+                                <div className="space-y-3">
+                                    <label className="text-navy font-bold text-sm block ml-1">Teléfono o Email</label>
+                                    <input 
+                                        type="text"
+                                        placeholder="Email o Teléfono..."
+                                        value={formData.contacto}
+                                        onChange={(e) => setFormData(p => ({ ...p, contacto: e.target.value }))}
+                                        className={`w-full bg-navy/5 h-16 px-6 rounded-2xl outline-none transition-all border-2 text-navy ${errors.contacto ? 'border-red-200' : 'border-transparent focus:border-primary/20 focus:bg-white'}`}
+                                    />
+                                    {errors.contacto && <p className="text-red-500 text-xs ml-1">{errors.contacto}</p>}
+                                </div>
                             </div>
 
-                            <div>
-                                <Input
-                                    isRequired
-                                    name="contacto"
-                                    value={formData.contacto}
-                                    onChange={handleChange}
-                                    label="Teléfono o Email de contacto"
-                                    labelPlacement="outside"
-                                    placeholder="Donde prefiera que le contactemos"
-                                    variant="bordered"
-                                    radius="md"
-                                    size="lg"
-                                    isInvalid={!!errors.contacto}
-                                    color={errors.contacto ? "danger" : "default"}
-                                    classNames={{
-                                        label: "text-navy font-semibold text-sm pb-1",
-                                        inputWrapper: "border-navy/20 hover:border-gold focus-within:!border-gold bg-white shadow-sm transition-colors",
-                                        input: "text-navy placeholder:text-navy/30"
-                                    }}
-                                />
-                                {errors.contacto && (
-                                    <div className="flex items-center gap-1 mt-2 text-danger text-sm">
-                                        <AlertCircle className="w-4 h-4" />
-                                        {errors.contacto}
-                                    </div>
-                                )}
-                            </div>
-
-                            <div>
-                                <div className="text-navy font-semibold text-sm pb-1">Tipo de problema</div>
-                                <select
-                                    name="problema"
-                                    value={formData.problema}
-                                    onChange={handleProblemaChange}
-                                    className={`w-full px-4 py-3 rounded-lg border-2 transition-colors font-medium text-navy bg-white shadow-sm ${
-                                        errors.problema
-                                            ? "border-red-500"
-                                            : "border-navy/20 hover:border-gold focus:border-gold"
-                                    }`}
-                                >
-                                    <option value="">Selecciona el tipo de problema</option>
-                                    <option value="ansiedad">Ansiedad</option>
-                                    <option value="depresion">Depresión</option>
-                                    <option value="panico">Crisis de Pánico</option>
-                                    <option value="relaciones">Problemas Relacionales</option>
-                                    <option value="otro">Otro</option>
-                                </select>
-                                {errors.problema && (
-                                    <div className="flex items-center gap-1 mt-2 text-danger text-sm">
-                                        <AlertCircle className="w-4 h-4" />
-                                        {errors.problema}
-                                    </div>
-                                )}
-                            </div>
-
-                            <div>
-                                <div className="text-navy font-semibold text-sm pb-3">Modalidad preferida</div>
-                                <RadioGroup
-                                    value={formData.modalidad}
-                                    onChange={handleRadioChange}
-                                    orientation="horizontal"
-                                    classNames={{
-                                        wrapper: "gap-4"
-                                    }}
-                                >
-                                    <Radio
-                                        value="presencial"
-                                        classNames={{
-                                            base: "m-0 inline-flex items-center justify-between flex-row-reverse w-full max-w-[200px] cursor-pointer rounded-lg border-2 border-transparent bg-navy/5 p-4 hover:bg-navy/10 data-[selected=true]:border-gold shadow-sm",
-                                            labelWrapper: "ml-0",
-                                            label: "text-navy font-medium text-sm",
-                                            control: "bg-white border-navy/30 text-gold"
-                                        }}
+                            {/* Select and Radio Row */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                <div className="space-y-3 relative">
+                                    <label className="text-navy font-bold text-sm block ml-1">¿Qué te preocupa?</label>
+                                    <div 
+                                        onClick={() => setIsSelectOpen(!isSelectOpen)}
+                                        className={`w-full bg-navy/5 h-16 px-6 rounded-2xl flex items-center justify-between cursor-pointer border-2 transition-all ${errors.problema ? 'border-red-200' : 'border-transparent'} ${isSelectOpen ? 'bg-white border-primary/20' : ''}`}
                                     >
-                                        Presencial (Canet)
-                                    </Radio>
-                                    <Radio
-                                        value="online"
-                                        classNames={{
-                                            base: "m-0 inline-flex items-center justify-between flex-row-reverse w-full max-w-[200px] cursor-pointer rounded-lg border-2 border-transparent bg-navy/5 p-4 hover:bg-navy/10 data-[selected=true]:border-gold shadow-sm",
-                                            labelWrapper: "ml-0",
-                                            label: "text-navy font-medium text-sm",
-                                            control: "bg-white border-navy/30 text-gold"
-                                        }}
-                                    >
-                                        Online (Videollamada)
-                                    </Radio>
-                                </RadioGroup>
+                                        <span className={formData.problema ? 'text-navy' : 'text-navy/30'}>
+                                            {MOTIVOS_CONSULTA.find(m => m.id === formData.problema)?.label || "Selecciona un motivo"}
+                                        </span>
+                                        <ChevronDown className={`w-5 h-5 text-navy/40 transition-transform ${isSelectOpen ? 'rotate-180' : ''}`} />
+                                    </div>
+                                    
+                                    <AnimatePresence>
+                                        {isSelectOpen && (
+                                            <motion.div 
+                                                initial={{ opacity: 0, y: 10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: 10 }}
+                                                className="absolute z-50 top-full left-0 w-full mt-2 bg-white rounded-2xl shadow-2xl border border-navy/10 overflow-hidden py-2"
+                                            >
+                                                {MOTIVOS_CONSULTA.map((motivo) => (
+                                                    <div 
+                                                        key={motivo.id}
+                                                        onClick={() => handleSelectOption(motivo.id)}
+                                                        className="px-6 py-4 hover:bg-navy/5 text-navy cursor-pointer transition-colors font-medium"
+                                                    >
+                                                        {motivo.label}
+                                                    </div>
+                                                ))}
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                    {errors.problema && <p className="text-red-500 text-xs ml-1">{errors.problema}</p>}
+                                </div>
+
+                                <div className="space-y-3">
+                                    <label className="text-navy font-bold text-sm block ml-1">Modalidad preferida</label>
+                                    <div className="grid grid-cols-2 gap-3 p-2 bg-navy/5 rounded-2xl h-16">
+                                        <button 
+                                            type="button"
+                                            onClick={() => setFormData(p => ({ ...p, modalidad: "online" }))}
+                                            className={`rounded-xl text-sm font-bold transition-all ${formData.modalidad === "online" ? 'bg-white text-navy shadow-sm' : 'text-navy/40'}`}
+                                        >
+                                            Online
+                                        </button>
+                                        <button 
+                                            type="button"
+                                            onClick={() => setFormData(p => ({ ...p, modalidad: "presencial" }))}
+                                            className={`rounded-xl text-sm font-bold transition-all ${formData.modalidad === "presencial" ? 'bg-white text-navy shadow-sm' : 'text-navy/40'}`}
+                                        >
+                                            Presencial
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div>
-                                <Textarea
-                                    name="descripcion"
+                            {/* Textarea Row */}
+                            <div className="space-y-3">
+                                <label className="text-navy font-bold text-sm block ml-1">¿Cómo puedo ayudarte? (opcional)</label>
+                                <textarea 
+                                    placeholder="Cuéntame brevemente tu caso..."
+                                    rows={4}
                                     value={formData.descripcion}
-                                    onChange={handleChange}
-                                    label="Breve descripción del motivo de consulta (opcional)"
-                                    labelPlacement="outside"
-                                    placeholder="Si lo desea, puede explicar brevemente su situación general."
-                                    variant="bordered"
-                                    radius="md"
-                                    minRows={4}
-                                    classNames={{
-                                        label: "text-navy font-semibold text-sm pb-1",
-                                        inputWrapper: "border-navy/20 hover:border-gold focus-within:!border-gold bg-white shadow-sm transition-colors",
-                                        input: "text-navy placeholder:text-navy/30"
-                                    }}
+                                    onChange={(e) => setFormData(p => ({ ...p, descripcion: e.target.value }))}
+                                    className="w-full bg-navy/5 p-6 rounded-2xl outline-none transition-all border-2 border-transparent focus:border-primary/20 focus:bg-white text-navy resize-none"
                                 />
                             </div>
 
-                            <div>
-                                <Checkbox
-                                    isRequired
-                                    checked={formData.privacidad}
-                                    onChange={handleCheckboxChange}
-                                    radius="sm"
-                                    color="warning"
-                                    classNames={{
-                                        base: "items-start",
-                                        label: "text-xs text-navy/70 leading-relaxed ml-1",
-                                        wrapper: `mt-1 before:border-navy/30 ${errors.privacidad ? "before:border-danger" : ""}`
-                                    }}
-                                >
-                                    He leído y acepto la Política de Privacidad y el tratamiento confidencial de mis datos.
-                                </Checkbox>
-                                {errors.privacidad && (
-                                    <div className="flex items-center gap-1 mt-2 text-danger text-sm">
-                                        <AlertCircle className="w-4 h-4" />
-                                        {errors.privacidad}
+                            {/* Footer Row */}
+                            <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-6 border-t border-navy/5">
+                                <label className="flex items-start gap-3 cursor-pointer group max-w-sm">
+                                    <input 
+                                        type="checkbox" 
+                                        checked={formData.privacidad}
+                                        onChange={(e) => setFormData(p => ({ ...p, privacidad: e.target.checked }))}
+                                        className="sr-only"
+                                    />
+                                    <div className={`mt-1 w-5 h-5 rounded-md border-2 transition-all flex items-center justify-center shrink-0 ${formData.privacidad ? 'bg-primary border-primary' : 'border-navy/20 group-hover:border-primary/40'}`}>
+                                        {formData.privacidad && <Check className="w-4 h-4 text-white" />}
                                     </div>
-                                )}
+                                    <span className="text-xs text-navy/50 leading-relaxed italic">
+                                        Acepto la Política de Privacidad y el tratamiento de mis datos de forma confidencial.
+                                    </span>
+                                </label>
+
+                                <button 
+                                    type="submit"
+                                    disabled={isLoading}
+                                    className="w-full md:w-auto h-16 px-12 rounded-full bg-primary text-black font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50"
+                                >
+                                    {isLoading ? "Enviando..." : "Enviar consulta"}
+                                    {!isLoading && <Send className="w-5 h-5" />}
+                                </button>
                             </div>
-
-                            <Button
-                                type="submit"
-                                isLoading={isLoading}
-                                isDisabled={isLoading}
-                                size="lg"
-                                className="w-full bg-navy hover:bg-navy/90 text-white font-bold py-7 text-lg shadow-xl shadow-navy/20 hover:shadow-navy/40 transition-all duration-300 transform hover:-translate-y-1 rounded-xl mt-4"
-                            >
-                                {isLoading ? (
-                                    <div className="flex items-center gap-2">
-                                        <Loader className="w-5 h-5 animate-spin" />
-                                        Enviando...
-                                    </div>
-                                ) : (
-                                    <div className="flex items-center gap-2">
-                                        <Check className="w-5 h-5" />
-                                        Enviar solicitud protegida
-                                    </div>
-                                )}
-                            </Button>
-
-                            {submitStatus === "success" && isSubmitted && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    className="p-4 bg-sage/20 text-sage-dark border border-sage/30 rounded-xl flex items-start gap-3 font-medium shadow-sm mt-4"
-                                >
-                                    <Check className="w-5 h-5 shrink-0 mt-0.5" />
-                                    <div>
-                                        <p className="font-bold">¡Mensaje enviado correctamente!</p>
-                                        <p className="text-sm mt-1">Le contactaremos en breve para iniciar su proceso terapéutico.</p>
-                                    </div>
-                                </motion.div>
-                            )}
-
-                            {submitStatus === "error" && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    className="p-4 bg-red-50 text-red-700 border border-red-200 rounded-xl flex items-start gap-3 font-medium shadow-sm mt-4"
-                                >
-                                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
-                                    <div>
-                                        <p className="font-bold">Error al enviar el mensaje</p>
-                                        <p className="text-sm mt-1">Por favor, intenta de nuevo o contacta directamente por teléfono.</p>
-                                    </div>
-                                </motion.div>
-                            )}
                         </form>
-                    </div>
-                </motion.div>
 
+                        {/* Submission Success */}
+                        <AnimatePresence>
+                            {submitStatus === "success" && (
+                                <motion.div 
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    className="mt-8 p-6 bg-emerald-50 rounded-2xl border border-emerald-100 flex items-center gap-4 text-emerald-800"
+                                >
+                                    <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
+                                        <Check className="w-6 h-6 text-white" />
+                                    </div>
+                                    <div>
+                                        <p className="font-bold uppercase tracking-widest text-xs mb-1">Éxito</p>
+                                        <p className="font-medium">Mensaje enviado. Te contactaré en menos de 24h.</p>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </motion.div>
+
+                    {/* Contact Tiles */}
+                    <div className="lg:col-span-2 flex flex-col gap-6">
+                        <motion.a 
+                            href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ y: -5 }}
+                            className="bg-white p-10 rounded-[2.5rem] border border-navy/5 shadow-xl shadow-navy/[0.02] group"
+                        >
+                            <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                                <Calendar className="w-6 h-6 text-primary group-hover:text-white" />
+                            </div>
+                            <span className="text-navy/40 text-xs font-black uppercase tracking-widest block mb-1">Reserva tu cita</span>
+                            <span className="text-navy text-2xl font-bold block mb-4">Agenda una sesión</span>
+                            <div className="flex items-center gap-2 text-primary text-sm font-bold">
+                                Ver disponibilidad <ArrowUpRight className="w-4 h-4" />
+                            </div>
+                        </motion.a>
+
+                        <motion.a 
+                            href="mailto:joanramonsoto@gmail.com"
+                            whileHover={{ y: -5 }}
+                            className="bg-navy p-10 rounded-[2.5rem] text-white relative overflow-hidden group h-full flex flex-col justify-end min-h-[250px]"
+                        >
+                            <Globe2 className="absolute top-[-10%] right-[-10%] w-48 h-48 opacity-10 rotate-12" />
+                            <div className="relative z-10">
+                                <Mail className="w-10 h-10 text-primary mb-6" />
+                                <span className="text-white/40 text-xs font-black uppercase tracking-widest block mb-1">Email</span>
+                                <span className="text-white text-xl font-medium block mb-4 break-all">joanramonsoto@gmail.com</span>
+                                <div className="flex items-center gap-2 text-primary text-sm font-bold bg-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-md">
+                                    Enviar email <Send className="w-3 h-3" />
+                                </div>
+                            </div>
+                        </motion.a>
+                    </div>
+
+                    {/* Wide Location Tile */}
+                    <motion.a 
+                        href="https://www.google.com/maps/place/Cl%C3%ADnica+de+la+Ansiedad+Catalunya/@41.5955262,2.5789221,17z"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ y: -5 }}
+                        className="lg:col-span-6 bg-white p-8 lg:p-12 rounded-[3rem] border border-navy/5 shadow-xl shadow-navy/[0.02] flex flex-col md:flex-row items-center justify-between gap-8 group"
+                    >
+                        <div className="flex items-center gap-8">
+                            <div className="w-20 h-20 rounded-[1.5rem] bg-navy/5 flex items-center justify-center shrink-0">
+                                <MapPin className="w-10 h-10 text-primary" />
+                            </div>
+                            <div>
+                                <h4 className="text-navy/40 text-xs font-black uppercase tracking-widest mb-1">Presencial</h4>
+                                <p className="text-navy text-2xl lg:text-3xl font-bold leading-tight">Ronda Dr. Anglès 74, Canet de Mar</p>
+                                <p className="text-navy/50 mt-1">Maresme, Barcelona</p>
+                            </div>
+                        </div>
+                        <div className="px-8 py-5 rounded-full bg-navy text-white font-bold text-lg flex items-center gap-4 group-hover:bg-primary transition-colors">
+                            Google Maps <ArrowUpRight className="w-5 h-5" />
+                        </div>
+                    </motion.a>
+                </div>
             </div>
         </section>
     );

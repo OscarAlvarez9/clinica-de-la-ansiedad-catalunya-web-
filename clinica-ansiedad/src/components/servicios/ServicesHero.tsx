@@ -25,11 +25,11 @@ export default function ServicesHero() {
                     </p>
 
                     <p className="text-lg text-text/80 leading-relaxed max-w-3xl text-balance mb-6">
-                        Desde hace más de 30 años acompañamos a personas que buscan comprender los síntomas de ansiedad, sus causas y cómo se cura la ansiedad desde la raíz. Ofrecemos consulta psicológica presencial en Barcelona y terapia online para toda España.
+                        Desde hace más de 30 años acompañamos a personas que buscan comprender los síntomas de ansiedad, sus causas y cómo se cura la ansiedad desde la raíz. Ofrecemos consulta psicológica presencial en Barcelona (Canet de Mar, comarca del Maresme) y terapia online para pacientes de toda Catalunya —Girona, Lleida, Tarragona— y toda España.
                     </p>
 
                     <p className="text-lg text-text/80 leading-relaxed max-w-3xl text-balance">
-                        Nuestro equipo diseña intervenciones personalizadas que no solo alivian los síntomas físicos de la ansiedad — palpitaciones, hiperventilación, insomnio — sino que generan cambios estructurales profundos y duraderos.
+                        Joan Ramon Soto diseña intervenciones personalizadas que no solo alivian los síntomas físicos de la ansiedad — palpitaciones, hiperventilación, insomnio — sino que generan cambios estructurales profundos y duraderos.
                     </p>
                 </motion.div>
             </div>

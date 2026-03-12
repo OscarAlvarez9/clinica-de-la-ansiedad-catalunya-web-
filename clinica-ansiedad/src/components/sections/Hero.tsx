@@ -58,7 +58,7 @@ export default function Hero() {
                         variants={fadeUpVariant}
                         className="text-text/80 text-lg md:text-xl leading-relaxed max-w-2xl mb-10 font-light"
                     >
-                        Desde 1993 resolvemos las <strong className="font-bold text-navy">causas de la ansiedad</strong> con un proceso clínico personalizado dirigido por el <strong className="font-semibold text-navy">Dr. Joan Ramon Soto</strong>. Terapia presencial en Barcelona y online.
+                        Desde 1993 resolvemos las <strong className="font-bold text-navy">causas de la ansiedad</strong> con un proceso clínico personalizado dirigido por el <strong className="font-semibold text-navy">Dr. Joan Ramon Soto</strong>. Psicólogo especialista en ansiedad en Barcelona. Terapia presencial en Canet de Mar (Maresme) y online para toda Catalunya y España.
                     </motion.p>
 
                     <motion.div

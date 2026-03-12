@@ -35,7 +35,7 @@ export default function ApproachSection() {
                         <span className="text-gold text-sm tracking-widest uppercase font-bold">Nuestro Enfoque</span>
                     </div>
 
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 leading-tight">
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 leading-tight text-white focus:outline-none">
                         Un enfoque que va a la raíz, <br /><span className="text-gold italic">no a los síntomas</span>
                     </h2>
 
@@ -46,9 +46,9 @@ export default function ApproachSection() {
                             rápidamente, nosotros entendemos la ansiedad como una señal de alarma mental.
                         </p>
                         <p>
-                            Liderado por <strong className="text-white">Joan Ramon Soto</strong>, psicólogo fundador y especialista,
-                            nuestro equipo provee un entorno clínico riguroso desde 1993. Escuchamos tu historia
-                            única para desarticular los conflictos internos que mantienen viva la angustia.
+                            Liderado por <strong className="text-white">Joan Ramon Soto</strong>, psicólogo fundador y especialista en ansiedad en Barcelona,
+                            este espacio clínico provee un entorno riguroso desde 1993 en Canet de Mar (Maresme). Escuchamos tu historia
+                            única para desarticular los conflictos internos que mantienen viva la angustia. Consulta presencial y online para toda Catalunya.
                         </p>
                     </div>
 

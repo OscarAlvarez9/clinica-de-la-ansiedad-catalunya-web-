@@ -34,7 +34,7 @@ export default function Methodologies() {
                                 </div>
                                 <h3 className="font-serif text-2xl text-navy font-bold">Clara y Cerca</h3>
                                 <p className="text-text/80 leading-relaxed text-balance">
-                                    Somos especialistas en el tratamiento de la ansiedad, con más de 25 años de experiencia y miles de personas atendidas. Aplicamos terapias basadas en la evidencia con un equipo profesional altamente cualificado, ofreciendo atención personalizada presencial y online.
+                                    Somos especialistas en el tratamiento de la ansiedad, con más de 25 años de experiencia y miles de personas atendidas. Aplicamos terapias basadas en la evidencia con un enfoque clínico riguroso, ofreciendo atención personalizada presencial y online de la mano de Joan Ramon Soto.
                                 </p>
                             </CardBody>
                         </Card>

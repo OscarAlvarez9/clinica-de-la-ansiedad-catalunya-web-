@@ -2,32 +2,36 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardBody } from '@heroui/react';
-import { Brain, Activity, Compass, AlertCircle } from 'lucide-react';
+import { Brain, Activity, Compass, AlertCircle, ArrowRight } from 'lucide-react';
 
 const specialties = [
     {
-        icon: <Brain className="w-6 h-6 text-navy" />,
-        title: "Trastorno de Ansiedad Generalizada",
-        subtitle: "Síntomas, Causas y Tratamiento",
-        content: "El trastorno de ansiedad generalizada se manifiesta con preocupación constante, tensión muscular, dificultad para dormir y síntomas físicos como palpitaciones o hiperventilación. Tratamos las causas de la ansiedad desde su origen para lograr cambios profundos y duraderos."
+        icon: <Activity className="w-6 h-6 text-sage" />,
+        title: "Depresión",
+        subtitle: "Tratamiento Psicoanalítico contra la Depresión",
+        content: "La depresión se caracteriza por un estado de ánimo triste e inapetente que se mantiene en el tiempo sin modificación junto con una incapacidad de disfrutar de cualquier acontecimiento de la vida.",
+        href: "/depresion"
     },
     {
-        icon: <Activity className="w-6 h-6 text-sage" />,
-        title: "Depresión y Ansiedad",
-        subtitle: "Tratamiento Combinado Especializado",
-        content: "La depresión y la ansiedad frecuentemente aparecen juntas, generando tristeza profunda, pérdida de interés, fatiga y angustia constante. Nuestro abordaje psicoanalítico trata ambas condiciones de forma integral, comprendiendo las causas comunes que las alimentan."
+        icon: <Brain className="w-6 h-6 text-navy" />,
+        title: "Ansiedad",
+        subtitle: "Tratamiento Psicoanalítico contra la Ansiedad",
+        content: "La persona se encuentra sometida a una afluencia de excitaciones de origen externo o interno que es incapaz de controlar y dominar.",
+        href: "/ansiedad"
     },
     {
         icon: <Compass className="w-6 h-6 text-gold" />,
-        title: "Trastorno Obsesivo Compulsivo (TOC) y Fobias",
-        subtitle: "TOC, Fobia Social, Agorafobia e Hipocondría",
-        content: "El trastorno obsesivo compulsivo, la fobia social, la agorafobia y la hipocondría son manifestaciones comunes de la ansiedad. Tratamos los pensamientos obsesivos, el miedo social y las conductas de evitación desde la raíz para recuperar la libertad y la calidad de vida."
+        title: "Celos",
+        subtitle: "Tratamiento Psicoanalítico contra los Celos",
+        content: "Los celos son unos estados afectivos normales, todo el mundo los tiene en algún momento u otro de su vida pero sobre todo en la infancia.",
+        href: "/celos"
     },
     {
         icon: <AlertCircle className="w-6 h-6 text-navy" />,
-        title: "Crisis de Ansiedad y Ataques de Pánico",
-        subtitle: "Intervención Urgente y Tratamiento de Raíz",
-        content: "Los síntomas de una crisis de ansiedad incluyen palpitaciones, hiperventilación, hormigueo, dolor en el brazo izquierdo y miedo intenso. Realizamos una evaluación clínica exhaustiva para identificar el origen de las crisis y diseñar un tratamiento que detenga el ciclo del pánico."
+        title: "Ludopatía",
+        subtitle: "Tratamiento Psicoanalítico contra la Ludopatía",
+        content: "La ludopatía es una adicción vinculada al juego. Una adicción no existe sin un sujeto previo que tenga una subjetividad que puede dar lugar a una adicción.",
+        href: "/ludopatia"
     }
 ];
 
@@ -46,12 +50,14 @@ export default function SpecialtiesSection() {
                     className="text-center mb-16"
                 >
                     <span className="text-gold font-bold tracking-widest uppercase text-sm mb-4 block">
-                        Áreas de Intervención
+                        Espacio Psicoanalítico · Desde 1993
                     </span>
                     <h2 className="font-serif text-3xl md:text-5xl font-bold mb-6">
-                        Especialidades Clínicas
+                        Áreas de Especialización
                     </h2>
-                    <div className="w-16 h-1 bg-sage mx-auto mb-8"></div>
+                    <p className="text-white/60 max-w-2xl mx-auto text-base leading-relaxed mb-8">
+                        Pioneros en terapia online desde hace más de 25 años. Con atención presencial en Maresme y online para toda Catalunya y España.
+                    </p>
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -78,9 +84,14 @@ export default function SpecialtiesSection() {
                                             </span>
                                         </div>
                                     </div>
-                                    <p className="text-white/70 leading-relaxed text-sm">
+                                    <p className="text-white/70 leading-relaxed text-sm mb-4">
                                         {item.content}
                                     </p>
+                                    {item.href && (
+                                        <a href={item.href} className="inline-flex items-center gap-1.5 text-gold text-xs font-bold uppercase tracking-widest hover:gap-3 transition-all">
+                                            Seguir leyendo <ArrowRight className="w-3.5 h-3.5" />
+                                        </a>
+                                    )}
                                 </CardBody>
                             </Card>
                         </motion.div>

@@ -1,164 +1,272 @@
-import type { Metadata } from 'next';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import { Button } from '@heroui/react';
-import Link from 'next/link';
-import { HeartHandshake, MessageCircle, Flame, Scale } from 'lucide-react';
-import BookingOptions from '@/components/servicios/BookingOptions';
-import StickyBookingButton from '@/components/servicios/StickyBookingButton';
-import FAQSection from '@/components/sections/FAQSection';
+"use client";
 
-export const metadata: Metadata = {
-    title: 'Terapia de Pareja en Barcelona y Catalunya | Clínica de la Ansiedad',
-    description: 'Terapia de pareja con enfoque psicoanalítico para resolver conflictos, reproches y desconexión afectiva. Sesiones presenciales en Barcelona y online. Reserva tu primera consulta.',
+import { motion, type Variants } from "framer-motion";
+import { Card, CardBody, Chip, Button } from "@heroui/react";
+import { HeartHandshake, MessageCircle, Flame, Scale, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import BookingOptions from "@/components/servicios/BookingOptions";
+import FAQSection from "@/components/sections/FAQSection";
+import StickyBookingButton from "@/components/servicios/StickyBookingButton";
+import TerapiaDeParejaHero from "@/components/heroes/TerapiaDeParejaHero";
+import { BOOKING_URL } from "@/lib/constants";
+
+const inView: Variants = {
+  hidden: { opacity: 0, y: 32 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
 };
 
+const stagger: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.09 } },
+};
+
+const indications = [
+  "Problemas de comunicación o discusiones constantes sin resolución.",
+  "Infidelidades o pérdida de confianza en el otro.",
+  "Desconexión emocional, apatía o sensación de convivir con un desconocido.",
+  "Dificultades en la esfera sexual o falta de intimidad.",
+  "Conflictos sobre la crianza de los hijos o familias políticas.",
+  "Dudas serias sobre la continuidad de la relación.",
+];
+
+const approach = [
+  {
+    title: "Traducir el conflicto",
+    desc: "Identificamos las verdaderas necesidades emocionales que se esconden detrás de las discusiones superficiales o los silencios punitivos.",
+  },
+  {
+    title: "Gestión Emocional Compartida",
+    desc: "Enseñamos técnicas efectivas de comunicación no violenta y asertividad para romper dinámicas destructivas.",
+  },
+  {
+    title: "Reparación del Daño",
+    desc: "Trabajamos estratégicamente en la restauración de la confianza tras crisis severas como la infidelidad.",
+  },
+  {
+    title: "Acuerdos Estables",
+    desc: "Consolidamos pautas de convivencia saludables que fomenten la intimidad, el respeto y la autonomía dentro de la pareja.",
+  },
+];
+
+const benefits = [
+  {
+    Icon: MessageCircle,
+    title: "Comunicación Efectiva",
+    desc: "Desactivaréis la lectura de mentes y el rencor acumulado. Aprenderéis a solicitar lo que necesitáis sin ataques ni hostilidad.",
+  },
+  {
+    Icon: Flame,
+    title: "Reconexión Íntima",
+    desc: "Al reducirse el resentimiento diario, vuelve a generarse el espacio psicológico necesario para la curiosidad, la admiración y la cercanía emocional.",
+  },
+  {
+    Icon: Scale,
+    title: "Acuerdos Equitativos",
+    desc: "Estableceréis un reparto justo de responsabilidades invisibles, disolviendo la sensación de desequilibrio e invisibilidad en la pareja.",
+  },
+];
+
 export default function TerapiaDeParejaPage() {
-    return (
-        <div className="min-h-screen bg-cream selection:bg-gold/20 selection:text-navy">
-            <Navbar />
-            <main className="pt-32 pb-24">
-                <div className="container mx-auto px-4 md:px-8 max-w-4xl text-center">
-                    <span className="text-gold font-bold tracking-widest uppercase text-sm mb-4 block">
-                        Resolución de Conflictos
-                    </span>
-                    <h1 className="font-serif text-4xl md:text-6xl font-extrabold text-navy tracking-tight mb-6">
-                        Terapia de <span className="italic text-sage">Pareja</span>
-                    </h1>
-                    <div className="w-24 h-1 bg-gold mx-auto mb-10"></div>
+  return (
+    <div className="min-h-screen bg-cream selection:bg-gold/20 selection:text-navy">
+      <Navbar />
+      <main>
+        <TerapiaDeParejaHero />
 
-                    <p className="text-xl text-navy/80 font-medium leading-relaxed mb-8">
-                        Un acompañamiento especializado diseñado para resolver dinámicas de conflicto, bloqueos en la comunicación y desconexión afectiva.
-                    </p>
-                </div>
+        {/* ===== CUÁNDO ACUDIR ===== */}
+        <section className="py-20 md:py-28 px-4 md:px-8 bg-cream">
+          <div className="container mx-auto max-w-4xl">
+            <motion.div variants={inView} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
+              <Chip size="sm" className="bg-gold/10 text-gold border border-gold/20 text-[10px] font-bold uppercase tracking-widest mb-6">
+                Indicaciones
+              </Chip>
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-navy mb-6">
+                ¿Cuándo acudir a Terapia de Pareja?
+              </h2>
+              <p className="text-navy/60 text-lg leading-relaxed mb-10 max-w-2xl">
+                Las crisis en las relaciones son dolorosas y desgastantes. La terapia es especialmente efectiva cuando enfrentáis: Consulta de terapia de pareja en Barcelona (Canet de Mar, Maresme) y{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">sesiones online</Link> para parejas de toda Catalunya.
+              </p>
+            </motion.div>
 
-                {/* Early CTA - Positioned after hero */}
-                <div className="container mx-auto px-4 md:px-8 max-w-4xl">
-                    <div className="text-left bg-white/50 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white shadow-glass mb-16">
-                        <h2 className="font-serif text-3xl font-bold text-navy mb-6">¿Cuándo acudir a Terapia de Pareja?</h2>
-                        <p className="text-text/80 leading-relaxed mb-6 text-lg">
-                            Las crisis en las relaciones son dolorosas y desgastantes. Buscamos ayuda cuando el diálogo se ha roto y las discusiones se vuelven cíclicas. La terapia es especialmente efectiva cuando enfrentáis:
-                        </p>
-                        <div className="grid md:grid-cols-2 gap-4 mb-8">
-                            {[
-                                "Problemas de comunicación o discusiones constantes sin resolución.",
-                                "Infidelidades o pérdida de confianza en el otro.",
-                                "Desconexión emocional, apatía o sensación de convivir con un desconocido.",
-                                "Dificultades en la esfera sexual o falta de intimidad.",
-                                "Conflictos sobre la crianza de los hijos o familias políticas.",
-                                "Dudas serias sobre la continuidad de la relación.",
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-start gap-3">
-                                    <HeartHandshake className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                                    <span className="text-text/80">{item}</span>
-                                </div>
-                            ))}
-                        </div>
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid md:grid-cols-2 gap-3 mb-10"
+            >
+              {indications.map((item, i) => (
+                <motion.div key={i} variants={inView} className="flex items-start gap-3 py-3 px-4 rounded-xl hover:bg-white/70 transition-colors">
+                  <HeartHandshake className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                  <span className="text-navy/70">{item}</span>
+                </motion.div>
+              ))}
+            </motion.div>
 
-                        <div className="w-full h-px bg-navy/10 my-10"></div>
+            <motion.div
+              variants={inView}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
+              <Card className="bg-gold/10 border border-gold/20 shadow-none">
+                <CardBody className="p-6 md:p-8">
+                  <h3 className="font-serif text-xl font-bold text-navy mb-2">Nuestro objetivo</h3>
+                  <p className="text-navy/70">
+                    Convertir la crisis en una oportunidad de crecimiento, construyendo una relación más madura, consciente y conectada, o facilitando una separación sana y respetuosa si ese es el camino elegido.
+                  </p>
+                </CardBody>
+              </Card>
+            </motion.div>
+          </div>
+        </section>
 
-                        <h2 className="font-serif text-3xl font-bold text-navy mb-6">Reconstruir el vínculo</h2>
-                        <div className="space-y-6 text-text/80 leading-relaxed text-lg mb-8">
-                            <p>
-                                Las crisis de pareja a menudo ocultan malestares individuales no resueltos o patrones de comunicación disfuncionales. Nuestro enfoque ayuda a <strong>desarticular los reproches cruzados</strong> para dar paso a un diálogo genuino.
-                            </p>
-                            <p>
-                                En un ambiente neutral y sin juicios, el terapeuta actúa como facilitador para:
-                            </p>
-                            <ul className="list-disc pl-5 space-y-4">
-                                <li><strong>Traducir el conflicto:</strong> Identificamos las verdaderas necesidades emocionales que se esconden detrás de las discusiones superficiales o los silencios punitivos.</li>
-                                <li><strong>Gestión Emocional Compartida:</strong> Enseñamos técnicas efectivas de comunicación no violenta y asertividad para romper dinámicas destructivas.</li>
-                                <li><strong>Reparación del Daño:</strong> Trabajamos estratégicamente en la restauración de la confianza tras crisis severas (como la infidelidad).</li>
-                                <li><strong>Acuerdos Estables:</strong> Consolidamos pautas de convivencia saludables que fomenten la intimidad, el respeto y la autonomía dentro de la pareja.</li>
-                            </ul>
-                        </div>
+        {/* ===== RECONSTRUIR EL VÍNCULO ===== */}
+        <section className="py-20 md:py-28 px-4 md:px-8 bg-white">
+          <div className="container mx-auto max-w-4xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <motion.div
+                variants={inView}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-80px" }}
+              >
+                <Chip size="sm" className="bg-navy/8 text-navy border border-navy/10 text-[10px] font-bold uppercase tracking-widest mb-6">
+                  Metodología
+                </Chip>
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mb-6">
+                  Reconstruir el vínculo
+                </h2>
+                <p className="text-navy/60 text-lg leading-relaxed mb-8">
+                  Las crisis de pareja a menudo ocultan malestares individuales no resueltos o patrones de comunicación disfuncionales. Nuestro enfoque ayuda a{" "}
+                  <strong className="text-navy font-semibold">desarticular los reproches cruzados</strong>{" "}
+                  para dar paso a un diálogo genuino. Los{" "}<Link href="/celos" className="text-gold hover:text-gold/80 underline underline-offset-2">celos patológicos</Link> o la{" "}<Link href="/ansiedad" className="text-gold hover:text-gold/80 underline underline-offset-2">ansiedad</Link> de uno de los miembros pueden ser el detonante de la crisis.
+                </p>
+              </motion.div>
 
-                        <div className="bg-gold/10 rounded-2xl p-6 border border-gold/20">
-                            <h3 className="font-serif text-xl font-bold text-navy mb-2">Nuestro objetivo</h3>
-                            <p className="text-text/80">Convertir la crisis en una oportunidad de crecimiento, construyendo una relación más madura, consciente y conectada, o facilitando una separación sana y respetuosa si ese es el camino elegido.</p>
-                        </div>
-                    </div>
+              <motion.div
+                variants={stagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="space-y-4"
+              >
+                {approach.map((item, i) => (
+                  <motion.div key={i} variants={inView}>
+                    <Card className="bg-cream border border-navy/5 hover:border-gold/20 transition-all shadow-none">
+                      <CardBody className="p-5">
+                        <h3 className="font-serif text-base font-bold text-navy mb-1">{item.title}</h3>
+                        <p className="text-navy/60 text-sm leading-relaxed">{item.desc}</p>
+                      </CardBody>
+                    </Card>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
 
-                    {/* Authority Section */}
-                    <div className="text-center bg-navy text-white p-6 md:p-16 rounded-3xl shadow-glass mb-12 md:mb-16 relative overflow-hidden">
-                        {/* Background glow */}
-                        <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-sage/20 rounded-full blur-[80px] -z-10"></div>
-                        <div className="absolute bottom-0 left-0 w-48 md:w-64 h-48 md:h-64 bg-gold/10 rounded-full blur-[80px] -z-10"></div>
+            {/* Pullquote */}
+            <motion.div
+              variants={inView}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="mt-16 flex gap-6 items-start"
+            >
+              <div className="w-1 bg-gold rounded-full shrink-0 self-stretch" />
+              <div>
+                <p className="font-serif text-xl md:text-2xl text-navy italic leading-snug font-light">
+                  &ldquo;Intervenir en una crisis de pareja requiere neutralidad absoluta, pericia clínica para no caer en alianzas destructivas, y la empatía necesaria para validar el dolor de ambas partes.&rdquo;
+                </p>
+                <p className="mt-4 font-bold tracking-[0.2em] uppercase text-xs text-navy/50">
+                  Joan Ramon Soto Cifuente · Psicólogo Fundador
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
-                        <h2 className="font-serif text-2xl md:text-3xl font-bold mb-8 md:mb-6">Guiados por la Experiencia Clínica</h2>
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
-                            <div className="flex flex-col md:flex-row items-center gap-3 md:gap-4 max-w-sm text-center md:text-left">
-                                <div className="font-serif text-5xl md:text-6xl font-extrabold text-gold opacity-80">+25</div>
-                                <p className="text-white/80 leading-snug text-sm md:text-base">Años de experiencia en psicoterapia y psicoanálisis directo.</p>
-                            </div>
-                            <div className="hidden md:block w-px h-16 bg-white/20"></div>
-                            <div className="w-24 h-px bg-white/20 md:hidden"></div>
-                            <div className="flex flex-col md:flex-row items-center gap-3 md:gap-4 max-w-sm text-center md:text-left">
-                                <div className="font-serif text-5xl md:text-6xl font-extrabold text-sage opacity-80">+1K</div>
-                                <p className="text-white/80 leading-snug text-sm md:text-base">Parejas y familias apoyadas en procesos de alta complejidad.</p>
-                            </div>
-                        </div>
-                        <p className="mt-10 md:mt-12 text-white/70 max-w-2xl mx-auto italic text-sm md:text-base px-2">
-                            "Intervenir en una crisis de pareja requiere neutralidad absoluta, pericia clínica para no caer en alianzas destructivas, y la empatía necesaria para validar el dolor de ambas partes."
-                            <br /><span className="not-italic font-bold text-gold mt-4 md:mt-6 block text-sm md:text-base">— Joan Ramon Soto Cifuente</span>
-                        </p>
-                    </div>
+        {/* ===== BENEFICIOS ===== */}
+        <section className="py-16 md:py-20 px-4 md:px-8">
+          <div className="container mx-auto max-w-5xl">
+            <motion.div
+              variants={inView}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="text-center mb-12 md:mb-16"
+            >
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-navy mb-4">
+                Construyendo un{" "}
+                <span className="text-gold italic font-light">Vínculo Sólido</span>
+              </h2>
+              <p className="text-base md:text-lg text-navy/70 max-w-2xl mx-auto font-light">
+                Más allá de dejar de discutir, la verdadera meta es transformar cómo os relacionáis frente al desacuerdo y recuperar la intimidad funcional.
+              </p>
+            </motion.div>
 
-                    <div className="mt-12">
-                        <Link
-                            href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
-                            className="inline-block bg-navy text-white font-medium rounded-full px-8 py-4 text-lg hover:bg-navy/90 shadow-md transition-all cursor-pointer"
-                        >
-                            Solicitar Valoración
-                        </Link>
-                    </div>
-                </div>
-            </main>
-            {/* Beneficios Profundos */}
-            <section className="py-16 md:py-20 bg-cream relative">
-                <div className="container mx-auto px-4 md:px-8 max-w-5xl">
-                    <div className="text-center mb-10 md:mb-16">
-                        <h2 className="font-serif text-3xl md:text-5xl font-bold text-navy mb-4">
-                            Construyendo un <span className="text-gold italic font-light">Vínculo Sólido</span>
-                        </h2>
-                        <p className="text-base md:text-lg text-navy/70 max-w-2xl mx-auto font-light">
-                            Más allá de dejar de discutir, la verdadera meta es transformar cómo os relacionáis frente al desacuerdo y recuperar la intimidad funcional.
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center sm:text-left">
-                        <div className="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-glass border border-navy/5 hover:border-gold/30 transition-all hover:-translate-y-1">
-                            <MessageCircle className="w-10 h-10 text-gold mb-4 md:mb-6 mx-auto sm:mx-0" />
-                            <h3 className="font-serif text-xl md:text-2xl font-bold text-navy mb-3 md:mb-4">Comunicación Efectiva</h3>
-                            <p className="text-navy/70 leading-relaxed font-light text-sm md:text-base">
-                                Desactivaréis la lectura de mentes y el rencor acumulado. Aprenderéis a solicitar lo que necesitáis sin ataques ni hostilidad.
-                            </p>
-                        </div>
-                        <div className="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-glass border border-navy/5 hover:border-gold/30 transition-all hover:-translate-y-1">
-                            <Flame className="w-10 h-10 text-gold mb-4 md:mb-6 mx-auto sm:mx-0" />
-                            <h3 className="font-serif text-xl md:text-2xl font-bold text-navy mb-3 md:mb-4">Reconexión Íntima</h3>
-                            <p className="text-navy/70 leading-relaxed font-light text-sm md:text-base">
-                                Al reducirse el resentimiento diario, vuelve a generarse el espacio psicológico necesario para la curiosidad, la admiración y la cercanía emocional.
-                            </p>
-                        </div>
-                        <div className="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-glass border border-navy/5 hover:border-gold/30 transition-all hover:-translate-y-1">
-                            <Scale className="w-10 h-10 text-gold mb-4 md:mb-6 mx-auto sm:mx-0" />
-                            <h3 className="font-serif text-xl md:text-2xl font-bold text-navy mb-3 md:mb-4">Acuerdos Equitativos</h3>
-                            <p className="text-navy/70 leading-relaxed font-light text-sm md:text-base">
-                                Estableceréis un reparto justo de responsabilidades invisibles, disolviendo la sensación de desequilibrio e invisibilidad en la pareja.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+            >
+              {benefits.map(({ Icon, title, desc }, i) => (
+                <motion.div key={i} variants={inView}>
+                  <Card className="bg-white border border-navy/5 hover:border-gold/30 transition-all hover:-translate-y-1 shadow-none h-full">
+                    <CardBody className="p-6 md:p-8">
+                      <Icon className="w-10 h-10 text-gold mb-4 md:mb-6" />
+                      <h3 className="font-serif text-xl md:text-2xl font-bold text-navy mb-3 md:mb-4">{title}</h3>
+                      <p className="text-navy/70 leading-relaxed font-light text-sm md:text-base">{desc}</p>
+                    </CardBody>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
 
-            {/* Reserva Section */}
-            <BookingOptions />
-            <FAQSection />
+            <motion.div
+              variants={inView}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="text-center mt-12"
+            >
+              <Button
+                as="a"
+                href={BOOKING_URL}
+                className="bg-navy text-white font-semibold px-10 py-7 rounded-xl text-sm shadow-xl shadow-navy/20 hover:bg-navy/90 transition-all"
+                endContent={<ArrowRight className="w-4 h-4" />}
+              >
+                Solicitar Cita de Pareja
+              </Button>
+            </motion.div>
+          </div>
+        </section>
 
-            {/* Sticky Booking Button */}
-            <StickyBookingButton />
+        {/* ===== CONDICIONES RELACIONADAS ===== */}
+        <section className="py-12 px-4 md:px-8 border-t border-navy/5">
+          <div className="container mx-auto max-w-4xl">
+            <p className="text-navy/50 text-sm leading-relaxed">
+              Los conflictos de pareja frecuentemente se vinculan a{" "}
+              <a href="/ansiedad" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">ansiedad</a>,{" "}
+              <a href="/celos" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">celos patológicos</a> o{" "}
+              <a href="/depresion" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">depresión</a> de uno o ambos miembros.
+              Puede complementarse con{" "}
+              <a href="/servicios/terapia-individual" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia individual</a> o{" "}
+              <a href="/servicios/dimension-familiar" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia familiar</a>.
+              Terapia de pareja en Barcelona (Canet de Mar, Maresme) y{" "}
+              <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para parejas de toda Catalunya.
+            </p>
+          </div>
+        </section>
 
-            <Footer />
-        </div>
-    );
+        <BookingOptions />
+        <FAQSection />
+        <StickyBookingButton />
+      </main>
+      <Footer />
+    </div>
+  );
 }

@@ -35,7 +35,7 @@ export default function BookingOptions() {
                     >
                         <Card className="h-full border border-navy/10 shadow-glass bg-white hover:border-gold/30 transition-colors">
                             <CardBody className="p-8 md:p-12 flex flex-col h-full">
-                                <div className="w-16 h-16 rounded-2xl bg-sage/10 flex items-center justify-center text-sage mb-6">
+                                <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center text-gold mb-6">
                                     <MapPin className="w-8 h-8" />
                                 </div>
                                 <h3 className="font-serif text-2xl text-navy font-bold mb-4">Consulta Presencial</h3>
@@ -52,7 +52,7 @@ export default function BookingOptions() {
                                     href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full inline-block text-center bg-navy text-white font-medium rounded-xl py-4 hover:bg-navy/90 transition-all shadow-md"
+                                    className="w-full inline-block text-center bg-navy text-white font-medium rounded-xl py-4 hover:bg-navy/90 transition-all shadow-md cursor-pointer"
                                 >
                                     Reservar Presencial
                                 </a>
@@ -85,7 +85,7 @@ export default function BookingOptions() {
                                     href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full inline-block text-center bg-white border border-navy text-navy font-medium rounded-xl py-4 hover:bg-navy/5 transition-all shadow-sm"
+                                    className="w-full inline-block text-center bg-navy text-white font-medium rounded-xl py-4 hover:bg-navy/90 transition-all shadow-md cursor-pointer"
                                 >
                                     Reservar Online
                                 </a>

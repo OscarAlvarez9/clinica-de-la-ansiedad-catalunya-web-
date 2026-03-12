@@ -26,10 +26,10 @@ export default function AboutHero() {
                         <div className="w-20 h-1 bg-gold mb-10" />
 
                         <p className="text-xl md:text-2xl text-navy font-medium leading-relaxed mb-8 text-balance">
-                            Soy Joan Ramon Soto Cifuente, Fundador de la Clínica de la Ansiedad Catalunya y Psicoterapeuta con más de 30 años de experiencia.
+                            Soy Joan Ramon Soto Cifuente, psicólogo especialista en ansiedad en Barcelona, fundador de la Clínica de la Ansiedad Catalunya y psicoterapeuta psicoanalítico con más de 30 años de experiencia clínica.
                         </p>
                         <p className="text-lg text-text/80 leading-relaxed max-w-2xl text-balance mb-8">
-                            Mi trabajo se centra en el abordaje clínico riguroso para descifrar las causas profundas del sufrimiento emocional. No buscamos solo paliar el síntoma, sino resolver el conflicto que lo genera.
+                            Desde mi consulta en Canet de Mar (comarca del Maresme, Barcelona) y mediante terapia online, mi trabajo se centra en el abordaje clínico riguroso para descifrar las causas profundas del sufrimiento emocional. No buscamos solo paliar el síntoma, sino resolver el conflicto que lo genera. Atiendo pacientes de toda Catalunya y España.
                         </p>
                     </motion.div>
 

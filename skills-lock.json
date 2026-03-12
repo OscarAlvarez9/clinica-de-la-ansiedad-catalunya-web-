@@ -1,15 +1,15 @@
 {
   "version": 1,
   "skills": {
+    "agent-tools": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "4531a7acb44796d0c191affa79eee5bd71bb99eb0d76f9b8c2e966d1354020dc"
+    },
     "nano-banana-2": {
       "source": "tul-sh/skills",
       "sourceType": "github",
       "computedHash": "dc826c226f62f44f802bc47c25149bca1501e684a2f6c7fb14fa985d14fb4f7f"
-    },
-    "agent-tools": {
-      "source": "inference-sh/skills",
-      "sourceType": "github",
-      "computedHash": "220054a640e514d0bb5be4af7eb9b54f2205b2f6de6a85bd1561f0b0b06d6013"
     }
   }
 }

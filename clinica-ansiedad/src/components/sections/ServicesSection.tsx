@@ -57,7 +57,7 @@ export default function ServicesSection() {
                             <Chip
                                 key={i}
                                 variant="flat"
-                                className="bg-gold/10 text-gold font-medium text-sm px-2 border border-gold/20"
+                                className="bg-gold/10 text-gold font-medium text-sm px-2 border border-gold/20 cursor-default select-none"
                                 radius="sm"
                             >
                                 {chip}
@@ -75,10 +75,10 @@ export default function ServicesSection() {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: i * 0.15 }}
                         >
-                            <Card as={Link} href={service.href} isPressable className="h-full glass-panel border-none group text-left w-full hover:scale-[1.02] transition-transform">
+                            <Card as={Link} href={service.href} isPressable className="h-full glass-panel border-none group text-left w-full hover:scale-[1.02] transition-transform cursor-pointer">
                                 <CardHeader className="pt-10 px-8 pb-0">
-                                    <h3 className="text-2xl font-serif font-bold text-navy w-full border-b border-navy/10 pb-4 group-hover:border-gold/30 transition-colors">
-                                        {service.title} <span className="text-gold opacity-0 group-hover:opacity-100 transition-opacity ml-2">→</span>
+                                    <h3 className="text-2xl font-serif font-bold text-navy w-full border-b border-navy/10 pb-4 group-hover:border-gold/30 transition-colors flex items-center justify-between">
+                                        {service.title} <span className="text-gold text-xl transition-transform group-hover:translate-x-1">→</span>
                                     </h3>
                                 </CardHeader>
                                 <CardBody className="px-8 py-8 pt-6">

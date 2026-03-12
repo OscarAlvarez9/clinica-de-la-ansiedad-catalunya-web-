@@ -38,7 +38,7 @@ const faqs = [
     },
     {
         title: "¿Atendéis en catalán y castellano?",
-        content: "Sí, nuestro equipo es completamente bilingüe. Joan Ramon Soto y todo el equipo atienden indistintamente en catalán y castellano. Es fundamental que te expreses en tu lengua emocional, la que mejor conecta con tu historia de vida, para que la terapia sea lo más profunda y efectiva posible."
+        content: "Sí, Joan Ramon Soto es completamente bilingüe. Atiende indistintamente en catalán y castellano. Es fundamental que te expreses en tu lengua emocional, la que mejor conecta con tu historia de vida, para que la terapia sea lo más profunda y efectiva posible."
     }
 ];
 
@@ -70,14 +70,14 @@ export default function FAQSection() {
                     transition={{ duration: 0.6 }}
                     className="bg-white rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-navy/5"
                 >
-                    <Accordion type="single" collapsible className="w-full space-y-4">
+                    <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
                         {faqs.map((faq, i) => (
                             <AccordionItem
                                 key={i}
                                 value={`item-${i}`}
                                 className="border border-navy/10 rounded-xl px-6 data-[state=open]:border-gold/30 data-[state=open]:bg-cream/30 transition-all duration-300"
                             >
-                                <AccordionTrigger className="text-navy font-bold font-sans text-base md:text-lg hover:text-gold hover:no-underline text-left">
+                                <AccordionTrigger className="text-navy font-bold font-sans text-base md:text-lg hover:text-gold hover:no-underline text-left cursor-pointer">
                                     {faq.title}
                                 </AccordionTrigger>
                                 <AccordionContent className="text-navy/70 leading-relaxed text-base pt-2 pb-6">

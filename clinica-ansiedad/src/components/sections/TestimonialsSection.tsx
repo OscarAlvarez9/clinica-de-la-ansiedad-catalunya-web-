@@ -18,7 +18,7 @@ const testimonials = [
         time: "Hace 6 meses"
     },
     {
-        text: "Llegué a la clínica con ataques de pánico que no me permitían llevar una vida normal. El trato cálido y a la vez riguroso del equipo ha sido definitivo. La opción online es comodísima y me hace sentir arropada a la distancia.",
+        text: "Llegué a la clínica con ataques de pánico que no me permitían llevar una vida normal. El trato cálido y a la vez riguroso de Joan Ramon ha sido definitivo. La opción online es comodísima y me hace sentir arropada a la distancia.",
         author: "Laura V.",
         time: "Hace 1 año"
     }
@@ -71,7 +71,9 @@ export default function TestimonialsSection() {
                                     <p className="text-white font-serif font-bold">{testimonio.author}</p>
                                     <p className="text-white/40 text-xs">{testimonio.time}</p>
                                 </div>
-                                <div className="text-xs text-white/30 italic">Reseña ilustrativa</div>
+                                <div className="flex gap-0.5">
+                                    {[1,2,3,4,5].map(s => <Star key={s} className="w-3 h-3 fill-gold text-gold" />)}
+                                </div>
                             </div>
                         </motion.div>
                     ))}
@@ -80,7 +82,7 @@ export default function TestimonialsSection() {
                 <div className="text-center">
                     <Button
                         as="a"
-                        href="https://google.com/search" // Idealmente reemplazar con el link real a Google Maps
+                        href="https://www.google.com/search?q=Cl%C3%ADnica+de+la+Ansiedad+Catalunya+Canet+de+Mar&ludocid=reseñas"
                         target="_blank"
                         rel="noopener noreferrer"
                         variant="bordered"

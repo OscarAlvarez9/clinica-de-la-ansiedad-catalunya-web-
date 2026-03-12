@@ -40,6 +40,18 @@ export default function Navbar() {
                 { name: "Terapia Individual", href: "/servicios/terapia-individual" },
                 { name: "Terapia de Pareja", href: "/servicios/terapia-de-pareja" },
                 { name: "Dimensión Familiar", href: "/servicios/dimension-familiar" },
+                { name: "Terapia Online", href: "/terapia-online" },
+            ]
+        },
+        {
+            name: "Especialidades",
+            href: "/ansiedad",
+            subItems: [
+                { name: "Ansiedad", href: "/ansiedad" },
+                { name: "Crisis de Pánico", href: "/crisis-de-panico" },
+                { name: "Depresión", href: "/depresion" },
+                { name: "Celos", href: "/celos" },
+                { name: "Ludopatía", href: "/ludopatia" },
             ]
         },
         { name: "Enfoque", href: "/enfoque" },
@@ -111,9 +123,9 @@ export default function Navbar() {
             </NavbarContent>
 
             <NavbarContent justify="end" className="gap-2 sm:gap-3 md:gap-4 lg:gap-6">
-                <NavbarItem className="hidden lg:flex items-center gap-2">
+                <NavbarItem className="hidden sm:flex items-center gap-2">
                     <Phone className="w-4 h-4 text-gold" />
-                    <span className="text-navy font-bold text-xs">93 226 14 12</span>
+                    <a href="tel:+34629794365" className="text-navy font-bold text-xs hover:text-gold transition-colors">629 79 43 65</a>
                 </NavbarItem>
                 <NavbarItem>
                     <Button

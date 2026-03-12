@@ -9,6 +9,7 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import WhyUsSection from '@/components/sections/WhyUsSection';
 import FAQSection from '@/components/sections/FAQSection';
 import ProcessSection from '@/components/sections/ProcessSection';
+import BrandManifestoSection from '@/components/sections/BrandManifestoSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/layout/Footer';
 import StickyBookingButton from '@/components/servicios/StickyBookingButton';
@@ -27,6 +28,7 @@ export default function Home() {
                 <TestimonialsSection />
                 <WhyUsSection />
                 <ProcessSection />
+                <BrandManifestoSection />
                 <ContactSection />
                 <FAQSection />
                 <StickyBookingButton />
@@ -35,3 +37,5 @@ export default function Home() {
         </div>
     );
 }
+
+

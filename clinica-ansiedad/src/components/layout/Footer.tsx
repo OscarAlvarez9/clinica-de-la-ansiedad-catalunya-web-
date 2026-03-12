@@ -34,29 +34,29 @@ export default function Footer() {
                     {/* Nav Col */}
                     <div>
                         <h3 className="font-sans font-bold text-lg mb-4 text-white">Navegación</h3>
-                        <ul className="space-y-3 text-sm text-white/70">
-                            <li><a href="#enfoque" className="hover:text-gold transition-colors">Nuestro enfoque</a></li>
-                            <li><a href="#equipo" className="hover:text-gold transition-colors">Joan Ramon Soto</a></li>
-                            <li><a href="#faq" className="hover:text-gold transition-colors">Preguntas frecuentes</a></li>
-                            <li><a href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp" className="hover:text-gold transition-colors">Pedir cita</a></li>
+                        <ul className="space-y-3 text-sm text-white/90">
+                            <li><a href="/enfoque" className="hover:text-gold transition-colors">Nuestro enfoque</a></li>
+                            <li><a href="/sobre-mi" className="hover:text-gold transition-colors">Joan Ramon Soto</a></li>
+                            <li><a href="/#faq" className="hover:text-gold transition-colors">Preguntas frecuentes</a></li>
+                            <li><a href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Pedir cita</a></li>
                         </ul>
                     </div>
 
                     {/* Services Col */}
                     <div>
                         <h3 className="font-sans font-bold text-lg mb-4 text-white">Servicios</h3>
-                        <ul className="space-y-3 text-sm text-white/70">
-                            <li><a href="/servicios" className="hover:text-gold transition-colors">Terapia individual</a></li>
-                            <li><a href="/servicios" className="hover:text-gold transition-colors">Terapia de pareja</a></li>
-                            <li><a href="/servicios" className="hover:text-gold transition-colors">Terapia online</a></li>
-                            <li><a href="/servicios" className="hover:text-gold transition-colors">Dimensión familiar</a></li>
+                        <ul className="space-y-3 text-sm text-white/90">
+                            <li><a href="/servicios/terapia-individual" className="hover:text-gold transition-colors">Terapia individual</a></li>
+                            <li><a href="/servicios/terapia-de-pareja" className="hover:text-gold transition-colors">Terapia de pareja</a></li>
+                            <li><a href="/terapia-online" className="hover:text-gold transition-colors">Terapia online</a></li>
+                            <li><a href="/servicios/dimension-familiar" className="hover:text-gold transition-colors">Dimensión familiar</a></li>
                         </ul>
                     </div>
 
                     {/* Contact Col */}
                     <div>
                         <h3 className="font-sans font-bold text-lg mb-4 text-white">Contacto</h3>
-                        <ul className="space-y-4 text-sm text-white/70">
+                        <ul className="space-y-4 text-sm text-white/90">
                             <li className="flex items-start gap-3">
                                 <Phone className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                                 <a href="tel:+34629794365" className="hover:text-white transition-colors">
@@ -81,11 +81,11 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/70">
                     <p>© {currentYear} Clínica de la Ansiedad Catalunya. Todos los derechos reservados.</p>
                     <div className="flex gap-4">
-                        <Link href="/" className="hover:text-white transition-colors">Política de privacidad</Link>
-                        <Link href="/" className="hover:text-white transition-colors">Aviso legal</Link>
+                        <Link href="/privacidad" className="hover:text-white transition-colors">Política de privacidad</Link>
+                        <Link href="/aviso-legal" className="hover:text-white transition-colors">Aviso legal</Link>
                     </div>
                 </div>
             </div>
