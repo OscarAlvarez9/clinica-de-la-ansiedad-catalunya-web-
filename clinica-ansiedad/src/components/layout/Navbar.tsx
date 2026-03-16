@@ -123,10 +123,7 @@ export default function Navbar() {
             </NavbarContent>
 
             <NavbarContent justify="end" className="gap-2 sm:gap-3 md:gap-4 lg:gap-6">
-                <NavbarItem className="hidden sm:flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-gold" />
-                    <a href="tel:+34629794365" className="text-navy font-bold text-xs hover:text-gold transition-colors">629 79 43 65</a>
-                </NavbarItem>
+
                 <NavbarItem>
                     <Button
                         as="a"

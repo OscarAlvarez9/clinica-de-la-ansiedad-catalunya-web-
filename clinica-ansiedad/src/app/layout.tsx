@@ -71,7 +71,7 @@ export default function RootLayout({
                 <Script id="schema-organization" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
                 <Script id="schema-website" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
             </head>
-            <body className="bg-cream text-text font-sans antialiased selection:bg-gold/20 selection:text-navy">
+            <body suppressHydrationWarning className="bg-cream text-text font-sans antialiased selection:bg-gold/20 selection:text-navy">
                 <Providers>
                     {children}
                 </Providers>
