@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Mail, MapPin, ShieldCheck, Check, Send, ArrowUpRight, Globe2, Sparkles, ChevronDown } from "lucide-react";
 
@@ -59,6 +60,8 @@ export default function ContactSection() {
         return Object.keys(newErrors).length === 0;
     };
 
+    const form = useRef<HTMLFormElement>(null);
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!validateForm()) return;
@@ -66,12 +69,27 @@ export default function ContactSection() {
         setIsLoading(true);
         setSubmitStatus("idle");
 
-        try {
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            console.log("Formulario enviado:", formData);
-            setSubmitStatus("success");
+        // Prepare Template Parameters for EmailJS
+        const templateParams = {
+            from_name: formData.nombre,
+            contact_info: formData.contacto,
+            modality: formData.modalidad,
+            subject: MOTIVOS_CONSULTA.find(m => m.id === formData.problema)?.label || formData.problema,
+            message: formData.descripcion || "Sin descripción adicional.",
+            to_email: "contacto@clinicadelansiedad.com"
+        };
 
-            setTimeout(() => {
+        try {
+            const result = await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+                templateParams,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+            );
+
+            if (result.status === 200) {
+                setSubmitStatus("success");
+                // Reset form
                 setFormData({
                     nombre: "",
                     contacto: "",
@@ -80,12 +98,18 @@ export default function ContactSection() {
                     descripcion: "",
                     privacidad: false
                 });
-                setSubmitStatus("idle");
-            }, 5000);
+            } else {
+                setSubmitStatus("error");
+            }
         } catch (error) {
+            console.error("EmailJS Error:", error);
             setSubmitStatus("error");
         } finally {
             setIsLoading(false);
+            // Auto hide success message after 5 seconds
+            if (submitStatus === "success") {
+                setTimeout(() => setSubmitStatus("idle"), 5000);
+            }
         }
     };
 
@@ -281,10 +305,10 @@ export default function ContactSection() {
                             </div>
                         </form>
 
-                        {/* Submission Success */}
-                        <AnimatePresence>
+                        <AnimatePresence mode="wait">
                             {submitStatus === "success" && (
                                 <motion.div 
+                                    key="success"
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
@@ -296,6 +320,23 @@ export default function ContactSection() {
                                     <div>
                                         <p className="font-bold uppercase tracking-widest text-xs mb-1">Éxito</p>
                                         <p className="font-medium">Mensaje enviado. Te contactaré en menos de 24h.</p>
+                                    </div>
+                                </motion.div>
+                            )}
+                            {submitStatus === "error" && (
+                                <motion.div 
+                                    key="error"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    className="mt-8 p-6 bg-red-50 rounded-2xl border border-red-100 flex items-center gap-4 text-red-800"
+                                >
+                                    <div className="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center shrink-0">
+                                        <Check className="w-6 h-6 text-white rotate-45" />
+                                    </div>
+                                    <div>
+                                        <p className="font-bold uppercase tracking-widest text-xs mb-1">Error</p>
+                                        <p className="font-medium">Ha ocurrido un error al enviar. Por favor, inténtalo de nuevo.</p>
                                     </div>
                                 </motion.div>
                             )}
