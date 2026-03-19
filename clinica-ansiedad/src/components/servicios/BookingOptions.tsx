@@ -1,8 +1,7 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import { Card, CardBody } from '@heroui/react';
 import { Calendar, MonitorSmartphone, MapPin } from 'lucide-react';
+import Link from 'next/link';
 
 export default function BookingOptions() {
     return (
@@ -48,14 +47,12 @@ export default function BookingOptions() {
                                         <span>Lunes a Viernes con cita previa</span>
                                     </div>
                                 </div>
-                                <a
-                                    href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <Link
+                                    href="/#contacto"
                                     className="w-full inline-block text-center bg-navy text-white font-medium rounded-xl py-4 hover:bg-navy/90 transition-all shadow-md cursor-pointer"
                                 >
                                     Reservar Presencial
-                                </a>
+                                </Link>
                             </CardBody>
                         </Card>
                     </motion.div>
@@ -81,14 +78,12 @@ export default function BookingOptions() {
                                         <span>Horarios flexibles adaptados a tu zona horaria</span>
                                     </div>
                                 </div>
-                                <a
-                                    href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <Link
+                                    href="/#contacto"
                                     className="w-full inline-block text-center bg-navy text-white font-medium rounded-xl py-4 hover:bg-navy/90 transition-all shadow-md cursor-pointer"
                                 >
                                     Reservar Online
-                                </a>
+                                </Link>
                             </CardBody>
                         </Card>
                     </motion.div>

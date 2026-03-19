@@ -3,6 +3,7 @@ import { motion, type Variants } from "framer-motion";
 import { Button } from "@heroui/react";
 import { Star, ArrowRight, ShieldCheck, Clock } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const fadeUpVariant: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -66,8 +67,8 @@ export default function Hero() {
                         className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-16"
                     >
                         <Button
-                            as="a"
-                            href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
+                            as={Link}
+                            href="#contacto"
                             className="w-full sm:w-auto bg-navy hover:bg-navy/95 text-white font-semibold px-10 py-8 rounded-xl text-lg shadow-2xl shadow-navy/20 transition-all duration-300 group"
                         >
                             Solicitar Valoración Primera

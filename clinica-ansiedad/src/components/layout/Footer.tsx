@@ -1,6 +1,7 @@
 "use client";
+import React from 'react';
 import Link from "next/link";
-import { Phone, Mail, MapPin, Star } from "lucide-react";
+import { Phone, Mail, MapPin, Star, Instagram, Facebook, Twitter, Linkedin, ArrowUpRight, ShieldCheck, Heart } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -35,10 +36,10 @@ export default function Footer() {
                     <div>
                         <h3 className="font-sans font-bold text-lg mb-4 text-white">Navegación</h3>
                         <ul className="space-y-3 text-sm text-white/90">
-                            <li><a href="/enfoque" className="hover:text-gold transition-colors">Nuestro enfoque</a></li>
-                            <li><a href="/sobre-mi" className="hover:text-gold transition-colors">Joan Ramon Soto</a></li>
-                            <li><a href="/#faq" className="hover:text-gold transition-colors">Preguntas frecuentes</a></li>
-                            <li><a href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Pedir cita</a></li>
+                            <li><Link href="/enfoque" className="text-white/80 hover:text-gold transition-colors">Nuestro enfoque</Link></li>
+                            <li><Link href="/sobre-mi" className="text-white/80 hover:text-gold transition-colors">Joan Ramon Soto</Link></li>
+                            <li><Link href="/#faq" className="text-white/80 hover:text-gold transition-colors">Preguntas frecuentes</Link></li>
+                            <li><Link href="/#contacto" className="text-white/80 hover:text-gold transition-colors font-bold flex items-center gap-2 group">Pedir cita <ArrowUpRight className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform" /></Link></li>
                         </ul>
                     </div>
 

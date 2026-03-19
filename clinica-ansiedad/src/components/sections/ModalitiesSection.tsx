@@ -2,6 +2,7 @@
 import { MapPin, Globe, CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@heroui/react";
+import Link from 'next/link';
 
 const modalities = [
     {
@@ -109,8 +110,8 @@ export default function ModalitiesSection() {
                                 {/* Button */}
                                 <div className="mt-auto">
                                     <Button
-                                        as="a"
-                                        href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
+                                        as={Link}
+                                        href="#contacto"
                                         className={`w-full font-semibold px-8 py-6 rounded-xl text-base transition-all duration-300 flex items-center justify-center gap-2 group/btn ${item.primary
                                             ? "bg-navy hover:bg-navy/90 text-white shadow-lg shadow-navy/10"
                                             : "bg-white border border-navy/10 text-navy hover:bg-navy/5"

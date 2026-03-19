@@ -54,7 +54,7 @@ export default function Navbar() {
         },
         { name: "Enfoque", href: "/enfoque" },
         { name: "Blog", href: "/blog" },
-        { name: "Contacto", href: "https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp" },
+        { name: "Contacto", href: "/#contacto" },
     ];
 
     return (
@@ -128,8 +128,8 @@ export default function Navbar() {
 
                 <NavbarItem>
                     <Button
-                        as="a"
-                        href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
+                        as={Link}
+                        href="/#contacto"
                         className="bg-navy text-white font-bold rounded-lg sm:rounded-xl px-3 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 hover:bg-navy/90 shadow-lg shadow-navy/10 transition-all text-[10px] sm:text-xs md:text-xs uppercase tracking-wider md:tracking-widest"
                     >
                         Cita
@@ -171,8 +171,8 @@ export default function Navbar() {
                 ))}
                 <NavbarMenuItem className="mt-8">
                     <Button
-                        as="a"
-                        href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
+                        as={Link}
+                        href="/#contacto"
                         className="w-full bg-navy text-white font-bold rounded-2xl py-6 sm:py-8 text-base sm:text-lg"
                         onClick={() => setIsMenuOpen(false)}
                     >

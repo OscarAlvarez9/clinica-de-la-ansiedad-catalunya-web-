@@ -20,8 +20,10 @@ export default function StickyBookingButton() {
     }, []);
 
     const handleClick = () => {
-        const bookingUrl = "https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp";
-        window.open(bookingUrl, '_blank');
+        const contactSection = document.getElementById('contacto');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     if (!isVisible) return null;
