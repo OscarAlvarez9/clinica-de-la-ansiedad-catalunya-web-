@@ -65,9 +65,9 @@ export default async function BlogPage({ searchParams }: PageProps) {
   const allPosts = mappedPosts.length > 0 ? mappedPosts : FALLBACK_POSTS;
   
   // Extract all categories explicitly from Contentful to populate the sidebar
-  const contentfulCategories = categoryEntries
+  const contentfulCategories = Array.from(new Set(categoryEntries
     .map((entry: any) => entry.fields?.nombre)
-    .filter(Boolean)
+    .filter(Boolean)))
     .sort();
 
   // If using fallbacks or no categories found, extract from posts as fallback
