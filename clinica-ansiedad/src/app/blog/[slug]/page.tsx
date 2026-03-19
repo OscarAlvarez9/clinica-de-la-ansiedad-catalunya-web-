@@ -20,7 +20,7 @@ interface PageProps {
 export const revalidate = 3600; // Revalidate every hour
 
 export async function generateStaticParams() {
-    const entries = await getEntries('blogPost');
+    const entries = await getEntries('blogPost', false, ['-fields.fechaPublicacion']);
     return entries.map((entry: any) => ({
         slug: entry.fields.slug,
     }));
@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     };
 
     // Grab latest 2 posts as related for now
-    const allEntries = await getEntries('blogPost');
+    const allEntries = await getEntries('blogPost', false, ['-fields.fechaPublicacion']);
     const relatedPosts: BlogPost[] = allEntries
         .filter((e) => e.sys.id !== post.id)
         .slice(0, 2)

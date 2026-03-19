@@ -34,7 +34,7 @@ interface PageProps {
 export default async function BlogPage({ searchParams }: PageProps) {
   // Fetch both posts and all available categories
   const [contentfulEntries, categoryEntries] = await Promise.all([
-      getEntries('blogPost'),
+      getEntries('blogPost', false, ['-fields.fechaPublicacion']),
       getEntries('category')
   ]);
   

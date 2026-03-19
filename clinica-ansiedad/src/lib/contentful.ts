@@ -56,15 +56,19 @@ export interface BlogPost {
 }
 
 // Generic fetching function with preview support
-export async function getEntries<T>(contentType: string, isPreview = false) {
+export async function getEntries<T>(contentType: string, isPreview = false, order?: string[]) {
   const currentClient = isPreview ? previewClient : client;
   
+  const query: any = {
+    content_type: contentType,
+  };
+
+  if (order) {
+    query.order = order;
+  }
+  
   try {
-    const entries = await currentClient.getEntries<React.ComponentProps<any>>({
-      content_type: contentType,
-      order: ['-fields.fechaPublicacion'], // Order by publish date descending
-    });
-    
+    const entries = await currentClient.getEntries<React.ComponentProps<any>>(query);
     return entries.items;
   } catch (error) {
     console.error(`Error fetching ${contentType} from Contentful:`, error);
