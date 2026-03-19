@@ -278,20 +278,35 @@ export default function ContactSection() {
 
                             {/* Footer Row */}
                             <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-6 border-t border-navy/5">
-                                <label className="flex items-start gap-3 cursor-pointer group max-w-sm">
-                                    <input 
-                                        type="checkbox" 
-                                        checked={formData.privacidad}
-                                        onChange={(e) => setFormData(p => ({ ...p, privacidad: e.target.checked }))}
-                                        className="sr-only"
-                                    />
-                                    <div className={`mt-1 w-5 h-5 rounded-md border-2 transition-all flex items-center justify-center shrink-0 ${formData.privacidad ? 'bg-primary border-primary' : 'border-navy/20 group-hover:border-primary/40'}`}>
-                                        {formData.privacidad && <Check className="w-4 h-4 text-white" />}
-                                    </div>
-                                    <span className="text-xs text-navy/50 leading-relaxed italic">
-                                        Acepto la Política de Privacidad y el tratamiento de mis datos de forma confidencial.
-                                    </span>
-                                </label>
+                                <div className="flex flex-col">
+                                    <label className="flex items-start gap-3 cursor-pointer group max-w-sm">
+                                        <input 
+                                            type="checkbox" 
+                                            required
+                                            checked={formData.privacidad}
+                                            onChange={(e) => {
+                                                setFormData(p => ({ ...p, privacidad: e.target.checked }));
+                                                if (errors.privacidad) setErrors(prev => ({ ...prev, privacidad: "" }));
+                                            }}
+                                            className="sr-only"
+                                        />
+                                        <div className={`mt-1 w-5 h-5 rounded-md border-2 transition-all flex items-center justify-center shrink-0 ${formData.privacidad ? 'bg-primary border-primary' : errors.privacidad ? 'border-red-400 bg-red-50' : 'border-navy/20 group-hover:border-primary/40'}`}>
+                                            {formData.privacidad && <Check className="w-4 h-4 text-white" />}
+                                        </div>
+                                        <span className={`text-xs leading-relaxed italic transition-colors ${errors.privacidad ? 'text-red-600 font-medium' : 'text-navy/50'}`}>
+                                            Acepto la Política de Privacidad y el tratamiento de mis datos de forma confidencial.
+                                        </span>
+                                    </label>
+                                    {errors.privacidad && (
+                                        <motion.p 
+                                            initial={{ opacity: 0, y: -5 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className="text-red-500 text-[10px] mt-2 ml-8 font-bold uppercase tracking-wider"
+                                        >
+                                            {errors.privacidad}
+                                        </motion.p>
+                                    )}
+                                </div>
 
                                 <button 
                                     type="submit"
