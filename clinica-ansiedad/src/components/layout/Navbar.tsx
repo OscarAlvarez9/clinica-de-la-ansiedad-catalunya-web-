@@ -137,7 +137,7 @@ export default function Navbar() {
                 </NavbarItem>
             </NavbarContent>
 
-            <NavbarMenu className="bg-cream/98 backdrop-blur-xl pt-6 px-4 gap-4">
+            <NavbarMenu className="bg-white/95 backdrop-blur-3xl pt-32 pb-24 px-6 md:px-8 overflow-y-auto min-h-screen gap-8 z-40">
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item.name}-${index}`} className="w-full block">
                         {item.subItems ? (
