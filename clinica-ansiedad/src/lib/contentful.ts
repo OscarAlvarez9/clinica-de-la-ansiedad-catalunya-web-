@@ -80,13 +80,22 @@ export async function getEntryBySlug(contentType: string, slug: string, isPrevie
   const currentClient = isPreview ? previewClient : client;
   
   try {
+    // We sanitize the target slug for comparison
+    const targetSlug = slug.replace(/^\/|\/$/g, '');
+    
+    // Fetch all entries of this type and find the one that matches after sanitization
+    // This is more robust than a direct field match if slugs in CMS have inconsistent slashes
     const entries = await currentClient.getEntries<React.ComponentProps<any>>({
       content_type: contentType,
-      limit: 1,
-      'fields.slug': slug,
+      limit: 100, // Reasonable limit for a blog
     });
     
-    return entries.items[0];
+    const matchedEntry = entries.items.find((entry: any) => {
+      const entrySlug = (entry.fields.slug || '').replace(/^\/|\/$/g, '');
+      return entrySlug === targetSlug;
+    });
+    
+    return matchedEntry || null;
   } catch (error) {
     console.error(`Error fetching ${contentType} ${slug} from Contentful:`, error);
     return null;
