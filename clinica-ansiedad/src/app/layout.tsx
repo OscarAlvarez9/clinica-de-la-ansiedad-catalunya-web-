@@ -54,7 +54,16 @@ export const metadata: Metadata = {
         description: 'Tratamiento especializado de ansiedad, depresión y crisis de pánico. +30 años de experiencia.',
         images: ['https://clinicadelansiedad.com/images/og-clinic-hero.png'],
         creator: '@clinicadelansiedad'
-    }
+    },
+    icons: {
+        icon: [
+            { url: '/favicon.png' },
+            { url: '/icon.png' },
+        ],
+        apple: [
+            { url: '/apple-icon.png' },
+        ],
+    },
 };
 
 export default function RootLayout({

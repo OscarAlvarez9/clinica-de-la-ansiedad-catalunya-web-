@@ -66,12 +66,54 @@ export async function generateMetadata({ params }: PageProps) {
 // Custom Rich Text Render Options
 const renderOptions = {
     renderNode: {
+        [BLOCKS.HEADING_2]: (node: any, children: any) => (
+            <h2 className="text-3xl md:text-5xl font-serif text-navy mt-24 mb-12 leading-tight tracking-tight">
+                {children}
+            </h2>
+        ),
+        [BLOCKS.HEADING_3]: (node: any, children: any) => (
+            <h3 className="text-2xl md:text-3xl font-serif text-navy/90 mt-18 mb-8 leading-snug">
+                {children}
+            </h3>
+        ),
+        [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
+            <p className="text-navy/80 text-lg md:text-xl leading-[2.2] mb-14 font-light">
+                {children}
+            </p>
+        ),
+        [BLOCKS.UL_LIST]: (node: any, children: any) => (
+            <ul className="list-none pl-0 mb-14 flex flex-col gap-6">
+                {children}
+            </ul>
+        ),
+        [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
+            <li className="relative pl-10 text-navy/80 text-lg md:text-xl leading-relaxed font-light before:content-[''] before:absolute before:left-0 before:top-[0.85rem] before:w-2 before:h-2 before:rounded-full before:bg-gold">
+                {children}
+            </li>
+        ),
+        [BLOCKS.QUOTE]: (node: any, children: any) => (
+            <blockquote className="border-l-0 bg-navy/5 p-12 md:p-16 rounded-[40px] italic text-navy/90 text-2xl md:text-3xl font-serif my-20 relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-2 h-full bg-gold/30" />
+                <span className="absolute top-4 left-6 text-6xl text-gold/20 font-serif">"</span>
+                {children}
+            </blockquote>
+        ),
+        [INLINES.HYPERLINK]: (node: any, children: any) => (
+            <a 
+                href={node.data.uri} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gold font-medium border-b border-gold/30 hover:text-navy hover:border-navy transition-all no-underline"
+            >
+                {children}
+            </a>
+        ),
         [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
             const url = node.data.target.fields?.file?.url;
             const alt = node.data.target.fields?.title;
             if (url) {
                 return (
-                    <div className="my-10 w-full rounded-2xl overflow-hidden shadow-glass">
+                    <div className="my-20 w-full rounded-[40px] overflow-hidden shadow-2xl">
                         <img src={`https:${url}`} alt={alt || 'Blog Image'} className="w-full h-auto object-cover" />
                     </div>
                 );
@@ -234,11 +276,11 @@ export default async function BlogPostPage({ params }: PageProps) {
 
                 {/* Article Content Section - Centered Reading Experience */}
                 <section className="px-6 pb-32 relative z-10">
-                    <div className="max-w-3xl mx-auto">
+                    <div className="max-w-2xl mx-auto">
                         
                         {/* Intro / Excerpt */}
                         {post.excerpt && (
-                            <p className="text-2xl md:text-3xl font-serif text-navy/90 leading-relaxed mb-16 italic border-l-4 border-gold pl-8 py-2 bg-gold/5 rounded-r-3xl">
+                            <p className="text-2xl md:text-3xl font-serif text-navy/90 leading-relaxed mb-20 italic border-l-4 border-gold pl-8 py-2 bg-gold/5 rounded-r-3xl">
                                 {post.excerpt}
                             </p>
                         )}
@@ -257,25 +299,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                                 </div>
                             </div>
 
-                            <div
-                              className="prose prose-xl prose-navy max-w-none 
-                              prose-headings:font-serif prose-headings:text-navy prose-headings:font-normal prose-headings:mt-20 prose-headings:mb-8
-                              prose-h2:text-4xl md:prose-h2:text-5xl prose-h2:tracking-tight
-                              prose-h3:text-2xl md:prose-h3:text-3xl prose-h3:text-navy/80
-                              prose-p:text-navy/80 prose-p:leading-[2] prose-p:mb-10 prose-p:font-light
-                              prose-a:text-gold prose-a:font-medium hover:prose-a:text-navy prose-a:transition-colors prose-a:no-underline prose-a:border-b prose-a:border-gold/30 hover:prose-a:border-navy
-                              prose-strong:text-navy prose-strong:font-bold
-                              prose-blockquote:border-l-0 prose-blockquote:bg-navy/5 prose-blockquote:p-12 prose-blockquote:rounded-[32px] prose-blockquote:italic prose-blockquote:text-navy/90 prose-blockquote:text-2xl prose-blockquote:font-serif prose-blockquote:my-20 relative
-                              prose-li:text-navy/80 prose-li:font-light prose-li:mb-4
-                              prose-ul:list-none prose-ul:pl-0
-                              prose-img:rounded-[40px] prose-img:shadow-2xl prose-img:my-20"
-                            >
-                                {/* Custom CSS for bullet points */}
-                                <style dangerouslySetInnerHTML={{__html: `
-                                  .prose-navy ul li { position: relative; padding-left: 2rem; }
-                                  .prose-navy ul li::before { content: ""; position: absolute; left: 0; top: 0.85rem; width: 0.5rem; height: 0.5rem; border-radius: 50%; background-color: #D4AF37; }
-                                `}} />
-                                
+                            <div className="prose-xl max-w-none">
                                 {post.content}
                             </div>
 
