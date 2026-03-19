@@ -5,7 +5,7 @@ import { buildMetadata } from '@/lib/metadata';
 import { blogPostingSchema } from '@/lib/schema';
 import Script from 'next/script';
 import BlogCard from '@/components/blog/BlogCard';
-import { Calendar, Clock, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, ArrowRight, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SafeImage from '@/components/ui/SafeImage';
@@ -222,92 +222,91 @@ export default async function BlogPostPage({ params }: PageProps) {
                     </div>
                 </section>
 
-                {/* Content Section */}
-                <section className="px-6 mb-32 relative">
-                    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
+                {/* Article Content Section - Centered Reading Experience */}
+                <section className="px-6 pb-32 relative z-10">
+                    <div className="max-w-3xl mx-auto">
                         
-                        {/* Article Meta / Share (Side Sticky) */}
-                        <aside className="lg:w-1/4 hidden lg:block sticky top-32">
-                            <div className="bg-white/40 backdrop-blur-sm rounded-[32px] p-8 shadow-glass border border-white/60 space-y-12">
-                                <div>
-                                    <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-navy/40 mb-6">Compartir</h4>
-                                    <div className="flex gap-3">
-                                        {[
-                                            { icon: Facebook, label: 'Facebook' },
-                                            { icon: Twitter, label: 'Twitter' },
-                                            { icon: Linkedin, label: 'LinkedIn' }
-                                        ].map((social, i) => (
-                                            <button key={i} className="flex-1 aspect-square rounded-2xl border border-navy/5 bg-white shadow-sm flex items-center justify-center text-navy/60 hover:text-gold hover:border-gold/20 hover:bg-gold/5 transition-all duration-300 group" aria-label={`Compartir en ${social.label}`}>
-                                                <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="pt-10 border-t border-navy/5">
-                                    <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-navy/40 mb-6">Sobre el autor</h4>
-                                    <div className="flex flex-col gap-4">
-                                        <div className="w-16 h-16 rounded-full overflow-hidden shadow-md border-2 border-white">
-                                            <SafeImage src={post.author.image} alt={post.author.name} className="w-full h-full object-cover" />
-                                        </div>
-                                        <div>
-                                            <p className="font-serif text-lg text-navy mb-1">{post.author.name}</p>
-                                            <p className="text-muted text-sm leading-relaxed italic">
-                                                "Mi práctica clínica se centra en la singularidad de cada paciente, buscando transformar el síntoma en una herramienta de crecimiento."
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <Link href="/sobre-mi" className="inline-block mt-6 text-gold font-bold text-[10px] uppercase tracking-[0.15em] pb-1 border-b border-gold/30 hover:border-gold transition-colors">
-                                        Conocer al Doctor
-                                    </Link>
-                                </div>
-                            </div>
-                        </aside>
+                        {/* Intro / Excerpt */}
+                        {post.excerpt && (
+                            <p className="text-2xl md:text-3xl font-serif text-navy/90 leading-relaxed mb-16 italic border-l-4 border-gold pl-8 py-2 bg-gold/5 rounded-r-3xl">
+                                {post.excerpt}
+                            </p>
+                        )}
 
                         {/* Article Body */}
-                        <article className="lg:w-2/3 lg:pl-8">
-                            {post.excerpt && (
-                                <p className="text-2xl font-serif text-navy/80 leading-relaxed mb-12 border-l-4 border-gold pl-6 italic">
-                                    {post.excerpt}
-                                </p>
-                            )}
+                        <article className="relative">
+                            {/* Floating Share Buttons (Destkop Only, Side) */}
+                            <div className="hidden xl:block absolute -left-24 top-20 h-full">
+                                <div className="sticky top-40 flex flex-col gap-4">
+                                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-navy/30 origin-left -rotate-90 translate-y-8 -translate-x-4 mb-8">Compartir</span>
+                                    {[Facebook, Twitter, Linkedin].map((Icon, i) => (
+                                        <button key={i} className="w-10 h-10 rounded-full bg-white border border-navy/5 shadow-sm flex items-center justify-center text-navy/40 hover:text-gold hover:border-gold/20 hover:bg-gold/5 transition-all group">
+                                            <Icon className="w-4 h-4 group-hover:scale-110" />
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
 
                             <div
-                              className="prose prose-lg md:prose-xl prose-navy max-w-none 
-                              prose-headings:font-serif prose-headings:text-navy prose-headings:font-normal prose-headings:mt-16 prose-headings:mb-6
-                              prose-h2:text-4xl 
-                              prose-h3:text-2xl prose-h3:text-navy/80
-                              prose-p:text-navy/70 prose-p:leading-[1.8] prose-p:mb-8 prose-p:font-light
-                              prose-a:text-gold prose-a:font-medium hover:prose-a:text-navy prose-a:transition-colors
-                              prose-strong:text-navy prose-strong:font-bold prose-strong:font-sans
-                              prose-blockquote:border-l-0 prose-blockquote:bg-white/50 prose-blockquote:backdrop-blur-sm prose-blockquote:shadow-glass prose-blockquote:border prose-blockquote:border-navy/5 prose-blockquote:p-10 prose-blockquote:rounded-3xl prose-blockquote:italic prose-blockquote:text-navy/90 prose-blockquote:text-2xl prose-blockquote:font-serif prose-blockquote:my-16 relative
-                              prose-li:text-navy/70 prose-li:font-light
+                              className="prose prose-xl prose-navy max-w-none 
+                              prose-headings:font-serif prose-headings:text-navy prose-headings:font-normal prose-headings:mt-20 prose-headings:mb-8
+                              prose-h2:text-4xl md:prose-h2:text-5xl prose-h2:tracking-tight
+                              prose-h3:text-2xl md:prose-h3:text-3xl prose-h3:text-navy/80
+                              prose-p:text-navy/80 prose-p:leading-[2] prose-p:mb-10 prose-p:font-light
+                              prose-a:text-gold prose-a:font-medium hover:prose-a:text-navy prose-a:transition-colors prose-a:no-underline prose-a:border-b prose-a:border-gold/30 hover:prose-a:border-navy
+                              prose-strong:text-navy prose-strong:font-bold
+                              prose-blockquote:border-l-0 prose-blockquote:bg-navy/5 prose-blockquote:p-12 prose-blockquote:rounded-[32px] prose-blockquote:italic prose-blockquote:text-navy/90 prose-blockquote:text-2xl prose-blockquote:font-serif prose-blockquote:my-20 relative
+                              prose-li:text-navy/80 prose-li:font-light prose-li:mb-4
                               prose-ul:list-none prose-ul:pl-0
-                              prose-img:rounded-[32px] prose-img:shadow-xl prose-img:my-16"
+                              prose-img:rounded-[40px] prose-img:shadow-2xl prose-img:my-20"
                             >
-                                {/* We inject custom CSS into the prose to handle bullet points overriding standard prose-ul */}
+                                {/* Custom CSS for bullet points */}
                                 <style dangerouslySetInnerHTML={{__html: `
-                                  .prose-navy ul li { position: relative; padding-left: 1.5rem; }
-                                  .prose-navy ul li::before { content: ""; position: absolute; left: 0; top: 0.75rem; width: 0.375rem; height: 0.375rem; border-radius: 50%; background-color: #D4AF37; }
+                                  .prose-navy ul li { position: relative; padding-left: 2rem; }
+                                  .prose-navy ul li::before { content: ""; position: absolute; left: 0; top: 0.85rem; width: 0.5rem; height: 0.5rem; border-radius: 50%; background-color: #D4AF37; }
                                 `}} />
                                 
                                 {post.content}
                             </div>
 
-                            <div className="mt-24 pt-10 border-t border-navy/10 flex flex-col md:flex-row items-center justify-between gap-8">
-                                <div className="flex items-center gap-4">
-                                    <span className="text-navy/50 font-sans text-xs uppercase tracking-widest">Enviado en</span>
-                                    <span className="bg-white border border-navy/10 shadow-sm text-navy px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.2em]">
-                                        {post.category}
-                                    </span>
+                            {/* Post Footer: Categories & Author Bio */}
+                            <div className="mt-24 pt-16 border-t border-navy/10">
+                                <div className="flex flex-wrap items-center justify-between gap-6 mb-16">
+                                    <div className="flex items-center gap-4">
+                                        <span className="text-navy/40 font-bold text-[10px] uppercase tracking-widest">Publicado en</span>
+                                        <span className="bg-gold/10 text-gold px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] border border-gold/20">
+                                            {post.category}
+                                        </span>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <span className="text-navy/40 font-bold text-[10px] uppercase tracking-widest">Compartir</span>
+                                        <div className="flex gap-3">
+                                            {[Facebook, Twitter, Linkedin].map((Icon, i) => (
+                                                <button key={i} className="w-8 h-8 rounded-full bg-white border border-navy/5 shadow-sm flex items-center justify-center text-navy/40 hover:text-gold transition-colors">
+                                                    <Icon className="w-3.5 h-3.5" />
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div className="flex flex-col items-center sm:hidden w-full gap-4 pt-8 border-t border-navy/5">
-                                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-navy/40">Compartir</span>
-                                    <div className="flex gap-4 w-full justify-center">
-                                        <Facebook className="w-10 h-10 p-2.5 rounded-full bg-white shadow-sm text-navy/60 hover:text-gold cursor-pointer" />
-                                        <Twitter className="w-10 h-10 p-2.5 rounded-full bg-white shadow-sm text-navy/60 hover:text-gold cursor-pointer" />
-                                        <Linkedin className="w-10 h-10 p-2.5 rounded-full bg-white shadow-sm text-navy/60 hover:text-gold cursor-pointer" />
+                                {/* Author Signature Card */}
+                                <div className="bg-white rounded-[40px] p-8 md:p-12 shadow-glass border border-navy/5 flex flex-col md:flex-row items-center gap-8 md:gap-12 text-center md:text-left relative overflow-hidden group">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 group-hover:bg-gold/10 transition-colors" />
+                                    
+                                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shadow-xl border-4 border-white shrink-0">
+                                        <SafeImage src={post.author.image} alt={post.author.name} className="w-full h-full object-cover" />
+                                    </div>
+                                    
+                                    <div className="flex-grow">
+                                        <p className="text-gold font-bold text-[10px] uppercase tracking-[0.2em] mb-2 font-sans">{post.author.role}</p>
+                                        <h4 className="font-serif text-3xl text-navy mb-4">{post.author.name}</h4>
+                                        <p className="text-muted text-lg leading-relaxed italic mb-6">
+                                            "Acompaño a las personas en el proceso de descifrar el mensaje oculto tras sus síntomas, transformando la ansiedad en una vía hacia el autoconocimiento."
+                                        </p>
+                                        <Link href="/sobre-mi" className="inline-flex items-center gap-2 bg-navy text-white px-8 py-3 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-gold transition-all shadow-lg hover:shadow-gold/20">
+                                            Leer biografía completa <ArrowRight className="w-3.5 h-3.5" />
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
