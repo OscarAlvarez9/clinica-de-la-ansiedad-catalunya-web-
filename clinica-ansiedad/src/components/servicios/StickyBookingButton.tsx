@@ -19,13 +19,9 @@ export default function StickyBookingButton() {
         return () => window.removeEventListener('scroll', toggleVisibility);
     }, []);
 
-    const handleClick = (type: 'presencial' | 'online') => {
-        const message = type === 'presencial'
-            ? 'Hola, quisiera reservar una cita presencial'
-            : 'Hola, quisiera reservar una cita online';
-
-        const whatsappUrl = `https://wa.me/34000000000?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
+    const handleClick = () => {
+        const bookingUrl = "https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp";
+        window.open(bookingUrl, '_blank');
     };
 
     if (!isVisible) return null;
@@ -34,7 +30,7 @@ export default function StickyBookingButton() {
         <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3 md:gap-4 animate-in fade-in slide-in-from-bottom-4 duration-300">
             {/* Botón Presencial - Gold (Arriba) */}
             <button
-                onClick={() => handleClick('presencial')}
+                onClick={() => handleClick()}
                 className="group relative bg-gold text-navy rounded-full p-4 shadow-lg hover:shadow-2xl transition-all duration-200 hover:scale-105 hover:bg-gold/85 focus:outline-none focus:ring-2 focus:ring-gold/60 focus:ring-offset-2 focus:ring-offset-cream"
                 aria-label="Reservar sesión presencial"
                 title="Presencial"
@@ -50,7 +46,7 @@ export default function StickyBookingButton() {
 
             {/* Botón Online - Sage (Abajo) */}
             <button
-                onClick={() => handleClick('online')}
+                onClick={() => handleClick()}
                 className="group relative bg-sage text-white rounded-full p-4 shadow-lg hover:shadow-2xl transition-all duration-200 hover:scale-105 hover:bg-sage/85 focus:outline-none focus:ring-2 focus:ring-sage/60 focus:ring-offset-2 focus:ring-offset-cream"
                 aria-label="Reservar sesión online"
                 title="Online"
