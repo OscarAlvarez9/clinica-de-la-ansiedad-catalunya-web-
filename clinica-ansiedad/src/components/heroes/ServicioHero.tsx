@@ -39,8 +39,6 @@ interface ServicioHeroProps {
 export default function ServicioHero({
   image,
   imageAlt,
-  imagePosition = "right",
-  bg = "cream",
   chip,
   chipIcon,
   title,
@@ -51,142 +49,154 @@ export default function ServicioHero({
   quote,
   stats,
 }: ServicioHeroProps) {
-  const bgClass = bg === "cream" ? "bg-cream" : "bg-white";
-  const edgeGradient = imagePosition === "right"
-    ? (bg === "cream" ? "bg-gradient-to-r from-cream to-transparent" : "bg-gradient-to-r from-white to-transparent")
-    : (bg === "cream" ? "bg-gradient-to-l from-cream to-transparent" : "bg-gradient-to-l from-white to-transparent");
-
-  const content = (
-    <div className={`relative z-10 flex flex-col justify-center w-full lg:w-[57%] pt-36 pb-20 px-8 md:px-16 lg:px-20 ${imagePosition === "left" ? "lg:ml-auto" : ""}`}>
-      <motion.div custom={0} variants={fadeUp} initial="hidden" animate="show">
-        <Chip
-          startContent={<span className="text-gold">{chipIcon}</span>}
-          variant="bordered"
-          className="border-navy/15 bg-white text-navy/80 text-[10px] font-bold tracking-[0.15em] uppercase mb-8 shadow-sm"
-        >
-          {chip}
-        </Chip>
-      </motion.div>
-
-      <motion.h1
-        custom={1}
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
-        className="font-serif text-5xl md:text-6xl xl:text-7xl font-bold text-navy leading-[1.04] tracking-tight mb-8"
-      >
-        {title}<br />
-        <span className="text-gold italic font-light">{titleAccent}</span>
-      </motion.h1>
-
-      <motion.p
-        custom={2}
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
-        className="text-lg text-navy/65 leading-relaxed font-light max-w-md mb-10"
-      >
-        {description}
-      </motion.p>
-
-      <motion.div
-        custom={3}
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
-        className="space-y-3 mb-10"
-      >
-        {trust.map((item, i) => (
-          <div key={i} className="flex items-center gap-3">
-            <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
-            <span className="text-navy/60 text-sm">{item}</span>
-          </div>
-        ))}
-      </motion.div>
-
-      <motion.div
-        custom={4}
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
-        className="flex flex-col sm:flex-row gap-4"
-      >
-        <Button
-          as="a"
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-navy text-white font-semibold px-10 py-7 rounded-xl text-sm shadow-2xl shadow-navy/20 hover:bg-navy/90 transition-all cursor-pointer"
-          endContent={<ArrowRight className="w-4 h-4" />}
-        >
-          {ctaText}
-        </Button>
-        <Button
-          as="a"
-          href="/enfoque"
-          variant="bordered"
-          className="border-navy/15 text-navy hover:bg-navy/5 font-bold px-8 py-7 rounded-xl text-xs uppercase tracking-widest cursor-pointer"
-        >
-          Nuestro Método
-        </Button>
-      </motion.div>
-
-      {/* Stat strip */}
-      <motion.div
-        custom={5}
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
-        className="flex gap-8 mt-14 pt-10 border-t border-navy/10"
-      >
-        {stats.map((s, i) => (
-          <div key={i}>
-            <p className="font-serif text-3xl font-bold text-gold leading-none">{s.value}</p>
-            <p className="text-navy/50 text-xs font-medium mt-1">{s.label}</p>
-          </div>
-        ))}
-      </motion.div>
-    </div>
-  );
-
-  const imagePanel = (
-    <motion.div
-      initial={{ opacity: 0, scale: 1.04 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-      className={`hidden lg:block absolute inset-y-0 ${imagePosition === "right" ? "right-0" : "left-0"} w-[40%]`}
-    >
-      <Image
-        src={image}
-        alt={imageAlt}
-        fill
-        className="object-cover object-top"
-        priority
-      />
-      <div className={`absolute inset-y-0 w-16 ${imagePosition === "right" ? "left-0 bg-gradient-to-r" : "right-0 bg-gradient-to-l"} ${bg === "cream" ? "from-cream" : "from-white"} to-transparent`} />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy/15 via-transparent to-transparent" />
-
-      {/* Quote strip */}
-      <div className="absolute bottom-10 left-8 right-8">
-        <div className="flex gap-4 items-start">
-          <div className="w-0.5 h-12 bg-gold rounded-full shrink-0 mt-1" />
-          <div>
-            <p className="font-serif text-white text-base italic leading-snug font-light drop-shadow-lg">
-              &ldquo;{quote}&rdquo;
-            </p>
-            <p className="text-gold text-[10px] font-bold uppercase tracking-[0.2em] mt-2">
-              Joan Ramon Soto · Psicólogo Fundador
-            </p>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
 
   return (
-    <section className={`relative min-h-screen flex overflow-hidden ${bgClass}`}>
-      {content}
-      {imagePanel}
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#FDFBF7] pt-32 pb-24 border-b border-navy/5">
+      {/* Subtle Dynamic Immersive Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-gold/15 rounded-full blur-[120px] mix-blend-multiply animate-pulse-slow" />
+        <div className="absolute bottom-[-10%] right-[-20%] w-[50%] h-[50%] bg-[#164E63]/10 rounded-full blur-[150px] mix-blend-multiply" />
+        <div className="absolute inset-0" style={{ backgroundImage: `radial-gradient(#164E63 0.5px, transparent 0.5px)`, backgroundSize: '40px 40px', opacity: 0.04 }} />
+      </div>
+
+      <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+        
+        {/* Text Content */}
+        <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <motion.div custom={0} variants={fadeUp} initial="hidden" animate="show">
+            <Chip
+              startContent={<span className="text-gold">{chipIcon}</span>}
+              variant="bordered"
+              className="border-navy/15 bg-white/60 backdrop-blur-md text-navy text-[10px] font-bold tracking-[0.2em] uppercase mb-8 shadow-sm"
+            >
+              {chip}
+            </Chip>
+          </motion.div>
+
+          <motion.h1
+            custom={1}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="font-serif text-5xl md:text-6xl xl:text-7xl font-light text-navy leading-[1.05] tracking-tight mb-8"
+          >
+            {title}{" "}
+            <span className="text-gold italic font-serif">{titleAccent}</span>
+          </motion.h1>
+
+          <motion.p
+            custom={2}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="text-lg md:text-xl text-navy/70 leading-relaxed font-light max-w-2xl mb-10"
+          >
+            {description}
+          </motion.p>
+
+          <motion.div
+            custom={3}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="flex flex-col sm:flex-row flex-wrap gap-4 lg:gap-8 justify-center lg:justify-start mb-12 w-full"
+          >
+            {trust.map((item, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <CheckCircle2 className="w-5 h-5 text-gold shrink-0" />
+                <span className="text-navy/70 text-sm font-medium">{item}</span>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            custom={4}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start"
+          >
+            <Button
+              as="a"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-navy text-white font-semibold px-10 py-7 rounded-full text-sm shadow-xl shadow-navy/20 hover:bg-navy/90 hover:scale-[1.02] transition-all cursor-pointer uppercase tracking-widest"
+              endContent={<ArrowRight className="w-4 h-4 ml-2" />}
+            >
+              {ctaText}
+            </Button>
+            <Button
+              as="a"
+              href="/enfoque"
+              variant="bordered"
+              className="border-navy/15 text-navy hover:bg-navy/5 font-bold px-10 py-7 rounded-full text-xs uppercase tracking-widest cursor-pointer transition-colors"
+            >
+              Nuestro Método
+            </Button>
+          </motion.div>
+
+          {/* Stat strip */}
+          <motion.div
+            custom={5}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="flex justify-center lg:justify-start gap-12 mt-16 pt-10 border-t border-navy/10 w-full"
+          >
+            {stats.map((s, i) => (
+              <div key={i} className="text-center lg:text-left">
+                <p className="font-serif text-4xl font-bold text-navy leading-none mb-2">{s.value}</p>
+                <p className="text-navy/60 text-xs font-bold uppercase tracking-[0.1em]">{s.label}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Image & Quote Panel (Elegant Floating Card instead of Massive Split Screen) */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          className="w-full lg:w-2/5 flex flex-col items-center lg:items-end mt-12 lg:mt-0"
+        >
+          <div className="relative w-full max-w-md">
+            {/* Soft decorative glow behind the image card */}
+            <div className="absolute inset-0 bg-gold/20 rounded-[40px] blur-3xl transform -rotate-3 scale-105" />
+            
+            <div className="relative bg-white p-4 rounded-[40px] shadow-glass-hover border border-white/60">
+              <div className="aspect-[4/5] rounded-[32px] overflow-hidden relative">
+                <Image
+                  src={image}
+                  alt={imageAlt}
+                  fill
+                  className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                  priority
+                />
+                
+                {/* Subtle gradient overlay on image */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent" />
+              </div>
+
+              {/* Graceful Quote Card overlapping the image */}
+              <div className="absolute -bottom-8 -left-8 md:-left-12 bg-cream/90 backdrop-blur-xl p-6 rounded-3xl border border-navy/5 shadow-xl max-w-[280px]">
+                <div className="flex gap-4 items-start">
+                  <div className="w-1 h-12 bg-gold rounded-full shrink-0" />
+                  <div>
+                    <p className="font-serif text-navy text-sm italic leading-snug font-light mb-3">
+                      &ldquo;{quote}&rdquo;
+                    </p>
+                    <p className="text-gold text-[9px] font-bold uppercase tracking-[0.2em]">
+                      Dr. Joan Ramon Soto
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+      </div>
     </section>
   );
 }

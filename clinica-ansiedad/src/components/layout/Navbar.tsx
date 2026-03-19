@@ -9,13 +9,11 @@ import {
     NavbarMenu,
     NavbarMenuItem,
     Button,
-} from "@heroui/react";
-import {
+    Dropdown,
+    DropdownTrigger,
     DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+    DropdownItem
+} from "@heroui/react";
 import { ChevronDown, Phone, Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -96,20 +94,24 @@ export default function Navbar() {
                 {menuItems.map((item) => (
                     <NavbarItem key={item.name} className="text-xs md:text-sm lg:text-base">
                         {item.subItems ? (
-                            <DropdownMenu>
-                                <DropdownMenuTrigger className="flex items-center gap-1 text-navy hover:text-gold transition-colors font-sans text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.2em] uppercase font-bold outline-none cursor-pointer">
-                                    {item.name} <ChevronDown className="w-3 h-3 opacity-50" />
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent className="bg-white/98 backdrop-blur-xl border border-navy/5 shadow-2xl rounded-2xl p-2 min-w-[200px] md:min-w-[240px] mt-2">
+                            <Dropdown
+                                classNames={{
+                                    content: "min-w-[220px] p-2 bg-white/95 backdrop-blur-3xl border border-navy/10 shadow-glass rounded-[20px]",
+                                }}
+                            >
+                                <DropdownTrigger>
+                                    <button className="flex items-center gap-1 text-navy hover:text-gold transition-colors font-sans text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.2em] uppercase font-bold outline-none cursor-pointer">
+                                        {item.name} <ChevronDown className="w-3 h-3 opacity-50" />
+                                    </button>
+                                </DropdownTrigger>
+                                <DropdownMenu aria-label={`Submenú de ${item.name}`}>
                                     {item.subItems.map(subItem => (
-                                        <DropdownMenuItem key={subItem.name} asChild className="cursor-pointer hover:bg-navy/5 rounded-xl focus:bg-navy/5 focus:text-navy data-[highlighted]:bg-navy/5 transition-all">
-                                            <Link href={subItem.href} className="w-full text-navy font-semibold text-xs py-2 px-3 block">
-                                                {subItem.name}
-                                            </Link>
-                                        </DropdownMenuItem>
+                                        <DropdownItem key={subItem.name} href={subItem.href} className="text-navy font-serif font-bold text-sm py-2.5 px-4 rounded-xl hover:bg-gold/5 hover:text-gold transition-colors data-[hover=true]:bg-gold/5 data-[hover=true]:text-gold">
+                                            {subItem.name}
+                                        </DropdownItem>
                                     ))}
-                                </DropdownMenuContent>
-                            </DropdownMenu>
+                                </DropdownMenu>
+                            </Dropdown>
                         ) : (
                             <Link
                                 href={item.href}
