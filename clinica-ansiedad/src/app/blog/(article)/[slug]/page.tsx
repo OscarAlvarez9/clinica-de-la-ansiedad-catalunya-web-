@@ -27,7 +27,13 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-    const { slug } = await params;
+    const { slug: rawSlug } = await params;
+    const slug = (rawSlug || '').replace(/^\/|\/$/g, '');
+
+    // Safety guard: if slug is somehow empty or "blog" at this level, 
+    // it shouldn't be matching here, but we return early to help Next.js.
+    if (!slug || slug === 'blog') return {};
+
     const entry = await getEntryBySlug('blogPost', slug);
 
     if (!entry) return buildMetadata({
@@ -76,7 +82,11 @@ const renderOptions = {
 };
 
 export default async function BlogPostPage({ params }: PageProps) {
-    const { slug } = await params;
+    const { slug: rawSlug } = await params;
+    const slug = (rawSlug || '').replace(/^\/|\/$/g, '');
+
+    if (!slug || slug === 'blog') notFound();
+
     const entry = await getEntryBySlug('blogPost', slug);
 
     if (!entry) {
@@ -125,7 +135,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                     role: 'Psicólogo Fundador',
                     image: f.autor?.fields?.avatar?.fields?.file?.url ? `https:${f.autor.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
                 },
-                slug: f.slug || '',
+                slug: (f.slug || '').replace(/^\/|\/$/g, ''),
                 featured: false,
             };
         });

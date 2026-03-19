@@ -57,7 +57,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
         role: 'Psicólogo Fundador',
         image: fields.autor?.fields?.avatar?.fields?.file?.url ? `https:${fields.autor.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
       },
-      slug: fields.slug || '',
+      slug: (fields.slug || '').replace(/^\/|\/$/g, ''),
       featured: false, // Could add a boolean field in Contentful
     };
   });
