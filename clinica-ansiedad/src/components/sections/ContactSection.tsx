@@ -75,16 +75,15 @@ export default function ContactSection() {
             contact_info: formData.contacto,
             modality: formData.modalidad,
             subject: MOTIVOS_CONSULTA.find(m => m.id === formData.problema)?.label || formData.problema,
-            message: formData.descripcion || "Sin descripción adicional.",
-            to_email: "contacto@clinicadelansiedad.com"
+            message: formData.descripcion || "Sin descripción adicional."
         };
 
         try {
             const result = await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
                 templateParams,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
             );
 
             if (result.status === 200) {
