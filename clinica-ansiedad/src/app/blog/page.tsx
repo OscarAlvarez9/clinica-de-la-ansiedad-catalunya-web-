@@ -87,40 +87,104 @@ export default async function BlogPage({ searchParams }: PageProps) {
     <div className="min-h-screen bg-cream">
       <Navbar />
       <main className="bg-[#FDFBF7]">
-        {/* Hero Section */}
-        <section className="relative pt-40 pb-24 px-6 overflow-hidden">
-          {/* Subtle Dynamic Background */}
-          <div className="absolute inset-0 z-0 pointer-events-none">
-            <div className="absolute top-[-20%] right-[-10%] w-[70%] h-[70%] bg-gold/10 rounded-full blur-[120px] mix-blend-multiply" />
-            <div className="absolute bottom-[-10%] left-[-20%] w-[60%] h-[60%] bg-[#164E63]/5 rounded-full blur-[150px] mix-blend-multiply" />
-            <div className="absolute inset-0" style={{ backgroundImage: `radial-gradient(#164E63 0.5px, transparent 0.5px)`, backgroundSize: '40px 40px', opacity: 0.03 }} />
+        {/* Premium Magazine-Style Hero Section */}
+        <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden">
+          {/* Background Image with Glass Overlay */}
+          <div className="absolute inset-0 z-0">
+            <SafeImage 
+              src="/images/blog-hero-bg.png" 
+              alt="Blog Background" 
+              className="w-full h-full object-cover opacity-40 blur-[2px]" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-cream/20 via-cream/80 to-[#FDFBF7]" />
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] mix-blend-overlay" />
           </div>
 
-          <div className="max-w-7xl mx-auto relative z-10 flex flex-col items-center">
-            {/* Tagline */}
-            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-md border border-navy/10 text-navy px-6 py-2 rounded-full text-xs font-bold uppercase tracking-[0.2em] mb-8 shadow-sm">
-                <BookOpen className="w-4 h-4 text-gold" />
-                Biblioteca Clínica
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              
+              {/* Left Side: Content */}
+              <div className="lg:col-span-7 flex flex-col">
+                <div className="inline-flex items-center gap-2 bg-gold/10 backdrop-blur-md border border-gold/20 text-navy px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] mb-8 w-fit shadow-sm">
+                    <BookOpen className="w-3.5 h-3.5 text-gold" />
+                    Biblioteca Clínica · Vol. 2024
+                </div>
+
+                <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-serif text-navy leading-[1.05] tracking-tight mb-8">
+                    Palabras para <br />
+                    <span className="text-gold italic font-medium relative inline-block">
+                       entenderte
+                       <svg className="absolute w-[110%] h-auto -left-[5%] -bottom-2 md:-bottom-4 text-gold/20 -z-10" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M2 18C45 -2 150 -2 198 18" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
+                       </svg>
+                    </span>
+                </h1>
+
+                <p className="text-navy/70 text-lg md:text-xl max-w-xl leading-relaxed font-light mb-10 border-l-2 border-gold/30 pl-6 py-2">
+                    Reflexiones, recursos y técnica clínica sobre ansiedad y pánico. Un espacio de lectura pausada para dar sentido al malestar contemporáneo.
+                </p>
+
+                <div className="flex items-center gap-6">
+                   <div className="h-[1px] w-12 bg-navy/20" />
+                   <div className="flex items-center gap-3">
+                      <div className="flex -space-x-2">
+                         {[1,2,3].map(i => (
+                           <div key={i} className="w-8 h-8 rounded-full border-2 border-white overflow-hidden shadow-sm">
+                              <SafeImage src={`https://i.pravatar.cc/100?img=${i+14}`} alt="Lector" className="w-full h-full object-cover" />
+                           </div>
+                         ))}
+                      </div>
+                      <span className="text-[10px] text-navy/60 font-bold uppercase tracking-widest">+5.000 lectores mensuales</span>
+                   </div>
+                </div>
+              </div>
+
+              {/* Right Side: Floating Featured Post Preview */}
+              <div className="lg:col-span-5 relative">
+                {featuredPost && (
+                  <Link href={`/blog/${featuredPost.slug}`} className="block group">
+                    <div className="relative group overflow-hidden rounded-[2.5rem] shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                      {/* Glassmorphism Card */}
+                      <div className="absolute inset-0 bg-navy/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity z-10" />
+                      
+                      {/* Image Container */}
+                      <div className="aspect-[4/5] relative">
+                        <SafeImage 
+                          src={featuredPost.image} 
+                          alt={featuredPost.title} 
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent" />
+                      </div>
+
+                      {/* Content Overlay */}
+                      <div className="absolute inset-x-0 bottom-0 p-8 md:p-10 z-20">
+                        <div className="flex items-center gap-3 mb-4 text-gold text-[10px] font-bold uppercase tracking-[0.2em] bg-white/10 backdrop-blur-md w-fit px-3 py-1.5 rounded-lg border border-white/10">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+                          Lo más leído
+                        </div>
+                        <h2 className="text-2xl md:text-3xl font-serif text-white mb-4 leading-tight group-hover:text-gold transition-colors">
+                          {featuredPost.title}
+                        </h2>
+                        <div className="flex items-center justify-between text-white/60 text-[10px] font-medium uppercase tracking-[0.2em]">
+                          <span className="flex items-center gap-2">
+                             {featuredPost.readTime}
+                          </span>
+                          <span className="flex items-center gap-2 group-hover:text-white transition-colors">
+                            Leer ahora <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                )}
+
+                {/* Decorative floating elements */}
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-gold/10 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-navy/5 rounded-full blur-3xl" />
+              </div>
+
             </div>
-
-            {/* Main Title */}
-            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif text-navy text-center leading-[1.1] tracking-tight mb-8">
-                Palabras para entender <br className="hidden md:block" />
-                <span className="text-gold italic font-medium relative whitespace-nowrap">
-                   tu malestar
-                   <svg className="absolute w-full h-auto left-0 -bottom-2 md:-bottom-4 text-gold/30 -z-10" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                       <path d="M2 18C45 -2 150 -2 198 18" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-                   </svg>
-                </span>
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-navy/70 text-lg md:text-xl max-w-2xl text-center leading-relaxed font-light mb-16">
-                Reflexiones y recursos sobre ansiedad, pánico y psicoanálisis escritos por el Dr. Joan Ramon Soto. Un espacio para dar sentido a la clínica contemporánea.
-            </p>
-
-            {/* Decorative Divider */}
-            <div className="w-px h-16 bg-gradient-to-b from-navy/20 to-transparent" />
           </div>
         </section>
 
@@ -174,74 +238,16 @@ export default async function BlogPage({ searchParams }: PageProps) {
                         </div>
                     ) : (
                         <>
-                            {/* Featured Post */}
-                            {featuredPost && (
-                                <div className="bg-white rounded-[40px] overflow-hidden shadow-glass border border-navy/5 group hover:shadow-glass-hover transition-all duration-500">
-                                    <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden">
-                                        <SafeImage
-                                            src={featuredPost.image}
-                                            alt={featuredPost.title}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                            fallbackSrc="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200"
-                                        />
-                                        <div className="absolute top-6 left-6 flex gap-3 z-10">
-                                            <span className="bg-gold text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-xl">
-                                                Destacado
-                                            </span>
-                                            <span className="bg-white/90 backdrop-blur-md text-navy text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">
-                                                {featuredPost.category}
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="p-8 md:p-12 relative">
-                                        <div className="flex items-center gap-4 text-muted font-sans text-xs mb-4 uppercase tracking-widest">
-                                            <span>{new Date(featuredPost.date).toLocaleDateString('es-ES', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                                            <span className="w-1 h-1 rounded-full bg-gold" />
-                                            <span>{featuredPost.readTime}</span>
-                                        </div>
-                                        <Link href={`/blog/${featuredPost.slug}`}>
-                                            <h2 className="text-3xl lg:text-4xl font-serif text-navy mb-4 group-hover:text-gold transition-colors leading-tight">
-                                                {featuredPost.title}
-                                            </h2>
-                                        </Link>
-                                        <p className="text-muted text-lg mb-8 leading-relaxed line-clamp-3">
-                                            {featuredPost.excerpt}
-                                        </p>
-                                        <div className="flex items-center justify-between pt-6 border-t border-navy/5">
-                                            <div className="flex items-center gap-4">
-                                                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-gold/20">
-                                                    <SafeImage src={featuredPost.author.image} alt={featuredPost.author.name} className="w-full h-full object-cover" />
-                                                </div>
-                                                <div className="flex flex-col">
-                                                    <p className="text-navy font-bold text-sm leading-none mb-1">{featuredPost.author.name}</p>
-                                                    <p className="text-muted text-[10px] uppercase tracking-widest">{featuredPost.author.role}</p>
-                                                </div>
-                                            </div>
-                                            <Link
-                                                href={`/blog/${featuredPost.slug}`}
-                                                className="w-12 h-12 flex items-center justify-center bg-navy/5 text-navy rounded-full group-hover:bg-gold group-hover:text-white transition-all duration-300"
-                                            >
-                                                <ArrowRight className="w-5 h-5" />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-
                             {/* Posts Grid */}
-                            {otherPosts.length > 0 && (
-                                <div>
-                                    <div className="flex items-center gap-4 mb-8">
-                                        <h2 className="text-3xl font-serif text-navy">Más Publicaciones</h2>
-                                        <div className="h-px flex-grow bg-navy/10" />
-                                    </div>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        {otherPosts.map((post, index) => (
-                                            <BlogCard key={post.id} post={post} index={index} />
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
+                            <div className="flex items-center gap-4 mb-8">
+                                <h2 className="text-3xl font-serif text-navy">Publicaciones Recientes</h2>
+                                <div className="h-[1px] flex-grow bg-navy/10" />
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+                                {otherPosts.map((post, index) => (
+                                    <BlogCard key={post.id} post={post} index={index} />
+                                ))}
+                            </div>
                         </>
                     )}
                 </div>
