@@ -1,9 +1,11 @@
 "use client";
 import React from 'react';
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import { Phone, Mail, MapPin, Star, Instagram, Facebook, Twitter, Linkedin, ArrowUpRight, ShieldCheck, Heart } from "lucide-react";
 
 export default function Footer() {
+    const t = useTranslations('footer');
     const currentYear = new Date().getFullYear();
 
     return (
@@ -23,7 +25,7 @@ export default function Footer() {
                         </p>
                         <p className="text-white/80 text-sm mb-6">
                             Joan Ramon Soto<br />
-                            <span className="text-white/60">Psicólogo especialista en ansiedad</span>
+                            <span className="text-white/60">{t('brand_claim')}</span>
                         </p>
 
                         <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full w-fit">
@@ -34,29 +36,29 @@ export default function Footer() {
 
                     {/* Nav Col */}
                     <div>
-                        <h3 className="font-sans font-bold text-lg mb-4 text-white">Navegación</h3>
+                        <h3 className="font-sans font-bold text-lg mb-4 text-white">{t('nav_title')}</h3>
                         <ul className="space-y-3 text-sm text-white/90">
                             <li><Link href="/enfoque" className="text-white/80 hover:text-gold transition-colors">Nuestro enfoque</Link></li>
                             <li><Link href="/sobre-mi" className="text-white/80 hover:text-gold transition-colors">Joan Ramon Soto</Link></li>
-                            <li><Link href="/#faq" className="text-white/80 hover:text-gold transition-colors">Preguntas frecuentes</Link></li>
-                            <li><Link href="/#contacto" className="text-white/80 hover:text-gold transition-colors font-bold flex items-center gap-2 group">Pedir cita <ArrowUpRight className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform" /></Link></li>
+                            <li><Link href={"/#faq" as any} className="text-white/80 hover:text-gold transition-colors">Preguntas frecuentes</Link></li>
+                            <li><Link href={"/#contacto" as any} className="text-white/80 hover:text-gold transition-colors font-bold flex items-center gap-2 group">{t('contact_title')} <ArrowUpRight className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform" /></Link></li>
                         </ul>
                     </div>
 
                     {/* Services Col */}
                     <div>
-                        <h3 className="font-sans font-bold text-lg mb-4 text-white">Servicios</h3>
+                        <h3 className="font-sans font-bold text-lg mb-4 text-white">{t('services_title')}</h3>
                         <ul className="space-y-3 text-sm text-white/90">
-                            <li><a href="/servicios/terapia-individual" className="hover:text-gold transition-colors">Terapia individual</a></li>
-                            <li><a href="/servicios/terapia-de-pareja" className="hover:text-gold transition-colors">Terapia de pareja</a></li>
-                            <li><a href="/terapia-online" className="hover:text-gold transition-colors">Terapia online</a></li>
-                            <li><a href="/servicios/dimension-familiar" className="hover:text-gold transition-colors">Dimensión familiar</a></li>
+                            <li><Link href="/servicios/terapia-individual" className="hover:text-gold transition-colors">Terapia individual</Link></li>
+                            <li><Link href="/servicios/terapia-de-pareja" className="hover:text-gold transition-colors">Terapia de pareja</Link></li>
+                            <li><Link href="/terapia-online" className="hover:text-gold transition-colors">Terapia online</Link></li>
+                            <li><Link href="/servicios/dimension-familiar" className="hover:text-gold transition-colors">Dimensión familiar</Link></li>
                         </ul>
                     </div>
 
                     {/* Contact Col */}
                     <div>
-                        <h3 className="font-sans font-bold text-lg mb-4 text-white">Contacto</h3>
+                        <h3 className="font-sans font-bold text-lg mb-4 text-white">{t('contact_title')}</h3>
                         <ul className="space-y-4 text-sm text-white/90">
                             <li className="flex items-start gap-3">
                                 <Phone className="w-5 h-5 text-gold shrink-0 mt-0.5" />
@@ -83,10 +85,10 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/70">
-                    <p>© {currentYear} Clínica de la Ansiedad Catalunya. Todos los derechos reservados.</p>
+                    <p>© {currentYear} Clínica de la Ansiedad Catalunya. {t('rights')}</p>
                     <div className="flex gap-4">
-                        <Link href="/privacidad" className="hover:text-white transition-colors">Política de privacidad</Link>
-                        <Link href="/aviso-legal" className="hover:text-white transition-colors">Aviso legal</Link>
+                        <Link href={"/privacidad" as any} className="hover:text-white transition-colors">Política de privacidad</Link>
+                        <Link href={"/aviso-legal" as any} className="hover:text-white transition-colors">Aviso legal</Link>
                     </div>
                 </div>
             </div>

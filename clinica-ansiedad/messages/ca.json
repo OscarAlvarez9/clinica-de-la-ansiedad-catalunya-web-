@@ -1,0 +1,137 @@
+{
+  "navbar": {
+    "about": "Sobre Mi",
+    "services": {
+      "title": "Serveis",
+      "all": "Tots els serveis",
+      "individual": "Teràpia Individual",
+      "couple": "Teràpia de Parella",
+      "family": "Dimensió Familiar",
+      "online": "Teràpia Online"
+    },
+    "specialities": {
+      "title": "Especialitats",
+      "anxiety": "Ansietat",
+      "panic": "Crisis de Pànic",
+      "depression": "Depressió",
+      "jealousy": "Gelosia",
+      "gambling": "Ludopatia"
+    },
+    "approach": "Enfocament",
+    "blog": "Blog",
+    "contact": "Contacte",
+    "cta": "Cita",
+    "mobile_cta": "Sol·licitar Valoració"
+  },
+  "hero": {
+    "eyebrow_1": "Especialistes en Ansietat",
+    "eyebrow_2": "Barcelona & Online",
+    "h1": "Símptomes d'ansietat: identifica'ls i <accent>supera'ls</accent>.",
+    "h1_sub": "Teràpia rigorosa que funciona.",
+    "description": "Des del 1993 resolem les <strong_p>causes de l'ansietat</strong_p> amb un procés clínic personalitzat dirigit pel <strong_p>Dr. Joan Ramon Soto</strong_p>. Psicoanalista especialista en ansietat a Barcelona. Teràpia presencial a Canet de Mar (Maresme) i online per a tota Catalunya i Espanya.",
+    "cta_main": "Sol·licitar Valoració Primera",
+    "cta_secondary": "El nostre Mètode",
+    "patients_label": "Pacients recuperats",
+    "years_label": "Anys de Trajectòria",
+    "quote": "\"El símptoma és només el missatger continu. El nostre treball és desxifrar el missatge.\"",
+    "role": "Psicoanalític"
+  },
+  "footer": {
+    "brand_claim": "Psicoteràpia psicoanalítica rigorosa per desarticular el patiment des de l'arrel.",
+    "nav_title": "Navegació",
+    "services_title": "Serveis",
+    "contact_title": "Contacte",
+    "legal_title": "Legal",
+    "rights": "Tots els drets reservats."
+  },
+  "problem": {
+    "h2": "Et sents <accent>atrapat</accent> en algun d'aquests escenaris?",
+    "situations": [
+        "Sents una angoixa que no pots explicar amb paraules.",
+        "T'envaeixen pors irracionals que limiten la teva vida diària.",
+        "El teu cos reacciona amb taquicàrdies o falta d'aire sense causa física.",
+        "T'exigeixes massa i l'estrès t'està passant factura.",
+        "Sents que repeteixes sempre els mateixos errors en les teves relacions."
+    ],
+    "quote": "L'ansietat no és l'enemic, sinó <accent>el senyal</accent> d'un conflicte que necessita ser escoltat."
+  },
+  "approach": {
+    "eyebrow": "El nostre Enfocament",
+    "h2": "Un enfocament que va a l'arrel, <accent>no als símptomes</accent>",
+    "p1": "La <strong_p>psicoteràpia psicoanalítica</strong_p> és un espai per entendre què s'amaga darrere de la teva ansietat. Mentre altres teràpies busquen silenciar el símptoma ràpidament, nosaltres entenem l'ansietat com un senyal d'alarma mental.",
+    "p2": "Liderat per <strong_w>Joan Ramon Soto</strong_w>, psicoanalític especialista en ansietat a Barcelona, aquest espai clínic proveeix un entorn rigorós des del 1993 a Canet de Mar (Maresme). Escoltem la teva història única per desarticular els conflictes interns que mantenen viva l'angoixa. Consulta presencial i online per a tota Catalunya.",
+    "differentiators": [
+        "Causes profundes, no només alleujament dels símptomes temporals",
+        "Més de 30 anys d'experiència clínica especialitzada",
+        "Procés terapèutic estrictament personalitzat i continu"
+    ],
+    "cta": "Conèixer més sobre la meva metodologia",
+    "process_title": "El procés analític",
+    "steps": {
+      "step1_title": "1. El Símptoma",
+      "step1_content": "L'ansietat palpable és només la punta de l'iceberg. És la forma en què la teva ment t'avisa que hi ha alguna cosa que no marxa bé. No busquem \"callar-la\" amb tiretes superficials, sinó escoltar-la per entendre des d'on ens parla.",
+      "step2_title": "2. La Causa Arrel",
+      "step2_content": "A través del diàleg clínic, explorem el conflicte inconscient, els mandats familiars o les vivències que actuen com a motor silenciós del patiment. En fer-ho conscient, perd el seu poder paralitzant.",
+      "step3_title": "3. La Resolució",
+      "step3_content": "El tractament psicoanalític directe genera canvis estructurals en la teva psique. El resultat no és només la desaparició progressiva del símptoma, sinó una reorganització mental que prevé recaigudes i et torna l'autonomia sobre la teva vida."
+    }
+  },
+  "services": {
+    "title": "En què et podem ajudar?",
+    "specialities": [
+      "Ansietat", "Depressió", "Crisis de pànic",
+      "Pensaments obsessius", "Gelosia", "Ludopatia"
+    ],
+    "list": [
+      {
+        "title": "Teràpia Individual",
+        "desc": "Un espai confidencial per explorar les teves angoixes personals, entendre els teus símptomes i construir nous recursos emocionals estables."
+      },
+      {
+        "title": "Teràpia de Parella",
+        "desc": "Acompanyament especialitzat per resoldre dinàmiques de conflicte, retrets o desconnexió afectiva des d'una perspectiva psicoanalítica."
+      },
+      {
+        "title": "Dimensió Familiar",
+        "desc": "Abordatge de la simptomatologia que apareix a la xarxa de vincles familiars, facilitant un entorn més sa de convivència."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Preguntes freqüents",
+    "list": [
+      {
+        "title": "Quins són els símptomes d'ansietat més comuns?",
+        "content": "Els símptomes d'ansietat més freqüents inclouen palpitacions, hiperventilació, formigueig a la cara, pressió a les oïdes, necessitat constant de respirar profund, punxades al cos, batecs a l'estómac i insomni. També poden aparèixer atacs de pànic amb por intensa, dolor al braç esquerre per estrès i sensació de pèrdua de control. Si reconeixes aquests símptomes, buscar ajuda professional és el primer pas."
+      },
+      {
+        "title": "Què és el trastorn d'ansietat generalitzada?",
+        "content": "El trastorn d'ansietat generalitzada es caracteritza per una preocupació excessiva i difícil de controlar que es manté durant mesos, acompanyada de tensió muscular, fatiga, dificultat de concentració i problemes de son. A diferència de l'ansietat puntual, és un estat persistent que afecta la vida diària. El nostre tractament aborda les causes profundes de l'ansietat generalitzada per assolir canvis estructurals duradors."
+      },
+      {
+        "title": "Com es cura l'ansietat?",
+        "content": "L'ansietat es cura abordant les seves causes d'arrel, no només gestionant els símptomes. Mitjançant el Psicoanàlisi Directe identifiquem els conflictes inconscients que generen l'angoixa i treballem per desactivar-los. A diferència de tècniques que només ensenyen a 'conviure' amb l'ansietat, el nostre objectiu és que deixis de necessitar-la. El tractament és personalitzat i busca l'autonomia emocional completa."
+      },
+      {
+        "title": "La teràpia online per a l'ansietat és efectiva?",
+        "content": "Sí, la teràpia online per a l'ansietat és tan efectiva com la presencial. Portem més de 30 anys oferint teràpia online, molt abans que es popularitzés. És especialment útil per a persones amb agorafòbia o fòbia social, o que viuen fora de Barcelona. El vincle terapèutic es construeix de la mateixa manera a través de videollamada."
+      },
+      {
+        "title": "Tracteu depressió, TOC, fòbia social i hipocondria?",
+        "content": "Sí. A més de l'ansietat, tractem la depressió i ansietat combinades, el trastorn obsessivocompulsiu (TOC), la fòbia social, la hipocondria, l'agorafòbia, l'estrès posttraumàtic i la fòbia d'impulsió. Tots aquests trastorns estan interrelacionats i requereixen un abordatge profund que tracti l'origen comú del patiment."
+      },
+      {
+        "title": "Què passa a la primera visita?",
+        "content": "En la primera consulta psicològica realitzem una entrevista clínica profunda — no tests mecànics. Explorem la teva història, identifiquem els símptomes i les seves possibles causes, i avaluem el tipus de trastorn (ansietat generalitzada, crisis de pànic, depressió, etc.). És un espai confidencial on dissenyem junts el pla de tractament més adequat per al teu cas."
+      },
+      {
+        "title": "Com puc ajudar algú amb ansietat?",
+        "content": "Per ajudar algú amb ansietat: escolta sense jutjar, no minimitzis el que sent, acompanya'l sense pressionar i anima'l a buscar ajuda professional. Durant una crisi d'ansietat, manté la calma i ajuda'l a regular la respiració. Evita frases com 'calma't' o 'no és per a tant'. A la nostra clínica també orientem els familiars sobre com acompanyar el procés."
+      },
+      {
+        "title": "Atoneu en català i castellà?",
+        "content": "Sí, Joan Ramon Soto és completament bilingüe. Atén indistintament en català i castellà. És fonamental que t'expressis en la teva llengua emocional, la que millor connecta amb la teva història de vida, perquè la teràpia sigui el més profunda i efectiva possible."
+      }
+    ]
+  }
+}

@@ -3,7 +3,8 @@ import { motion, type Variants } from "framer-motion";
 import { Button } from "@heroui/react";
 import { Star, ArrowRight, ShieldCheck, Clock } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 const fadeUpVariant: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -22,6 +23,8 @@ const staggerContainer: Variants = {
 };
 
 export default function Hero() {
+    const t = useTranslations('hero');
+
     return (
         <section className="relative min-h-[90vh] flex items-center bg-cream overflow-hidden pt-32 pb-20">
             {/* Background Texture / Subtle Grid */}
@@ -40,10 +43,10 @@ export default function Hero() {
                     <motion.div variants={fadeUpVariant} className="mb-8 flex flex-wrap gap-3">
                         <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full border border-navy/10 bg-white text-navy font-bold text-[10px] tracking-[0.15em] uppercase shadow-sm">
                             <ShieldCheck className="w-3 h-3 text-gold" />
-                            Especialistas en Ansiedad
+                            {t('eyebrow_1')}
                         </span>
                         <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full border border-gold/20 bg-gold/5 text-navy font-bold text-[10px] tracking-[0.15em] uppercase">
-                            Barcelona & Online
+                            {t('eyebrow_2')}
                         </span>
                     </motion.div>
 
@@ -51,15 +54,19 @@ export default function Hero() {
                         variants={fadeUpVariant}
                         className="text-navy font-serif leading-tight lg:leading-[1.15] text-5xl md:text-7xl lg:text-8xl xl:text-[5.5rem] font-bold mb-10 tracking-tight pt-2"
                     >
-                        Síntomas de ansiedad: identifícalos y <span className="text-gold italic font-medium">supéralos</span>.
-                        <span className="font-light italic text-gold text-3xl md:text-5xl lg:text-5xl mt-4 block">Terapia rigurosa que funciona.</span>
+                        {t.rich('h1', {
+                            accent: (chunks) => <span className="text-gold italic font-medium">{chunks}</span>
+                        })}
+                        <span className="font-light italic text-gold text-3xl md:text-5xl lg:text-5xl mt-4 block">{t('h1_sub')}</span>
                     </motion.h1>
 
                     <motion.p
                         variants={fadeUpVariant}
                         className="text-text/80 text-lg md:text-xl leading-relaxed max-w-2xl mb-10 font-light"
                     >
-                        Desde 1993 resolvemos las <strong className="font-bold text-navy">causas de la ansiedad</strong> con un proceso clínico personalizado dirigido por el <strong className="font-semibold text-navy">Dr. Joan Ramon Soto</strong>. Psicólogo especialista en ansiedad en Barcelona. Terapia presencial en Canet de Mar (Maresme) y online para toda Catalunya y España.
+                        {t.rich('description', {
+                            strong_p: (chunks) => <strong className="font-bold text-navy">{chunks}</strong>
+                        })}
                     </motion.p>
 
                     <motion.div
@@ -68,18 +75,18 @@ export default function Hero() {
                     >
                         <Button
                             as={Link}
-                            href="#contacto"
+                            href="/#contacto"
                             className="w-full sm:w-auto bg-navy hover:bg-navy/95 text-white font-semibold px-10 py-8 rounded-xl text-lg shadow-2xl shadow-navy/20 transition-all duration-300 group"
                         >
-                            Solicitar Valoración Primera
+                            {t('cta_main')}
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Button>
                         <Button
-                            as="a"
+                            as={Link}
                             href="/enfoque"
                             className="w-full sm:w-auto bg-white border border-navy/10 text-navy hover:bg-navy/5 font-bold px-8 py-8 rounded-xl text-md transition-all uppercase tracking-widest"
                         >
-                            Nuestro Método
+                            {t('cta_secondary')}
                         </Button>
                     </motion.div>
 
@@ -104,7 +111,7 @@ export default function Hero() {
                                     ))}
                                 </div>
                                 <p className="text-navy/70 text-[10px] font-bold tracking-[0.2em] uppercase">
-                                    Pacientes recuperados
+                                    {t('patients_label')}
                                 </p>
                             </div>
                         </div>
@@ -115,7 +122,7 @@ export default function Hero() {
                             </div>
                             <div>
                                 <p className="font-serif text-3xl font-bold text-navy leading-none">30+</p>
-                                <p className="text-navy/70 text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Años de Trayectoria</p>
+                                <p className="text-navy/70 text-[10px] font-bold uppercase tracking-[0.2em] mt-1">{t('years_label')}</p>
                             </div>
                         </div>
                     </motion.div>
@@ -142,12 +149,12 @@ export default function Hero() {
                             <div className="flex items-start gap-4 mb-3">
                                 <div className="w-1 h-12 bg-gold flex-shrink-0" />
                                 <p className="font-serif text-xl italic font-light leading-snug text-navy">
-                                    "El síntoma es solo el mensajero continuo. Nuestro trabajo es descifrar el mensaje."
+                                    {t('quote')}
                                 </p>
                             </div>
                             <div className="pl-5">
                                 <p className="font-bold tracking-[0.2em] uppercase text-xs text-navy">Joan Ramon Soto</p>
-                                <p className="text-[10px] text-gold font-bold tracking-[0.2em] uppercase mt-1">Psicoanalítico</p>
+                                <p className="text-[10px] text-gold font-bold tracking-[0.2em] uppercase mt-1">{t('role')}</p>
                             </div>
                         </div>
                     </div>

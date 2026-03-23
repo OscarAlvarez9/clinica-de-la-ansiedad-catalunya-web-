@@ -1,0 +1,137 @@
+{
+  "navbar": {
+    "about": "Sobre Mí",
+    "services": {
+      "title": "Servicios",
+      "all": "Todos los servicios",
+      "individual": "Terapia Individual",
+      "couple": "Terapia de Pareja",
+      "family": "Dimensión Familiar",
+      "online": "Terapia Online"
+    },
+    "specialities": {
+      "title": "Especialidades",
+      "anxiety": "Ansiedad",
+      "panic": "Crisis de Pánico",
+      "depression": "Depresión",
+      "jealousy": "Celos",
+      "gambling": "Ludopatía"
+    },
+    "approach": "Enfoque",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "cta": "Cita",
+    "mobile_cta": "Solicitar Valoración"
+  },
+  "hero": {
+    "eyebrow_1": "Especialistas en Ansiedad",
+    "eyebrow_2": "Barcelona & Online",
+    "h1": "Síntomas de ansiedad: identifícalos y <accent>supéralos</accent>.",
+    "h1_sub": "Terapia rigurosa que funciona.",
+    "description": "Desde 1993 resolvemos las <strong_p>causas de la ansiedad</strong_p> con un proceso clínico personalizado dirigido por el <strong_p>Dr. Joan Ramon Soto</strong_p>. Psicoanalista especialista en ansiedad en Barcelona. Terapia presencial en Canet de Mar (Maresme) y online para toda Catalunya y España.",
+    "cta_main": "Solicitar Valoración Primera",
+    "cta_secondary": "Nuestro Método",
+    "patients_label": "Pacientes recuperados",
+    "years_label": "Años de Trayectoria",
+    "quote": "\"El síntoma es solo el mensajero continuo. Nuestro trabajo es descifrar el mensaje.\"",
+    "role": "Psicoanalítico"
+  },
+  "footer": {
+    "brand_claim": "Psicoterapia psicoanalítica rigurosa para desarticular el sufrimiento desde la raíz.",
+    "nav_title": "Navegación",
+    "services_title": "Servicios",
+    "contact_title": "Contacto",
+    "legal_title": "Legal",
+    "rights": "Todos los derechos reservados."
+  },
+  "problem": {
+    "h2": "¿Te sientes <accent>atrapado</accent> en alguno de estos escenarios?",
+    "situations": [
+        "Sientes una angustia que no puedes explicar con palabras.",
+        "Te invaden miedos irracionales que limitan tu vida diaria.",
+        "Tu cuerpo reacciona con taquicardias o falta de aire sin causa física.",
+        "Te exiges demasiado y el estrés te está pasando factura.",
+        "Sientes que repites siempre los mismos errores en tus relaciones."
+    ],
+    "quote": "La ansiedad no es el enemigo, sino <accent>la señal</accent> de un conflicto que necesita ser escuchado."
+  },
+  "approach": {
+    "eyebrow": "Nuestro Enfoque",
+    "h2": "Un enfoque que va a la raíz, <accent>no a los síntomas</accent>",
+    "p1": "La <strong_p>psicoterapia psicoanalítica</strong_p> es un espacio para entender qué se esconde detrás de tu ansiedad. Mientras otras terapias buscan silenciar el síntoma rápidamente, nosotros entendemos la ansiedad como una señal de alarma mental.",
+    "p2": "Liderado por <strong_w>Joan Ramon Soto</strong_w>, psicoanalítico especialista en ansiedad en Barcelona, este espacio clínico provee un entorno riguroso desde 1993 en Canet de Mar (Maresme). Escuchamos tu historia única para desarticular los conflictos internos que mantienen viva la angustia. Consulta presencial y online para toda Catalunya.",
+    "differentiators": [
+        "Causas profundas, no solo alivio de los síntomas temporales",
+        "Más de 30 años de experiencia clínica especializada",
+        "Proceso terapéutico estrictamente personalizado y continuo"
+    ],
+    "cta": "Conocer más sobre mi metodología",
+    "process_title": "El proceso analítico",
+    "steps": {
+      "step1_title": "1. El Síntoma",
+      "step1_content": "La ansiedad palpable es solo la punta del iceberg. Es la forma en la que tu mente te avisa de que hay algo que no marcha bien. No buscamos \"callarla\" con tiritas superficiales, sino escucharla para entender desde dónde nos habla.",
+      "step2_title": "2. La Causa Raíz",
+      "step2_content": "A través del diálogo clínico, exploramos el conflicto inconsciente, los mandatos familiares o las vivencias que actúan como motor silencioso del sufrimiento. Al hacerlo consciente, pierde su poder paralizante.",
+      "step3_title": "3. La Resolución",
+      "step3_content": "El tratamiento psicoanalítico directo genera cambios estructurales en tu psique. El resultado no es solo la desaparición progresiva del síntoma, sino una reorganización mental que previene recaídas y te devuelve la autonomía sobre tu vida."
+    }
+  },
+  "services": {
+    "title": "¿En qué podemos ayudarte?",
+    "specialities": [
+      "Ansiedad", "Depresión", "Crisis de pánico",
+      "Pensamientos obsesivos", "Celos", "Ludopatía"
+    ],
+    "list": [
+      {
+        "title": "Terapia Individual",
+        "desc": "Un espacio confidencial para explorar tus angustias personales, entender tus síntomas y construir nuevos recursos emocionales estables."
+      },
+      {
+        "title": "Terapia de Pareja",
+        "desc": "Acompañamiento especializado para resolver dinámicas de conflicto, reproches o desconexión afectiva desde una perspectiva psicoanalítica."
+      },
+      {
+        "title": "Dimensión Familiar",
+        "desc": "Abordaje de la sintomatología que aparece en la red de vínculos familiares, facilitando un entorno más sano de convivencia."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "list": [
+      {
+        "title": "¿Cuáles son los síntomas de ansiedad más comunes?",
+        "content": "Los síntomas de ansiedad más frecuentes incluyen palpitaciones, hiperventilación, hormigueo en la cara, presión en los oídos, necesidad constante de respirar profundo, pinchazos en el cuerpo, latidos en el estómago e insomnio. También pueden aparecer ataques de pánico con miedo intenso, dolor en el brazo izquierdo por estrés y sensación de pérdida de control. Si reconoces estos síntomas, buscar ayuda profesional es el primer paso."
+      },
+      {
+        "title": "¿Qué es el trastorno de ansiedad generalizada?",
+        "content": "El trastorno de ansiedad generalizada se caracteriza por preocupación excesiva y difícil de controlar que se mantiene durante meses, acompañada de tensión muscular, fatiga, dificultad de concentración y problemas de sueño. A diferencia de la ansiedad puntual, es un estado persistente que afecta la vida diaria. Nuestro tratamiento aborda las causas profundas de la ansiedad generalizada para lograr cambios estructurales duraderos."
+      },
+      {
+        "title": "¿Cómo se cura la ansiedad?",
+        "content": "La ansiedad se cura abordando sus causas de raíz, no solo gestionando los síntomas. Mediante el Psicoanálisis Directo identificamos los conflictos inconscientes que generan la angustia y trabajamos para desactivarlos. A diferencia de técnicas que solo enseñan a 'convivir' con la ansiedad, nuestro objetivo es que dejes de necesitarla. El tratamiento es personalizado y busca la autonomía emocional completa."
+      },
+      {
+        "title": "¿La terapia online para la ansiedad es efectiva?",
+        "content": "Sí, la terapia online para la ansiedad es igual de efectiva que la presencial. Llevamos más de 30 años ofreciendo terapia online, mucho antes de que se popularizara. Es especialmente útil para personas con agorafobia o fobia social, o que viven fuera de Barcelona. El vínculo terapéutico se construye de igual manera a través de videollamada."
+      },
+      {
+        "title": "¿Tratáis depresión, TOC, fobia social e hipocondría?",
+        "content": "Sí. Además de la ansiedad, tratamos la depresión y ansiedad combinadas, el trastorno obsesivo compulsivo (TOC), la fobia social, la hipocondría, la agorafobia, el estrés postraumático y la fobia de impulsión. Todos estos trastornos están interrelacionados y requieren un abordaje profundo que trate el origen común del sufrimiento."
+      },
+      {
+        "title": "¿Qué ocurre en la primera visita?",
+        "content": "En la primera consulta psicológica realizamos una entrevista clínica profunda — no tests mecánicos. Exploramos tu historia, identificamos los síntomas y sus posibles causas, y evaluamos el tipo de trastorno (ansiedad generalizada, crisis de pánico, depresión, etc.). Es un espacio confidencial donde diseñamos juntos el plan de tratamiento más adecuado para tu caso."
+      },
+      {
+        "title": "¿Cómo puedo ayudar a alguien con ansiedad?",
+        "content": "Para ayudar a alguien con ansiedad: escucha sin juzgar, no minimices lo que siente, acompáñale sin presionar y anímale a buscar ayuda profesional. Durante una crisis de ansiedad, mantén la calma y ayúdale a regular la respiración. Evita frases como 'cálmate' o 'no es para tanto'. En nuestra clínica también orientamos a familiares sobre cómo acompañar el proceso."
+      },
+      {
+        "title": "¿Atendéis en catalán y castellano?",
+        "content": "Sí, Joan Ramon Soto es completamente bilingüe. Atiende indistintamente en catalán y castellano. Es fundamental que te expreses en tu lengua emocional, la que mejor conecta con tu historia de vida, para que la terapia sea lo más profunda y efectiva posible."
+      }
+    ]
+  }
+}
