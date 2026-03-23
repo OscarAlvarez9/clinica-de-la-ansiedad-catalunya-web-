@@ -2,7 +2,7 @@ import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
   title: 'Terapia Individual Ansiedad | Consulta Psicológica Barcelona',
-  description: 'Terapia individual psicoanalítica para ansiedad, depresión, hipocondría y TOC. Primera visita clínica profunda y personalizada. Psicólogo en Barcelona y online.',
+  description: 'Terapia individual psicoanalítica para ansiedad, depresión, hipocondría y TOC. Primera visita clínica profunda y personalizada. Psicoanalista en Barcelona y online.',
   path: '/servicios/terapia-individual',
   keywords: [
     'terapia individual', 'consulta psicologica', 'primera visita',

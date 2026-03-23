@@ -112,7 +112,7 @@ export default function DepresionPage() {
                 La ansiedad grita. La depresión se calla. Mientras una te mantiene en alerta permanente, la otra te empuja al repliegue —el mundo exterior deja de despertar interés, los proyectos pierden sentido, las relaciones se vuelven un esfuerzo agotador.
               </motion.p>
               <motion.p variants={inView}>
-                En nuestra consulta de Barcelona (Canet de Mar, comarca del Maresme) he visto a personas brillantes convencidas de que la depresión era un defecto suyo. No lo es. Es una señal —dura, dolorosa— pero una señal que, bien descifrada, abre la puerta a una transformación real. Como psicoanalítico especialista en depresión en Barcelona, trato la depresión y ansiedad con psicoterapia psicoanalítica, también disponible como{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</Link> para pacientes de toda Catalunya —Girona, Lleida, Tarragona— y toda España.
+                En nuestra consulta de Barcelona (Canet de Mar, comarca del Maresme) he visto a personas brillantes convencidas de que la depresión era un defecto suyo. No lo es. Es una señal —dura, dolorosa— pero una señal que, bien descifrada, abre la puerta a una transformación real. Como psicoanalista especialista en depresión en Barcelona, trato la depresión y ansiedad con psicoterapia psicoanalítica, también disponible como{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</Link> para pacientes de toda Catalunya —Girona, Lleida, Tarragona— y toda España.
               </motion.p>
             </motion.div>
           </div>

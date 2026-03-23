@@ -108,7 +108,7 @@ export default function TerapiaOnlinePage() {
                 <em>The Lancet Psychiatry</em> y <em>Journal of Anxiety Disorders</em> lo confirman repetidamente. La clave no es la presencia física —es la calidad del vínculo terapéutico. Tratamos{" "}<Link href="/ansiedad" className="text-gold hover:text-gold/80 underline underline-offset-2">ansiedad</Link>,{" "}<Link href="/crisis-de-panico" className="text-gold hover:text-gold/80 underline underline-offset-2">crisis de pánico</Link> y{" "}<Link href="/depresion" className="text-gold hover:text-gold/80 underline underline-offset-2">depresión</Link> con la misma eficacia que en consulta presencial.
               </motion.p>
               <motion.p variants={inView}>
-                Como psicólogo online en Barcelona con más de 30 años de experiencia, esto no es una adaptación de última hora. Es una modalidad que llevamos tres décadas perfeccionando. Cada sesión online mantiene la misma estructura clínica, la misma profundidad analítica y el mismo compromiso que nuestras consultas presenciales en Barcelona.
+                Como psicoanalista online en Barcelona con más de 30 años de experiencia, esto no es una adaptación de última hora. Es una modalidad que llevamos tres décadas perfeccionando. Cada sesión online mantiene la misma estructura clínica, la misma profundidad analítica y el mismo compromiso que nuestras consultas presenciales en Barcelona.
               </motion.p>
             </motion.div>
 
@@ -272,7 +272,7 @@ export default function TerapiaOnlinePage() {
               También atendemos{" "}
               <a href="/celos" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">celos patológicos</a> y{" "}
               <a href="/ludopatia" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">ludopatía</a> online.
-              Psicólogo online en Barcelona para pacientes de toda Catalunya —Girona, Lleida, Tarragona, el Maresme— y toda España.
+              Psicoanalista online en Barcelona para pacientes de toda Catalunya —Girona, Lleida, Tarragona, el Maresme— y toda España.
             </p>
           </div>
         </section>

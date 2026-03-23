@@ -302,7 +302,7 @@ export default function TerapiaIndividualPage() {
               Puede complementarse con{" "}
               <a href="/servicios/terapia-de-pareja" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia de pareja</a> o{" "}
               <a href="/servicios/dimension-familiar" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia familiar</a>.
-              Psicólogo en Barcelona (Canet de Mar, Maresme) y{" "}
+              Psicoanalista en Barcelona (Canet de Mar, Maresme) y{" "}
               <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para toda Catalunya y España.
             </p>
           </div>

@@ -5,10 +5,10 @@ export const metadata = buildMetadata({
   description: 'Terapia online especializada en ansiedad desde 1993. Misma eficacia que la terapia presencial. Tratamiento de ansiedad generalizada, crisis de pánico y depresión.',
   path: '/terapia-online',
   keywords: [
-    'terapia online ansiedad', 'terapia de ansiedad online', 'psicólogo online',
+    'terapia online ansiedad', 'terapia de ansiedad online', 'psicoanalista online',
     'terapia ansiedad videollamada', 'ansiedad generalizada', 'crisis de pánico',
-    'depresión online', 'psicólogo online España', 'terapia online Catalunya',
-    'psicólogo online Barcelona', 'terapia online Girona', 'terapia online Lleida',
+    'depresión online', 'psicoanalista online España', 'terapia online Catalunya',
+    'psicoanalista online Barcelona', 'terapia online Girona', 'terapia online Lleida',
     'terapia online Tarragona', 'terapia online Maresme'
   ]
 });
