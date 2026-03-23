@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { Card, CardBody } from '@heroui/react';
 import { Calendar, MonitorSmartphone, MapPin } from 'lucide-react';

@@ -116,7 +116,7 @@ export default function AnsiedadPage() {
               className="space-y-6 text-navy/70 leading-relaxed text-lg"
             >
               <motion.p variants={inView}>
-                No es estar nervioso. No es ser débil. La ansiedad es la forma que tiene tu psiquismo de gritar cuando carga con algo que no puede procesar solo. Es una señal —intensa, molesta, a veces aterradora— pero una señal al fin y al cabo. Y tiene tratamiento. En nuestra clínica de Barcelona, como psicólogo especialista en ansiedad en Barcelona, llevamos más de tres décadas tratando el trastorno de ansiedad generalizada y sus múltiples manifestaciones en pacientes de toda Catalunya.
+                No es estar nervioso. No es ser débil. La ansiedad es la forma que tiene tu psiquismo de gritar cuando carga con algo que no puede procesar solo. Es una señal —intensa, molesta, a veces aterradora— pero una señal al fin y al cabo. Y tiene tratamiento. En nuestra clínica de Barcelona, como psicoanalítico especialista en ansiedad en Barcelona, llevamos más de tres décadas tratando el trastorno de ansiedad generalizada y sus múltiples manifestaciones en pacientes de toda Catalunya.
               </motion.p>
               <motion.p variants={inView}>
                 En treinta años de consulta en Barcelona —primero en el centro y ahora en nuestra sede de Canet de Mar (Maresme)— he visto a cientos de personas convencidas de que su ansiedad era un defecto de carácter. La realidad es otra: cuando los <a href="/ansiedad" className="text-navy font-semibold hover:text-gold transition-colors underline decoration-gold/30">síntomas de ansiedad</a> invaden tu día a día, hay{" "}
@@ -138,7 +138,7 @@ export default function AnsiedadPage() {
                   &ldquo;La ansiedad no es tu enemiga. Es la solución desesperada que tu psiquismo encontró cuando no tenía otros recursos.&rdquo;
                 </p>
                 <p className="mt-4 font-bold tracking-[0.2em] uppercase text-xs text-navy/50">
-                  Joan Ramon Soto · Psicólogo Fundador
+                  Joan Ramon Soto · Psicoanalítico
                 </p>
               </div>
             </motion.div>
@@ -291,7 +291,7 @@ export default function AnsiedadPage() {
               viewport={{ once: true }}
               className="text-navy/50 text-lg mb-12 leading-relaxed max-w-xl mx-auto"
             >
-              Tres décadas dedicadas exclusivamente al tratamiento de la ansiedad, el pánico y la <a href="/depresion" className="text-navy/70 hover:text-gold transition-colors underline decoration-gold/30">depresión</a> en Barcelona y toda Catalunya —Maresme, Girona, Tarragona, Lleida— presencial y <a href="/terapia-online" className="text-navy/70 hover:text-gold transition-colors underline decoration-gold/30">online para toda España</a>. Psicólogo especialista en ansiedad en Barcelona, referente en Catalunya.
+              Tres décadas dedicadas exclusivamente al tratamiento de la ansiedad, el pánico y la <a href="/depresion" className="text-navy/70 hover:text-gold transition-colors underline decoration-gold/30">depresión</a> en Barcelona y toda Catalunya —Maresme, Girona, Tarragona, Lleida— presencial y <a href="/terapia-online" className="text-navy/70 hover:text-gold transition-colors underline decoration-gold/30">online para toda España</a>. Psicoanalítico especialista en ansiedad en Barcelona, referente en Catalunya.
             </motion.p>
             <motion.div
               variants={stagger}

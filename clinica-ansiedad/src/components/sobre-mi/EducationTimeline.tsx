@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { GraduationCap, Award } from 'lucide-react';
 
 const education = [
     { year: "2020", title: "Postgrado En Duelo y Acompañamiento" },
@@ -21,47 +22,62 @@ const education = [
 
 export default function EducationTimeline() {
     return (
-        <section className="py-20 bg-gradient-to-b from-white to-cream/30">
-            <div className="container mx-auto px-4 md:px-8 max-w-5xl">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="font-serif text-3xl md:text-5xl text-navy font-bold mb-4">
-                        Trayectoria Académica
-                    </h2>
-                    <div className="w-16 h-1 bg-gradient-to-r from-gold via-gold to-sage mx-auto mb-8"></div>
-                    <p className="text-lg text-text/70 max-w-2xl mx-auto">Una vida dedicada al aprendizaje continuo y la especialización terapéutica. Más de 30 años de formación y crecimiento profesional.</p>
-                </motion.div>
+        <section className="py-24 bg-[#FDFBF7] relative overflow-hidden">
+            {/* Background Texture */}
+            <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
+                style={{ backgroundImage: `radial-gradient(#164E63 1px, transparent 1px)`, backgroundSize: '60px 60px' }} />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <div className="container mx-auto px-6 relative z-10 max-w-7xl">
+                <div className="max-w-4xl mx-auto text-center mb-24">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/5 border border-navy/10 mb-6"
+                    >
+                        <GraduationCap className="w-4 h-4 text-gold" />
+                        <span className="text-[10px] font-black tracking-[0.3em] text-navy uppercase">Formación Continuada</span>
+                    </motion.div>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="font-serif text-5xl md:text-7xl font-bold text-navy mb-8"
+                    >
+                        Trayectoria <span className="text-gold italic font-light">Académica</span>
+                    </motion.h2>
+                    <p className="text-xl text-navy/50 font-light leading-relaxed max-w-2xl mx-auto">
+                        Más de 30 años de especialización ininterrumpida, combinando el rigor del psicoanálisis con los últimos avances en psicología clínica.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                     {education.map((edu, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: (index % 2) * 0.08 }}
+                            transition={{ duration: 0.7, delay: (index % 4) * 0.1 }}
                             className="group"
                         >
-                            <div className="h-full bg-white backdrop-blur-sm p-6 md:p-7 rounded-2xl border border-sage/20 shadow-sm hover:shadow-xl hover:border-sage/50 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
-                                {/* Gradient accent top-right */}
-                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-gold/10 to-transparent rounded-full -mr-10 -mt-10 group-hover:from-gold/20 transition-all"></div>
-
-                                <div className="relative z-10 flex items-start gap-4">
-                                    <div className="flex-shrink-0 pt-1">
-                                        <span className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-gold/20 to-gold/10 rounded-xl border border-gold/30 group-hover:border-gold/50 group-hover:from-gold/30 transition-all">
-                                            <span className="font-bold text-gold text-sm text-center">{edu.year}</span>
-                                        </span>
-                                    </div>
-                                    <div className="flex-grow pt-1.5">
-                                        <h3 className="text-navy font-semibold text-balance leading-snug group-hover:text-gold transition-colors duration-300">
-                                            {edu.title}
-                                        </h3>
+                            <div className="h-full bg-white border border-navy/5 p-8 rounded-[2rem] hover:shadow-[0_20px_50px_-15px_rgba(22,78,99,0.08)] hover:border-gold/20 transition-all duration-500 flex items-center gap-6 relative overflow-hidden">
+                                {/* Year Badge */}
+                                <div className="flex-shrink-0">
+                                    <div className="w-20 h-20 rounded-2xl bg-cream flex flex-col items-center justify-center p-2 border border-navy/5 group-hover:bg-gold/10 group-hover:border-gold/20 transition-all duration-500">
+                                        <Award className="w-4 h-4 text-gold/40 mb-1 group-hover:text-gold transition-colors" />
+                                        <span className="font-serif font-black text-navy text-lg leading-none">{edu.year}</span>
                                     </div>
                                 </div>
+
+                                <div className="flex-grow">
+                                    <h3 className="text-lg md:text-xl font-serif font-bold text-navy leading-tight group-hover:text-gold transition-colors duration-300">
+                                        {edu.title}
+                                    </h3>
+                                </div>
+                                
+                                {/* Subtle decorative dot */}
+                                <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-navy/5 group-hover:bg-gold transition-colors" />
                             </div>
                         </motion.div>
                     ))}

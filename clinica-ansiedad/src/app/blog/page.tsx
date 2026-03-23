@@ -54,7 +54,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
       image: fields.imagenDestacada?.fields?.file?.url ? `https:${fields.imagenDestacada.fields.file.url}` : '/images/default-blog.jpg',
       author: {
         name: fields.autor?.fields?.nombre || 'Dr. Joan Ramon Soto',
-        role: 'Psicólogo Fundador',
+        role: 'Psicoanalítico',
         image: fields.autor?.fields?.avatar?.fields?.file?.url ? `https:${fields.autor.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
       },
       slug: (fields.slug || '').replace(/^\/|\/$/g, ''),

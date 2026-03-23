@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { Button } from "@heroui/react";
 import { Phone, CalendarCheck, Sparkles } from "lucide-react";

@@ -49,10 +49,10 @@ export default function Hero() {
 
                     <motion.h1
                         variants={fadeUpVariant}
-                        className="text-navy font-serif leading-[1.1] text-5xl md:text-6xl lg:text-[5.5rem] font-bold mb-8 tracking-tight"
+                        className="text-navy font-serif leading-tight lg:leading-[1.15] text-5xl md:text-7xl lg:text-8xl xl:text-[5.5rem] font-bold mb-10 tracking-tight pt-2"
                     >
                         Síntomas de ansiedad: identifícalos y <span className="text-gold italic font-medium">supéralos</span>.
-                        <span className="font-light italic text-gold text-4xl md:text-5xl lg:text-6xl mt-1 block">Terapia rigurosa que funciona.</span>
+                        <span className="font-light italic text-gold text-3xl md:text-5xl lg:text-5xl mt-4 block">Terapia rigurosa que funciona.</span>
                     </motion.h1>
 
                     <motion.p
@@ -147,7 +147,7 @@ export default function Hero() {
                             </div>
                             <div className="pl-5">
                                 <p className="font-bold tracking-[0.2em] uppercase text-xs text-navy">Joan Ramon Soto</p>
-                                <p className="text-[10px] text-gold font-bold tracking-[0.2em] uppercase mt-1">Psicólogo Fundador</p>
+                                <p className="text-[10px] text-gold font-bold tracking-[0.2em] uppercase mt-1">Psicoanalítico</p>
                             </div>
                         </div>
                     </div>

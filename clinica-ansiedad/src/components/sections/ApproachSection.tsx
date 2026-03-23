@@ -46,7 +46,7 @@ export default function ApproachSection() {
                             rápidamente, nosotros entendemos la ansiedad como una señal de alarma mental.
                         </p>
                         <p>
-                            Liderado por <strong className="text-white">Joan Ramon Soto</strong>, psicólogo fundador y especialista en ansiedad en Barcelona,
+                            Liderado por <strong className="text-white">Joan Ramon Soto</strong>, psicoanalítico especialista en ansiedad en Barcelona,
                             este espacio clínico provee un entorno riguroso desde 1993 en Canet de Mar (Maresme). Escuchamos tu historia
                             única para desarticular los conflictos internos que mantienen viva la angustia. Consulta presencial y online para toda Catalunya.
                         </p>

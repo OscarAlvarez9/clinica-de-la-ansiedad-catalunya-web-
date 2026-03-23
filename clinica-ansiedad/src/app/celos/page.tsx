@@ -223,7 +223,7 @@ export default function CelosPage() {
                   &ldquo;Los celos no son una debilidad moral ni una señal de amor intenso. Son la expresión de una herida que lleva demasiado tiempo sin ser atendida.&rdquo;
                 </p>
                 <p className="mt-4 font-bold tracking-[0.2em] uppercase text-xs text-navy/50">
-                  Joan Ramon Soto · Psicólogo Fundador
+                  Joan Ramon Soto · Psicoanalítico
                 </p>
               </div>
             </motion.div>
@@ -341,7 +341,7 @@ export default function CelosPage() {
               <a href="/ansiedad" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">ansiedad intensa</a> y pueden derivar en{" "}
               <a href="/crisis-de-panico" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">crisis de pánico</a> o{" "}
               <a href="/depresion" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">depresión</a>.
-              Psicólogo especialista en celos en Barcelona. Ofrecemos{" "}
+              Psicoanalítico especialista en celos en Barcelona. Ofrecemos{" "}
               <a href="/servicios/terapia-de-pareja" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia de pareja</a> y{" "}
               <a href="/servicios/terapia-individual" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia individual</a> en Canet de Mar (Maresme) y{" "}
               <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para toda Catalunya.
