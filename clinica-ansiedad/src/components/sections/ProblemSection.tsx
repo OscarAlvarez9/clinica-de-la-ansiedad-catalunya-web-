@@ -1,17 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import { Card, CardBody } from "@heroui/react";
-
-const situations = [
-    "Crisis de ansiedad y ataques de pánico",
-    "Ansiedad generalizada y angustia constante",
-    "Pensamientos obsesivos (TOC)",
-    "Palpitaciones y síntomas físicos por ansiedad",
-    "Depresión y ansiedad combinadas",
-    "Insomnio, hiperventilación y estrés crónico",
-];
+import { useTranslations } from "next-intl";
 
 export default function ProblemSection() {
+    const t = useTranslations('problem');
+    const situations = t.raw('situations') as string[];
+
     return (
         <section className="bg-cream py-32 px-6 relative overflow-hidden">
             {/* Background Accent */}
@@ -32,7 +26,9 @@ export default function ProblemSection() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl lg:text-6xl font-serif text-navy font-bold mb-6 text-balance"
                     >
-                        ¿Reconoces alguna de estas situaciones?
+                        {t.rich('h2', {
+                            accent: (chunks) => <span className="text-gold italic">{chunks}</span>
+                        })}
                     </motion.h2>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -70,7 +66,9 @@ export default function ProblemSection() {
                     <div className="bg-navy rounded-[2.5rem] p-12 md:p-16 relative overflow-hidden shadow-2xl shadow-navy/20">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[60px] rounded-full" />
                         <p className="text-2xl md:text-3xl lg:text-4xl font-serif text-white font-medium italic leading-relaxed text-balance relative z-10">
-                            "No estás solo/a. Lo que sientes tiene un sentido que <span className="text-gold">podemos descifrar</span> para encontrar una solución duradera."
+                            {t.rich('quote', {
+                                accent: (chunks) => <span className="text-gold">{chunks}</span>
+                            })}
                         </p>
                     </div>
                 </motion.div>

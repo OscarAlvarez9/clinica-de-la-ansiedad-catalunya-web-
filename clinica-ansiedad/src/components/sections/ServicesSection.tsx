@@ -1,32 +1,24 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import { Card, CardHeader, CardBody, Chip } from "@heroui/react";
 
-const specialities = [
-    "Ansiedad", "Depresión", "Crisis de pánico",
-    "Pensamientos obsesivos", "Celos", "Ludopatía"
-];
-
-const services = [
-    {
-        title: "Terapia Individual",
-        desc: "Un espacio confidencial para explorar tus angustias personales, entender tus síntomas y construir nuevos recursos emocionales estables.",
-        href: "/servicios/terapia-individual"
-    },
-    {
-        title: "Terapia de Pareja",
-        desc: "Acompañamiento especializado para resolver dinámicas de conflicto, reproches o desconexión afectiva desde una perspectiva psicoanalítica.",
-        href: "/servicios/terapia-de-pareja"
-    },
-    {
-        title: "Dimensión Familiar",
-        desc: "Abordaje de la sintomatología que aparece en la red de vínculos familiares, facilitando un entorno más sano de convivencia.",
-        href: "/servicios/dimension-familiar"
-    }
-];
-
 export default function ServicesSection() {
+    const t = useTranslations('services');
+    const specialities = t.raw('specialities') as string[];
+    const services = t.raw('list') as Array<{ title: string, desc: string }>;
+
+    // Mapping of titles to hrefs to maintain routing logic
+    const hrefMap: Record<string, string> = {
+        "Terapia Individual": "/servicios/terapia-individual",
+        "Teràpia Individual": "/servicios/terapia-individual",
+        "Terapia de Pareja": "/servicios/terapia-de-pareja",
+        "Teràpia de Parella": "/servicios/terapia-de-pareja",
+        "Dimensión Familiar": "/servicios/dimension-familiar",
+        "Dimensió Familiar": "/servicios/dimension-familiar"
+    };
+
     return (
         <section id="servicios" className="bg-cream py-24 px-6">
             <div className="max-w-6xl mx-auto">
@@ -37,7 +29,7 @@ export default function ServicesSection() {
                         viewport={{ once: true, margin: "-100px" }}
                         className="text-3xl md:text-5xl font-serif text-navy font-bold mb-4"
                     >
-                        ¿En qué podemos ayudarte?
+                        {t('title')}
                     </motion.h2>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -75,7 +67,12 @@ export default function ServicesSection() {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: i * 0.15 }}
                         >
-                            <Card as={Link} href={service.href} isPressable className="h-full glass-panel border-none group text-left w-full hover:scale-[1.02] transition-transform cursor-pointer">
+                            <Card 
+                                as={Link} 
+                                href={(hrefMap[service.title] || "/servicios") as any} 
+                                isPressable 
+                                className="h-full glass-panel border-none group text-left w-full hover:scale-[1.02] transition-transform cursor-pointer"
+                            >
                                 <CardHeader className="pt-10 px-8 pb-0">
                                     <h3 className="text-2xl font-serif font-bold text-navy w-full border-b border-navy/10 pb-4 group-hover:border-gold/30 transition-colors flex items-center justify-between">
                                         {service.title} <span className="text-gold text-xl transition-transform group-hover:translate-x-1">→</span>

@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 import {
     Accordion,
@@ -12,11 +13,8 @@ import {
 } from "@/components/ui/accordion";
 
 export default function ApproachSection() {
-    const differentiators = [
-        "Causas profundas, no solo alivio de los síntomas temporales",
-        "Más de 30 años de experiencia clínica especializada",
-        "Proceso terapéutico estrictamente personalizado y continuo",
-    ];
+    const t = useTranslations('approach');
+    const differentiators = t.raw('differentiators') as string[];
 
     return (
         <section id="enfoque" className="bg-navy py-24 px-6 text-white overflow-hidden">
@@ -32,23 +30,25 @@ export default function ApproachSection() {
                 >
                     <div className="flex items-center gap-3 mb-6">
                         <div className="w-12 h-[1px] bg-gold" />
-                        <span className="text-gold text-sm tracking-widest uppercase font-bold">Nuestro Enfoque</span>
+                        <span className="text-gold text-sm tracking-widest uppercase font-bold">{t('eyebrow')}</span>
                     </div>
 
                     <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 leading-tight text-white focus:outline-none">
-                        Un enfoque que va a la raíz, <br /><span className="text-gold italic">no a los síntomas</span>
+                        {t.rich('h2', {
+                            accent: (chunks) => <><br /><span className="text-gold italic">{chunks}</span></>
+                        })}
                     </h2>
 
                     <div className="space-y-6 text-white/80 font-sans text-lg mb-10">
                         <p>
-                            La <strong>psicoterapia psicoanalítica</strong> es un espacio para entender qué se
-                            esconde detrás de tu ansiedad. Mientras otras terapias buscan silenciar el síntoma
-                            rápidamente, nosotros entendemos la ansiedad como una señal de alarma mental.
+                            {t.rich('p1', {
+                                strong_p: (chunks) => <strong className="font-bold text-white">{chunks}</strong>
+                            })}
                         </p>
                         <p>
-                            Liderado por <strong className="text-white">Joan Ramon Soto</strong>, psicoanalítico especialista en ansiedad en Barcelona,
-                            este espacio clínico provee un entorno riguroso desde 1993 en Canet de Mar (Maresme). Escuchamos tu historia
-                            única para desarticular los conflictos internos que mantienen viva la angustia. Consulta presencial y online para toda Catalunya.
+                            {t.rich('p2', {
+                                strong_w: (chunks) => <strong className="text-white">{chunks}</strong>
+                            })}
                         </p>
                     </div>
 
@@ -79,7 +79,7 @@ export default function ApproachSection() {
                             href="/enfoque"
                             className="inline-block bg-transparent border-2 border-gold text-gold font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-full hover:bg-gold hover:text-navy transition-all"
                         >
-                            Conocer más sobre mi metodología
+                            {t('cta')}
                         </Link>
                     </motion.div>
 
@@ -95,25 +95,25 @@ export default function ApproachSection() {
                 >
                     <div className="bg-navy-light/40 border border-white/10 rounded-3xl p-8 backdrop-blur-md">
                         <h3 className="font-serif text-2xl mb-6 text-white font-bold border-b border-white/10 pb-4">
-                            El proceso analítico
+                            {t('process_title')}
                         </h3>
                         <Accordion type="single" collapsible className="w-full text-white/90">
                             <AccordionItem value="item-1" className="border-b-white/10">
-                                <AccordionTrigger className="hover:text-gold text-white text-lg font-serif">1. El Síntoma</AccordionTrigger>
+                                <AccordionTrigger className="hover:text-gold text-white text-lg font-serif">{t('steps.step1_title')}</AccordionTrigger>
                                 <AccordionContent className="text-white/70 text-base leading-relaxed">
-                                    La ansiedad palpable es solo la punta del iceberg. Es la forma en la que tu mente te avisa de que hay algo que no marcha bien. No buscamos "callarla" con tiritas superficiales, sino escucharla para entender desde dónde nos habla.
+                                    {t('steps.step1_content')}
                                 </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="item-2" className="border-b-white/10">
-                                <AccordionTrigger className="hover:text-gold text-white text-lg font-serif">2. La Causa Raíz</AccordionTrigger>
+                                <AccordionTrigger className="hover:text-gold text-white text-lg font-serif">{t('steps.step2_title')}</AccordionTrigger>
                                 <AccordionContent className="text-white/70 text-base leading-relaxed">
-                                    A través del diálogo clínico, exploramos el conflicto inconsciente, los mandatos familiares o las vivencias que actúan como motor silencioso del sufrimiento. Al hacerlo consciente, pierde su poder paralizante.
+                                    {t('steps.step2_content')}
                                 </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="item-3" className="border-none">
-                                <AccordionTrigger className="hover:text-gold text-white text-lg font-serif">3. La Resolución</AccordionTrigger>
+                                <AccordionTrigger className="hover:text-gold text-white text-lg font-serif">{t('steps.step3_title')}</AccordionTrigger>
                                 <AccordionContent className="text-white/70 text-base leading-relaxed">
-                                    El tratamiento psicoanalítico directo genera cambios estructurales en tu psique. El resultado no es solo la desaparición progresiva del síntoma, sino una reorganización mental que previene recaídas y te devuelve la autonomía sobre tu vida.
+                                    {t('steps.step3_content')}
                                 </AccordionContent>
                             </AccordionItem>
                         </Accordion>

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link, usePathname } from "@/i18n/routing";
+import { useTranslations, useLocale } from "next-intl";
 import {
     Navbar as HeroNavbar,
     NavbarBrand,
@@ -14,9 +15,12 @@ import {
     DropdownMenu,
     DropdownItem
 } from "@heroui/react";
-import { ChevronDown, Phone, Menu, X } from "lucide-react";
+import { ChevronDown, Phone, Menu, X, Globe } from "lucide-react";
 
 export default function Navbar() {
+    const t = useTranslations('navbar');
+    const locale = useLocale();
+    const pathname = usePathname();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -29,32 +33,37 @@ export default function Navbar() {
     }, []);
 
     const menuItems = [
-        { name: "Sobre Mí", href: "/sobre-mi" },
+        { name: t('about'), href: "/sobre-mi" as any },
         {
-            name: "Servicios",
-            href: "/servicios",
+            name: t('services.title'),
+            href: "/servicios" as any,
             subItems: [
-                { name: "Todos los servicios", href: "/servicios" },
-                { name: "Terapia Individual", href: "/servicios/terapia-individual" },
-                { name: "Terapia de Pareja", href: "/servicios/terapia-de-pareja" },
-                { name: "Dimensión Familiar", href: "/servicios/dimension-familiar" },
-                { name: "Terapia Online", href: "/terapia-online" },
+                { name: t('services.all'), href: "/servicios" as any },
+                { name: t('services.individual'), href: "/servicios/terapia-individual" as any },
+                { name: t('services.couple'), href: "/servicios/terapia-de-pareja" as any },
+                { name: t('services.family'), href: "/servicios/dimension-familiar" as any },
+                { name: t('services.online'), href: "/terapia-online" as any },
             ]
         },
         {
-            name: "Especialidades",
-            href: "/ansiedad",
+            name: t('specialities.title'),
+            href: "/ansiedad" as any,
             subItems: [
-                { name: "Ansiedad", href: "/ansiedad" },
-                { name: "Crisis de Pánico", href: "/crisis-de-panico" },
-                { name: "Depresión", href: "/depresion" },
-                { name: "Celos", href: "/celos" },
-                { name: "Ludopatía", href: "/ludopatia" },
+                { name: t('specialities.anxiety'), href: "/ansiedad" as any },
+                { name: t('specialities.panic'), href: "/crisis-de-panico" as any },
+                { name: t('specialities.depression'), href: "/depresion" as any },
+                { name: t('specialities.jealousy'), href: "/celos" as any },
+                { name: t('specialities.gambling'), href: "/ludopatia" as any },
             ]
         },
-        { name: "Enfoque", href: "/enfoque" },
-        { name: "Blog", href: "/blog" },
-        { name: "Contacto", href: "/#contacto" },
+        { name: t('approach'), href: "/enfoque" as any },
+        { name: t('blog'), href: "/blog" as any },
+        { name: t('contact'), href: "/#contacto" as any },
+    ];
+
+    const languages = [
+        { key: "es", label: "CASTELLANO", flag: "ES" },
+        { key: "ca", label: "CATALÀ", flag: "CA" }
     ];
 
     return (
@@ -106,7 +115,7 @@ export default function Navbar() {
                                 </DropdownTrigger>
                                 <DropdownMenu aria-label={`Submenú de ${item.name}`}>
                                     {item.subItems.map(subItem => (
-                                        <DropdownItem key={subItem.name} href={subItem.href} className="text-navy font-serif font-bold text-sm py-2.5 px-4 rounded-xl hover:bg-gold/5 hover:text-gold transition-colors data-[hover=true]:bg-gold/5 data-[hover=true]:text-gold">
+                                        <DropdownItem key={subItem.name} as={Link as any} href={subItem.href} className="text-navy font-serif font-bold text-sm py-2.5 px-4 rounded-xl hover:bg-gold/5 hover:text-gold transition-colors data-[hover=true]:bg-gold/5 data-[hover=true]:text-gold">
                                             {subItem.name}
                                         </DropdownItem>
                                     ))}
@@ -125,6 +134,43 @@ export default function Navbar() {
             </NavbarContent>
 
             <NavbarContent justify="end" className="gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+                {/* Language Switcher */}
+                <NavbarItem className="hidden md:flex">
+                    <Dropdown
+                        classNames={{
+                            content: "min-w-[120px] p-2 bg-white/95 backdrop-blur-3xl border border-navy/10 shadow-glass rounded-[20px]",
+                        }}
+                    >
+                        <DropdownTrigger>
+                            <Button
+                                variant="light"
+                                className="p-0 min-w-unit-10 h-unit-10 text-navy hover:text-gold transition-colors font-sans text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.2em] uppercase font-bold"
+                                startContent={<Globe className="w-4 h-4 opacity-70" />}
+                            >
+                                {locale.toUpperCase()}
+                            </Button>
+                        </DropdownTrigger>
+                        <DropdownMenu
+                            aria-label="Seleccionar idioma"
+                            disallowEmptySelection
+                            selectionMode="single"
+                            selectedKeys={[locale]}
+                        >
+                            {languages.map((lang) => (
+                                <DropdownItem
+                                    key={lang.key}
+                                    as={Link as any}
+                                    href={pathname as any}
+                                    // @ts-ignore - locale prop is passed to Link component
+                                    locale={lang.key as any}
+                                    className={`text-navy font-sans font-bold text-[10px] uppercase tracking-widest ${locale === lang.key ? "text-gold bg-gold/5" : ""}`}
+                                >
+                                    {lang.label}
+                                </DropdownItem>
+                            ))}
+                        </DropdownMenu>
+                    </Dropdown>
+                </NavbarItem>
 
                 <NavbarItem>
                     <Button
@@ -132,12 +178,26 @@ export default function Navbar() {
                         href="/#contacto"
                         className="bg-navy text-white font-bold rounded-lg sm:rounded-xl px-3 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 hover:bg-navy/90 shadow-lg shadow-navy/10 transition-all text-[10px] sm:text-xs md:text-xs uppercase tracking-wider md:tracking-widest"
                     >
-                        Cita
+                        {t('cta')}
                     </Button>
                 </NavbarItem>
             </NavbarContent>
 
             <NavbarMenu className="bg-white/95 backdrop-blur-3xl pt-32 pb-24 px-6 md:px-8 overflow-y-auto min-h-screen gap-8 z-40">
+                {/* Mobile Language Switcher */}
+                <div className="flex gap-4 mb-8">
+                    {languages.map((lang) => (
+                        <Link
+                            key={lang.key}
+                            href={pathname as any}
+                            locale={lang.key as any}
+                            className={`text-xs font-sans font-bold tracking-widest uppercase pb-1 border-b-2 transition-all ${locale === lang.key ? "text-gold border-gold" : "text-navy/40 border-transparent"}`}
+                        >
+                            {lang.label}
+                        </Link>
+                    ))}
+                </div>
+
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item.name}-${index}`} className="w-full block">
                         {item.subItems ? (
@@ -176,7 +236,7 @@ export default function Navbar() {
                         className="w-full bg-navy text-white font-bold rounded-2xl py-6 sm:py-8 text-base sm:text-lg"
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        Solicitar Valoración
+                        {t('mobile_cta')}
                     </Button>
                 </NavbarMenuItem>
             </NavbarMenu>
