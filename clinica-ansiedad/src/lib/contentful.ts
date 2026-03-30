@@ -56,61 +56,48 @@ export interface BlogPost {
 }
 
 // Generic fetching function with preview support
-export async function getEntries<T>(contentType: string, isPreview = false, order?: string[], locale = 'es') {
-  const currentClient = isPreview ? previewClient : client;
-  
-  const query: any = {
-    content_type: contentType,
-    locale: locale,
-  };
-
-  if (order) {
-    query.order = order;
-  }
-  
+export const getEntries = async (contentType: string, preview = false, order: string[] = ['-sys.createdAt'], locale = 'es') => {
   try {
-    const entries = await currentClient.getEntries<React.ComponentProps<any>>(query);
-    return entries.items;
+    const currentClient = preview ? previewClient : client;
+    
+    // Diagnostic discovery: the Contentful space currently uses 'en-US' 
+    // as the primary locale even for Spanish content.
+    const contentfulLocale = 'en-US'; 
+
+    const response = await currentClient.getEntries({
+      content_type: contentType,
+      order: order as any,
+      locale: contentfulLocale,
+    });
+    return response.items;
   } catch (error) {
-    console.error(`Error fetching ${contentType} from Contentful:`, error);
+    console.error(`Error fetching entries for ${contentType}:`, error);
     return [];
   }
-}
+};
 
-export async function getEntryBySlug(contentType: string, slug: string, isPreview = false, locale = 'es') {
-  const currentClient = isPreview ? previewClient : client;
-  
+/**
+ * Get a single entry by its slug field
+ */
+export const getEntryBySlug = async (contentType: string, slug: string, preview = false, locale = 'es') => {
   try {
-    // We sanitize the target slug for comparison
-    const targetSlug = slug.replace(/^\/|\/$/g, '');
+    const entries = await getEntries(contentType, preview, [], locale);
     
-    // First try a direct query (more efficient)
-    const directQuery = await currentClient.getEntries<React.ComponentProps<any>>({
-      content_type: contentType,
-      'fields.slug': targetSlug,
-      locale: locale,
-      limit: 1,
+    // Normalize the search slug (remove leading/trailing slashes)
+    const normalizedSearchSlug = (slug || '').replace(/^\/|\/$/g, '');
+
+    const entry = entries.find((e: any) => {
+      const entrySlug = e.fields?.slug;
+      if (!entrySlug) return false;
+      
+      // Normalize Contentful slug for comparison
+      const normalizedEntrySlug = entrySlug.replace(/^\/|\/$/g, '');
+      return normalizedEntrySlug === normalizedSearchSlug;
     });
-    
-    if (directQuery.items.length > 0) {
-      return directQuery.items[0];
-    }
-    
-    // Fallback search in case of inconsistent slashes or if the slug field is localized differently
-    const entries = await currentClient.getEntries<React.ComponentProps<any>>({
-      content_type: contentType,
-      locale: locale,
-      limit: 100, 
-    });
-    
-    const matchedEntry = entries.items.find((entry: any) => {
-      const entrySlug = (entry.fields.slug || '').replace(/^\/|\/$/g, '');
-      return entrySlug === targetSlug;
-    });
-    
-    return matchedEntry || null;
+
+    return entry || null;
   } catch (error) {
-    console.error(`Error fetching ${contentType} ${slug} from Contentful:`, error);
+    console.error(`Error in getEntryBySlug for ${slug}:`, error);
     return null;
   }
-}
+};

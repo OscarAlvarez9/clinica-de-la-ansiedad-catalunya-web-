@@ -6,7 +6,7 @@ import Script from 'next/script';
 import BlogCard from '@/components/blog/BlogCard';
 import CategoryFilter from '@/components/blog/CategoryFilter';
 import { BookOpen, Search, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import SafeImage from '@/components/ui/SafeImage';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -27,40 +27,52 @@ export const metadata = buildMetadata({
 
 export const revalidate = 3600; // Revalidate every hour
 
-interface PageProps {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}
-
-export default async function BlogPage({ searchParams }: PageProps) {
-  // Fetch both posts and all available categories
-  const [contentfulEntries, categoryEntries] = await Promise.all([
-      getEntries('blogPost', false, ['-fields.fechaPublicacion']),
-      getEntries('category')
-  ]);
+export default async function BlogPage({ params, searchParams }: { params: Promise<{ locale: string }>, searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+  const { locale } = await params;
+  console.log(`[BlogPage] Rendering for locale: ${locale}`);
+  
+  let contentfulEntries: any[] = [];
+  let categoryEntries: any[] = [];
+  
+  try {
+      console.log('[BlogPage] Fetching entries from Contentful...');
+      [contentfulEntries, categoryEntries] = await Promise.all([
+          getEntries('blogPost', false, ['-fields.fechaPublicacion'], locale),
+          getEntries('category', false, [], locale)
+      ]);
+      console.log(`[BlogPage] Fetched ${contentfulEntries.length} posts and ${categoryEntries.length} categories`);
+  } catch (err) {
+      console.error('[BlogPage] Error fetching from Contentful:', err);
+  }
   
   const sp = await searchParams;
   const currentCategory = sp.category as string | undefined;
   
-  const mappedPosts: BlogPost[] = contentfulEntries.map((entry) => {
-    const fields = entry.fields as any;
-    return {
-      id: entry.sys.id,
-      title: fields.titulo || 'Sin título',
-      excerpt: fields.metaDescripcion || 'Sin descripción',
-      content: '', // Content is not rendered on the list page
-      date: fields.fechaPublicacion || entry.sys.createdAt,
-      readTime: '5 min de lectura', // Can be calculated from content length
-      category: fields.categoria && fields.categoria[0]?.fields?.nombre ? fields.categoria[0].fields.nombre : 'Psicología',
-      image: fields.imagenDestacada?.fields?.file?.url ? `https:${fields.imagenDestacada.fields.file.url}` : '/images/default-blog.jpg',
-      author: {
-        name: fields.autor?.fields?.nombre || 'Dr. Joan Ramon Soto',
-        role: 'Psicoanalítico',
-        image: fields.autor?.fields?.avatar?.fields?.file?.url ? `https:${fields.autor.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
-      },
-      slug: (fields.slug || '').replace(/^\/|\/$/g, ''),
-      featured: false, // Could add a boolean field in Contentful
-    };
-  });
+  const mappedPosts: BlogPost[] = (contentfulEntries || []).map((entry) => {
+    try {
+        const fields = entry.fields as any;
+        return {
+          id: entry.sys.id,
+          title: fields.titulo || 'Sin título',
+          excerpt: fields.metaDescripcion || 'Sin descripción',
+          content: '', 
+          date: fields.fechaPublicacion || entry.sys.createdAt,
+          readTime: '5 min de lectura', 
+          category: fields.categoria && fields.categoria[0]?.fields?.nombre ? fields.categoria[0].fields.nombre : 'Psicología',
+          image: fields.imagenDestacada?.fields?.file?.url ? `https:${fields.imagenDestacada.fields.file.url}` : '/images/default-blog.jpg',
+          author: {
+            name: fields.autor?.fields?.nombre || 'Dr. Joan Ramon Soto',
+            role: 'Psicoanalítico',
+            image: fields.autor?.fields?.avatar?.fields?.file?.url ? `https:${fields.autor.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
+          },
+          slug: (fields.slug || '').replace(/^\/|\/$/g, ''),
+          featured: false, 
+        };
+    } catch (e) {
+        console.error('[BlogPage] Error mapping entry:', entry.sys?.id, e);
+        return null as any;
+    }
+  }).filter(Boolean);
 
   const allPosts = mappedPosts.length > 0 ? mappedPosts : FALLBACK_POSTS;
   
@@ -142,7 +154,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
               {/* Right Side: Floating Featured Post Preview */}
               <div className="lg:col-span-5 relative">
                 {featuredPost && (
-                  <Link href={`/blog/${featuredPost.slug}`} className="block group">
+                  <Link href={{ pathname: '/blog/[slug]', params: { slug: featuredPost.slug } }} className="block group">
                     <div className="relative group overflow-hidden rounded-[2.5rem] shadow-2xl transition-all duration-500 hover:scale-[1.02]">
                       {/* Glassmorphism Card */}
                       <div className="absolute inset-0 bg-navy/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity z-10" />

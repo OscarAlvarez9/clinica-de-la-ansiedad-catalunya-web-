@@ -199,7 +199,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             role: 'Psicoanalítico',
             image: fields.author?.fields?.avatar?.fields?.file?.url ? `https:${fields.author.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
         },
-        slug: fields.slug || '',
+        slug: (fields.slug || '').replace(/^\/|\/$/g, ''),
     };
 
     // TOC Headings
