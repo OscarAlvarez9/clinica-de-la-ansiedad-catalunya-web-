@@ -56,11 +56,12 @@ export interface BlogPost {
 }
 
 // Generic fetching function with preview support
-export async function getEntries<T>(contentType: string, isPreview = false, order?: string[]) {
+export async function getEntries<T>(contentType: string, isPreview = false, order?: string[], locale = 'es') {
   const currentClient = isPreview ? previewClient : client;
   
   const query: any = {
     content_type: contentType,
+    locale: locale,
   };
 
   if (order) {
@@ -76,18 +77,30 @@ export async function getEntries<T>(contentType: string, isPreview = false, orde
   }
 }
 
-export async function getEntryBySlug(contentType: string, slug: string, isPreview = false) {
+export async function getEntryBySlug(contentType: string, slug: string, isPreview = false, locale = 'es') {
   const currentClient = isPreview ? previewClient : client;
   
   try {
     // We sanitize the target slug for comparison
     const targetSlug = slug.replace(/^\/|\/$/g, '');
     
-    // Fetch all entries of this type and find the one that matches after sanitization
-    // This is more robust than a direct field match if slugs in CMS have inconsistent slashes
+    // First try a direct query (more efficient)
+    const directQuery = await currentClient.getEntries<React.ComponentProps<any>>({
+      content_type: contentType,
+      'fields.slug': targetSlug,
+      locale: locale,
+      limit: 1,
+    });
+    
+    if (directQuery.items.length > 0) {
+      return directQuery.items[0];
+    }
+    
+    // Fallback search in case of inconsistent slashes or if the slug field is localized differently
     const entries = await currentClient.getEntries<React.ComponentProps<any>>({
       content_type: contentType,
-      limit: 100, // Reasonable limit for a blog
+      locale: locale,
+      limit: 100, 
     });
     
     const matchedEntry = entries.items.find((entry: any) => {

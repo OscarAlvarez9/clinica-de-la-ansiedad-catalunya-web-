@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { BlogPost } from '@/lib/blog-data';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -21,7 +21,7 @@ export default function BlogCard({ post, index }: BlogCardProps) {
             className="group bg-white rounded-3xl overflow-hidden shadow-glass hover:shadow-glass-hover transition-all duration-500 border border-navy/5 flex flex-col h-full"
         >
             {/* Image Container */}
-            <Link href={`/blog/${post.slug}`} className="relative h-64 overflow-hidden block">
+            <Link href={{ pathname: '/blog/[slug]', params: { slug: post.slug } }} className="relative h-64 overflow-hidden block">
                 <div className="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
                 <SafeImage
                     src={post.image}
@@ -48,7 +48,7 @@ export default function BlogCard({ post, index }: BlogCardProps) {
                     </div>
                 </div>
 
-                <Link href={`/blog/${post.slug}`} className="group-hover:text-gold transition-colors duration-300">
+                <Link href={{ pathname: '/blog/[slug]', params: { slug: post.slug } }} className="group-hover:text-gold transition-colors duration-300">
                     <h3 className="text-2xl font-serif text-navy mb-4 leading-tight">
                         {post.title}
                     </h3>
@@ -66,7 +66,7 @@ export default function BlogCard({ post, index }: BlogCardProps) {
                         <span className="text-sm font-medium text-navy/80">{post.author.name}</span>
                     </div>
                     <Link
-                        href={`/blog/${post.slug}`}
+                        href={{ pathname: '/blog/[slug]', params: { slug: post.slug } }}
                         className="text-gold font-bold text-sm uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all"
                     >
                         Leer más <ArrowRight className="w-4 h-4" />

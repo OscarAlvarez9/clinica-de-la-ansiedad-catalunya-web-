@@ -23,6 +23,7 @@ export const routing = defineRouting({
     '/ludopatia': '/ludopatia',
     '/enfoque': '/enfoque',
     '/blog': '/blog',
+    '/blog/[slug]': '/blog/[slug]',
     '/privacidad': '/privacidad',
     '/aviso-legal': '/aviso-legal'
   }
