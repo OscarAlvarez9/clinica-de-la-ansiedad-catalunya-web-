@@ -124,37 +124,41 @@ const renderOptions = {
             </a>
         ),
         [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
-            const url = node.data.target.fields?.file?.url;
-            const alt = node.data.target.fields?.title;
-            if (url) {
-                return (
-                    <div className="my-20 w-full rounded-[40px] overflow-hidden shadow-2xl bg-white p-2">
-                        <OptimizedImage 
-                            src={`https:${url}`} 
-                            alt={alt || 'Imagen del artículo'} 
-                            width={1200}
-                            height={800}
-                            className="w-full h-auto object-cover rounded-[32px]" 
-                        />
-                    </div>
-                );
-            }
-            return null;
+            const asset = node.data.target;
+            const url = asset?.fields?.file?.url;
+            const title = asset?.fields?.title || 'Imagen del artículo';
+            
+            if (!url) return null;
+
+            return (
+                <div className="my-20 w-full rounded-[40px] overflow-hidden shadow-2xl bg-white p-2 text-center">
+                    <OptimizedImage 
+                        src={`https:${url}`} 
+                        alt={title} 
+                        width={1200} 
+                        height={675} 
+                        className="w-full h-auto object-cover rounded-[32px]" 
+                    />
+                </div>
+            );
         },
         [BLOCKS.EMBEDDED_ENTRY]: (node: any) => {
-            const { contentType } = node.data.target.sys.contentType.sys.id;
-            const fields = node.data.target.fields;
+            const contentType = node.data.target?.sys?.contentType?.sys?.id;
+            const fields = node.data.target?.fields;
+
+            if (!fields) return null;
 
             if (contentType === 'blogPost') {
                 return (
-                    <div className="my-16 border border-navy/10 rounded-[32px] p-8 bg-white shadow-sm flex flex-col md:flex-row gap-8 items-center">
-                        <div className="w-full md:w-1/3 aspect-video rounded-2xl overflow-hidden">
+                    <div className="my-16 border border-navy/10 rounded-[32px] p-8 bg-white shadow-sm flex flex-col md:flex-row gap-8 items-center no-prose">
+                        <div className="w-full md:w-1/3 aspect-video rounded-2xl overflow-hidden shadow-md">
                              <SafeImage src={`https:${fields.imagenDestacada?.fields?.file?.url}`} alt={fields.titulo} className="w-full h-full object-cover" />
                         </div>
                         <div className="flex-grow text-left">
-                            <h4 className="font-serif text-xl text-navy mb-4">{fields.titulo}</h4>
-                            <Link href={{ pathname: '/blog/[slug]', params: { slug: fields.slug } }} className="text-gold font-bold text-xs uppercase tracking-widest hover:gap-2 transition-all inline-flex items-center gap-1">
-                                Leer artículo relacionado <ArrowRight className="w-3.5 h-3.5" />
+                            <span className="text-[10px] font-bold uppercase tracking-widest text-gold mb-2 block">Artículo Relacionado</span>
+                            <h4 className="font-serif text-2xl text-navy mb-4 leading-tight">{fields.titulo}</h4>
+                            <Link href={{ pathname: '/blog/[slug]', params: { slug: fields.slug || '' } }} className="text-navy font-bold text-xs uppercase tracking-widest hover:text-gold transition-all inline-flex items-center gap-2 group">
+                                Continuar leyendo <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                             </Link>
                         </div>
                     </div>
@@ -440,7 +444,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                                 <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-navy/10 pt-16">
                                     {prevEntry ? (
                                         <Link 
-                                            href={{ pathname: '/blog/[slug]', params: { slug: prevEntry.fields.slug } }}
+                                            href={{ pathname: '/blog/[slug]', params: { slug: prevEntry.fields.slug || '' } }}
                                             className="group p-8 rounded-[32px] bg-white border border-navy/5 hover:border-gold/30 transition-all text-left flex flex-col gap-2"
                                         >
                                             <span className="text-[10px] font-bold uppercase tracking-widest text-navy/40 flex items-center gap-2">
@@ -452,7 +456,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                                     
                                     {nextEntry ? (
                                         <Link 
-                                            href={{ pathname: '/blog/[slug]', params: { slug: nextEntry.fields.slug } }}
+                                            href={{ pathname: '/blog/[slug]', params: { slug: nextEntry.fields.slug || '' } }}
                                             className="group p-8 rounded-[32px] bg-white border border-navy/5 hover:border-gold/30 transition-all text-right flex flex-col items-end gap-2"
                                         >
                                             <span className="text-[10px] font-bold uppercase tracking-widest text-navy/40 flex items-center gap-2">
