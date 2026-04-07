@@ -6,7 +6,8 @@ import { Calendar, Mail, MapPin, ShieldCheck, Check, Send, ArrowUpRight, Globe2,
 
 interface FormData {
     nombre: string;
-    contacto: string;
+    email: string;
+    telefono: string;
     modalidad: string;
     problema: string;
     descripcion: string;
@@ -30,7 +31,8 @@ const MOTIVOS_CONSULTA = [
 export default function ContactSection() {
     const [formData, setFormData] = useState<FormData>({
         nombre: "",
-        contacto: "",
+        email: "",
+        telefono: "",
         modalidad: "online",
         problema: "",
         descripcion: "",
@@ -46,14 +48,17 @@ export default function ContactSection() {
         const newErrors: FormErrors = {};
 
         if (!formData.nombre.trim()) newErrors.nombre = "El nombre es requerido";
-        if (!formData.contacto.trim()) newErrors.contacto = "Teléfono o email es requerido";
+        if (!formData.email.trim() && !formData.telefono.trim()) newErrors.email = "Email o teléfono es requerido";
         if (!formData.problema) newErrors.problema = "Selecciona un motivo";
         if (!formData.privacidad) newErrors.privacidad = "Debes aceptar la política";
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const phoneRegex = /^[\d\s\+\-\(\)]{9,}$/;
-        if (formData.contacto && !emailRegex.test(formData.contacto) && !phoneRegex.test(formData.contacto)) {
-            newErrors.contacto = "Ingresa un contacto válido";
+        if (formData.email && !emailRegex.test(formData.email)) {
+            newErrors.email = "Ingresa un email válido";
+        }
+        if (formData.telefono && !phoneRegex.test(formData.telefono)) {
+            newErrors.telefono = "Ingresa un teléfono válido";
         }
 
         setErrors(newErrors);
@@ -72,7 +77,8 @@ export default function ContactSection() {
         // Prepare Template Parameters for EmailJS
         const templateParams = {
             from_name: formData.nombre,
-            contact_info: formData.contacto,
+            email: formData.email,
+            phone: formData.telefono,
             modality: formData.modalidad,
             subject: MOTIVOS_CONSULTA.find(m => m.id === formData.problema)?.label || formData.problema,
             message: formData.descripcion || "Sin descripción adicional."
@@ -91,7 +97,8 @@ export default function ContactSection() {
                 // Reset form
                 setFormData({
                     nombre: "",
-                    contacto: "",
+                    email: "",
+                    telefono: "",
                     modalidad: "online",
                     problema: "",
                     descripcion: "",
@@ -181,10 +188,10 @@ export default function ContactSection() {
 
                         <form onSubmit={handleSubmit} className="space-y-10">
                             {/* Inputs Row */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                                 <div className="space-y-3">
                                     <label className="text-navy font-bold text-sm block ml-1">Nombre completo</label>
-                                    <input 
+                                    <input
                                         type="text"
                                         placeholder="Tu nombre..."
                                         value={formData.nombre}
@@ -194,15 +201,26 @@ export default function ContactSection() {
                                     {errors.nombre && <p className="text-red-500 text-xs ml-1">{errors.nombre}</p>}
                                 </div>
                                 <div className="space-y-3">
-                                    <label className="text-navy font-bold text-sm block ml-1">Teléfono o Email</label>
-                                    <input 
-                                        type="text"
-                                        placeholder="Email o Teléfono..."
-                                        value={formData.contacto}
-                                        onChange={(e) => setFormData(p => ({ ...p, contacto: e.target.value }))}
-                                        className={`w-full bg-navy/5 h-16 px-6 rounded-2xl outline-none transition-all border-2 text-navy ${errors.contacto ? 'border-red-200' : 'border-transparent focus:border-primary/20 focus:bg-white'}`}
+                                    <label className="text-navy font-bold text-sm block ml-1">Email</label>
+                                    <input
+                                        type="email"
+                                        placeholder="tu@email.com..."
+                                        value={formData.email}
+                                        onChange={(e) => setFormData(p => ({ ...p, email: e.target.value }))}
+                                        className={`w-full bg-navy/5 h-16 px-6 rounded-2xl outline-none transition-all border-2 text-navy ${errors.email ? 'border-red-200' : 'border-transparent focus:border-primary/20 focus:bg-white'}`}
                                     />
-                                    {errors.contacto && <p className="text-red-500 text-xs ml-1">{errors.contacto}</p>}
+                                    {errors.email && <p className="text-red-500 text-xs ml-1">{errors.email}</p>}
+                                </div>
+                                <div className="space-y-3">
+                                    <label className="text-navy font-bold text-sm block ml-1">Teléfono</label>
+                                    <input
+                                        type="tel"
+                                        placeholder="+34 600 123 456"
+                                        value={formData.telefono}
+                                        onChange={(e) => setFormData(p => ({ ...p, telefono: e.target.value }))}
+                                        className={`w-full bg-navy/5 h-16 px-6 rounded-2xl outline-none transition-all border-2 text-navy ${errors.telefono ? 'border-red-200' : 'border-transparent focus:border-primary/20 focus:bg-white'}`}
+                                    />
+                                    {errors.telefono && <p className="text-red-500 text-xs ml-1">{errors.telefono}</p>}
                                 </div>
                             </div>
 
