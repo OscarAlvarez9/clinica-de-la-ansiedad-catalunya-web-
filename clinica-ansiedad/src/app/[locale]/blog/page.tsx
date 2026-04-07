@@ -13,14 +13,14 @@ import Footer from '@/components/layout/Footer';
 
 export const metadata = buildMetadata({
   title: 'Blog sobre Ansiedad y Salud Mental | Clínica de la Ansiedad Catalunya',
-  description: 'Artículos sobre síntomas de ansiedad, crisis de pánico, depresión y tratamiento psicológico por el Dr. Joan Ramon Soto.',
+  description: 'Artículos sobre síntomas de ansiedad, crisis de pánico, depresión y tratamiento psicológico por el Joan Ramon Soto.',
   path: '/blog',
   keywords: [
     'blog ansiedad',
     'artículos psicología',
     'psicoterapia psicoanalítica blog',
     'salud mental recursos',
-    'Dr. Joan Ramon Soto blog',
+    'Joan Ramon Soto blog',
     'tratamiento ansiedad artículos'
   ]
 });
@@ -61,7 +61,7 @@ export default async function BlogPage({ params, searchParams }: { params: Promi
           category: fields.categoria && fields.categoria[0]?.fields?.nombre ? fields.categoria[0].fields.nombre : 'Psicología',
           image: fields.imagenDestacada?.fields?.file?.url ? `https:${fields.imagenDestacada.fields.file.url}` : '/images/default-blog.jpg',
           author: {
-            name: fields.autor?.fields?.nombre || 'Dr. Joan Ramon Soto',
+            name: fields.autor?.fields?.nombre || 'Joan Ramon Soto',
             role: 'Psicoanalítico',
             image: fields.autor?.fields?.avatar?.fields?.file?.url ? `https:${fields.autor.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
           },

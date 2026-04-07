@@ -187,7 +187,7 @@ export default function ServicioHero({
                       &ldquo;{quote}&rdquo;
                     </p>
                     <p className="text-gold text-[9px] font-bold uppercase tracking-[0.2em]">
-                      Dr. Joan Ramon Soto
+                      Joan Ramon Soto
                     </p>
                   </div>
                 </div>

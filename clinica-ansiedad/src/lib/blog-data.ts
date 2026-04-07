@@ -44,7 +44,7 @@ export const BLOG_POSTS: BlogPost[] = [
         category: 'Psicoanálisis',
         image: '/images/blog/ansiedad-roots.jpg',
         author: {
-            name: 'Dr. Joan Ramon Soto',
+            name: 'Joan Ramon Soto',
             role: 'Psicoanalista Clínico',
             image: '/images/joan-ramon.jpg'
         },
@@ -69,7 +69,7 @@ export const BLOG_POSTS: BlogPost[] = [
         category: 'Terapia Familiar',
         image: '/images/blog/family-bonds.jpg',
         author: {
-            name: 'Dr. Joan Ramon Soto',
+            name: 'Joan Ramon Soto',
             role: 'Psicoanalista Clínico',
             image: '/images/joan-ramon.jpg'
         },
@@ -90,7 +90,7 @@ export const BLOG_POSTS: BlogPost[] = [
         category: 'Terapia Online',
         image: '/images/blog/online-therapy.jpg',
         author: {
-            name: 'Dr. Joan Ramon Soto',
+            name: 'Joan Ramon Soto',
             role: 'Psicoanalista Clínico',
             image: '/images/joan-ramon.jpg'
         },

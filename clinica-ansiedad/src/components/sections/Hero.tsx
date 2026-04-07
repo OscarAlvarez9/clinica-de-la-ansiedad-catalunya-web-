@@ -138,7 +138,7 @@ export default function Hero() {
                     <div className="relative w-full aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(22,78,99,0.2)]">
                         <Image
                             src="/images/joan-ramon-soto.png"
-                            alt="Dr. Joan Ramon Soto"
+                            alt="Joan Ramon Soto"
                             fill
                             className="object-cover"
                             priority

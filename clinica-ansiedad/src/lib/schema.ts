@@ -14,7 +14,7 @@ export const medicalClinicSchema = {
     "name": "Clínica de la Ansiedad Catalunya",
     "alternateName": [
         "Clínica de l'Ansietat Catalunya",
-        "Dr. Joan Ramon Soto - Psicoterapia Psicoanalítica"
+        "Joan Ramon Soto - Psicoterapia Psicoanalítica"
     ],
     "headline": "Terapia Psicoanalítica Especializada en Ansiedad, Depresión y Crisis de Pánico",
     "description": "Clínica especializada en el tratamiento de los síntomas de ansiedad, trastorno de ansiedad generalizada, depresión, TOC, crisis de pánico y fobia social desde 1993. Abordaje profundo y personalizado en Barcelona (Canet de Mar) y terapia online para toda España.",
@@ -110,7 +110,7 @@ export const medicalClinicSchema = {
                 "@type": "Rating",
                 "ratingValue": "5"
             },
-            "reviewBody": "El Dr. Joan Ramon Soto cambió mi vida. Después de 15 años con ansiedad, finalmente entiendo qué estaba pasando. La terapia psicoanalítica es profunda, rigurosa y transformadora."
+            "reviewBody": "El Joan Ramon Soto cambió mi vida. Después de 15 años con ansiedad, finalmente entiendo qué estaba pasando. La terapia psicoanalítica es profunda, rigurosa y transformadora."
         },
         {
             "@type": "Review",
@@ -272,7 +272,7 @@ export const medicalClinicSchema = {
 };
 
 // ============================================
-// 2. PERSONA - Dr. Joan Ramon Soto
+// 2. PERSONA - Joan Ramon Soto
 // ============================================
 export const personSchema = {
     "@context": "https://schema.org",

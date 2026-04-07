@@ -195,7 +195,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         category: fields.categoria && fields.categoria[0]?.fields?.nombre ? fields.categoria[0].fields.nombre : 'Psicología',
         image: fields.imagenDestacada?.fields?.file?.url ? `https:${fields.imagenDestacada.fields.file.url}` : '/images/default-blog.jpg',
         author: {
-            name: fields.autor?.fields?.nombre || 'Dr. Joan Ramon Soto',
+            name: fields.autor?.fields?.nombre || 'Joan Ramon Soto',
             role: 'Psicoanalítico',
             image: fields.author?.fields?.avatar?.fields?.file?.url ? `https:${fields.author.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
         },
@@ -228,7 +228,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 category: f.categoria && f.categoria[0]?.fields?.nombre ? f.categoria[0].fields.nombre : 'Psicología',
                 image: f.imagenDestacada?.fields?.file?.url ? `https:${f.imagenDestacada.fields.file.url}` : '/images/default-blog.jpg',
                 author: {
-                    name: f.autor?.fields?.nombre || 'Dr. Joan Ramon Soto',
+                    name: f.autor?.fields?.nombre || 'Joan Ramon Soto',
                     role: 'Psicoanalítico',
                     image: f.author?.fields?.avatar?.fields?.file?.url ? `https:${f.author.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
                 },

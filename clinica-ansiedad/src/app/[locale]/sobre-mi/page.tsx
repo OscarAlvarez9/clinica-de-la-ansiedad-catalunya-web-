@@ -10,11 +10,11 @@ import StickyBookingButton from '@/components/servicios/StickyBookingButton';
 import FAQSection from '@/components/sections/FAQSection';
 
 export const metadata = buildMetadata({
-    title: 'Dr. Joan Ramon Soto | Psicoanalista Ansiedad Barcelona',
-    description: 'Psicoanalista con más de 30 años en psicoterapia psicoanalítica. Dr. Joan Ramon Soto, fundador de la Clínica de la Ansiedad Catalunya. Consulta en Barcelona y online.',
+    title: 'Joan Ramon Soto | Psicoanalista Ansiedad Barcelona',
+    description: 'Psicoanalista con más de 30 años en psicoterapia psicoanalítica. Joan Ramon Soto, fundador de la Clínica de la Ansiedad Catalunya. Consulta en Barcelona y online.',
     path: '/sobre-mi',
     keywords: [
-        'Dr. Joan Ramon Soto',
+        'Joan Ramon Soto',
         'psicólogo ansiedad',
         'psicólogo Barcelona',
         'consulta psicologica',
@@ -25,7 +25,7 @@ export const metadata = buildMetadata({
         'psicólogo Maresme', 'psicoterapeuta Catalunya'
     ],
     image: 'https://clinicadelansiedad.com/images/joan-ramon-soto.png',
-    imageAlt: 'Dr. Joan Ramon Soto - Psicoanalista Ansiedad Barcelona'
+    imageAlt: 'Joan Ramon Soto - Psicoanalista Ansiedad Barcelona'
 });
 
 export default function SobreMiPage() {

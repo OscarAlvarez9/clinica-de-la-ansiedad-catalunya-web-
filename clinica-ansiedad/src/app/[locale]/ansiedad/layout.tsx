@@ -2,7 +2,7 @@ import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
   title: 'Síntomas de Ansiedad y Causas | Clínica Ansiedad Catalunya',
-  description: 'Descubre qué es la ansiedad, sus síntomas físicos y sus causas profundas. Tratamiento psicoanalítico con el Dr. Joan Ramon Soto. Consulta en Barcelona y online.',
+  description: 'Descubre qué es la ansiedad, sus síntomas físicos y sus causas profundas. Tratamiento psicoanalítico con el Joan Ramon Soto. Consulta en Barcelona y online.',
   path: '/ansiedad',
   keywords: [
     'sintomas de ansiedad', 'ansiedad sintomas', 'que es ansiedad',

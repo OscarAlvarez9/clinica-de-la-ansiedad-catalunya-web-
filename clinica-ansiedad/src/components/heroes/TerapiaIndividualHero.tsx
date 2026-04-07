@@ -6,7 +6,7 @@ export default function TerapiaIndividualHero() {
   return (
     <ServicioHero
       image="/images/joan-ramon-soto.png"
-      imageAlt="Dr. Joan Ramon Soto - Terapia Individual Barcelona"
+      imageAlt="Joan Ramon Soto - Terapia Individual Barcelona"
       imagePosition="right"
       bg="cream"
       chip="Psicoterapia Especializada · Desde 1993"
