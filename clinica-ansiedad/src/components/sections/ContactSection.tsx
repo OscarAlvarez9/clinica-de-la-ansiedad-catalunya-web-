@@ -377,12 +377,12 @@ export default function ContactSection() {
 
                     {/* Contact Tiles */}
                     <div className="lg:col-span-2 flex flex-col gap-6">
-                        <motion.button 
-                            onClick={() => {
-                                document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
-                            }}
+                        <motion.a 
+                            href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ y: -5 }}
-                            className="bg-white p-10 rounded-[2.5rem] border border-navy/5 shadow-xl shadow-navy/[0.02] group text-left w-full"
+                            className="bg-white p-10 rounded-[2.5rem] border border-navy/5 shadow-xl shadow-navy/[0.02] group text-left w-full block"
                         >
                             <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                                 <Calendar className="w-6 h-6 text-primary group-hover:text-white" />
@@ -392,7 +392,7 @@ export default function ContactSection() {
                             <div className="flex items-center gap-2 text-primary text-sm font-bold">
                                 Ver disponibilidad <ArrowUpRight className="w-4 h-4" />
                             </div>
-                        </motion.button>
+                        </motion.a>
 
                         <motion.a 
                             href="mailto:joanramonsoto@gmail.com"

@@ -19,7 +19,7 @@ export const medicalClinicSchema = {
     "headline": "Terapia Psicoanalítica Especializada en Ansiedad, Depresión y Crisis de Pánico",
     "description": "Clínica especializada en el tratamiento de los síntomas de ansiedad, trastorno de ansiedad generalizada, depresión, TOC, crisis de pánico y fobia social desde 1993. Abordaje profundo y personalizado en Barcelona (Canet de Mar) y terapia online para toda España.",
     "url": "https://clinicadelansiedad.com",
-    "telephone": "+34629794365",
+    "telephone": "+34613916079",
     "email": "joanramonsoto@gmail.com",
     "founded": "1993",
     "foundingDate": "1993",
@@ -259,7 +259,7 @@ export const medicalClinicSchema = {
         {
             "@type": "ContactPoint",
             "contactType": "Customer Support",
-            "telephone": "+34629794365",
+            "telephone": "+34613916079",
             "email": "joanramonsoto@gmail.com",
             "availableLanguage": ["es", "ca"]
         },
@@ -353,10 +353,10 @@ export const personSchema = {
     "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Professional",
-        "telephone": "+34629794365",
+        "telephone": "+34613916079",
         "email": "joanramonsoto@gmail.com"
     },
-    "telephone": "+34629794365",
+    "telephone": "+34613916079",
     "email": "joanramonsoto@gmail.com",
     "sameAs": [
         "https://www.google.com/maps/place/Ronda+Dr+Anglès+74,+Canet+de+Mar",
@@ -624,7 +624,7 @@ export const organizationSchema = {
     "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Customer Service",
-        "telephone": "+34629794365",
+        "telephone": "+34613916079",
         "email": "joanramonsoto@gmail.com"
     }
 };
