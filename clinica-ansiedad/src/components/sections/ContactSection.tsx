@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Calendar, Mail, MapPin, ArrowUpRight, Globe2, Sparkles, Phone, MessageCircle } from "lucide-react";
+import { Calendar, MapPin, ArrowUpRight, Sparkles, Phone, MessageCircle } from "lucide-react";
 
 const WHATSAPP_NUMBER = "34613916079";
 const WHATSAPP_MESSAGE = encodeURIComponent("Hola, me gustaría solicitar una valoración.");
@@ -107,30 +107,16 @@ export default function ContactSection() {
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ y: -5 }}
-                            className="bg-white p-10 rounded-[2.5rem] border border-navy/5 shadow-xl shadow-navy/[0.02] group text-left w-full block"
+                            className="bg-white p-10 rounded-[2.5rem] border border-navy/5 shadow-xl shadow-navy/[0.02] group text-left w-full h-full flex flex-col justify-between"
                         >
                             <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                                 <Calendar className="w-6 h-6 text-primary group-hover:text-white" />
                             </div>
-                            <span className="text-navy/40 text-xs font-black uppercase tracking-widest block mb-1">Reserva tu cita</span>
-                            <span className="text-navy text-2xl font-bold block mb-4">Agenda una sesión</span>
-                            <div className="flex items-center gap-2 text-primary text-sm font-bold">
-                                Ver disponibilidad <ArrowUpRight className="w-4 h-4" />
-                            </div>
-                        </motion.a>
-
-                        <motion.a
-                            href="mailto:joanramonsoto@gmail.com"
-                            whileHover={{ y: -5 }}
-                            className="bg-navy p-10 rounded-[2.5rem] text-white relative overflow-hidden group h-full flex flex-col justify-end min-h-[250px]"
-                        >
-                            <Globe2 className="absolute top-[-10%] right-[-10%] w-48 h-48 opacity-10 rotate-12" />
-                            <div className="relative z-10">
-                                <Mail className="w-10 h-10 text-primary mb-6" />
-                                <span className="text-white/40 text-xs font-black uppercase tracking-widest block mb-1">Email</span>
-                                <span className="text-white text-xl font-medium block mb-4 break-all">joanramonsoto@gmail.com</span>
-                                <div className="flex items-center gap-2 text-primary text-sm font-bold bg-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-md">
-                                    Enviar email <ArrowUpRight className="w-3 h-3" />
+                            <div>
+                                <span className="text-navy/40 text-xs font-black uppercase tracking-widest block mb-1">Reserva tu cita</span>
+                                <span className="text-navy text-2xl font-bold block mb-4">Agenda una sesión</span>
+                                <div className="flex items-center gap-2 text-primary text-sm font-bold">
+                                    Ver disponibilidad <ArrowUpRight className="w-4 h-4" />
                                 </div>
                             </div>
                         </motion.a>
