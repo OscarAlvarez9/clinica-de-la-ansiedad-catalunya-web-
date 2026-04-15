@@ -107,16 +107,16 @@ export default function ContactSection() {
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ y: -5 }}
-                            className="bg-navy p-10 lg:p-12 rounded-[2.5rem] border border-navy/5 shadow-xl shadow-navy/[0.02] group text-left w-full h-full flex flex-col justify-between min-h-[420px]"
+                            className="bg-white p-10 lg:p-12 rounded-[2.5rem] border border-navy/5 shadow-xl shadow-navy/[0.02] group text-left w-full h-full flex flex-col justify-between min-h-[420px]"
                         >
                             <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                                 <Calendar className="w-7 h-7 text-primary group-hover:text-white" />
                             </div>
                             <div>
-                                <span className="text-white/40 text-xs font-black uppercase tracking-widest block mb-3">Reserva tu cita</span>
-                                <span className="text-white text-3xl lg:text-4xl font-serif font-bold block mb-4 leading-tight">Agenda una sesión</span>
-                                <p className="text-white/50 text-base leading-relaxed mb-8">Elige el horario que mejor se adapte a ti. Consulta presencial u online.</p>
-                                <div className="flex items-center gap-3 bg-primary text-black px-6 py-3 rounded-full font-bold text-sm w-fit group-hover:scale-105 transition-transform">
+                                <span className="text-navy/40 text-xs font-black uppercase tracking-widest block mb-3">Reserva tu cita</span>
+                                <span className="text-navy text-3xl lg:text-4xl font-serif font-bold block mb-4 leading-tight">Agenda una sesión</span>
+                                <p className="text-navy/50 text-base leading-relaxed mb-8">Elige el horario que mejor se adapte a ti. Consulta presencial u online.</p>
+                                <div className="flex items-center gap-3 bg-navy text-white px-6 py-3 rounded-full font-bold text-sm w-fit transition-colors group-hover:bg-primary group-hover:text-black">
                                     Ver disponibilidad <ArrowUpRight className="w-4 h-4" />
                                 </div>
                             </div>
