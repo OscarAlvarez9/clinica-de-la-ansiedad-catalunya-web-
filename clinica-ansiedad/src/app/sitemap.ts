@@ -1,9 +1,13 @@
 import { MetadataRoute } from 'next';
-import { BLOG_POSTS } from '@/lib/blog-data';
+import { getEntries } from '@/lib/contentful';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://clinicadelansiedad.com';
+// Las URLs reales viven bajo www + prefijo de idioma (/es, /ca): el middleware de
+// next-intl no sirve rutas sin prefijo, así que el sitemap debe listar las URLs
+// canónicas exactas o Google acaba rastreando 404s.
+const BASE_URL = 'https://www.clinicadelansiedad.com';
+const LOCALES = ['es', 'ca'] as const;
 
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const staticPages = [
         { path: '', freq: 'weekly', priority: 1.0 },
         { path: '/ansiedad', freq: 'monthly', priority: 0.95 },
@@ -19,23 +23,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { path: '/servicios/dimension-familiar', freq: 'monthly', priority: 0.7 },
         { path: '/sobre-mi', freq: 'monthly', priority: 0.8 },
         { path: '/blog', freq: 'weekly', priority: 0.85 },
-        { path: '/ca', freq: 'monthly', priority: 0.8 },
-        { path: '/ca/terapia-individual', freq: 'monthly', priority: 0.7 },
-        { path: '/ca/terapia-online', freq: 'monthly', priority: 0.7 }
     ];
 
-    // Blog posts URLs
-    const blogPosts = BLOG_POSTS.map((post) => ({
-        path: `/blog/${post.slug}`,
-        freq: 'monthly' as const,
-        priority: 0.85
-    }));
+    // Páginas estáticas en ambos idiomas: /es/... y /ca/...
+    const localizedPages = LOCALES.flatMap((locale) =>
+        staticPages.map(({ path, freq, priority }) => ({
+            path: `/${locale}${path}`,
+            freq,
+            // El catalán ligeramente por debajo del castellano
+            priority: locale === 'es' ? priority : Math.max(0.5, priority - 0.15),
+        }))
+    );
 
-    // Combine all pages
-    const allPages = [...staticPages, ...blogPosts];
+    // Posts del blog desde Contentful (la fuente real — los slugs hardcodeados de
+    // blog-data.ts son fallbacks que no existen como entradas y daban 404).
+    let blogPosts: { path: string; freq: string; priority: number }[] = [];
+    try {
+        const entries = await getEntries('blogPost', false, ['-fields.fechaPublicacion']);
+        blogPosts = entries
+            .map((entry: any) => (entry.fields?.slug || '').replace(/^\/|\/$/g, ''))
+            .filter(Boolean)
+            .map((slug: string) => ({
+                path: `/es/blog/${slug}`,
+                freq: 'monthly',
+                priority: 0.85,
+            }));
+    } catch {
+        // Si Contentful no responde, el sitemap sale sin posts en vez de romperse.
+    }
+
+    const allPages = [...localizedPages, ...blogPosts];
 
     return allPages.map(({ path, freq, priority }) => ({
-        url: `${baseUrl}${path}`,
+        url: `${BASE_URL}${path}`,
         lastModified: new Date().toISOString().split('T')[0],
         changeFrequency: freq as any,
         priority,

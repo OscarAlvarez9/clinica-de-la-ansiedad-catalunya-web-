@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: '*',
             allow: '/',
         },
-        sitemap: 'https://clinicadelansiedad.com/sitemap.xml',
+        sitemap: 'https://www.clinicadelansiedad.com/sitemap.xml',
     };
 }
