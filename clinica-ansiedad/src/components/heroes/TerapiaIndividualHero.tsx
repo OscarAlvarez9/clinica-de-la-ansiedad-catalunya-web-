@@ -5,7 +5,7 @@ import ServicioHero from "./ServicioHero";
 export default function TerapiaIndividualHero() {
   return (
     <ServicioHero
-      image="/images/joan-ramon-soto.png"
+      image="/images/joanramonsotoimagenweb.webp"
       imageAlt="Joan Ramon Soto - Terapia Individual Barcelona"
       imagePosition="right"
       bg="cream"

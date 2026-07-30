@@ -24,7 +24,7 @@ export const metadata = buildMetadata({
         'psicólogo ansiedad Barcelona', 'psicólogo Canet de Mar',
         'psicólogo Maresme', 'psicoterapeuta Catalunya'
     ],
-    image: 'https://clinicadelansiedad.com/images/joan-ramon-soto.png',
+    image: 'https://clinicadelansiedad.com/images/joanramonsotoimagenweb.webp',
     imageAlt: 'Joan Ramon Soto - Psicoanalista Ansiedad Barcelona'
 });
 

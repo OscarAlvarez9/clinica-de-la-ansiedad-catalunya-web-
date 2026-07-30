@@ -1,6 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { Calendar, MessageCircle } from 'lucide-react';
+import { bookingUrl, whatsappUrl } from '@/lib/constants';
+
+const WA_URL = whatsappUrl('Hola, me gustaría solicitar una valoración.');
 
 export default function StickyBookingButton() {
     const [isVisible, setIsVisible] = useState(false);
@@ -8,61 +12,39 @@ export default function StickyBookingButton() {
     useEffect(() => {
         const toggleVisibility = () => {
             // Mostrar después de scrollear 300px
-            if (window.scrollY > 300) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
+            setIsVisible(window.scrollY > 300);
         };
 
-        window.addEventListener('scroll', toggleVisibility);
+        window.addEventListener('scroll', toggleVisibility, { passive: true });
         return () => window.removeEventListener('scroll', toggleVisibility);
     }, []);
-
-    const handleClick = () => {
-        const contactSection = document.getElementById('contacto');
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
 
     if (!isVisible) return null;
 
     return (
-        <div className="fixed bottom-8 right-8 z-40 flex flex-col gap-4 md:gap-6 animate-in fade-in slide-in-from-bottom-4 duration-300">
-            {/* Botón Presencial - Gold (Arriba) */}
+        <div className="fixed bottom-6 right-4 md:bottom-8 md:right-8 z-40 flex flex-col items-end gap-3 animate-in fade-in slide-in-from-bottom-4 duration-300">
+            {/* WhatsApp — contacto de baja fricción */}
             <a
-                href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
+                href={WA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative bg-gold text-navy rounded-full p-5 md:p-6 shadow-[0_10px_40px_-10px_rgba(212,175,55,0.5)] hover:shadow-[0_15px_50px_-10px_rgba(212,175,55,0.7)] transition-all duration-300 hover:scale-110 hover:bg-gold-light focus:outline-none focus:ring-4 focus:ring-gold/30 flex items-center justify-center"
-                aria-label="Reservar sesión presencial"
-                title="Cita Presencial"
+                className="flex items-center gap-2.5 bg-[#25D366] text-black font-bold rounded-full pl-4 pr-5 py-3.5 shadow-[0_10px_35px_-10px_rgba(37,211,102,0.6)] hover:shadow-[0_14px_45px_-10px_rgba(37,211,102,0.8)] hover:scale-105 active:scale-[0.98] transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#25D366]/30 text-sm"
+                aria-label="Escríbenos por WhatsApp"
             >
-                <svg className="w-8 h-8 md:w-10 md:h-10 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <div className="absolute right-full mr-5 top-1/2 -translate-y-1/2 bg-navy/90 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-widest px-4 py-2 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0 pointer-events-none shadow-xl border border-white/10">
-                    Cita Presencial
-                </div>
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp
             </a>
 
-            {/* Botón Online - Sage (Abajo) */}
+            {/* Reserva — acción principal, mismo destino en todo el sitio */}
             <a
-                href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
+                href={bookingUrl('sticky')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative bg-sage text-white rounded-full p-5 md:p-6 shadow-[0_10px_40px_-10px_rgba(107,158,139,0.5)] hover:shadow-[0_15px_50px_-10px_rgba(107,158,139,0.7)] transition-all duration-300 hover:scale-110 hover:bg-sage/90 focus:outline-none focus:ring-4 focus:ring-sage/30 flex items-center justify-center"
-                aria-label="Reservar sesión online"
-                title="Cita Online"
+                className="flex items-center gap-2.5 bg-navy text-white font-bold rounded-full pl-4 pr-5 py-4 shadow-[0_10px_40px_-10px_rgba(44,110,138,0.6)] hover:shadow-[0_14px_50px_-10px_rgba(44,110,138,0.8)] hover:bg-navy/90 hover:scale-105 active:scale-[0.98] transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-navy/30 text-sm uppercase tracking-wider"
+                aria-label="Reservar cita"
             >
-                <svg className="w-8 h-8 md:w-10 md:h-10 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-                <div className="absolute right-full mr-5 top-1/2 -translate-y-1/2 bg-navy/90 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-widest px-4 py-2 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0 pointer-events-none shadow-xl border border-white/10">
-                    Cita Online
-                </div>
+                <Calendar className="w-5 h-5 text-gold-light" />
+                Reservar cita
             </a>
         </div>
     );

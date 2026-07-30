@@ -378,8 +378,13 @@ export default function AnsiedadPage() {
               <a href="/celos" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">celos patológicos</a> vinculados a la angustia de base.
               Ofrecemos <a href="/servicios/terapia-individual" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia individual</a>,{" "}
               <a href="/servicios/terapia-de-pareja" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia de pareja</a> y{" "}
-              <a href="/servicios/dimension-familiar" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia familiar</a> en nuestra consulta de Canet de Mar (Barcelona) y{" "}
+              <a href="/servicios/dimension-familiar" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia familiar</a> en nuestra{" "}
+              <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">consulta de Canet de Mar (Maresme)</a> y{" "}
               <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para pacientes de toda Catalunya y España.
+            </p>
+            <p className="text-navy/50 text-sm leading-relaxed mt-4">
+              ¿Representas a una empresa? Ofrecemos también un{" "}
+              <a href="/taller-gestion-estres-empresas" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">taller práctico de gestión del estrés y la ansiedad para empresas</a>: un programa presencial de prevención y entrenamiento de herramientas para equipos.
             </p>
           </div>
         </section>

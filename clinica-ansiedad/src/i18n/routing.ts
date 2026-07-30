@@ -16,6 +16,8 @@ export const routing = defineRouting({
     '/servicios/terapia-de-pareja': '/servicios/terapia-de-pareja',
     '/servicios/dimension-familiar': '/servicios/dimension-familiar',
     '/terapia-online': '/terapia-online',
+    '/taller-gestion-estres-empresas': '/taller-gestion-estres-empresas',
+    '/psicologo-maresme': '/psicologo-maresme',
     '/ansiedad': '/ansiedad',
     '/crisis-de-panico': '/crisis-de-panico',
     '/depresion': '/depresion',

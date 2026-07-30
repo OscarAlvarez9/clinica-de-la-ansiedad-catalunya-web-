@@ -30,7 +30,7 @@ export const medicalClinicSchema = {
         "givenName": "Joan Ramon",
         "familyName": "Soto",
         "jobTitle": "Psicoterapeuta Psicoanalítico",
-        "image": "https://clinicadelansiedad.com/images/joan-ramon-soto.png",
+        "image": "https://clinicadelansiedad.com/images/joanramonsotoimagenweb.webp",
         "sameAs": [
             "https://www.linkedin.com/in/joan-ramon-soto",
             "https://www.google.com/maps/place/Ronda+Dr+Anglès+74,+Canet+de+Mar"
@@ -284,7 +284,7 @@ export const personSchema = {
     "jobTitle": "Psicoterapeuta Psicoanalítico",
     "description": "Especialista en psicoterapia psicoanalítica con 31 años de experiencia tratando ansiedad, depresión y conflictos emocionales profundos.",
     "url": "https://clinicadelansiedad.com",
-    "image": "https://clinicadelansiedad.com/images/joan-ramon-soto.png",
+    "image": "https://clinicadelansiedad.com/images/joanramonsotoimagenweb.webp",
     "worksFor": {
         "@type": "MedicalClinic",
         "@id": "https://clinicadelansiedad.com",

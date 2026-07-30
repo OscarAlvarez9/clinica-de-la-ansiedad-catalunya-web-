@@ -1,0 +1,83 @@
+import type { Metadata } from 'next';
+
+const PATH = '/psicologo-maresme';
+const BASE = 'https://www.clinicadelansiedad.com';
+
+const meta = {
+  es: {
+    title: 'Psicólogo en el Maresme y Canet de Mar | Psicoanalista Joan Ramon Soto',
+    description:
+      'Consulta de psicoanálisis en Canet de Mar (Maresme) para ansiedad, depresión y crisis de pánico. Psicoanalista colegiado Joan Ramon Soto, presencial y online, en catalán y castellano. Desde 1993.',
+    keywords: [
+      'psicologo Maresme', 'psicologo Canet de Mar', 'psicoanalista Maresme',
+      'psicoanalista Canet de Mar', 'psicologo Arenys de Mar', 'psicologo Calella',
+      'psicologo Pineda de Mar', 'psicologo Mataró', 'terapia ansiedad Maresme',
+      'psicologo ansiedad Canet de Mar', 'consulta psicologica Maresme',
+      'psicoanalisis Canet de Mar', 'psicologo Sant Pol de Mar',
+    ],
+    ogLocale: 'es_ES',
+  },
+  ca: {
+    title: "Psicòleg al Maresme i Canet de Mar | Psicoanalista Joan Ramon Soto",
+    description:
+      "Consulta de psicoanàlisi a Canet de Mar (Maresme) per a ansietat, depressió i crisis de pànic. Psicoanalista col·legiat Joan Ramon Soto, presencial i online, en català i castellà. Des de 1993.",
+    keywords: [
+      'psicòleg Maresme', 'psicòleg Canet de Mar', 'psicoanalista Maresme',
+      'psicoanalista Canet de Mar', 'psicòleg Arenys de Mar', 'psicòleg Calella',
+      'psicòleg Pineda de Mar', 'psicòleg Mataró', 'teràpia ansietat Maresme',
+      'psicoanàlisi Canet de Mar', 'consulta psicològica Maresme',
+    ],
+    ogLocale: 'ca_ES',
+  },
+} as const;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const m = locale === 'ca' ? meta.ca : meta.es;
+  const url = `${BASE}/${locale === 'ca' ? 'ca' : 'es'}${PATH}`;
+
+  return {
+    title: m.title,
+    description: m.description,
+    keywords: m.keywords as unknown as string[],
+    robots: 'index, follow',
+    alternates: {
+      canonical: url,
+      languages: {
+        es: `${BASE}/es${PATH}`,
+        ca: `${BASE}/ca${PATH}`,
+        'x-default': `${BASE}/es${PATH}`,
+      },
+    },
+    openGraph: {
+      title: m.title,
+      description: m.description,
+      url,
+      type: 'website',
+      locale: m.ogLocale,
+      siteName: 'Clínica de la Ansiedad Catalunya',
+      images: [
+        {
+          url: `${BASE}/images/clinic-interior.png`,
+          width: 1200,
+          height: 630,
+          alt: 'Consulta de la Clínica de la Ansiedad en Canet de Mar, Maresme',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: m.title,
+      description: m.description,
+      images: [`${BASE}/images/clinic-interior.png`],
+    },
+  };
+}
+
+export default function PsicologoMaresmeLayout({ children }: { children: React.ReactNode }) {
+  return children;
+}

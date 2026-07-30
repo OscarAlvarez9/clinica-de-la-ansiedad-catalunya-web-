@@ -29,6 +29,14 @@ export default function ServiciosPage() {
                 <Methodologies />
                 <TreatmentModalities />
                 <SpecialtiesSection />
+                <section className="py-12 px-4 md:px-8 border-t border-navy/5">
+                    <div className="container mx-auto max-w-4xl">
+                        <p className="text-navy/50 text-sm leading-relaxed">
+                            Además de la atención individual, de pareja y familiar, trabajamos con empresas a través de un{" "}
+                            <a href="/taller-gestion-estres-empresas" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">taller práctico de gestión del estrés y la ansiedad para empresas</a>: un programa presencial de prevención y entrenamiento de herramientas para equipos, en grupos reducidos.
+                        </p>
+                    </div>
+                </section>
                 <FAQSection />
             </main>
             <Footer />

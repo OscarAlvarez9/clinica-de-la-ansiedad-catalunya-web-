@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { Card, CardBody } from '@heroui/react';
 import { Calendar, MonitorSmartphone, MapPin } from 'lucide-react';
-import Link from 'next/link';
+import { bookingUrl } from '@/lib/constants';
 
 export default function BookingOptions() {
     return (
@@ -48,12 +48,14 @@ export default function BookingOptions() {
                                         <span>Lunes a Viernes con cita previa</span>
                                     </div>
                                 </div>
-                                <Link
-                                    href="/#contacto"
+                                <a
+                                    href={bookingUrl('booking-options-presencial')}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-full inline-block text-center bg-navy text-white font-medium rounded-xl py-4 hover:bg-navy/90 transition-all shadow-md cursor-pointer"
                                 >
                                     Reservar Presencial
-                                </Link>
+                                </a>
                             </CardBody>
                         </Card>
                     </motion.div>
@@ -79,12 +81,14 @@ export default function BookingOptions() {
                                         <span>Horarios flexibles adaptados a tu zona horaria</span>
                                     </div>
                                 </div>
-                                <Link
-                                    href="/#contacto"
+                                <a
+                                    href={bookingUrl('booking-options-online')}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-full inline-block text-center bg-navy text-white font-medium rounded-xl py-4 hover:bg-navy/90 transition-all shadow-md cursor-pointer"
                                 >
                                     Reservar Online
-                                </Link>
+                                </a>
                             </CardBody>
                         </Card>
                     </motion.div>

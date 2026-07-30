@@ -16,13 +16,19 @@ import {
     DropdownItem
 } from "@heroui/react";
 import { ChevronDown, Phone, Menu, X, Globe } from "lucide-react";
+import { bookingUrl } from "@/lib/constants";
 
-export default function Navbar() {
+export default function Navbar({ theme = "light" }: { theme?: "light" | "dark" }) {
     const t = useTranslations('navbar');
     const locale = useLocale();
     const pathname = usePathname();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    // Sobre un hero oscuro (theme="dark") y en la parte superior sin scroll, el
+    // navbar transparente necesita texto claro; al hacer scroll pasa a fondo
+    // blanco y vuelve al estilo navy por defecto.
+    const onDark = theme === "dark" && !isScrolled && !isMenuOpen;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -56,6 +62,7 @@ export default function Navbar() {
                 { name: t('specialities.gambling'), href: "/ludopatia" as any },
             ]
         },
+        { name: t('empresas'), href: "/taller-gestion-estres-empresas" as any },
         { name: t('approach'), href: "/enfoque" as any },
         { name: t('blog'), href: "/blog" as any },
         { name: t('contact'), href: "/#contacto" as any },
@@ -80,7 +87,7 @@ export default function Navbar() {
             <NavbarContent className="sm:hidden">
                 <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="text-navy p-2 hover:text-gold transition-colors"
+                    className={`p-2 transition-colors ${onDark ? "text-white hover:text-gold-light" : "text-navy hover:text-gold"}`}
                     aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
                 >
                     {isMenuOpen ? (
@@ -95,7 +102,7 @@ export default function Navbar() {
                 <img
                     src="/images/logo.png"
                     alt="Clínica de la Ansiedad Catalunya"
-                    className="h-9 sm:h-10 md:h-12 w-auto object-contain brightness-0"
+                    className={`h-9 sm:h-10 md:h-12 w-auto object-contain ${onDark ? "brightness-0 invert" : "brightness-0"}`}
                 />
             </NavbarBrand>
 
@@ -109,7 +116,7 @@ export default function Navbar() {
                                 }}
                             >
                                 <DropdownTrigger>
-                                    <button className="flex items-center gap-1 text-navy hover:text-gold transition-colors font-sans text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.2em] uppercase font-bold outline-none cursor-pointer">
+                                    <button className={`flex items-center gap-1 transition-colors font-sans text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.2em] uppercase font-bold outline-none cursor-pointer ${onDark ? "text-white/90 hover:text-gold-light" : "text-navy hover:text-gold"}`}>
                                         {item.name} <ChevronDown className="w-3 h-3 opacity-50" />
                                     </button>
                                 </DropdownTrigger>
@@ -124,7 +131,7 @@ export default function Navbar() {
                         ) : (
                             <Link
                                 href={item.href}
-                                className="text-navy hover:text-gold transition-colors font-sans text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.2em] uppercase font-bold"
+                                className={`transition-colors font-sans text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.2em] uppercase font-bold ${onDark ? "text-white/90 hover:text-gold-light" : "text-navy hover:text-gold"}`}
                             >
                                 {item.name}
                             </Link>
@@ -144,7 +151,7 @@ export default function Navbar() {
                         <DropdownTrigger>
                             <Button
                                 variant="light"
-                                className="p-0 min-w-unit-10 h-unit-10 text-navy hover:text-gold transition-colors font-sans text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.2em] uppercase font-bold"
+                                className={`p-0 min-w-unit-10 h-unit-10 transition-colors font-sans text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.2em] uppercase font-bold ${onDark ? "text-white/90 hover:text-gold-light" : "text-navy hover:text-gold"}`}
                                 startContent={<Globe className="w-4 h-4 opacity-70" />}
                             >
                                 {locale.toUpperCase()}
@@ -174,9 +181,11 @@ export default function Navbar() {
 
                 <NavbarItem>
                     <Button
-                        as={Link}
-                        href="/#contacto"
-                        className="bg-navy text-white font-bold rounded-lg sm:rounded-xl px-3 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 hover:bg-navy/90 shadow-lg shadow-navy/10 transition-all text-[10px] sm:text-xs md:text-xs uppercase tracking-wider md:tracking-widest"
+                        as="a"
+                        href={bookingUrl('navbar')}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`font-bold rounded-lg sm:rounded-xl px-3 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 shadow-lg transition-all text-[10px] sm:text-xs md:text-xs uppercase tracking-wider md:tracking-widest ${onDark ? "bg-white text-navy hover:bg-white/90 shadow-black/20" : "bg-navy text-white hover:bg-navy/90 shadow-navy/10"}`}
                     >
                         {t('cta')}
                     </Button>
@@ -231,8 +240,10 @@ export default function Navbar() {
                 ))}
                 <NavbarMenuItem className="mt-8">
                     <Button
-                        as={Link}
-                        href="/#contacto"
+                        as="a"
+                        href={bookingUrl('navbar-mobile')}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-full bg-navy text-white font-bold rounded-2xl py-6 sm:py-8 text-base sm:text-lg"
                         onClick={() => setIsMenuOpen(false)}
                     >

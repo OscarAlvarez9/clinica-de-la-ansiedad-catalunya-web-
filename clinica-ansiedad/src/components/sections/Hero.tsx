@@ -5,6 +5,7 @@ import { Star, ArrowRight, ShieldCheck, Clock } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
+import { bookingUrl } from "@/lib/constants";
 
 const fadeUpVariant: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -74,8 +75,10 @@ export default function Hero() {
                         className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-16"
                     >
                         <Button
-                            as={Link}
-                            href="/#contacto"
+                            as="a"
+                            href={bookingUrl('hero-home')}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="w-full sm:w-auto bg-navy hover:bg-navy/95 text-white font-semibold px-10 py-8 rounded-xl text-lg shadow-2xl shadow-navy/20 transition-all duration-300 group"
                         >
                             {t('cta_main')}
@@ -137,7 +140,7 @@ export default function Hero() {
                 >
                     <div className="relative w-full aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(22,78,99,0.2)]">
                         <Image
-                            src="/images/joan-ramon-soto.png"
+                            src="/images/joanramonsotoimagenweb.webp"
                             alt="Joan Ramon Soto"
                             fill
                             className="object-cover"

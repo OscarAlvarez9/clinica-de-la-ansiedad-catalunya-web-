@@ -18,6 +18,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { path: '/ludopatia', freq: 'monthly', priority: 0.85 },
         { path: '/enfoque', freq: 'monthly', priority: 0.85 },
         { path: '/terapia-online', freq: 'monthly', priority: 0.9 },
+        { path: '/taller-gestion-estres-empresas', freq: 'monthly', priority: 0.9 },
+        { path: '/psicologo-maresme', freq: 'monthly', priority: 0.9 },
         { path: '/servicios/terapia-individual', freq: 'monthly', priority: 0.85 },
         { path: '/servicios/terapia-de-pareja', freq: 'monthly', priority: 0.75 },
         { path: '/servicios/dimension-familiar', freq: 'monthly', priority: 0.7 },

@@ -40,6 +40,7 @@ export default function Footer() {
                         <ul className="space-y-3 text-sm text-white/90">
                             <li><Link href="/enfoque" className="text-white/80 hover:text-gold transition-colors">Nuestro enfoque</Link></li>
                             <li><Link href="/sobre-mi" className="text-white/80 hover:text-gold transition-colors">Joan Ramon Soto</Link></li>
+                            <li><Link href={"/psicologo-maresme" as any} className="text-white/80 hover:text-gold transition-colors">Psicoanalista en el Maresme</Link></li>
                             <li><Link href={"/#faq" as any} className="text-white/80 hover:text-gold transition-colors">Preguntas frecuentes</Link></li>
                             <li><Link href={"/#contacto" as any} className="text-white/80 hover:text-gold transition-colors font-bold flex items-center gap-2 group">{t('contact_title')} <ArrowUpRight className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform" /></Link></li>
                         </ul>

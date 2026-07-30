@@ -302,8 +302,10 @@ export default function TerapiaIndividualPage() {
               Puede complementarse con{" "}
               <a href="/servicios/terapia-de-pareja" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia de pareja</a> o{" "}
               <a href="/servicios/dimension-familiar" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia familiar</a>.
-              Psicoanalista en Barcelona (Canet de Mar, Maresme) y{" "}
+              <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">Psicoanalista en Canet de Mar (Maresme)</a> y{" "}
               <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para toda Catalunya y España.
+              Para organizaciones ofrecemos además un{" "}
+              <a href="/taller-gestion-estres-empresas" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">taller de gestión del estrés y la ansiedad para empresas</a>.
             </p>
           </div>
         </section>

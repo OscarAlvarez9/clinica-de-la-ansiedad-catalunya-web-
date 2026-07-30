@@ -6,7 +6,7 @@ export default function ExpertBio() {
         <div className="flex flex-col md:flex-row items-center gap-6 p-8 bg-white rounded-2xl shadow-[0_10px_40px_-15px_rgba(44,95,120,0.1)] border border-navy/5">
             <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shrink-0 border-4 border-cream shadow-md">
                 <Image
-                    src="/images/joan-ramon-soto.png"
+                    src="/images/joanramonsotoimagenweb.webp"
                     alt="Joan Ramon Soto - Psicoterapeuta psicoanalítico"
                     fill
                     className="object-cover object-top hover:scale-105 transition-transform duration-500"

@@ -3,7 +3,6 @@
 export default function CredentialsBanner() {
     const credentials = [
         { label: "COPC", sublabel: "Col·legi Oficial de Psicòlegs de Catalunya" },
-        { label: "COP", sublabel: "Colegio Oficial de Psicólogos de España" },
         { label: "5.0 ★", sublabel: "130+ Reseñas verificadas Google" },
         { label: "1993 →", sublabel: "Más de 30 años de trayectoria clínica" },
         { label: "Online", sublabel: "Terapia para toda España y Catalunya" },

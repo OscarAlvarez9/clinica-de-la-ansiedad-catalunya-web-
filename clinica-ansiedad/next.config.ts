@@ -40,6 +40,11 @@ const nextConfig: NextConfig = {
             { source: '/ludopatia', destination: '/es/ludopatia', permanent: true },
             { source: '/enfoque', destination: '/es/enfoque', permanent: true },
             { source: '/terapia-online', destination: '/es/terapia-online', permanent: true },
+            { source: '/taller-gestion-estres-empresas', destination: '/es/taller-gestion-estres-empresas', permanent: true },
+            // Slugs cortos alternativos que se pueden compartir en comunicación comercial.
+            { source: '/taller-empresas', destination: '/es/taller-gestion-estres-empresas', permanent: true },
+            { source: '/es/taller-empresas', destination: '/es/taller-gestion-estres-empresas', permanent: true },
+            { source: '/ca/taller-empresas', destination: '/ca/taller-gestion-estres-empresas', permanent: true },
             { source: '/servicios', destination: '/es/servicios', permanent: true },
             { source: '/servicios/:path*', destination: '/es/servicios/:path*', permanent: true },
             { source: '/sobre-mi', destination: '/es/sobre-mi', permanent: true },
@@ -55,10 +60,12 @@ const nextConfig: NextConfig = {
             { source: '/tratamientos-y-servicios', destination: '/es/servicios', permanent: true },
             { source: '/como-saber-si-has-dejado-de-querer-a-tu-pareja', destination: '/es/servicios/terapia-de-pareja', permanent: true },
             { source: '/deterioro-relacion-pareja-factores', destination: '/es/servicios/terapia-de-pareja', permanent: true },
-            { source: '/psicoanalisis-canet-de-mar', destination: '/es/enfoque', permanent: true },
-            // TODO: crear página local de Canet de Mar / Maresme (rankeaba top 3-5
-            // en catalán) y apuntar aquí en vez de a la home.
-            { source: '/psicologia-canet-de-mar', destination: '/es', permanent: true },
+            // Página local de Canet de Mar / Maresme (estas URLs del WordPress antiguo
+            // rankeaban top 3-5 en catalán). Reconducidas a la nueva landing local.
+            { source: '/psicoanalisis-canet-de-mar', destination: '/es/psicologo-maresme', permanent: true },
+            { source: '/psicologia-canet-de-mar', destination: '/es/psicologo-maresme', permanent: true },
+            { source: '/psicologo-maresme', destination: '/es/psicologo-maresme', permanent: true },
+            { source: '/psicologo-canet-de-mar', destination: '/es/psicologo-maresme', permanent: true },
             { source: '/formacion-academica', destination: '/es/sobre-mi', permanent: true },
 
             // No existe página de contacto: el contacto es la sección #contacto de
