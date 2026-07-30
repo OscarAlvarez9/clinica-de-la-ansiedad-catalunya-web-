@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { BookOpen, ExternalLink, Newspaper, Quote, ArrowRight } from 'lucide-react';
-import { Card, CardBody } from '@heroui/react';
 
 const publications = [
     {
@@ -53,8 +52,8 @@ export default function PublicationsSection() {
                             viewport={{ once: true }}
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8"
                         >
-                            <BookOpen className="w-4 h-4 text-gold" />
-                            <span className="text-[10px] font-black tracking-[0.3em] text-gold uppercase">Divulgación Clínica</span>
+                            <BookOpen className="w-4 h-4 text-gold-light" />
+                            <span className="text-[10px] font-black tracking-[0.3em] text-sage uppercase">Divulgación Clínica</span>
                         </motion.div>
                         <motion.h2
                             initial={{ opacity: 0, y: 30 }}
@@ -62,7 +61,7 @@ export default function PublicationsSection() {
                             viewport={{ once: true }}
                             className="font-serif text-5xl md:text-7xl font-bold mb-8 leading-[0.9] tracking-tighter"
                         >
-                            Voz de autoridad en <span className="text-gold italic font-light">primeros medios</span>
+                            Voz de autoridad en <span className="text-gold-light italic font-light">primeros medios</span>
                         </motion.h2>
                     </div>
                     <motion.div
@@ -89,11 +88,11 @@ export default function PublicationsSection() {
                         >
                             <div className="group h-full bg-white/5 backdrop-blur-sm border border-white/10 p-10 rounded-[2rem] hover:bg-white/[0.08] hover:border-gold/30 transition-all duration-500 relative flex flex-col">
                                 <div className="absolute top-10 right-10 opacity-10 group-hover:opacity-30 transition-opacity">
-                                    <Quote className="w-10 h-10 text-gold" />
+                                    <Quote className="w-10 h-10 text-gold-light" />
                                 </div>
                                 
                                 <div className="mb-8">
-                                    <span className="text-gold text-[10px] font-black tracking-[0.2em] uppercase bg-gold/10 px-3 py-1.5 rounded-full border border-gold/20">
+                                    <span className="text-gold-light text-[10px] font-black tracking-[0.2em] uppercase bg-gold/15 px-3 py-1.5 rounded-full border border-gold-light/25">
                                         {item.source}
                                     </span>
                                 </div>

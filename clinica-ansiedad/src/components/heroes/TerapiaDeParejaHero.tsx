@@ -5,7 +5,7 @@ import ServicioHero from "./ServicioHero";
 export default function TerapiaDeParejaHero() {
   return (
     <ServicioHero
-      image="/images/clinic-interior.png"
+      image="/images/centreclinicansiedad.jpeg"
       imageAlt="Consulta Terapia de Pareja Barcelona"
       imagePosition="left"
       bg="white"

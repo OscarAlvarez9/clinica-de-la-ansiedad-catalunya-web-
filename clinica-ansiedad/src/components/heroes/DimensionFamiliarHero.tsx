@@ -5,7 +5,7 @@ import ServicioHero from "./ServicioHero";
 export default function DimensionFamiliarHero() {
   return (
     <ServicioHero
-      image="/images/clinic-interior.png"
+      image="/images/centreclinicansiedad.jpeg"
       imageAlt="Consulta Terapia Familiar Barcelona"
       imagePosition="right"
       bg="cream"

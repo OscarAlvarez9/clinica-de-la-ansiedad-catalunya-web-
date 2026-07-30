@@ -541,7 +541,7 @@ export default function TallerEmpresasPage() {
                   <div aria-hidden className="absolute -inset-3 bg-gold/15 rounded-[2.5rem] blur-2xl" />
                   <div className="relative rounded-[2rem] overflow-hidden border-4 border-white shadow-[0_30px_80px_-25px_rgba(26,58,72,0.45)] aspect-[4/3.4]">
                     <Image
-                      src="/images/clinic-interior.png"
+                      src="/images/centreclinicansiedad.jpeg"
                       alt="Clínica de la Ansiedad, centro psicológico en Barcelona"
                       fill
                       priority

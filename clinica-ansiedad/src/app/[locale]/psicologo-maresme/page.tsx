@@ -252,7 +252,7 @@ export default function PsicologoMaresmePage() {
     telephone: "+34613916079",
     email: "joanramonsoto@gmail.com",
     priceRange: "€€",
-    image: "https://www.clinicadelansiedad.com/images/clinic-interior.png",
+    image: "https://www.clinicadelansiedad.com/images/centreclinicansiedad.jpeg",
     founder: { "@type": "Person", name: "Joan Ramon Soto", jobTitle: "Psicoanalista" },
     address: {
       "@type": "PostalAddress",

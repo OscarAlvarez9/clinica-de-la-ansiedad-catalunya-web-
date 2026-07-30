@@ -29,7 +29,7 @@ export const medicalClinicSchema = {
         "name": "Joan Ramon Soto",
         "givenName": "Joan Ramon",
         "familyName": "Soto",
-        "jobTitle": "Psicoterapeuta Psicoanalítico",
+        "jobTitle": "Psicoanalista",
         "image": "https://clinicadelansiedad.com/images/joanramonsotoimagenweb.webp",
         "sameAs": [
             "https://www.linkedin.com/in/joan-ramon-soto",
@@ -88,7 +88,7 @@ export const medicalClinicSchema = {
             "description": "Consultas previa cita"
         }
     ],
-    "image": "https://clinicadelansiedad.com/images/clinic-interior.png",
+    "image": "https://clinicadelansiedad.com/images/centreclinicansiedad.jpeg",
     "logo": "https://clinicadelansiedad.com/logo.png",
     "aggregateRating": {
         "@type": "AggregateRating",
@@ -281,7 +281,7 @@ export const personSchema = {
     "name": "Joan Ramon Soto",
     "givenName": "Joan Ramon",
     "familyName": "Soto",
-    "jobTitle": "Psicoterapeuta Psicoanalítico",
+    "jobTitle": "Psicoanalista",
     "description": "Especialista en psicoterapia psicoanalítica con 31 años de experiencia tratando ansiedad, depresión y conflictos emocionales profundos.",
     "url": "https://clinicadelansiedad.com",
     "image": "https://clinicadelansiedad.com/images/joanramonsotoimagenweb.webp",

@@ -196,7 +196,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         image: fields.imagenDestacada?.fields?.file?.url ? `https:${fields.imagenDestacada.fields.file.url}` : '/images/default-blog.jpg',
         author: {
             name: fields.autor?.fields?.nombre || 'Joan Ramon Soto',
-            role: 'Psicoanalítico',
+            role: 'Psicoanalista',
             image: fields.author?.fields?.avatar?.fields?.file?.url ? `https:${fields.author.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
         },
         slug: (fields.slug || '').replace(/^\/|\/$/g, ''),
@@ -229,7 +229,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 image: f.imagenDestacada?.fields?.file?.url ? `https:${f.imagenDestacada.fields.file.url}` : '/images/default-blog.jpg',
                 author: {
                     name: f.autor?.fields?.nombre || 'Joan Ramon Soto',
-                    role: 'Psicoanalítico',
+                    role: 'Psicoanalista',
                     image: f.author?.fields?.avatar?.fields?.file?.url ? `https:${f.author.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
                 },
                 slug: (f.slug || '').replace(/^\/|\/$/g, ''),

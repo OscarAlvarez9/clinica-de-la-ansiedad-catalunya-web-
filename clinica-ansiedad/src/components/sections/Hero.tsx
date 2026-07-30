@@ -169,7 +169,7 @@ export default function Hero() {
                         className="absolute -left-20 top-20 w-56 h-72 rounded-2xl overflow-hidden border-8 border-cream shadow-2xl hidden 2xl:block"
                     >
                         <Image
-                            src="/images/clinic-interior.png"
+                            src="/images/centreclinicansiedad.jpeg"
                             alt="Interior de la clínica"
                             fill
                             className="object-cover"
