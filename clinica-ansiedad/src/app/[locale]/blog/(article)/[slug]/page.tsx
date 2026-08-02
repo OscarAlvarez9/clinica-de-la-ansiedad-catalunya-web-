@@ -46,7 +46,8 @@ export async function generateMetadata({ params }: PageProps) {
     if (!entry) return buildMetadata({
         title: 'Post no encontrado',
         description: 'El artículo que buscas no existe o ha sido movido.',
-        path: '/blog'
+        path: '/blog',
+        lang: locale
     });
 
     const fields = entry.fields as any;
@@ -65,6 +66,7 @@ export async function generateMetadata({ params }: PageProps) {
         image: fields.imagenDestacada?.fields?.file?.url ? `https:${fields.imagenDestacada.fields.file.url}` : undefined,
         imageAlt: fields.titulo,
         type: 'article',
+        lang: locale,
         publishedTime: fields.fechaPublicacion || entry.sys.createdAt,
         modifiedTime: entry.sys.updatedAt
     });
@@ -246,11 +248,11 @@ export default async function BlogPostPage({ params }: PageProps) {
         datePublished: post.date,
         dateModified: entry.sys.updatedAt,
         image: post.image,
-        url: `https://clinicadelansiedad.com/blog/${slug}`
+        url: `https://www.clinicadelansiedad.com/${locale}/blog/${slug}`
     });
 
     // Social Sharing Intents
-    const shareUrl = `https://clinicadelansiedad.com/blog/${slug}`;
+    const shareUrl = `https://www.clinicadelansiedad.com/${locale}/blog/${slug}`;
     const shareTitle = post.title;
     const socialLinks = [
         { Icon: Facebook, url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}` },

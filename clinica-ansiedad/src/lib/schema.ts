@@ -10,7 +10,7 @@
 export const medicalClinicSchema = {
     "@context": "https://schema.org",
     "@type": ["MedicalClinic", "LocalBusiness", "HealthAndBeautyBusiness"],
-    "@id": "https://clinicadelansiedad.com",
+    "@id": "https://www.clinicadelansiedad.com",
     "name": "Clínica de la Ansiedad Catalunya",
     "alternateName": [
         "Clínica de l'Ansietat Catalunya",
@@ -18,19 +18,19 @@ export const medicalClinicSchema = {
     ],
     "headline": "Terapia Psicoanalítica Especializada en Ansiedad, Depresión y Crisis de Pánico",
     "description": "Clínica especializada en el tratamiento de los síntomas de ansiedad, trastorno de ansiedad generalizada, depresión, TOC, crisis de pánico y fobia social desde 1993. Abordaje profundo y personalizado en Barcelona (Canet de Mar) y terapia online para toda España.",
-    "url": "https://clinicadelansiedad.com",
+    "url": "https://www.clinicadelansiedad.com",
     "telephone": "+34613916079",
     "email": "joanramonsoto@gmail.com",
     "founded": "1993",
     "foundingDate": "1993",
     "founder": {
         "@type": "Person",
-        "@id": "https://clinicadelansiedad.com#joan-ramon-soto",
+        "@id": "https://www.clinicadelansiedad.com#joan-ramon-soto",
         "name": "Joan Ramon Soto",
         "givenName": "Joan Ramon",
         "familyName": "Soto",
         "jobTitle": "Psicoanalista",
-        "image": "https://clinicadelansiedad.com/images/joanramonsotoimagenweb.webp",
+        "image": "https://www.clinicadelansiedad.com/images/joanramonsotoimagenweb.webp",
         "sameAs": [
             "https://www.linkedin.com/in/joan-ramon-soto",
             "https://www.google.com/maps/place/Ronda+Dr+Anglès+74,+Canet+de+Mar"
@@ -54,7 +54,7 @@ export const medicalClinicSchema = {
             }
         },
         "yearsOfExperience": 31,
-        "url": "https://clinicadelansiedad.com"
+        "url": "https://www.clinicadelansiedad.com"
     },
     "address": {
         "@type": "PostalAddress",
@@ -88,8 +88,8 @@ export const medicalClinicSchema = {
             "description": "Consultas previa cita"
         }
     ],
-    "image": "https://clinicadelansiedad.com/images/centreclinicansiedad.jpeg",
-    "logo": "https://clinicadelansiedad.com/logo.png",
+    "image": "https://www.clinicadelansiedad.com/images/centreclinicansiedad.jpeg",
+    "logo": "https://www.clinicadelansiedad.com/logo.png",
     "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
@@ -142,7 +142,7 @@ export const medicalClinicSchema = {
     "availableService": [
         {
             "@type": "MedicalTherapy",
-            "@id": "https://clinicadelansiedad.com#terapia-individual",
+            "@id": "https://www.clinicadelansiedad.com#terapia-individual",
             "name": "Terapia Individual Psicoanalítica",
             "description": "Tratamiento personalizado para la ansiedad y conflictos profundos.",
             "serviceType": "Psychotherapy",
@@ -150,7 +150,7 @@ export const medicalClinicSchema = {
         },
         {
             "@type": "MedicalTherapy",
-            "@id": "https://clinicadelansiedad.com#terapia-pareja",
+            "@id": "https://www.clinicadelansiedad.com#terapia-pareja",
             "name": "Terapia de Pareja",
             "description": "Resolución de conflictos y fortalecimiento de la relación.",
             "serviceType": "Psychotherapy",
@@ -158,7 +158,7 @@ export const medicalClinicSchema = {
         },
         {
             "@type": "MedicalTherapy",
-            "@id": "https://clinicadelansiedad.com#terapia-online",
+            "@id": "https://www.clinicadelansiedad.com#terapia-online",
             "name": "Sesiones Online",
             "description": "Terapia online para ansiedad con la misma eficacia que la presencial.",
             "serviceType": "Telemedicine",
@@ -166,7 +166,7 @@ export const medicalClinicSchema = {
         },
         {
             "@type": "MedicalTherapy",
-            "@id": "https://clinicadelansiedad.com#tratamiento-ansiedad",
+            "@id": "https://www.clinicadelansiedad.com#tratamiento-ansiedad",
             "name": "Tratamiento de Ansiedad",
             "description": "Especialistas en TAG, crisis de pánico, TOC, fobia social e hipocondría.",
             "serviceType": "Psychiatry"
@@ -266,7 +266,7 @@ export const medicalClinicSchema = {
         {
             "@type": "ContactPoint",
             "contactType": "Appointment",
-            "url": "https://clinicadelansiedad.com#contacto"
+            "url": "https://www.clinicadelansiedad.com#contacto"
         }
     ]
 };
@@ -277,17 +277,17 @@ export const medicalClinicSchema = {
 export const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://clinicadelansiedad.com#joan-ramon-soto",
+    "@id": "https://www.clinicadelansiedad.com#joan-ramon-soto",
     "name": "Joan Ramon Soto",
     "givenName": "Joan Ramon",
     "familyName": "Soto",
     "jobTitle": "Psicoanalista",
     "description": "Especialista en psicoterapia psicoanalítica con 31 años de experiencia tratando ansiedad, depresión y conflictos emocionales profundos.",
-    "url": "https://clinicadelansiedad.com",
-    "image": "https://clinicadelansiedad.com/images/joanramonsotoimagenweb.webp",
+    "url": "https://www.clinicadelansiedad.com",
+    "image": "https://www.clinicadelansiedad.com/images/joanramonsotoimagenweb.webp",
     "worksFor": {
         "@type": "MedicalClinic",
-        "@id": "https://clinicadelansiedad.com",
+        "@id": "https://www.clinicadelansiedad.com",
         "name": "Clínica de la Ansiedad Catalunya"
     },
     "workLocation": [
@@ -475,7 +475,7 @@ export const blogPostingSchema = (post: {
     "author": {
         "@type": "Person",
         "name": post.author,
-        "url": "https://clinicadelansiedad.com"
+        "url": "https://www.clinicadelansiedad.com"
     },
     "datePublished": post.datePublished,
     "dateModified": post.dateModified,
@@ -488,7 +488,7 @@ export const blogPostingSchema = (post: {
         "name": "Clínica de la Ansiedad Catalunya",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://clinicadelansiedad.com/logo.png"
+            "url": "https://www.clinicadelansiedad.com/logo.png"
         }
     },
     "inLanguage": "es"
@@ -521,7 +521,7 @@ export const articleSchema = (article: {
         "name": "Clínica de la Ansiedad Catalunya",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://clinicadelansiedad.com/logo.png"
+            "url": "https://www.clinicadelansiedad.com/logo.png"
         }
     }
 });
@@ -553,7 +553,7 @@ export const eventSchema = (event: {
     "organizer": {
         "@type": "Organization",
         "name": "Clínica de la Ansiedad Catalunya",
-        "url": "https://clinicadelansiedad.com"
+        "url": "https://www.clinicadelansiedad.com"
     }
 });
 
@@ -613,8 +613,8 @@ export const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Clínica de la Ansiedad Catalunya",
-    "url": "https://clinicadelansiedad.com",
-    "logo": "https://clinicadelansiedad.com/logo.png",
+    "url": "https://www.clinicadelansiedad.com",
+    "logo": "https://www.clinicadelansiedad.com/logo.png",
     "description": "Clínica especializada en psicoterapia psicoanalítica para tratamiento de ansiedad desde 1993",
     "sameAs": [
         "https://www.facebook.com/clinicadelansiedad",
@@ -635,8 +635,8 @@ export const organizationSchema = {
 export const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://clinicadelansiedad.com#website",
-    "url": "https://clinicadelansiedad.com",
+    "@id": "https://www.clinicadelansiedad.com#website",
+    "url": "https://www.clinicadelansiedad.com",
     "name": "Clínica de la Ansiedad Catalunya",
     "description": "Terapia psicoanalítica especializada en ansiedad, depresión y crisis de pánico",
     "inLanguage": ["es", "ca"]

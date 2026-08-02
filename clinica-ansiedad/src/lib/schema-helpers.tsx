@@ -94,7 +94,7 @@ export function generateBreadcrumb(items: Array<{ name: string; path: string }>)
             "@type": "ListItem",
             "position": index + 1,
             "name": item.name,
-            "item": `https://clinicadelansiedad.com${item.path}`
+            "item": `https://www.clinicadelansiedad.com${item.path}`
         }))
     };
 }

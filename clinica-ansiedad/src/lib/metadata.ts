@@ -11,22 +11,27 @@ export interface MetadataProps {
     lang?: string;
 }
 
+// Host canónico: www. El servidor redirige sin-www → www con un 308,
+// así que canonical y hreflang deben apuntar SIEMPRE a www y con prefijo de idioma.
+const BASE = 'https://www.clinicadelansiedad.com';
+
 export function buildMetadata({
     title,
     description,
     path,
     keywords = [],
-    image = 'https://clinicadelansiedad.com/images/og-default.png',
+    image = `${BASE}/images/og-default.png`,
     imageAlt = 'Clínica de la Ansiedad Catalunya',
     type = 'website',
     publishedTime,
     modifiedTime,
     lang = 'es'
 }: MetadataProps) {
+    const locale = lang === 'ca' ? 'ca' : 'es';
     const ogConfig: any = {
         title,
         description,
-        url: `https://clinicadelansiedad.com${path}`,
+        url: `${BASE}/${locale}${path}`,
         siteName: 'Clínica de la Ansiedad Catalunya',
         locale: lang === 'ca' ? 'ca_ES' : 'es_ES',
         type,
@@ -52,11 +57,12 @@ export function buildMetadata({
         keywords: keywords.length > 0 ? keywords : ['clínica ansiedad', 'psicólogo barcelona', 'psicoterapia'],
         robots: 'index, follow',
         alternates: {
-            canonical: `https://clinicadelansiedad.com${path}`,
+            // cada página canoniza a SÍ MISMA: www + prefijo de su idioma
+            canonical: `${BASE}/${locale}${path}`,
             languages: {
-                'es': `https://clinicadelansiedad.com${path}`,
-                'ca': `https://clinicadelansiedad.com/ca${path}`,
-                'x-default': `https://clinicadelansiedad.com${path}`
+                'es': `${BASE}/es${path}`,
+                'ca': `${BASE}/ca${path}`,
+                'x-default': `${BASE}/es${path}`
             }
         },
         openGraph: ogConfig,

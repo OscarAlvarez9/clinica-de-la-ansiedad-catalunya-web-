@@ -35,17 +35,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     };
 
     return {
-        metadataBase: new URL('https://clinicadelansiedad.com'),
+        metadataBase: new URL('https://www.clinicadelansiedad.com'),
         title: titles[locale] || titles.es,
         description: descriptions[locale] || descriptions.es,
         authors: [{ name: 'Joan Ramon Soto' }],
         robots: 'index, follow',
         alternates: {
-            canonical: `https://clinicadelansiedad.com/${locale}`,
+            canonical: `https://www.clinicadelansiedad.com/${locale}`,
             languages: {
-                'es': 'https://clinicadelansiedad.com/es',
-                'ca': 'https://clinicadelansiedad.com/ca',
-                'x-default': 'https://clinicadelansiedad.com/es'
+                'es': 'https://www.clinicadelansiedad.com/es',
+                'ca': 'https://www.clinicadelansiedad.com/ca',
+                'x-default': 'https://www.clinicadelansiedad.com/es'
             }
         },
         openGraph: {
@@ -54,10 +54,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             type: 'website',
             locale: locale === 'ca' ? 'ca_ES' : 'es_ES',
             siteName: 'Clínica de la Ansiedad Catalunya',
-            url: `https://clinicadelansiedad.com/${locale}`,
+            url: `https://www.clinicadelansiedad.com/${locale}`,
             images: [
                 {
-                    url: 'https://clinicadelansiedad.com/images/og-clinic-hero.png',
+                    url: 'https://www.clinicadelansiedad.com/images/og-clinic-hero.png',
                     width: 1200,
                     height: 630,
                     alt: 'Clínica de la Ansiedad Catalunya'

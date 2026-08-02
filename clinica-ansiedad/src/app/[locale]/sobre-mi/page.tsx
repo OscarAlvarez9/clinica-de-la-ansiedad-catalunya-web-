@@ -9,24 +9,32 @@ import PublicationsSection from '@/components/sobre-mi/PublicationsSection';
 import StickyBookingButton from '@/components/servicios/StickyBookingButton';
 import FAQSection from '@/components/sections/FAQSection';
 
-export const metadata = buildMetadata({
-    title: 'Joan Ramon Soto | Psicoanalista Ansiedad Barcelona',
-    description: 'Psicoanalista con más de 30 años en psicoterapia psicoanalítica. Joan Ramon Soto, fundador de la Clínica de la Ansiedad Catalunya. Consulta en Barcelona y online.',
-    path: '/sobre-mi',
-    keywords: [
-        'Joan Ramon Soto',
-        'psicólogo ansiedad',
-        'psicólogo Barcelona',
-        'consulta psicologica',
-        'psicólogo especialista ansiedad',
-        'psicoterapia psicoanalítica',
-        'clínica de la ansiedad director',
-        'psicólogo ansiedad Barcelona', 'psicólogo Canet de Mar',
-        'psicólogo Maresme', 'psicoterapeuta Catalunya'
-    ],
-    image: 'https://clinicadelansiedad.com/images/joanramonsotoimagenweb.webp',
-    imageAlt: 'Joan Ramon Soto - Psicoanalista Ansiedad Barcelona'
-});
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return buildMetadata({
+      title: 'Joan Ramon Soto | Psicoanalista Ansiedad Barcelona',
+      description: 'Psicoanalista con más de 30 años en psicoterapia psicoanalítica. Joan Ramon Soto, fundador de la Clínica de la Ansiedad Catalunya. Consulta en Barcelona y online.',
+      path: '/sobre-mi',
+      keywords: [
+          'Joan Ramon Soto',
+          'psicólogo ansiedad',
+          'psicólogo Barcelona',
+          'consulta psicologica',
+          'psicólogo especialista ansiedad',
+          'psicoterapia psicoanalítica',
+          'clínica de la ansiedad director',
+          'psicólogo ansiedad Barcelona', 'psicólogo Canet de Mar',
+          'psicólogo Maresme', 'psicoterapeuta Catalunya'
+      ],
+      image: 'https://www.clinicadelansiedad.com/images/joanramonsotoimagenweb.webp',
+      imageAlt: 'Joan Ramon Soto - Psicoanalista Ansiedad Barcelona',
+    lang: locale,
+  });
+}
 
 export default function SobreMiPage() {
     return (

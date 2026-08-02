@@ -11,19 +11,27 @@ import SafeImage from '@/components/ui/SafeImage';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
-export const metadata = buildMetadata({
-  title: 'Blog sobre Ansiedad y Salud Mental | Clínica de la Ansiedad Catalunya',
-  description: 'Artículos sobre síntomas de ansiedad, crisis de pánico, depresión y tratamiento psicológico por el Joan Ramon Soto.',
-  path: '/blog',
-  keywords: [
-    'blog ansiedad',
-    'artículos psicología',
-    'psicoterapia psicoanalítica blog',
-    'salud mental recursos',
-    'Joan Ramon Soto blog',
-    'tratamiento ansiedad artículos'
-  ]
-});
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return buildMetadata({
+    title: 'Blog sobre Ansiedad y Salud Mental | Clínica de la Ansiedad Catalunya',
+    description: 'Artículos sobre síntomas de ansiedad, crisis de pánico, depresión y tratamiento psicológico por el Joan Ramon Soto.',
+    path: '/blog',
+    keywords: [
+      'blog ansiedad',
+      'artículos psicología',
+      'psicoterapia psicoanalítica blog',
+      'salud mental recursos',
+      'Joan Ramon Soto blog',
+      'tratamiento ansiedad artículos'
+    ],
+    lang: locale,
+  });
+}
 
 export const revalidate = 3600; // Revalidate every hour
 
