@@ -9,7 +9,7 @@ export default function AnsiedadHero() {
       chipIcon={<ShieldCheck className="w-3.5 h-3.5" />}
       title="Entender la ansiedad"
       titleAccent="para dejar de sufrirla."
-      description="Palpitaciones. Hiperventilación. La mente que no para. Si has llegado aquí es porque algo en ti ya sabe que necesitas respuestas reales —no técnicas de respiración, sino la comprensión de lo que te pasa."
+      description="Palpitaciones. Hiperventilación. La mente que no para. Si has llegado aquí es porque algo en ti ya sabe que necesitas respuestas reales —no técnicas de respiración, sino la comprensión de lo que te pasa. Psicoanalista especialista en ansiedad en Barcelona, presencial y online."
       ctaText="Solicitar Valoración"
       quote="El síntoma es solo el mensajero continuo. Nuestro trabajo es descifrar el mensaje."
       stats={[

@@ -4,6 +4,9 @@ import { motion, type Variants } from "framer-motion";
 import { Card, CardBody, Chip, Button } from "@heroui/react";
 import { CheckCircle2, ShieldCheck, HeartPulse, Leaf, ArrowRight } from "lucide-react";
 import Link from "next/link";
+// Link con prefijo de idioma: los <Link> de next/link sin prefijo acaban
+// redirigidos a /es aunque el visitante navegue en /ca.
+import { Link as LocaleLink } from "@/i18n/routing";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import AnsiedadHero from "@/components/heroes/AnsiedadHero";
@@ -379,13 +382,57 @@ export default function AnsiedadPage() {
               Ofrecemos <a href="/servicios/terapia-individual" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia individual</a>,{" "}
               <a href="/servicios/terapia-de-pareja" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia de pareja</a> y{" "}
               <a href="/servicios/dimension-familiar" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia familiar</a> en nuestra{" "}
-              <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">consulta de Canet de Mar (Maresme)</a> y{" "}
+              <LocaleLink href={"/psicologo-maresme" as never} className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">consulta de Canet de Mar (Maresme)</LocaleLink> y{" "}
               <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para pacientes de toda Catalunya y España.
             </p>
             <p className="text-navy/50 text-sm leading-relaxed mt-4">
               ¿Representas a una empresa? Ofrecemos también un{" "}
               <a href="/taller-gestion-estres-empresas" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">taller práctico de gestión del estrés y la ansiedad para empresas</a>: un programa presencial de prevención y entrenamiento de herramientas para equipos.
             </p>
+          </div>
+        </section>
+
+        {/* ===== LOCAL BARCELONA ===== */}
+        {/* H2 con la keyword exacta: la página ya asoma en pos 8-11 para las
+            búsquedas "psicólogo ansiedad barcelona" / "ansiedad barcelona" sin
+            tener ninguna sección local. Este bloque es la señal on-page. */}
+        <section className="py-20 md:py-24 px-4 md:px-8 bg-cream">
+          <div className="container mx-auto max-w-4xl">
+            <motion.div variants={inView} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
+              <Chip size="sm" className="bg-gold/10 text-gold border border-gold/20 text-[10px] font-bold uppercase tracking-widest mb-6">
+                Barcelona
+              </Chip>
+              <h2 className="font-serif text-3xl md:text-5xl font-semibold text-navy mb-8">
+                ¿Buscas psicólogo para la ansiedad en Barcelona?
+              </h2>
+            </motion.div>
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-60px" }}
+              className="space-y-6 text-navy/70 leading-relaxed text-lg"
+            >
+              <motion.p variants={inView}>
+                Lo que encontrarás aquí es otra cosa: un{" "}
+                <strong className="text-navy font-semibold">psicoanalista especialista en ansiedad</strong>. La diferencia importa — no trabajamos con técnicas para gestionar el síntoma, sino con el origen que lo produce. Atendemos a pacientes de Barcelona y su área metropolitana desde 1993. La consulta presencial está en{" "}
+                <LocaleLink href={"/psicologo-maresme" as never} className="text-gold hover:text-gold/80 underline underline-offset-2">Canet de Mar (Maresme)</LocaleLink>, a 40 minutos del centro de Barcelona en coche o R1, con la tranquilidad —y la discreción— que no siempre ofrece una consulta en el Eixample. Y para quien prefiere no desplazarse, la{" "}
+                <LocaleLink href={"/terapia-online" as never} className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</LocaleLink> mantiene el mismo método y el mismo terapeuta.
+              </motion.p>
+              <motion.p variants={inView}>
+                Sesiones en <strong className="text-navy font-semibold">castellano y catalán</strong>, con un psicoanalista con más de 30 años dedicados específicamente al tratamiento de la ansiedad, las crisis de pánico y la depresión.
+              </motion.p>
+            </motion.div>
+            <motion.div variants={inView} initial="hidden" whileInView="show" viewport={{ once: true }} className="mt-10">
+              <Button
+                as="a"
+                href={BOOKING_URL}
+                className="bg-navy text-white font-semibold px-10 py-7 rounded-xl text-sm shadow-xl shadow-navy/20 hover:bg-navy/90 transition-all"
+                endContent={<ArrowRight className="w-4 h-4" />}
+              >
+                Primera Valoración Gratuita
+              </Button>
+            </motion.div>
           </div>
         </section>
 

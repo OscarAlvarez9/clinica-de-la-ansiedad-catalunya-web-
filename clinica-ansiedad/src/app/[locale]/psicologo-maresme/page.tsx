@@ -122,7 +122,7 @@ const content = {
         },
         {
           q: "¿Sois psicólogos o psicoanalistas?",
-          a: "Joan Ramon Soto es psicólogo colegiado y trabaja desde el psicoanálisis. Es decir, la formación es la de psicología, pero el método de tratamiento es psicoanalítico: en lugar de gestionar el síntoma, buscamos comprender y resolver el conflicto que lo genera.",
+          a: "Psicoanalistas. Joan Ramon Soto es psicoanalista, con formación y práctica psicoanalítica desde 1993. Si lo que buscas es un psicólogo para tratar tu ansiedad, esto es lo que ofrecemos: en lugar de gestionar el síntoma con técnicas, buscamos comprender y resolver el conflicto que lo genera.",
         },
         {
           q: "¿Qué municipios del Maresme atendéis?",
@@ -212,7 +212,7 @@ const content = {
         },
         {
           q: "Sou psicòlegs o psicoanalistes?",
-          a: "Joan Ramon Soto és psicòleg col·legiat i treballa des del psicoanàlisi. És a dir, la formació és la de psicologia, però el mètode de tractament és psicoanalític: en lloc de gestionar el símptoma, busquem comprendre i resoldre el conflicte que el genera.",
+          a: "Psicoanalistes. Joan Ramon Soto és psicoanalista, amb formació i pràctica psicoanalítica des de 1993. Si el que busques és un psicòleg per tractar l'ansietat, això és el que oferim: en lloc de gestionar el símptoma amb tècniques, busquem comprendre i resoldre el conflicte que el genera.",
         },
         {
           q: "Quins municipis del Maresme ateneu?",

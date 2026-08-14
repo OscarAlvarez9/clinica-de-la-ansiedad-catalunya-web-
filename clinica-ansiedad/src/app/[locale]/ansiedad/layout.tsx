@@ -7,8 +7,13 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-    title: 'Síntomas de Ansiedad y Causas | Clínica Ansiedad Catalunya',
-    description: 'Descubre qué es la ansiedad, sus síntomas físicos y sus causas profundas. Tratamiento psicoanalítico con el Joan Ramon Soto. Consulta en Barcelona y online.',
+    // Barcelona delante: la página ya asoma en pos 8-11 para "ansiedad barcelona",
+    // "psicólogo ansiedad barcelona"... — el title es la señal que faltaba.
+    // OJO: Joan Ramon es PSICOANALISTA, no psicólogo (título protegido) — el
+    // title no puede autodenominarse psicólogo; a esa búsqueda se le responde
+    // en el H2 de la sección Barcelona ("¿Buscas psicólogo...?").
+    title: 'Tratamiento de la Ansiedad en Barcelona | Psicoanalista',
+    description: '¿Buscas psicólogo para la ansiedad en Barcelona? Somos otra cosa: psicoanalista especialista en ansiedad. Tratamiento de raíz, presencial (Barcelona · Maresme) y online.',
     path: '/ansiedad',
     keywords: [
       'sintomas de ansiedad', 'ansiedad sintomas', 'que es ansiedad',

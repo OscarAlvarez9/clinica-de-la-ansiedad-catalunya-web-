@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const { locale } = await params;
 
     const titles: Record<string, string> = {
-        es: 'Psicólogo Ansiedad Barcelona | Clínica de la Ansiedad Catalunya',
-        ca: 'Psicòleg Ansietat Barcelona | Clínica de l\'Ansietat Catalunya'
+        es: 'Clínica de la Ansiedad | Psicoanalista en Barcelona',
+        ca: 'Clínica de l\'Ansietat | Psicoanalista a Barcelona'
     };
 
     const descriptions: Record<string, string> = {
