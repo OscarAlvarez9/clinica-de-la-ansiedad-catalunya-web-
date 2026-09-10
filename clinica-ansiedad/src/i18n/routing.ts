@@ -27,7 +27,8 @@ export const routing = defineRouting({
     '/blog': '/blog',
     '/blog/[slug]': '/blog/[slug]',
     '/privacidad': '/privacidad',
-    '/aviso-legal': '/aviso-legal'
+    '/aviso-legal': '/aviso-legal',
+    '/politica-de-cookies': '/politica-de-cookies'
   }
 });
 

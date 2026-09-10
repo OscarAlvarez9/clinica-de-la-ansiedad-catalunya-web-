@@ -25,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { path: '/servicios/dimension-familiar', freq: 'monthly', priority: 0.7 },
         { path: '/sobre-mi', freq: 'monthly', priority: 0.8 },
         { path: '/blog', freq: 'weekly', priority: 0.85 },
+        { path: '/politica-de-cookies', freq: 'yearly', priority: 0.3 },
     ];
 
     // Páginas estáticas en ambos idiomas: /es/... y /ca/...

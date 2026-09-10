@@ -5,9 +5,13 @@ import { Providers } from './providers';
 import Script from 'next/script';
 import { medicalClinicSchema, faqSchema, personSchema, organizationSchema, websiteSchema } from '@/lib/schema';
 import { NextIntlClientProvider } from 'next-intl';
+import CookieConsent from '@/components/CookieConsent';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+
+// Google tag (gtag.js) — GA4. Va en el layout raíz para cubrir todas las páginas.
+const GA_ID = 'G-XB01E805MT';
 
 const figtree = Figtree({
     subsets: ['latin'],
@@ -88,6 +92,38 @@ export default async function RootLayout({
     return (
         <html lang={locale} className={`${figtree.variable} ${inter.variable} scroll-smooth`} suppressHydrationWarning>
             <head>
+                {/* Google tag (gtag.js) */}
+                <Script
+                    id="gtag-src"
+                    src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+                    strategy="afterInteractive"
+                />
+                <Script
+                    id="gtag-init"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  // Consent Mode v2: denegado por defecto (AEPD/RGPD). Solo se concede
+  // analytics_storage si el usuario ya aceptó en el banner (elección guardada,
+  // válida 1 año). El banner actualiza el consentimiento al decidir.
+  var __c=null;try{__c=JSON.parse(localStorage.getItem('ca-cookie-consent'))}catch(e){}
+  var __ok=!!(__c&&__c.analytics===true&&typeof __c.ts==='number'&&(Date.now()-__c.ts)<31536000000);
+  gtag('consent','default',{
+    ad_storage:'denied',
+    ad_user_data:'denied',
+    ad_personalization:'denied',
+    analytics_storage: __ok ? 'granted' : 'denied'
+  });
+
+  gtag('js', new Date());
+
+  gtag('config', '${GA_ID}');
+`,
+                    }}
+                />
                 <Script id="schema-clinic" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicSchema) }} />
                 <Script id="schema-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
                 <Script id="schema-person" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
@@ -99,6 +135,7 @@ export default async function RootLayout({
                     <Providers>
                         {children}
                     </Providers>
+                    <CookieConsent />
                 </NextIntlClientProvider>
             </body>
         </html>

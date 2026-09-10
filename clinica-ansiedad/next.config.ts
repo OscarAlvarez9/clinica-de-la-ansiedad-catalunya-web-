@@ -52,6 +52,7 @@ const nextConfig: NextConfig = {
             { source: '/blog/:slug*', destination: '/es/blog/:slug*', permanent: true },
             { source: '/privacidad', destination: '/es/privacidad', permanent: true },
             { source: '/aviso-legal', destination: '/es/aviso-legal', permanent: true },
+            { source: '/politica-de-cookies', destination: '/es/politica-de-cookies', permanent: true },
             { source: '/terapia-individual', destination: '/es/servicios/terapia-individual', permanent: true },
             { source: '/terapia-pareja', destination: '/es/servicios/terapia-de-pareja', permanent: true },
 
