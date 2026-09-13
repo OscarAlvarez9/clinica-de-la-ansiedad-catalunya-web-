@@ -14,3 +14,14 @@ export const PHONE_DISPLAY = '613 91 60 79';
 export const WHATSAPP_NUMBER = '34613916079';
 export const whatsappUrl = (message: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+// Ficha de Google (Clínica de la Ansiedad Catalunya, Canet de Mar).
+// Fuente única: la web mostraba 130+, el schema 4,9/156 y ninguno coincidía con
+// la ficha. Al actualizar, cambiar solo aquí. Comprobado el 13/09/2026: 5,0 (158).
+export const GOOGLE_REVIEWS = {
+  rating: '5,0',
+  count: 158,
+  // Maps URLs API: resuelve a la ficha del negocio (la URL por coordenadas que
+  // había antes abría el mapa, no el listado, así que no llevaba a las reseñas).
+  url: 'https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20de%20la%20Ansiedad%20Catalunya%2C%20Ronda%20Doctor%20Angl%C3%A8s%2074%2C%20Canet%20de%20Mar',
+} as const;

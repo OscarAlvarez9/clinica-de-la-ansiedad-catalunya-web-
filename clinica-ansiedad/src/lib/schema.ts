@@ -90,55 +90,9 @@ export const medicalClinicSchema = {
     ],
     "image": "https://www.clinicadelansiedad.com/images/centreclinicansiedad.jpeg",
     "logo": "https://www.clinicadelansiedad.com/logo.png",
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "156",
-        "reviewCount": "156"
-    },
-    "review": [
-        {
-            "@type": "Review",
-            "author": {
-                "@type": "Person",
-                "name": "María García"
-            },
-            "datePublished": "2025-12-15",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5"
-            },
-            "reviewBody": "El Joan Ramon Soto cambió mi vida. Después de 15 años con ansiedad, finalmente entiendo qué estaba pasando. La terapia psicoanalítica es profunda, rigurosa y transformadora."
-        },
-        {
-            "@type": "Review",
-            "author": {
-                "@type": "Person",
-                "name": "Carlos López"
-            },
-            "datePublished": "2025-11-20",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5"
-            },
-            "reviewBody": "Profesional ético, competente y genuinamente interesado en resolver el problema de raíz, no solo tratar síntomas."
-        },
-        {
-            "@type": "Review",
-            "author": {
-                "@type": "Person",
-                "name": "Ana Martínez"
-            },
-            "datePublished": "2025-10-10",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5"
-            },
-            "reviewBody": "Llevo 8 meses en terapia online y es la mejor decisión que he tomado. Siento que finalmente tengo herramientas para entenderme a mí misma."
-        }
-    ],
+    // Sin aggregateRating ni review: las reseñas de la clínica viven en su ficha de
+    // Google. Marcarlas aquí sería contenido autogestionado, que la guía de datos
+    // estructurados no admite para LocalBusiness y se sanciona como marcado engañoso.
     "availableService": [
         {
             "@type": "MedicalTherapy",

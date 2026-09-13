@@ -1,9 +1,11 @@
 "use client";
 
+import { GOOGLE_REVIEWS } from "@/lib/constants";
+
 export default function CredentialsBanner() {
     const credentials = [
         { label: "COPC", sublabel: "Col·legi Oficial de Psicòlegs de Catalunya" },
-        { label: "5.0 ★", sublabel: "130+ Reseñas verificadas Google" },
+        { label: `${GOOGLE_REVIEWS.rating} ★`, sublabel: `${GOOGLE_REVIEWS.count} reseñas en Google` },
         { label: "1993 →", sublabel: "Más de 30 años de trayectoria clínica" },
         { label: "Online", sublabel: "Terapia para toda España y Catalunya" },
     ];

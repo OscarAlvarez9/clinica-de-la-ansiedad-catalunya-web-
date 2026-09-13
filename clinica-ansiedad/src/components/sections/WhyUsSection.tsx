@@ -1,12 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import { Globe, ShieldQuestion, Handshake, MapPin } from "lucide-react";
+import { GOOGLE_REVIEWS } from "@/lib/constants";
 
 const stats = [
     { num: "1993", label: "Año de fundación" },
     { num: "+30", label: "Años de trayectoria" },
     { num: "+1K", label: "Pacientes atendidos" },
-    { num: "5.0★", label: "130+ reseñas Google" },
+    { num: `${GOOGLE_REVIEWS.rating}★`, label: `${GOOGLE_REVIEWS.count} reseñas Google` },
 ];
 
 const differentiators = [

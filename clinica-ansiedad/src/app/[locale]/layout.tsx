@@ -125,11 +125,15 @@ export default async function RootLayout({
 `,
                     }}
                 />
-                <Script id="schema-clinic" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicSchema) }} />
-                <Script id="schema-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-                <Script id="schema-person" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-                <Script id="schema-organization" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-                <Script id="schema-website" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+                {/* JSON-LD en <script> normal, no next/script: así viaja en el HTML del
+                    servidor. Con <Script> solo se inyectaba tras hidratar, de modo que
+                    cualquier rastreador que no ejecute JS (Bing, LLMs, previsualizaciones)
+                    no veía nada del marcado. */}
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicSchema) }} />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
             </head>
             <body suppressHydrationWarning className="bg-cream text-text font-sans antialiased selection:bg-gold/20 selection:text-navy">
                 <NextIntlClientProvider messages={messages}>

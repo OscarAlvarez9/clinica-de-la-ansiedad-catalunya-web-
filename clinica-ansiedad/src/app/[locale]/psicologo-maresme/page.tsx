@@ -24,7 +24,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { bookingUrl } from "@/lib/constants";
+import { bookingUrl, GOOGLE_REVIEWS } from "@/lib/constants";
 
 const inView: Variants = {
   hidden: { opacity: 0, y: 32 },
@@ -36,8 +36,8 @@ const stagger: Variants = {
 };
 
 const WHATSAPP_NUMBER = "34613916079";
-const MAPS_URL =
-  "https://www.google.com/maps/place/Cl%C3%ADnica+de+la+Ansiedad+Catalunya/@41.5955262,2.5789221,17z";
+// Enlace a la ficha (Maps URLs API), no a unas coordenadas sueltas.
+const MAPS_URL = GOOGLE_REVIEWS.url;
 
 // Municipios del Maresme atendidos (presencial en Canet de Mar).
 const TOWNS = [

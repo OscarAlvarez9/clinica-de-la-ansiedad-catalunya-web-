@@ -5,6 +5,7 @@ import { Button } from "@heroui/react";
 import { useAnimatedNumber } from "../../hooks/useAnimatedNumber";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { GOOGLE_REVIEWS } from "@/lib/constants";
 
 const testimonials = [
     {
@@ -27,7 +28,7 @@ const testimonials = [
 export default function TestimonialsSection() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
-    const reviewCount = useAnimatedNumber(130, 2, isInView);
+    const reviewCount = useAnimatedNumber(GOOGLE_REVIEWS.count, 2, isInView);
 
     return (
         <section className="bg-navy-light py-24 px-6 border-t border-white/5" ref={ref}>
@@ -45,10 +46,10 @@ export default function TestimonialsSection() {
                             ))}
                         </div>
                         <h2 className="text-4xl md:text-6xl font-serif text-white font-bold mb-2">
-                            <span className="text-gold">5.0</span> ★
+                            <span className="text-gold">{GOOGLE_REVIEWS.rating}</span> ★
                         </h2>
                         <p className="text-white/70 tracking-widest uppercase text-sm font-bold">
-                            {reviewCount} reseñas verificadas en Google
+                            {reviewCount} reseñas en Google
                         </p>
                     </motion.div>
                 </div>
@@ -82,7 +83,7 @@ export default function TestimonialsSection() {
                 <div className="text-center">
                     <Button
                         as="a"
-                        href="https://www.google.com/search?q=Cl%C3%ADnica+de+la+Ansiedad+Catalunya+Canet+de+Mar&ludocid=reseñas"
+                        href={GOOGLE_REVIEWS.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         variant="bordered"

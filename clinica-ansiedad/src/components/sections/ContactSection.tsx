@@ -1,11 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import { Calendar, MapPin, ArrowUpRight, Sparkles, Phone, MessageCircle } from "lucide-react";
-import { bookingUrl, whatsappUrl, PHONE_NUMBER, PHONE_DISPLAY } from "@/lib/constants";
+import { bookingUrl, whatsappUrl, PHONE_NUMBER, PHONE_DISPLAY, GOOGLE_REVIEWS } from "@/lib/constants";
 
 const WHATSAPP_URL = whatsappUrl("Hola, me gustaría solicitar una valoración.");
-const MAPS_URL =
-    "https://www.google.com/maps/place/Cl%C3%ADnica+de+la+Ansiedad+Catalunya/@41.5955262,2.5789221,17z";
+// Enlace a la ficha (Maps URLs API). La URL anterior era por coordenadas y abría
+// el mapa sin el listado, así que no llevaba ni a la ficha ni a las reseñas.
+const MAPS_URL = GOOGLE_REVIEWS.url;
 
 export default function ContactSection() {
     return (

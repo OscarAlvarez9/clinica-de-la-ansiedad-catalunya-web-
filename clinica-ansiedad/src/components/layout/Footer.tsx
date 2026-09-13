@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { Phone, Mail, MapPin, Star, Instagram, Facebook, Twitter, Linkedin, ArrowUpRight, ShieldCheck, Heart } from "lucide-react";
+import { GOOGLE_REVIEWS } from "@/lib/constants";
 
 export default function Footer() {
     const t = useTranslations('footer');
@@ -30,7 +31,7 @@ export default function Footer() {
 
                         <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full w-fit">
                             <Star className="w-4 h-4 text-gold fill-gold" />
-                            <span className="text-sm font-medium">5.0 Google Reviews</span>
+                            <span className="text-sm font-medium">{GOOGLE_REVIEWS.rating} en Google · {GOOGLE_REVIEWS.count} reseñas</span>
                         </div>
                     </div>
 
