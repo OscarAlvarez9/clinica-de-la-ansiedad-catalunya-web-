@@ -35,10 +35,12 @@ export default function Hero() {
             <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
                 {/* Left Content Area (7 columns) */}
+                {/* initial={false}: el hero se sirve ya visible. Con initial="hidden" el HTML
+                    llegaba con opacity:0 y quedaba en blanco hasta que hidrataba el JS. */}
                 <motion.div
                     className="lg:col-span-12 xl:col-span-7 flex flex-col"
                     variants={staggerContainer}
-                    initial="hidden"
+                    initial={false}
                     animate="visible"
                 >
                     <motion.div variants={fadeUpVariant} className="mb-8 flex flex-wrap gap-3">
@@ -133,7 +135,7 @@ export default function Hero() {
 
                 {/* Right Visual Area (5 columns) */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={false}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                     className="hidden xl:block xl:col-span-5 relative"

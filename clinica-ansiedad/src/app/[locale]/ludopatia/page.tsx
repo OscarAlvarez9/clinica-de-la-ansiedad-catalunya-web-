@@ -10,7 +10,7 @@ import LudopatiaHero from "@/components/heroes/LudopatiaHero";
 import BookingOptions from "@/components/servicios/BookingOptions";
 import FAQSection from "@/components/sections/FAQSection";
 import StickyBookingButton from "@/components/servicios/StickyBookingButton";
-import { BOOKING_URL } from "@/lib/constants";
+import { bookingUrl } from "@/lib/constants";
 
 const inView: Variants = {
   hidden: { opacity: 0, y: 32 },
@@ -293,7 +293,7 @@ export default function LudopatiaPage() {
             >
               <Button
                 as="a"
-                href={BOOKING_URL}
+                href={bookingUrl("cierre-ludopatia")}
                 className="bg-navy text-white font-semibold px-10 py-7 rounded-xl text-sm shadow-xl shadow-navy/20 hover:bg-navy/90 transition-all"
                 endContent={<ArrowRight className="w-4 h-4" />}
               >

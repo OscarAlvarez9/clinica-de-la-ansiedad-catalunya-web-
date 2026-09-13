@@ -11,6 +11,7 @@ import FAQSection from '@/components/sections/FAQSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import BrandManifestoSection from '@/components/sections/BrandManifestoSection';
 import ContactSection from '@/components/sections/ContactSection';
+import InlineBookingCTA from '@/components/sections/InlineBookingCTA';
 import Footer from '@/components/layout/Footer';
 import StickyBookingButton from '@/components/servicios/StickyBookingButton';
 
@@ -24,8 +25,10 @@ export default function Home() {
                 <ProblemSection />
                 <ApproachSection />
                 <ServicesSection />
+                <InlineBookingCTA ctaLocation="home-servicios" />
                 <ModalitiesSection />
                 <TestimonialsSection />
+                <InlineBookingCTA ctaLocation="home-testimonios" />
                 <WhyUsSection />
                 <ProcessSection />
                 <BrandManifestoSection />

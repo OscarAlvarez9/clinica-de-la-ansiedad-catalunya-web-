@@ -14,6 +14,7 @@ import Footer from '@/components/layout/Footer';
 import { BlogPost } from '@/lib/blog-data';
 import { calculateReadingTime, extractHeadings } from '@/lib/blog-utils';
 import OptimizedImage from '@/components/OptimizedImage';
+import { bookingUrl } from '@/lib/constants';
 
 interface PageProps {
     params: Promise<{ locale: string, slug: string }>;
@@ -513,7 +514,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                           </p>
                           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
                               <a
-                                  href="https://clinicadelaansiedad.setmore.com?utm_source=qr-code&utm_medium=more-share-bp"
+                                  href={bookingUrl('blog-articulo')}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="bg-gold text-white px-10 py-5 rounded-full font-bold hover:bg-gold-light transition-all shadow-[0_0_30px_rgba(212,175,55,0.3)] text-sm uppercase tracking-[0.2em]"

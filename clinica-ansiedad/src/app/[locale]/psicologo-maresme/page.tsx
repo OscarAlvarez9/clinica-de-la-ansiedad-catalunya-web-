@@ -24,7 +24,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { BOOKING_URL } from "@/lib/constants";
+import { bookingUrl } from "@/lib/constants";
 
 const inView: Variants = {
   hidden: { opacity: 0, y: 32 },
@@ -295,7 +295,8 @@ export default function PsicologoMaresmePage() {
           </div>
           <div className="container mx-auto max-w-6xl relative z-10 w-full min-w-0">
             <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
-              <motion.div variants={stagger} initial="hidden" animate="show" className="min-w-0">
+              {/* initial={false}: el hero se sirve visible, sin esperar a la hidratación */}
+              <motion.div variants={stagger} initial={false} animate="show" className="min-w-0">
                 <motion.div variants={inView}>
                   <span className="inline-flex max-w-full items-center gap-2 rounded-full border border-navy/10 bg-white px-4 py-2 text-navy text-[9px] sm:text-[10px] font-bold tracking-[0.18em] sm:tracking-[0.22em] uppercase mb-7 shadow-sm">
                     <MapPin className="w-3.5 h-3.5 text-gold shrink-0" />
@@ -310,7 +311,7 @@ export default function PsicologoMaresmePage() {
                   {t.hero.description}
                 </motion.p>
                 <motion.div variants={inView} className="flex flex-col sm:flex-row gap-3.5 mb-8">
-                  <Button as="a" href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="bg-navy text-white font-bold px-9 py-7 rounded-full text-xs uppercase tracking-widest shadow-xl shadow-navy/20 hover:bg-navy/90 hover:scale-[1.02] active:scale-[0.98] transition-all" endContent={<ArrowRight className="w-4 h-4 ml-1" />}>
+                  <Button as="a" href={bookingUrl("hero-maresme")} target="_blank" rel="noopener noreferrer" className="bg-navy text-white font-bold px-9 py-7 rounded-full text-xs uppercase tracking-widest shadow-xl shadow-navy/20 hover:bg-navy/90 hover:scale-[1.02] active:scale-[0.98] transition-all" endContent={<ArrowRight className="w-4 h-4 ml-1" />}>
                     {t.hero.ctaPrimary}
                   </Button>
                   <Button as="a" href={waUrl} target="_blank" rel="noopener noreferrer" variant="bordered" className="border-navy/20 text-navy hover:bg-navy/5 font-bold px-9 py-7 rounded-full text-xs uppercase tracking-widest transition-colors" startContent={<MessageCircle className="w-4 h-4" />}>
@@ -327,7 +328,7 @@ export default function PsicologoMaresmePage() {
                 </motion.div>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }} className="relative min-w-0">
+              <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }} className="relative min-w-0">
                 <div className="relative max-w-lg mx-auto lg:mx-0 lg:ml-auto">
                   <div aria-hidden className="absolute -inset-3 bg-gold/15 rounded-[2.5rem] blur-2xl" />
                   <div className="relative rounded-[2rem] overflow-hidden border-4 border-white shadow-[0_30px_80px_-25px_rgba(26,58,72,0.45)] aspect-[4/3.4]">
@@ -509,7 +510,7 @@ export default function PsicologoMaresmePage() {
                 <h2 className="font-serif text-3xl md:text-5xl font-bold text-white mb-6">{t.finalCta.h2}</h2>
                 <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto mb-10">{t.finalCta.subtitle}</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button as="a" href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="bg-gold text-white font-bold px-9 py-7 rounded-full text-xs uppercase tracking-widest shadow-xl shadow-black/20 hover:bg-gold-light transition-all" endContent={<ArrowRight className="w-4 h-4 ml-1" />}>
+                  <Button as="a" href={bookingUrl("cierre-maresme")} target="_blank" rel="noopener noreferrer" className="bg-gold text-white font-bold px-9 py-7 rounded-full text-xs uppercase tracking-widest shadow-xl shadow-black/20 hover:bg-gold-light transition-all" endContent={<ArrowRight className="w-4 h-4 ml-1" />}>
                     {t.finalCta.cta1}
                   </Button>
                   <Button as="a" href={waUrl} target="_blank" rel="noopener noreferrer" variant="bordered" className="border-white/25 text-white hover:bg-white/10 font-bold px-9 py-7 rounded-full text-xs uppercase tracking-widest transition-colors" startContent={<MessageCircle className="w-4 h-4" />}>

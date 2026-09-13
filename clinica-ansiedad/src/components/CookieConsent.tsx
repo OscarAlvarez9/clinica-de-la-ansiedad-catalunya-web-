@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Cookie } from "lucide-react";
+import { setCookieBannerOpen, setCookieBannerHeight } from "@/lib/useCookieBanner";
 
 // Preferencia de consentimiento (exenta de consentimiento según la AEPD por ser
 // almacenamiento de la propia elección del usuario). Caduca al año: se vuelve a preguntar.
@@ -59,6 +60,7 @@ export default function CookieConsent() {
     const locale = (useLocale() === "ca" ? "ca" : "es") as "es" | "ca";
     const t = texts[locale];
     const [visible, setVisible] = useState(false);
+    const panelRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (!readConsent()) setVisible(true);
@@ -66,6 +68,20 @@ export default function CookieConsent() {
         window.addEventListener("open-cookie-banner", open);
         return () => window.removeEventListener("open-cookie-banner", open);
     }, []);
+
+    // Los botones flotantes de reserva/WhatsApp se apartan mientras el banner tapa la franja inferior.
+    useEffect(() => {
+        setCookieBannerOpen(visible);
+        if (!visible) return;
+        const el = panelRef.current;
+        if (!el) return;
+        // getBoundingClientRect (no contentRect): la franja que tapa el banner incluye sus paddings.
+        const measure = () => setCookieBannerHeight(el.getBoundingClientRect().height);
+        measure();
+        const ro = new ResizeObserver(measure);
+        ro.observe(el);
+        return () => ro.disconnect();
+    }, [visible]);
 
     const decide = (analytics: boolean) => {
         try {
@@ -81,6 +97,7 @@ export default function CookieConsent() {
 
     return (
         <div
+            ref={panelRef}
             role="dialog"
             aria-live="polite"
             aria-label={t.title}

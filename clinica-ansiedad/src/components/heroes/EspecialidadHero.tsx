@@ -3,7 +3,9 @@
 import { motion, type Variants } from "framer-motion";
 import { Button, Chip } from "@heroui/react";
 import { ArrowRight } from "lucide-react";
-import { BOOKING_URL } from "@/lib/constants";
+import { usePathname } from "next/navigation";
+import { Link } from "@/i18n/routing";
+import { bookingUrl } from "@/lib/constants";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -40,6 +42,11 @@ export default function EspecialidadHero({
   quote,
   stats,
 }: EspecialidadHeroProps) {
+  // Atribución por página: cada hero de especialidad manda su propio utm_content
+  // (hero-ansiedad, hero-depresion...) en vez del genérico BOOKING_URL.
+  const pathname = usePathname();
+  const slug = (pathname || "").split("/").filter(Boolean).pop() || "especialidad";
+
   return (
     <section className="relative flex items-center bg-cream overflow-hidden min-h-[82vh]">
       {/* Top gold accent line */}
@@ -53,7 +60,7 @@ export default function EspecialidadHero({
 
         {/* ── LEFT — Content ── */}
         <div className="flex flex-col">
-          <motion.div custom={0} variants={fadeUp} initial="hidden" animate="show">
+          <motion.div custom={0} variants={fadeUp} initial={false} animate="show">
             <Chip
               startContent={<span className="text-gold">{chipIcon}</span>}
               variant="bordered"
@@ -66,7 +73,7 @@ export default function EspecialidadHero({
           <motion.h1
             custom={1}
             variants={fadeUp}
-            initial="hidden"
+            initial={false}
             animate="show"
             className="font-serif text-5xl md:text-6xl xl:text-[5.5rem] font-bold text-navy leading-[1.06] tracking-tight mb-7"
           >
@@ -78,7 +85,7 @@ export default function EspecialidadHero({
           <motion.div
             custom={2}
             variants={fadeUp}
-            initial="hidden"
+            initial={false}
             animate="show"
             className="w-12 h-0.5 bg-gold mb-7"
           />
@@ -86,7 +93,7 @@ export default function EspecialidadHero({
           <motion.p
             custom={3}
             variants={fadeUp}
-            initial="hidden"
+            initial={false}
             animate="show"
             className="text-lg text-navy/60 leading-relaxed font-light max-w-lg mb-10"
           >
@@ -96,13 +103,13 @@ export default function EspecialidadHero({
           <motion.div
             custom={4}
             variants={fadeUp}
-            initial="hidden"
+            initial={false}
             animate="show"
             className="flex flex-col sm:flex-row gap-4"
           >
             <Button
               as="a"
-              href={BOOKING_URL}
+              href={bookingUrl(`hero-${slug}`)}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-navy text-white font-semibold px-10 py-7 rounded-xl text-sm shadow-2xl shadow-navy/20 hover:bg-navy/90 transition-all cursor-pointer"
@@ -111,7 +118,7 @@ export default function EspecialidadHero({
               {ctaText}
             </Button>
             <Button
-              as="a"
+              as={Link}
               href="/enfoque"
               variant="bordered"
               className="border-navy/15 text-navy hover:bg-navy/5 font-bold px-8 py-7 rounded-xl text-xs uppercase tracking-widest cursor-pointer"
@@ -123,7 +130,7 @@ export default function EspecialidadHero({
 
         {/* ── RIGHT — Editorial quote + floating stats ── */}
         <motion.div
-          initial={{ opacity: 0, x: 32 }}
+          initial={false}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="hidden lg:flex flex-col justify-between gap-12"

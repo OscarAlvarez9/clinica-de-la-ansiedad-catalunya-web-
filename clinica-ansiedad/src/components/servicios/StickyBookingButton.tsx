@@ -3,11 +3,13 @@
 import { useState, useEffect } from 'react';
 import { Calendar, MessageCircle } from 'lucide-react';
 import { bookingUrl, whatsappUrl } from '@/lib/constants';
+import { useCookieBannerOpen } from '@/lib/useCookieBanner';
 
 const WA_URL = whatsappUrl('Hola, me gustaría solicitar una valoración.');
 
 export default function StickyBookingButton() {
     const [isVisible, setIsVisible] = useState(false);
+    const cookieBannerOpen = useCookieBannerOpen();
 
     useEffect(() => {
         const toggleVisibility = () => {
@@ -22,7 +24,12 @@ export default function StickyBookingButton() {
     if (!isVisible) return null;
 
     return (
-        <div className="fixed bottom-6 right-4 md:bottom-8 md:right-8 z-40 flex flex-col items-end gap-3 animate-in fade-in slide-in-from-bottom-4 duration-300">
+        // Mientras el banner de cookies ocupa la franja inferior, los botones suben
+        // por encima de él: antes quedaban debajo (z-40 contra z-60) y no se podían pulsar.
+        <div
+            className="fixed bottom-6 right-4 md:bottom-8 md:right-8 z-40 flex flex-col items-end gap-3 animate-in fade-in slide-in-from-bottom-4 duration-300 transition-[bottom] duration-300"
+            style={cookieBannerOpen ? { bottom: 'calc(var(--cookie-banner-h, 0px) + 1.5rem)' } : undefined}
+        >
             {/* WhatsApp — contacto de baja fricción */}
             <a
                 href={WA_URL}

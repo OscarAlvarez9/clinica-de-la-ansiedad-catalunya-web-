@@ -4,7 +4,9 @@ import { motion, type Variants } from "framer-motion";
 import { Button, Chip } from "@heroui/react";
 import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { BOOKING_URL } from "@/lib/constants";
+import { usePathname } from "next/navigation";
+import { Link } from "@/i18n/routing";
+import { bookingUrl } from "@/lib/constants";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
@@ -49,6 +51,9 @@ export default function ServicioHero({
   quote,
   stats,
 }: ServicioHeroProps) {
+  // Atribución por página: hero-terapia-individual, hero-terapia-de-pareja...
+  const pathname = usePathname();
+  const slug = (pathname || "").split("/").filter(Boolean).pop() || "servicio";
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#FDFBF7] pt-32 pb-24 border-b border-navy/5">
@@ -63,7 +68,7 @@ export default function ServicioHero({
         
         {/* Text Content */}
         <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-start text-center lg:text-left">
-          <motion.div custom={0} variants={fadeUp} initial="hidden" animate="show">
+          <motion.div custom={0} variants={fadeUp} initial={false} animate="show">
             <Chip
               startContent={<span className="text-gold">{chipIcon}</span>}
               variant="bordered"
@@ -76,7 +81,7 @@ export default function ServicioHero({
           <motion.h1
             custom={1}
             variants={fadeUp}
-            initial="hidden"
+            initial={false}
             animate="show"
             className="font-serif text-5xl md:text-6xl xl:text-7xl font-light text-navy leading-[1.05] tracking-tight mb-8"
           >
@@ -87,7 +92,7 @@ export default function ServicioHero({
           <motion.p
             custom={2}
             variants={fadeUp}
-            initial="hidden"
+            initial={false}
             animate="show"
             className="text-lg md:text-xl text-navy/70 leading-relaxed font-light max-w-2xl mb-10"
           >
@@ -97,7 +102,7 @@ export default function ServicioHero({
           <motion.div
             custom={3}
             variants={fadeUp}
-            initial="hidden"
+            initial={false}
             animate="show"
             className="flex flex-col sm:flex-row flex-wrap gap-4 lg:gap-8 justify-center lg:justify-start mb-12 w-full"
           >
@@ -112,13 +117,13 @@ export default function ServicioHero({
           <motion.div
             custom={4}
             variants={fadeUp}
-            initial="hidden"
+            initial={false}
             animate="show"
             className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start"
           >
             <Button
               as="a"
-              href={BOOKING_URL}
+              href={bookingUrl(`hero-${slug}`)}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-navy text-white font-semibold px-10 py-7 rounded-full text-sm shadow-xl shadow-navy/20 hover:bg-navy/90 hover:scale-[1.02] transition-all cursor-pointer uppercase tracking-widest"
@@ -127,7 +132,7 @@ export default function ServicioHero({
               {ctaText}
             </Button>
             <Button
-              as="a"
+              as={Link}
               href="/enfoque"
               variant="bordered"
               className="border-navy/15 text-navy hover:bg-navy/5 font-bold px-10 py-7 rounded-full text-xs uppercase tracking-widest cursor-pointer transition-colors"
@@ -140,7 +145,7 @@ export default function ServicioHero({
           <motion.div
             custom={5}
             variants={fadeUp}
-            initial="hidden"
+            initial={false}
             animate="show"
             className="flex justify-center lg:justify-start gap-12 mt-16 pt-10 border-t border-navy/10 w-full"
           >
