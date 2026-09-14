@@ -10,7 +10,7 @@ export default function TerapiaOnlineHero() {
       title="La distancia nunca fue"
       titleAccent="un obstáculo."
       description="Cuando la mayoría de clínicas aún no contemplaban la teleasistencia, nosotros ya acompañábamos pacientes a distancia. Treinta años perfeccionando la terapia online no se improvisan."
-      ctaText="Solicitar Primera Sesión Online"
+      ctaText="Reservar cita · 75 €"
       quote="La distancia física nunca ha sido un obstáculo para la profundidad clínica. Lo que cura es el vínculo terapéutico —no la proximidad geográfica."
       stats={[
         { value: "30+", label: "Años terapia online" },

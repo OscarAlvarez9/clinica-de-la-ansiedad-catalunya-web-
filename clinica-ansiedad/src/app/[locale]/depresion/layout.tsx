@@ -7,8 +7,8 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-    title: 'Depresión y Ansiedad: Tratamiento | Clínica Ansiedad Catalunya',
-    description: 'Tratamiento especializado de depresión y ansiedad desde el origen inconsciente. Psicoterapia psicoanalítica en Barcelona y online. Supera la tristeza profunda.',
+    title: 'Depresión en Canet de Mar (Maresme) | Clínica de la Ansiedad',
+    description: 'Tratamiento de la depresión y la ansiedad desde su origen inconsciente. Psicoanalista en Canet de Mar (Maresme), presencial y online.',
     path: '/depresion',
     keywords: [
       'depresion ansiedad', 'ansiedad y depresion', 'tratamiento depresión Barcelona',

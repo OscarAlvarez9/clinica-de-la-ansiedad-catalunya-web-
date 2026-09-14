@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { GOOGLE_REVIEWS } from "@/lib/constants";
 
 export default function BrandManifestoSection() {
     return (
@@ -55,12 +56,20 @@ export default function BrandManifestoSection() {
                         transition={{ duration: 0.8, delay: 0.4 }}
                         className="flex items-center gap-5 mb-14"
                     >
-                        <div className="w-14 h-14 rounded-full bg-gold/5 border border-gold/20 flex items-center justify-center shrink-0 shadow-sm">
-                            <span className="font-serif text-gold font-bold text-xl">JRS</span>
+                        {/* Cara real en vez del monograma "JRS": una cita firmada por unas
+                            iniciales dentro de un círculo no acredita a nadie. */}
+                        <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0 border-2 border-white shadow-md">
+                            <Image
+                                src="/images/joanramonsotoimagenweb.webp"
+                                alt="Joan Ramon Soto, psicoanalista"
+                                fill
+                                sizes="64px"
+                                className="object-cover object-top"
+                            />
                         </div>
                         <div>
                             <p className="text-navy font-black tracking-[0.2em] uppercase text-sm">Joan Ramon Soto</p>
-                            <p className="text-gold text-xs tracking-[0.2em] uppercase font-bold mt-1 opacity-80">Psicoterapeuta · Fundador</p>
+                            <p className="text-gold text-xs tracking-[0.2em] uppercase font-bold mt-1 opacity-80">Psicoanalista · Fundador</p>
                         </div>
                     </motion.div>
 
@@ -72,11 +81,15 @@ export default function BrandManifestoSection() {
                         transition={{ duration: 0.7, delay: 0.5 }}
                         className="flex flex-wrap gap-4 mb-14"
                     >
+                        {/* Credibilidad = datos comprobables, no adjetivos. Antes ponía
+                            "Rigor clínico / Escucha profunda / Sin parches temporales /
+                            Terapia personalizada": cuatro cosas que cualquiera puede decir
+                            de sí mismo y que por tanto no acreditan nada. */}
                         {[
-                            "Rigor clínico",
-                            "Escucha profunda",
-                            "Sin parches temporales",
-                            "Terapia personalizada",
+                            "Col·legiat COPC nº 3852",
+                            "Ejerciendo desde 1993",
+                            `${GOOGLE_REVIEWS.rating} en Google (${GOOGLE_REVIEWS.count} reseñas)`,
+                            "Psicoanálisis Directo",
                         ].map((pill) => (
                             <span
                                 key={pill}

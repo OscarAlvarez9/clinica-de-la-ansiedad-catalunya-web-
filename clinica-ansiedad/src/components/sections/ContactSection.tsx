@@ -83,7 +83,7 @@ export default function ContactSection() {
                             </h3>
 
                             <p className="text-white/50 text-lg max-w-md leading-relaxed">
-                                Cuéntanos tu caso y te responderemos lo antes posible. Primera valoración sin compromiso.
+                                Cuéntanos tu caso y te responderemos personalmente. Escribir no cuesta nada ni te compromete a reservar.
                             </p>
                         </div>
 
@@ -134,13 +134,13 @@ export default function ContactSection() {
                                 Agenda una sesión
                             </h3>
                             <p className="text-navy/50 text-lg max-w-md leading-relaxed">
-                                Elige el horario que mejor se adapte a ti. Consulta presencial u online.
+                                Elige el horario que mejor se adapte a ti, presencial u online. Sesión de 50 minutos, 75 € (pareja, 1 h, 100 €). El pago confirma la reserva.
                             </p>
                         </div>
 
                         <div className="relative z-10 mt-10">
                             <div className="inline-flex items-center gap-3 bg-navy text-white px-8 py-4 rounded-full font-bold text-base group-hover:bg-primary transition-colors">
-                                Ver disponibilidad
+                                Reservar cita · 75 €
                                 <ArrowUpRight className="w-4 h-4" />
                             </div>
                         </div>

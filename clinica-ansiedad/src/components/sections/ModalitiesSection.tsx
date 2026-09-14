@@ -2,7 +2,7 @@
 import { MapPin, Globe, CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@heroui/react";
-import Link from 'next/link';
+import { bookingUrl } from '@/lib/constants';
 
 const modalities = [
     {
@@ -16,7 +16,8 @@ const modalities = [
             "Fácil acceso desde el Maresme",
             "A 35 min de Barcelona ciudad"
         ],
-        buttonText: "Agendar Cita Presencial",
+        buttonText: "Reservar cita · 75 €",
+        ctaLocation: "modalidad-presencial",
         primary: true,
     },
     {
@@ -28,9 +29,10 @@ const modalities = [
         features: [
             "Cobertura en toda España",
             "Sin desplazamientos físicos",
-            "Plataformas de alta seguridad"
+            "Videollamada cifrada, sin grabación"
         ],
-        buttonText: "Solicitar Sesión Online",
+        buttonText: "Reservar cita · 75 €",
+        ctaLocation: "modalidad-online",
         primary: false,
     }
 ];
@@ -108,10 +110,14 @@ export default function ModalitiesSection() {
                                 </div>
 
                                 {/* Button */}
+                                {/* Antes apuntaba a "#contacto": el botón decía "Agendar Cita"
+                                    y solo hacía scroll. Ahora abre la reserva de verdad. */}
                                 <div className="mt-auto">
                                     <Button
-                                        as={Link}
-                                        href="#contacto"
+                                        as="a"
+                                        href={bookingUrl(item.ctaLocation)}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className={`w-full font-semibold px-8 py-6 rounded-xl text-base transition-all duration-300 flex items-center justify-center gap-2 group/btn ${item.primary
                                             ? "bg-navy hover:bg-navy/90 text-white shadow-lg shadow-navy/10"
                                             : "bg-white border border-navy/10 text-navy hover:bg-navy/5"

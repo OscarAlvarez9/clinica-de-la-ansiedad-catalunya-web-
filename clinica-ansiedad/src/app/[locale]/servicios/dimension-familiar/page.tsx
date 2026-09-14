@@ -82,7 +82,7 @@ export default function DimensionFamiliarPage() {
                 ¿Cuándo plantear una intervención sistémica?
               </h2>
               <p className="text-navy/60 text-lg leading-relaxed mb-10 max-w-2xl">
-                A menudo, un miembro de la familia expresa —mediante ansiedad, fobias o conductas disruptivas— tensiones latentes que pertenecen al sistema familiar completo. Trabajamos esta dimensión ante: Terapia familiar presencial en Barcelona (Canet de Mar, Maresme) y{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">online</Link> para familias de toda Catalunya.
+                A menudo, un miembro de la familia expresa —mediante ansiedad, fobias o conductas disruptivas— tensiones latentes que pertenecen al sistema familiar completo. Trabajamos esta dimensión ante: Terapia familiar presencial en Canet de Mar (Maresme) y{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">online</Link> para familias de toda Catalunya.
               </p>
             </motion.div>
 
@@ -249,8 +249,11 @@ export default function DimensionFamiliarPage() {
               Puede combinarse con{" "}
               <a href="/servicios/terapia-individual" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia individual</a> y{" "}
               <a href="/servicios/terapia-de-pareja" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia de pareja</a>.
-              Terapia familiar en Barcelona (Canet de Mar, Maresme) y{" "}
-              <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para familias de toda Catalunya —Barcelona, Girona, Lleida, Tarragona.
+              Consulta presencial en Canet de Mar (Maresme) y{" "}
+              <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a>:{" "}
+              <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">psicoanalista en el Maresme</a> para familias de Arenys de Mar, Arenys de Munt, Sant Pol, Calella, Mataró, Pineda, Malgrat y Montgat.
+              Más sobre la{" "}
+              <a href="/" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">Clínica de la Ansiedad</a>.
             </p>
           </div>
         </section>

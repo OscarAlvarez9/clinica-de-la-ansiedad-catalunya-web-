@@ -7,10 +7,10 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-    title: 'Cómo Se Cura la Ansiedad | Psicoanálisis Directo Barcelona',
-    description: 'Psicoanálisis directo para curar la ansiedad desde la raíz. 4 fases clínicas con más de 30 años de experiencia clínica en Barcelona, Maresme y online en Catalunya.',
+    title: 'Cómo se cura la ansiedad | Psicoanálisis en Canet de Mar',
+    description: 'Psicoanálisis directo para tratar la ansiedad desde la raíz. Un método clínico con más de 30 años. Psicoanalista en Canet de Mar (Maresme) y online.',
     path: '/enfoque',
-    keywords: ['como se cura la ansiedad', 'terapia ansiedad', 'psicoanálisis directo', 'causas de la ansiedad', 'tratamiento ansiedad Barcelona', 'psicoterapia psicoanalítica', 'curar ansiedad', 'psicoanálisis Barcelona', 'psicoanalista Catalunya', 'terapia psicoanalítica Maresme'],
+    keywords: ['como se cura la ansiedad', 'terapia ansiedad', 'psicoanálisis directo', 'causas de la ansiedad', 'tratamiento ansiedad Barcelona', 'psicoterapia psicoanalítica', 'curar ansiedad', 'psicoanálisis Barcelona', 'psicoanalista Catalunya', 'terapia psicoanalítica Maresme', 'psicoanalista Canet de Mar'],
     image: 'https://www.clinicadelansiedad.com/images/enfoque-hero.png',
     imageAlt: 'Cómo se cura la ansiedad - Psicoanálisis Directo',
     lang: locale,

@@ -241,7 +241,7 @@ export default function CelosPage() {
                 Cómo trabajamos los celos
               </h2>
               <p className="text-navy/60 text-lg leading-relaxed mb-16 max-w-2xl">
-                No se trata de aprender a «gestionar» los celos. Se trata de comprender qué herida los origina —y sanarla. En nuestra consulta de Barcelona (Canet de Mar, Maresme), trabajamos los celos patológicos con{" "}<Link href="/enfoque" className="text-gold hover:text-gold/80 underline underline-offset-2">psicoanálisis directo</Link>, presencial y{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">online</Link> para toda Catalunya.
+                No se trata de aprender a «gestionar» los celos. Se trata de comprender qué herida los origina —y sanarla. En nuestra consulta de Canet de Mar (Maresme), trabajamos los celos patológicos con{" "}<Link href="/enfoque" className="text-gold hover:text-gold/80 underline underline-offset-2">psicoanálisis directo</Link>, presencial y{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">online</Link> para toda Catalunya.
               </p>
             </motion.div>
 
@@ -341,10 +341,15 @@ export default function CelosPage() {
               <a href="/ansiedad" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">ansiedad intensa</a> y pueden derivar en{" "}
               <a href="/crisis-de-panico" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">crisis de pánico</a> o{" "}
               <a href="/depresion" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">depresión</a>.
-              Psicoanalista especialista en celos en Barcelona. Ofrecemos{" "}
+              Psicoanalista especialista en celos en Canet de Mar (Maresme). Ofrecemos{" "}
               <a href="/servicios/terapia-de-pareja" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia de pareja</a> y{" "}
               <a href="/servicios/terapia-individual" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia individual</a> en Canet de Mar (Maresme) y{" "}
               <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para toda Catalunya.
+            </p>
+            <p className="text-navy/50 text-sm leading-relaxed mt-4">
+              Consulta presencial en Canet de Mar (Maresme) y terapia online para toda Catalunya, con{" "}
+              <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">psicoanalista en el Maresme</a> en la{" "}
+              <a href="/" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">Clínica de la Ansiedad</a>.
             </p>
           </div>
         </section>

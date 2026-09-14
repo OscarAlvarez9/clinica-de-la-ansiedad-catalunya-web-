@@ -273,6 +273,8 @@ export default function TerapiaOnlinePage() {
               <a href="/celos" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">celos patológicos</a> y{" "}
               <a href="/ludopatia" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">ludopatía</a> online.
               Psicoanalista online en Barcelona para pacientes de toda Catalunya —Girona, Lleida, Tarragona, el Maresme— y toda España.
+              Si prefieres la consulta presencial, atendemos también como{" "}
+              <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">psicoanalista en el Maresme</a>, en Canet de Mar.
             </p>
           </div>
         </section>

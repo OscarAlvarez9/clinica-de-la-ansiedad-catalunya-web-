@@ -112,7 +112,7 @@ export default function DepresionPage() {
                 La ansiedad grita. La depresión se calla. Mientras una te mantiene en alerta permanente, la otra te empuja al repliegue —el mundo exterior deja de despertar interés, los proyectos pierden sentido, las relaciones se vuelven un esfuerzo agotador.
               </motion.p>
               <motion.p variants={inView}>
-                En nuestra consulta de Barcelona (Canet de Mar, comarca del Maresme) he visto a personas brillantes convencidas de que la depresión era un defecto suyo. No lo es. Es una señal —dura, dolorosa— pero una señal que, bien descifrada, abre la puerta a una transformación real. Como psicoanalista especialista en depresión en Barcelona, trato la depresión y ansiedad con psicoterapia psicoanalítica, también disponible como{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</Link> para pacientes de toda Catalunya —Girona, Lleida, Tarragona— y toda España.
+                En nuestra consulta de Canet de Mar (Maresme) he visto a personas brillantes convencidas de que la depresión era un defecto suyo. No lo es. Es una señal —dura, dolorosa— pero una señal que, bien descifrada, abre la puerta a una transformación real. Como psicoanalista especialista en depresión en el Maresme, trato la depresión y ansiedad con psicoterapia psicoanalítica, también disponible como{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</Link> para pacientes de toda Catalunya —Girona, Lleida, Tarragona— y toda España.
               </motion.p>
             </motion.div>
           </div>
@@ -333,8 +333,13 @@ export default function DepresionPage() {
               <a href="/crisis-de-panico" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">crisis de pánico</a> o{" "}
               <a href="/ludopatia" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">adicciones</a> vinculadas al vacío depresivo.
               Ofrecemos <a href="/servicios/terapia-individual" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia individual</a> y{" "}
-              <a href="/servicios/dimension-familiar" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia familiar</a> en Canet de Mar (Barcelona) y{" "}
+              <a href="/servicios/dimension-familiar" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia familiar</a> en Canet de Mar (Maresme) y{" "}
               <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para toda Catalunya y España.
+            </p>
+            <p className="text-navy/50 text-sm leading-relaxed mt-4">
+              Consulta presencial en Canet de Mar (Maresme) y terapia online para toda Catalunya, con{" "}
+              <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">psicoanalista en el Maresme</a> en la{" "}
+              <a href="/" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">Clínica de la Ansiedad</a>.
             </p>
           </div>
         </section>

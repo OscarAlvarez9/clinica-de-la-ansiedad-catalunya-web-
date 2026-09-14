@@ -7,8 +7,8 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-    title: 'Tratamiento de la Ludopatía | Clínica de la Ansiedad Catalunya',
-    description: 'Tratamiento psicoanalítico de ludopatía y adicción al juego en Barcelona y online. Abordamos el origen inconsciente de la adicción, no solo el síntoma visible.',
+    title: 'Ludopatía en Canet de Mar (Maresme) | Clínica de la Ansiedad',
+    description: 'Tratamiento psicoanalítico de la ludopatía y la adicción al juego en Canet de Mar (Maresme), presencial y online. Abordamos el origen, no solo el síntoma.',
     path: '/ludopatia',
     keywords: [
       'ludopatía tratamiento', 'adicción al juego', 'psicólogo ludopatía',

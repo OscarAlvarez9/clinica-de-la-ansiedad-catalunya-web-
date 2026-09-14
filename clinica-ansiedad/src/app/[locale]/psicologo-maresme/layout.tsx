@@ -5,9 +5,9 @@ const BASE = 'https://www.clinicadelansiedad.com';
 
 const meta = {
   es: {
-    title: 'Psicoanalista en el Maresme y Canet de Mar | Joan Ramon Soto',
+    title: 'Psicoanalista en el Maresme | Ansiedad · Canet de Mar',
     description:
-      'Consulta de psicoanálisis en Canet de Mar (Maresme) para ansiedad, depresión y crisis de pánico. Psicoanalista Joan Ramon Soto, presencial y online, en catalán y castellano. Desde 1993.',
+      'Consulta de psicoanálisis en Canet de Mar (Maresme) para ansiedad, depresión y crisis de pánico. Presencial y online, en catalán y castellano.',
     keywords: [
       'psicologo Maresme', 'psicologo Canet de Mar', 'psicoanalista Maresme',
       'psicoanalista Canet de Mar', 'psicologo Arenys de Mar', 'psicologo Calella',
@@ -18,9 +18,9 @@ const meta = {
     ogLocale: 'es_ES',
   },
   ca: {
-    title: "Psicoanalista al Maresme i Canet de Mar | Joan Ramon Soto",
+    title: "Psicoanalista al Maresme | Ansietat · Canet de Mar",
     description:
-      "Consulta de psicoanàlisi a Canet de Mar (Maresme) per a ansietat, depressió i crisis de pànic. Psicoanalista Joan Ramon Soto, presencial i online, en català i castellà. Des de 1993.",
+      "Consulta de psicoanàlisi a Canet de Mar (Maresme) per a ansietat, depressió i crisis de pànic. Presencial i online, en català i castellà.",
     keywords: [
       'psicòleg Maresme', 'psicòleg Canet de Mar', 'psicoanalista Maresme',
       'psicoanalista Canet de Mar', 'psicòleg Arenys de Mar', 'psicòleg Calella',

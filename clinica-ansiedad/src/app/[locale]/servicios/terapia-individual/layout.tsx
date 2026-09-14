@@ -7,8 +7,8 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-    title: 'Terapia Individual Ansiedad | Consulta Psicológica Barcelona',
-    description: 'Terapia individual psicoanalítica para ansiedad, depresión, hipocondría y TOC. Primera visita clínica profunda y personalizada. Psicoanalista en Barcelona y online.',
+    title: 'Terapia individual en Canet de Mar y el Maresme',
+    description: 'Terapia individual psicoanalítica para ansiedad, depresión, hipocondría y TOC. Consulta presencial en Canet de Mar (Maresme) y terapia online.',
     path: '/servicios/terapia-individual',
     keywords: [
       'terapia individual', 'consulta psicologica', 'primera visita',

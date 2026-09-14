@@ -25,17 +25,21 @@
     "mobile_cta": "Sol·licitar Valoració"
   },
   "hero": {
-    "eyebrow_1": "Especialistes en Ansietat",
-    "eyebrow_2": "Barcelona & Online",
-    "h1": "Símptomes d'ansietat: identifica'ls i <accent>supera'ls</accent>.",
+    "eyebrow_1": "Psicoanalista per a l'ansietat",
+    "eyebrow_2": "Canet de Mar · Maresme",
+    "h1": "Psicoanalista per a l'ansietat a <accent>Canet de Mar</accent> i el Maresme",
     "h1_sub": "Teràpia rigorosa que funciona.",
-    "description": "Des del 1993 resolem les <strong_p>causes de l'ansietat</strong_p> amb un procés clínic personalitzat dirigit per <strong_p>Joan Ramon Soto</strong_p>. Psicoanalista especialista en ansietat a Barcelona. Teràpia presencial a Canet de Mar (Maresme) i online per a tota Catalunya i Espanya.",
-    "cta_main": "Sol·licitar Valoració Primera",
-    "cta_secondary": "El nostre Mètode",
+    "description": "Des del 1993 resolem les <strong_p>causes de l'ansietat</strong_p> amb un procés clínic personalitzat dirigit per <strong_p>Joan Ramon Soto</strong_p>, psicoanalista. Consulta presencial a Ronda Doctor Anglès 74, Canet de Mar (Maresme), al costat de l'estació de la R1, i teràpia online per a tota Catalunya i Espanya.",
+    "cta_main": "Escriu-nos per WhatsApp",
+    "cta_secondary": "Reservar cita · 75 €",
     "patients_label": "Pacients recuperats",
     "years_label": "Anys de Trajectòria",
     "quote": "\"El símptoma és només el missatger continu. El nostre treball és desxifrar el missatge.\"",
-    "role": "Psicoanalista"
+    "role": "Psicoanalista",
+    "cta_note": "Et responem personalment. Sense pagar res per escriure.",
+    "cta_method": "Veure el nostre mètode",
+    "wa_message": "Hola, m'agradaria que m'expliquéssiu com funciona la primera sessió.",
+    "reviews_label": "{count} ressenyes a Google"
   },
   "footer": {
     "brand_claim": "Psicoteràpia psicoanalítica rigorosa per desarticular el patiment des de l'arrel.",
@@ -48,12 +52,12 @@
   "problem": {
     "h2": "Et sents <accent>atrapat</accent> en algun d'aquests escenaris?",
     "situations": [
-        "Sents una angoixa que no pots explicar amb paraules.",
-        "T'envaeixen pors irracionals que limiten la teva vida diària.",
-        "El teu cos reacciona amb taquicàrdies o falta d'aire sense causa física.",
-        "T'exigeixes massa i l'estrès t'està passant factura.",
-        "Sents que repeteixes sempre els mateixos errors en les teves relacions.",
-        "Evites plans o llocs per por que aparegui l'ansietat."
+      "Sents una angoixa que no pots explicar amb paraules.",
+      "T'envaeixen pors irracionals que limiten la teva vida diària.",
+      "El teu cos reacciona amb taquicàrdies o falta d'aire sense causa física.",
+      "T'exigeixes massa i l'estrès t'està passant factura.",
+      "Sents que repeteixes sempre els mateixos errors en les teves relacions.",
+      "Evites plans o llocs per por que aparegui l'ansietat."
     ],
     "quote": "L'ansietat no és l'enemic, sinó <accent>el senyal</accent> d'un conflicte que necessita ser escoltat."
   },
@@ -61,11 +65,11 @@
     "eyebrow": "El nostre Enfocament",
     "h2": "Un enfocament que va a l'arrel, <accent>no als símptomes</accent>",
     "p1": "La <strong_p>psicoteràpia psicoanalítica</strong_p> és un espai per entendre què s'amaga darrere de la teva ansietat. Mentre altres teràpies busquen silenciar el símptoma ràpidament, nosaltres entenem l'ansietat com un senyal d'alarma mental.",
-    "p2": "Liderat per <strong_w>Joan Ramon Soto</strong_w>, psicoanalista especialista en ansietat a Barcelona, aquest espai clínic proveeix un entorn rigorós des del 1993 a Canet de Mar (Maresme). Escoltem la teva història única per desarticular els conflictes interns que mantenen viva l'angoixa. Consulta presencial i online per a tota Catalunya.",
+    "p2": "Liderat per <strong_w>Joan Ramon Soto</strong_w>, psicoanalista especialista en ansietat, aquest espai clínic proveeix un entorn rigorós des del 1993 a Canet de Mar (Maresme). Escoltem la teva història única per desarticular els conflictes interns que mantenen viva l'angoixa. Consulta presencial a Canet de Mar i online per a tota Catalunya.",
     "differentiators": [
-        "Causes profundes, no només alleujament dels símptomes temporals",
-        "Més de 30 anys d'experiència clínica especialitzada",
-        "Procés terapèutic estrictament personalitzat i continu"
+      "Causes profundes, no només alleujament dels símptomes temporals",
+      "Més de 30 anys d'experiència clínica especialitzada",
+      "Procés terapèutic estrictament personalitzat i continu"
     ],
     "cta": "Conèixer més sobre la meva metodologia",
     "process_title": "El procés analític",
@@ -81,8 +85,12 @@
   "services": {
     "title": "En què et podem ajudar?",
     "specialities": [
-      "Ansietat", "Depressió", "Crisis de pànic",
-      "Pensaments obsessius", "Gelosia", "Ludopatia"
+      "Ansietat",
+      "Depressió",
+      "Crisis de pànic",
+      "Pensaments obsessius",
+      "Gelosia",
+      "Ludopatia"
     ],
     "list": [
       {
@@ -135,5 +143,25 @@
         "content": "Sí, Joan Ramon Soto és completament bilingüe. Atén indistintament en català i castellà. És fonamental que t'expressis en la teva llengua emocional, la que millor connecta amb la teva història de vida, perquè la teràpia sigui el més profunda i efectiva possible."
       }
     ]
+  },
+  "zonas": {
+    "eyebrow": "Zones que atenem",
+    "h2": "Psicoanalista per a tot el <accent>Maresme</accent>",
+    "p": "La consulta és al centre de Canet de Mar, a pocs minuts de l'estació de la R1 i amb sortida directa des de la C-32. Atenem persones de tota la comarca.",
+    "towns": [
+      "Canet de Mar",
+      "Arenys de Mar",
+      "Arenys de Munt",
+      "Sant Pol de Mar",
+      "Calella",
+      "Pineda de Mar",
+      "Malgrat de Mar",
+      "Mataró",
+      "Montgat"
+    ],
+    "cta": "Veure la pàgina del Maresme",
+    "address_label": "On som",
+    "address": "Ronda Doctor Anglès 74, 08360 Canet de Mar (Barcelona)",
+    "map_title": "Mapa de la consulta a Canet de Mar"
   }
 }

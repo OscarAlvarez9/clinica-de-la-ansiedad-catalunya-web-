@@ -29,14 +29,20 @@ const inter = Inter({
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
 
+    // Marca diferenciada ("Maresme") para no competir con la Clínica de la Ansiedad
+    // homónima de Barcelona ciudad, que se lleva los clics de esa consulta.
+    // Máximo 60 caracteres: a partir de ahí Google trunca el title en la SERP.
     const titles: Record<string, string> = {
-        es: 'Clínica de la Ansiedad | Psicoanalista en Barcelona',
-        ca: 'Clínica de l\'Ansietat | Psicoanalista a Barcelona'
+        es: 'Psicoanalista en Canet de Mar | Clínica Ansiedad Maresme',
+        ca: 'Psicoanalista a Canet de Mar | Clínica Ansietat Maresme'
     };
 
+    // Máximo 160 caracteres: a partir de ahí Google corta la description.
+    // Se retira "primera valoración sin compromiso": la reserva exige pago previo,
+    // así que la promesa no se sostenía.
     const descriptions: Record<string, string> = {
-        es: 'Tratamiento de síntomas de ansiedad, depresión y crisis de pánico en Barcelona. Psicoterapia psicoanalítica con más de 30 años de experiencia. Presencial y online.',
-        ca: 'Tractament de símptomes d\'ansietat, depressió i crisis de pànic a Barcelona. Psicoteràpia psicoanalítica amb més de 30 anys d\'experiència. Presencial i online.'
+        es: 'Psicoanalista para la ansiedad, la depresión y las crisis de pánico en Canet de Mar (Maresme). Consulta presencial y terapia online. Desde 1993.',
+        ca: 'Psicoanalista per a l\'ansietat, la depressió i les crisis de pànic a Canet de Mar (Maresme). Consulta presencial i teràpia online. Des del 1993.'
     };
 
     return {

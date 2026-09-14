@@ -11,13 +11,16 @@ export const medicalClinicSchema = {
     "@context": "https://schema.org",
     "@type": ["MedicalClinic", "LocalBusiness", "HealthAndBeautyBusiness"],
     "@id": "https://www.clinicadelansiedad.com",
-    "name": "Clínica de la Ansiedad Catalunya",
+    // Nombre con "Maresme" para separarse de la Clínica de la Ansiedad homónima de
+    // Barcelona ciudad (clinicadeansiedad.com), que se lleva los clics de esa consulta.
+    "name": "Clínica de la Ansiedad Maresme",
     "alternateName": [
-        "Clínica de l'Ansietat Catalunya",
-        "Joan Ramon Soto - Psicoterapia Psicoanalítica"
+        "Clínica de la Ansiedad Catalunya",
+        "Clínica de l'Ansietat Maresme",
+        "Joan Ramon Soto - Psicoanalista"
     ],
-    "headline": "Terapia Psicoanalítica Especializada en Ansiedad, Depresión y Crisis de Pánico",
-    "description": "Clínica especializada en el tratamiento de los síntomas de ansiedad, trastorno de ansiedad generalizada, depresión, TOC, crisis de pánico y fobia social desde 1993. Abordaje profundo y personalizado en Barcelona (Canet de Mar) y terapia online para toda España.",
+    "headline": "Psicoanalista Especializado en Ansiedad, Depresión y Crisis de Pánico en Canet de Mar",
+    "description": "Consulta psicoanalítica especializada en síntomas de ansiedad, trastorno de ansiedad generalizada, depresión, TOC, crisis de pánico y fobia social desde 1993. Atención presencial en Canet de Mar (Maresme) y terapia online para toda España.",
     "url": "https://www.clinicadelansiedad.com",
     "telephone": "+34613916079",
     "email": "joanramonsoto@gmail.com",
@@ -72,6 +75,9 @@ export const medicalClinicSchema = {
         "description": "Ubicación de la clínica presencial"
     },
     "hasMap": "https://www.google.com/maps/place/Ronda+Dr+Anglès+74,+08360+Canet+de+Mar,+Barcelona",
+    // Tarifas publicadas en el sistema de reservas (Setmore).
+    "priceRange": "75 € - 100 €",
+    "currenciesAccepted": "EUR",
     "openingHoursSpecification": [
         {
             "@type": "OpeningHoursSpecification",
@@ -126,20 +132,11 @@ export const medicalClinicSchema = {
             "serviceType": "Psychiatry"
         }
     ],
+    // Área de servicio presencial: la comarca del Maresme, con sede en Canet de Mar.
+    // Antes se declaraban además Girona, Tarragona, Lleida, Sabadell y Terrassa; se
+    // retiran porque no hay consulta presencial allí y diluían la señal local.
+    // Catalunya y España quedan como cobertura de la modalidad online.
     "areaServed": [
-        {
-            "@type": "City",
-            "name": "Barcelona",
-            "sameAs": "https://www.wikidata.org/wiki/Q1492"
-        },
-        {
-            "@type": "City",
-            "name": "Canet de Mar",
-            "containedInPlace": {
-                "@type": "AdministrativeArea",
-                "name": "Maresme"
-            }
-        },
         {
             "@type": "AdministrativeArea",
             "name": "Maresme",
@@ -150,31 +147,20 @@ export const medicalClinicSchema = {
         },
         {
             "@type": "City",
-            "name": "Girona",
-            "sameAs": "https://www.wikidata.org/wiki/Q7038"
+            "name": "Canet de Mar",
+            "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Maresme"
+            }
         },
-        {
-            "@type": "City",
-            "name": "Tarragona",
-            "sameAs": "https://www.wikidata.org/wiki/Q15088"
-        },
-        {
-            "@type": "City",
-            "name": "Lleida",
-            "sameAs": "https://www.wikidata.org/wiki/Q15090"
-        },
-        {
-            "@type": "City",
-            "name": "Mataró"
-        },
-        {
-            "@type": "City",
-            "name": "Sabadell"
-        },
-        {
-            "@type": "City",
-            "name": "Terrassa"
-        },
+        { "@type": "City", "name": "Arenys de Mar" },
+        { "@type": "City", "name": "Arenys de Munt" },
+        { "@type": "City", "name": "Sant Pol de Mar" },
+        { "@type": "City", "name": "Calella" },
+        { "@type": "City", "name": "Pineda de Mar" },
+        { "@type": "City", "name": "Malgrat de Mar" },
+        { "@type": "City", "name": "Mataró" },
+        { "@type": "City", "name": "Montgat" },
         {
             "@type": "AdministrativeArea",
             "name": "Catalunya",

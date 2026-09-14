@@ -182,7 +182,7 @@ export default function CrisisDePanicoPage() {
                   Aparecen en momentos de transición vital: cambios laborales, rupturas, pérdidas. Las palpitaciones, la hiperventilación, la opresión en el pecho —son el lenguaje somático de una angustia que necesita ser escuchada.
                 </motion.p>
                 <motion.p variants={inView}>
-                  Por eso el tratamiento exclusivamente sintomático —solo medicación, solo técnicas de respiración— ofrece alivio temporal. El pánico regresa porque el mensaje sigue sin descifrar. En nuestra consulta de Barcelona (Canet de Mar, comarca del Maresme), abordamos los ataques de pánico desde su origen emocional con{" "}<Link href="/enfoque" className="text-gold hover:text-gold/80 underline underline-offset-2">psicoanálisis directo</Link>, disponible también como{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</Link> para pacientes de Barcelona, Girona, Lleida, Tarragona y toda Catalunya.
+                  Por eso el tratamiento exclusivamente sintomático —solo medicación, solo técnicas de respiración— ofrece alivio temporal. El pánico regresa porque el mensaje sigue sin descifrar. En nuestra consulta de Canet de Mar (Maresme), abordamos los ataques de pánico desde su origen emocional con{" "}<Link href="/enfoque" className="text-gold hover:text-gold/80 underline underline-offset-2">psicoanálisis directo</Link>, disponible también como{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</Link> para pacientes de Barcelona, Girona, Lleida, Tarragona y toda Catalunya.
                 </motion.p>
               </motion.div>
 
@@ -318,9 +318,14 @@ export default function CrisisDePanicoPage() {
               <a href="/ansiedad" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">ansiedad</a>. Con frecuencia coexisten con{" "}
               <a href="/depresion" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">depresión</a> o se vinculan a{" "}
               <a href="/celos" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">celos patológicos</a> que generan angustia constante.
-              Tratamiento de ataques de pánico en Barcelona (Canet de Mar, Maresme) con{" "}
+              Tratamiento de ataques de pánico en Canet de Mar (Maresme) con{" "}
               <a href="/servicios/terapia-individual" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia individual</a> presencial y{" "}
               <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para toda Catalunya y España.
+            </p>
+            <p className="text-navy/50 text-sm leading-relaxed mt-4">
+              Consulta presencial en Canet de Mar (Maresme) y terapia online para toda Catalunya, con{" "}
+              <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">psicoanalista en el Maresme</a> en la{" "}
+              <a href="/" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">Clínica de la Ansiedad</a>.
             </p>
           </div>
         </section>
