@@ -10,7 +10,7 @@ export default function AnsiedadHero() {
       title="Tratar la ansiedad en Canet de Mar"
       titleAccent="para dejar de sufrirla."
       description="Palpitaciones. Hiperventilación. La mente que no para. Si has llegado aquí es porque algo en ti ya sabe que necesitas respuestas reales —no técnicas de respiración, sino la comprensión de lo que te pasa. Psicoanalista especialista en ansiedad en Canet de Mar (Maresme), presencial y online."
-      ctaText="Solicitar Valoración"
+      ctaText="Reservar cita · 75 €"
       quote="El síntoma es solo el mensajero continuo. Nuestro trabajo es descifrar el mensaje."
       stats={[
         { value: "30+", label: "Años de experiencia" },

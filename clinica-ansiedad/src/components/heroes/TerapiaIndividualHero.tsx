@@ -19,7 +19,7 @@ export default function TerapiaIndividualHero() {
         "Confidencialidad absoluta",
         "Presencial en Canet de Mar (Maresme) u online",
       ]}
-      ctaText="Solicitar Primera Sesión"
+      ctaText="Reservar cita · 75 €"
       quote="En la primera sesión no hay cuestionarios. Hay una conversación clínica real."
       stats={[
         { value: "30+", label: "Años de experiencia" },

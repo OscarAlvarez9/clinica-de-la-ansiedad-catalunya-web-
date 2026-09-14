@@ -1,11 +1,11 @@
 "use client";
 import { motion, type Variants } from "framer-motion";
 import { Button } from "@heroui/react";
-import { Star, ArrowRight, ShieldCheck, Clock } from "lucide-react";
+import { Star, ArrowRight, ShieldCheck, Clock, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import { bookingUrl } from "@/lib/constants";
+import { bookingUrl, whatsappUrl, GOOGLE_REVIEWS } from "@/lib/constants";
 
 const fadeUpVariant: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -27,7 +27,7 @@ export default function Hero() {
     const t = useTranslations('hero');
 
     return (
-        <section className="relative min-h-[90vh] flex items-center bg-cream overflow-hidden pt-32 pb-20">
+        <section className="relative min-h-[100dvh] flex items-center bg-cream overflow-hidden pt-24 pb-16">
             {/* Background Texture / Subtle Grid */}
             <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
                 style={{ backgroundImage: `radial-gradient(#164E63 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
@@ -43,7 +43,7 @@ export default function Hero() {
                     initial={false}
                     animate="visible"
                 >
-                    <motion.div variants={fadeUpVariant} className="mb-8 flex flex-wrap gap-3">
+                    <motion.div variants={fadeUpVariant} className="mb-6 flex flex-wrap gap-3">
                         <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full border border-navy/10 bg-white text-navy font-bold text-[10px] tracking-[0.15em] uppercase shadow-sm">
                             <ShieldCheck className="w-3 h-3 text-gold" />
                             {t('eyebrow_1')}
@@ -53,73 +53,95 @@ export default function Hero() {
                         </span>
                     </motion.div>
 
+                    {/* Escala contenida: el H1 local es largo (9 palabras). A text-8xl
+                        ocupaba 4 líneas y empujaba los CTAs fuera del pliegue. */}
                     <motion.h1
                         variants={fadeUpVariant}
-                        className="text-navy font-serif leading-tight lg:leading-[1.15] text-5xl md:text-7xl lg:text-8xl xl:text-[5.5rem] font-bold mb-10 tracking-tight pt-2"
+                        className="text-navy font-serif leading-[1.1] text-4xl md:text-5xl lg:text-6xl font-bold mb-5 tracking-tight"
                     >
                         {t.rich('h1', {
                             accent: (chunks) => <span className="text-gold italic font-medium">{chunks}</span>
                         })}
-                        <span className="font-light italic text-gold text-3xl md:text-5xl lg:text-5xl mt-4 block">{t('h1_sub')}</span>
+                        <span className="font-light italic text-gold text-2xl md:text-3xl mt-3 block">{t('h1_sub')}</span>
                     </motion.h1>
 
                     <motion.p
                         variants={fadeUpVariant}
-                        className="text-text/80 text-lg md:text-xl leading-relaxed max-w-2xl mb-10 font-light"
+                        className="text-text/80 text-base md:text-lg leading-relaxed max-w-xl mb-7 font-light"
                     >
                         {t.rich('description', {
                             strong_p: (chunks) => <strong className="font-bold text-navy">{chunks}</strong>
                         })}
                     </motion.p>
 
+                    {/* Jerarquía de CTAs: primero el canal sin coste (WhatsApp), después la
+                        reserva con el precio a la vista. Antes el primario prometía una
+                        "valoración sin compromiso" y llevaba directo a una pasarela de
+                        pago de 75 €, que es la fuga de conversión más grande de la home. */}
                     <motion.div
                         variants={fadeUpVariant}
-                        className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-16"
+                        className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-4"
                     >
+                        <Button
+                            as="a"
+                            href={whatsappUrl(t('wa_message'))}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full sm:w-auto bg-navy hover:bg-navy/95 text-white font-semibold px-9 py-7 rounded-xl text-base shadow-2xl shadow-navy/20 transition-all duration-300 group"
+                        >
+                            <MessageCircle className="mr-2 w-5 h-5 shrink-0" />
+                            {t('cta_main')}
+                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </Button>
                         <Button
                             as="a"
                             href={bookingUrl('hero-home')}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full sm:w-auto bg-navy hover:bg-navy/95 text-white font-semibold px-10 py-8 rounded-xl text-lg shadow-2xl shadow-navy/20 transition-all duration-300 group"
-                        >
-                            {t('cta_main')}
-                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                        <Button
-                            as={Link}
-                            href="/enfoque"
-                            className="w-full sm:w-auto bg-white border border-navy/10 text-navy hover:bg-navy/5 font-bold px-8 py-8 rounded-xl text-md transition-all uppercase tracking-widest"
+                            className="w-full sm:w-auto bg-white border border-navy/15 text-navy hover:bg-navy/5 font-bold px-8 py-7 rounded-xl text-base transition-all"
                         >
                             {t('cta_secondary')}
                         </Button>
                     </motion.div>
 
+                    <motion.p variants={fadeUpVariant} className="text-navy/50 text-sm mb-12">
+                        {t('cta_note')}{' '}
+                        <Link href="/enfoque" className="text-navy/70 underline underline-offset-2 hover:text-gold transition-colors">
+                            {t('cta_method')}
+                        </Link>
+                    </motion.p>
+
                     {/* Trust Indicators */}
                     <motion.div
                         variants={fadeUpVariant}
-                        className="flex flex-wrap items-center gap-x-12 gap-y-6 pt-10 border-t border-navy/10"
+                        className="flex flex-wrap items-center gap-x-10 gap-y-5 pt-7 border-t border-navy/10"
                     >
-                        <div className="flex items-center gap-4">
-                            <div className="flex -space-x-4">
-                                {[1, 2, 3].map((i) => (
-                                    <div key={i} className="w-12 h-12 rounded-full border-4 border-cream bg-slate-200 overflow-hidden relative">
-                                        <Image src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Paciente" fill className="object-cover" />
-                                    </div>
-                                ))}
-                                <div className="w-12 h-12 rounded-full border-4 border-cream bg-gold flex items-center justify-center text-[11px] text-navy font-bold shadow-sm">+1K</div>
+                        {/* Prueba social real y verificable. Antes había tres caras de stock
+                            (i.pravatar.cc) con alt="Paciente": además de ser un tell, fingía
+                            pacientes cuya cara nunca se mostraría por confidencialidad. */}
+                        <a
+                            href={GOOGLE_REVIEWS.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-4 group"
+                        >
+                            <div className="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                                <Star className="w-6 h-6 fill-gold text-gold" />
                             </div>
                             <div className="flex flex-col">
-                                <div className="flex gap-0.5 mb-1">
-                                    {[1, 2, 3, 4, 5].map((star) => (
-                                        <Star key={star} className="w-4 h-4 fill-gold text-gold" />
-                                    ))}
+                                <div className="flex items-center gap-2">
+                                    <p className="font-serif text-3xl font-bold text-navy leading-none">{GOOGLE_REVIEWS.rating}</p>
+                                    <div className="flex gap-0.5">
+                                        {[1, 2, 3, 4, 5].map((star) => (
+                                            <Star key={star} className="w-3.5 h-3.5 fill-gold text-gold" />
+                                        ))}
+                                    </div>
                                 </div>
-                                <p className="text-navy/70 text-[10px] font-bold tracking-[0.2em] uppercase">
-                                    {t('patients_label')}
+                                <p className="text-navy/70 text-[10px] font-bold tracking-[0.2em] uppercase mt-1 group-hover:text-gold transition-colors">
+                                    {t('reviews_label', { count: GOOGLE_REVIEWS.count })}
                                 </p>
                             </div>
-                        </div>
+                        </a>
 
                         <div className="flex items-center gap-4">
                             <div className="w-12 h-12 rounded-full bg-navy/5 flex items-center justify-center">

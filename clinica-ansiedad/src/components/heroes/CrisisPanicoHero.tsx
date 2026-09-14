@@ -10,7 +10,7 @@ export default function CrisisPanicoHero() {
       title="Crisis de pánico en Canet de Mar:"
       titleAccent="tienen causas y tienen solución."
       description="El corazón que se acelera. El aire que no llega. Si conoces esa secuencia, necesitas saber algo: no es un fallo de tu cuerpo. Es un mensaje que podemos descifrar. Consulta presencial en Canet de Mar (Maresme) y terapia online."
-      ctaText="Solicitar Valoración"
+      ctaText="Reservar cita · 75 €"
       quote="El ataque de pánico no es el enemigo. Es una señal urgente del psiquismo que pide ser escuchada."
       stats={[
         { value: "30+", label: "Años en trastornos de pánico" },

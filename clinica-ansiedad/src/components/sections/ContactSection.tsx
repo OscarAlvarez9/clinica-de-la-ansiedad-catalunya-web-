@@ -140,7 +140,7 @@ export default function ContactSection() {
 
                         <div className="relative z-10 mt-10">
                             <div className="inline-flex items-center gap-3 bg-navy text-white px-8 py-4 rounded-full font-bold text-base group-hover:bg-primary transition-colors">
-                                Ver disponibilidad
+                                Reservar cita · 75 €
                                 <ArrowUpRight className="w-4 h-4" />
                             </div>
                         </div>

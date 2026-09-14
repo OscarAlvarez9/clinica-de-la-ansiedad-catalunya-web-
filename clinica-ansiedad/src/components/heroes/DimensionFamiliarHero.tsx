@@ -19,7 +19,7 @@ export default function DimensionFamiliarHero() {
         "No solo al paciente identificado",
         "Presencial en Canet de Mar (Maresme) u online",
       ]}
-      ctaText="Pedir Cita Familiar"
+      ctaText="Reservar cita"
       quote="Ningún síntoma individual se produce en un vacío. La familia es siempre el contexto y, con frecuencia, parte de la solución."
       stats={[
         { value: "30+", label: "Años de experiencia" },

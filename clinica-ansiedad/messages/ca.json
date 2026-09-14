@@ -30,12 +30,16 @@
     "h1": "Psicoanalista per a l'ansietat a <accent>Canet de Mar</accent> i el Maresme",
     "h1_sub": "Teràpia rigorosa que funciona.",
     "description": "Des del 1993 resolem les <strong_p>causes de l'ansietat</strong_p> amb un procés clínic personalitzat dirigit per <strong_p>Joan Ramon Soto</strong_p>, psicoanalista. Consulta presencial a Ronda Doctor Anglès 74, Canet de Mar (Maresme), al costat de l'estació de la R1, i teràpia online per a tota Catalunya i Espanya.",
-    "cta_main": "Sol·licitar Valoració Primera",
-    "cta_secondary": "El nostre Mètode",
+    "cta_main": "Escriu-nos per WhatsApp",
+    "cta_secondary": "Reservar cita · 75 €",
     "patients_label": "Pacients recuperats",
     "years_label": "Anys de Trajectòria",
     "quote": "\"El símptoma és només el missatger continu. El nostre treball és desxifrar el missatge.\"",
-    "role": "Psicoanalista"
+    "role": "Psicoanalista",
+    "cta_note": "Et responem personalment. Sense pagar res per escriure.",
+    "cta_method": "Veure el nostre mètode",
+    "wa_message": "Hola, m'agradaria que m'expliquéssiu com funciona la primera sessió.",
+    "reviews_label": "{count} ressenyes a Google"
   },
   "footer": {
     "brand_claim": "Psicoteràpia psicoanalítica rigorosa per desarticular el patiment des de l'arrel.",

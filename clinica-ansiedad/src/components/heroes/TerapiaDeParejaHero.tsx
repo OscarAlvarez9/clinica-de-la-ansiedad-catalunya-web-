@@ -19,7 +19,7 @@ export default function TerapiaDeParejaHero() {
         "Para parejas en crisis o en punto de quiebre",
         "Presencial en Canet de Mar (Maresme) u online",
       ]}
-      ctaText="Solicitar Cita de Pareja"
+      ctaText="Reservar cita · 100 €"
       quote="Intervenir en una crisis de pareja requiere neutralidad absoluta y empatía para validar el dolor de ambas partes."
       stats={[
         { value: "30+", label: "Años de experiencia" },
