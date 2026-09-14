@@ -5,7 +5,7 @@ const BASE = 'https://www.clinicadelansiedad.com';
 
 const meta = {
   es: {
-    title: 'Psicoanalista en el Maresme | Ansiedad, pareja y familia · Canet de Mar',
+    title: 'Psicoanalista en el Maresme | Ansiedad · Canet de Mar',
     description:
       'Consulta de psicoanálisis en Canet de Mar (Maresme) para ansiedad, depresión y crisis de pánico. Presencial y online, en catalán y castellano.',
     keywords: [
@@ -18,7 +18,7 @@ const meta = {
     ogLocale: 'es_ES',
   },
   ca: {
-    title: "Psicoanalista al Maresme | Ansietat, parella i família · Canet de Mar",
+    title: "Psicoanalista al Maresme | Ansietat · Canet de Mar",
     description:
       "Consulta de psicoanàlisi a Canet de Mar (Maresme) per a ansietat, depressió i crisis de pànic. Presencial i online, en català i castellà.",
     keywords: [

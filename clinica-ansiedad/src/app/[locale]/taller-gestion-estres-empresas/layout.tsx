@@ -5,7 +5,7 @@ const BASE = 'https://www.clinicadelansiedad.com';
 
 const meta = {
   es: {
-    title: 'Taller de gestión del estrés para empresas del Maresme y Barcelona',
+    title: 'Taller de gestión del estrés para empresas | Maresme',
     description:
       'Taller práctico presencial de gestión del estrés y la ansiedad para empresas del Maresme y Barcelona: 3 sesiones, grupos de 4 a 10 personas.',
     keywords: [
@@ -19,7 +19,7 @@ const meta = {
     ogLocale: 'es_ES',
   },
   ca: {
-    title: "Taller de gestió de l'estrès per a empreses del Maresme i Barcelona",
+    title: "Taller de gestió de l'estrès per a empreses | Maresme",
     description:
       "Taller pràctic presencial de gestió de l'estrès i l'ansietat per a empreses del Maresme i Barcelona: 3 sessions, grups de 4 a 10 persones.",
     keywords: [

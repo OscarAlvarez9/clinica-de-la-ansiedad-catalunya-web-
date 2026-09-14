@@ -18,7 +18,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-    title: 'Blog sobre Ansiedad y Salud Mental | Clínica de la Ansiedad Catalunya',
+    title: 'Blog sobre ansiedad y salud mental | Clínica de la Ansiedad',
     description: 'Artículos sobre síntomas de ansiedad, crisis de pánico, depresión y tratamiento psicológico por el Joan Ramon Soto.',
     path: '/blog',
     keywords: [

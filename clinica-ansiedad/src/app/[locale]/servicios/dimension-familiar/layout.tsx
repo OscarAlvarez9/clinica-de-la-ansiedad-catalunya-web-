@@ -7,7 +7,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-    title: 'Terapia familiar en Canet de Mar (Maresme) | Clínica Ansiedad',
+    title: 'Terapia familiar en Canet de Mar y el Maresme',
     description: 'Terapia familiar psicoanalítica para ansiedad y conflictos intergeneracionales. Intervención sistémica presencial en Canet de Mar (Maresme) y sesiones online.',
     path: '/servicios/dimension-familiar',
     keywords: [

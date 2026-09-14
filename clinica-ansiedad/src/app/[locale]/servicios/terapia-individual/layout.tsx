@@ -7,7 +7,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-    title: 'Terapia individual en Canet de Mar (Maresme) | Clínica Ansiedad',
+    title: 'Terapia individual en Canet de Mar y el Maresme',
     description: 'Terapia individual psicoanalítica para ansiedad, depresión, hipocondría y TOC. Consulta presencial en Canet de Mar (Maresme) y terapia online.',
     path: '/servicios/terapia-individual',
     keywords: [

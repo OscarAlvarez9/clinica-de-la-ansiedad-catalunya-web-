@@ -31,9 +31,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
     // Marca diferenciada ("Maresme") para no competir con la Clínica de la Ansiedad
     // homónima de Barcelona ciudad, que se lleva los clics de esa consulta.
+    // Máximo 60 caracteres: a partir de ahí Google trunca el title en la SERP.
     const titles: Record<string, string> = {
-        es: 'Psicoanalista en Canet de Mar | Clínica de la Ansiedad Maresme',
-        ca: 'Psicoanalista a Canet de Mar | Clínica de l\'Ansietat Maresme'
+        es: 'Psicoanalista en Canet de Mar | Clínica Ansiedad Maresme',
+        ca: 'Psicoanalista a Canet de Mar | Clínica Ansietat Maresme'
     };
 
     // Máximo 160 caracteres: a partir de ahí Google corta la description.

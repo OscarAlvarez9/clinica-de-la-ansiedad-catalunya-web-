@@ -7,7 +7,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-    title: 'Terapia online para la ansiedad | Psicoanalista en Barcelona y toda España',
+    title: 'Terapia online ansiedad | Psicoanalista Barcelona y España',
     description: 'Terapia online especializada en ansiedad desde 1993. La misma eficacia que la sesión presencial, desde cualquier lugar de España.',
     path: '/terapia-online',
     keywords: [
