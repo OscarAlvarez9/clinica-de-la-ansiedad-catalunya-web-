@@ -36,9 +36,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         ca: 'Psicoanalista a Canet de Mar | Clínica de l\'Ansietat Maresme'
     };
 
+    // Máximo 160 caracteres: a partir de ahí Google corta la description.
+    // Se retira "primera valoración sin compromiso": la reserva exige pago previo,
+    // así que la promesa no se sostenía.
     const descriptions: Record<string, string> = {
-        es: 'Psicoanalista para la ansiedad, la depresión y las crisis de pánico en Canet de Mar (Maresme). Consulta presencial junto a la estación de la R1 y terapia online. Primera valoración sin compromiso.',
-        ca: 'Psicoanalista per a l\'ansietat, la depressió i les crisis de pànic a Canet de Mar (Maresme). Consulta presencial al costat de l\'estació de la R1 i teràpia online. Primera valoració sense compromís.'
+        es: 'Psicoanalista para la ansiedad, la depresión y las crisis de pánico en Canet de Mar (Maresme). Consulta presencial y terapia online. Desde 1993.',
+        ca: 'Psicoanalista per a l\'ansietat, la depressió i les crisis de pànic a Canet de Mar (Maresme). Consulta presencial i teràpia online. Des del 1993.'
     };
 
     return {

@@ -17,7 +17,7 @@ export async function generateMetadata({
   const { locale } = await params;
   return buildMetadata({
       title: 'Joan Ramon Soto | Psicoanalista en Canet de Mar (Maresme)',
-      description: 'Psicoanalista con más de 30 años en psicoterapia psicoanalítica. Joan Ramon Soto, fundador de la Clínica de la Ansiedad Catalunya. Consulta en Canet de Mar (Maresme) y atención online.',
+      description: 'Joan Ramon Soto, psicoanalista con más de 30 años de experiencia y fundador de la Clínica de la Ansiedad. Consulta en Canet de Mar (Maresme) y online.',
       path: '/sobre-mi',
       keywords: [
           'Joan Ramon Soto',

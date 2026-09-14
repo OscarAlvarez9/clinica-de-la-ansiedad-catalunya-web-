@@ -7,7 +7,7 @@ const meta = {
   es: {
     title: 'Taller de gestión del estrés para empresas del Maresme y Barcelona',
     description:
-      'Taller práctico presencial de gestión del estrés y la ansiedad para empresas: 3 sesiones, grupos de 4 a 10 personas. Formación en ansiedad para trabajadores de empresas del Maresme y Barcelona. Solicita una propuesta.',
+      'Taller práctico presencial de gestión del estrés y la ansiedad para empresas del Maresme y Barcelona: 3 sesiones, grupos de 4 a 10 personas.',
     keywords: [
       'taller gestión estrés empresas', 'formación ansiedad trabajadores',
       'taller estrés laboral', 'gestión del estrés en empresas',
@@ -21,7 +21,7 @@ const meta = {
   ca: {
     title: "Taller de gestió de l'estrès per a empreses del Maresme i Barcelona",
     description:
-      "Taller pràctic presencial de gestió de l'estrès i l'ansietat per a empreses: 3 sessions, grups de 4 a 10 persones. Formació en ansietat per a treballadors d'empreses del Maresme i Barcelona. Sol·licita una proposta.",
+      "Taller pràctic presencial de gestió de l'estrès i l'ansietat per a empreses del Maresme i Barcelona: 3 sessions, grups de 4 a 10 persones.",
     keywords: [
       "taller gestió estrès empreses", "formació ansietat treballadors",
       "taller estrès laboral", "gestió de l'estrès a empreses",

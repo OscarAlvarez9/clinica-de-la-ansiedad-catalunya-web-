@@ -8,7 +8,7 @@ export async function generateMetadata({
   const { locale } = await params;
   return buildMetadata({
     title: 'Terapia de pareja en Canet de Mar (Maresme) | Clínica Ansiedad',
-    description: 'Terapia de pareja psicoanalítica para resolver conflictos, desconexión afectiva y comunicación. Sesiones presenciales en Canet de Mar (Maresme) y online para todo el Maresme y Catalunya.',
+    description: 'Terapia de pareja psicoanalítica para conflictos y desconexión afectiva. Sesiones presenciales en Canet de Mar (Maresme) y terapia online.',
     path: '/servicios/terapia-de-pareja',
     keywords: [
       'terapia pareja', 'terapia de pareja Barcelona', 'psicólogo pareja',

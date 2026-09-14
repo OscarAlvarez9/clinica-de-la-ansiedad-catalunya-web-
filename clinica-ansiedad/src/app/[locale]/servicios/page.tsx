@@ -15,7 +15,7 @@ export async function generateMetadata({
   const { locale } = await params;
   return buildMetadata({
       title: 'Terapia de ansiedad, depresión y TOC en Canet de Mar (Maresme)',
-      description: 'Psicoterapia para ansiedad generalizada, depresión, TOC, fobia social y agorafobia. Terapia individual, de pareja y familiar presencial en Canet de Mar (Maresme) y online.',
+      description: 'Psicoterapia para ansiedad, depresión, TOC, fobia social y agorafobia. Terapia individual, de pareja y familiar en Canet de Mar (Maresme) y online.',
       path: '/servicios',
       keywords: [
           'terapia ansiedad', 'trastorno de ansiedad generalizada', 'trastorno obsesivo compulsivo',

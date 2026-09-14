@@ -8,7 +8,7 @@ export async function generateMetadata({
   const { locale } = await params;
   return buildMetadata({
     title: 'Cómo se cura la ansiedad | Psicoanálisis en Canet de Mar',
-    description: 'Psicoanálisis directo para curar la ansiedad desde la raíz. Un método clínico con más de 30 años de experiencia. Psicoanalista en Canet de Mar (Maresme), con atención online.',
+    description: 'Psicoanálisis directo para tratar la ansiedad desde la raíz. Un método clínico con más de 30 años. Psicoanalista en Canet de Mar (Maresme) y online.',
     path: '/enfoque',
     keywords: ['como se cura la ansiedad', 'terapia ansiedad', 'psicoanálisis directo', 'causas de la ansiedad', 'tratamiento ansiedad Barcelona', 'psicoterapia psicoanalítica', 'curar ansiedad', 'psicoanálisis Barcelona', 'psicoanalista Catalunya', 'terapia psicoanalítica Maresme', 'psicoanalista Canet de Mar'],
     image: 'https://www.clinicadelansiedad.com/images/enfoque-hero.png',
