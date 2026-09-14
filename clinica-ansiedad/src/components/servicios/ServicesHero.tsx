@@ -24,8 +24,8 @@ export default function ServicesHero() {
                     </span>
                     
                     <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-navy tracking-tight leading-[1.1] mb-10">
-                        Tratamiento de la Ansiedad, <br />
-                        <span className="italic text-gold font-serif">Depresión y TOC</span>
+                        Tratamiento de la Ansiedad, Depresión y TOC <br />
+                        <span className="italic text-gold font-serif">en Canet de Mar</span>
                     </h1>
 
                     <p className="text-xl md:text-2xl text-navy/70 font-light leading-relaxed max-w-4xl text-balance mb-12">
@@ -37,7 +37,7 @@ export default function ServicesHero() {
                         <div className="bg-white/50 backdrop-blur-sm border border-navy/5 rounded-[32px] p-8 shadow-glass-light hover:shadow-glass hover:-translate-y-1 transition-all duration-500">
                             <h3 className="text-navy font-bold font-serif text-2xl mb-4 italic">El Origen del Síntoma</h3>
                             <p className="text-navy/70 leading-relaxed font-light">
-                                Desde hace más de 30 años acompañamos a personas que buscan comprender los síntomas de ansiedad, sus causas y cómo se cura desde la raíz. Ofrecemos consulta psicológica presencial en Barcelona y toda Catalunya, así como terapia online.
+                                Desde hace más de 30 años acompañamos a personas que buscan comprender los síntomas de ansiedad, sus causas y cómo se cura desde la raíz. Ofrecemos consulta psicoanalítica presencial en Canet de Mar (Maresme), así como terapia online para toda Catalunya.
                             </p>
                         </div>
                         <div className="bg-white/50 backdrop-blur-sm border border-navy/5 rounded-[32px] p-8 shadow-glass-light hover:shadow-glass hover:-translate-y-1 transition-all duration-500">

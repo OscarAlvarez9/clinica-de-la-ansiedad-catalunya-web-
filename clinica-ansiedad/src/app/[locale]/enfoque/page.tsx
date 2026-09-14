@@ -117,7 +117,7 @@ export default function EnfoquePage() {
                                     La Arquitectura de tu <span className="text-gold italic font-light">bienestar</span>
                                 </h1>
                                 <p className="text-xl md:text-2xl text-navy/60 leading-relaxed max-w-xl font-medium mb-10">
-                                    No buscamos silenciar los síntomas, buscamos entender por qué están ahí. Transformamos la estructura de la ansiedad desde su raíz más profunda.
+                                    No buscamos silenciar los síntomas, buscamos entender por qué están ahí. Transformamos la estructura de la ansiedad desde su raíz más profunda. Psicoanalista en Canet de Mar (Maresme), con atención online.
                                 </p>
                                 <div className="flex flex-wrap gap-4">
                                     <button 

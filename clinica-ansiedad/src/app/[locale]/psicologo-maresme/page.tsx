@@ -60,8 +60,8 @@ const content = {
     waMessage: "Hola, me gustaría solicitar una valoración en la consulta de Canet de Mar.",
     hero: {
       eyebrow: "Consulta presencial en Canet de Mar · Maresme",
-      title: "Psicoanalista en Canet de Mar",
-      titleAccent: "y el Maresme",
+      title: "Psicoanalista en el Maresme:",
+      titleAccent: "consulta en Canet de Mar",
       description:
         "Espacio psicoanalítico dirigido por Joan Ramon Soto. Tratamos la ansiedad, la depresión y las crisis de pánico desde la raíz, con consulta presencial en Canet de Mar y sesiones online para todo el Maresme.",
       ctaPrimary: "Reservar cita",
@@ -102,6 +102,29 @@ const content = {
         { title: "Terapia individual", desc: "Un proceso personal, confidencial y a tu ritmo.", href: "/servicios/terapia-individual" as const },
       ],
     },
+    municipios: {
+      h2: "Desde qué municipios del Maresme atendemos",
+      subtitle: "La consulta está en Canet de Mar, en el centro del Maresme. Estos son los trayectos más habituales de quienes vienen a sesión.",
+      list: [
+        {
+          h3: "Arenys de Mar y Arenys de Munt",
+          p: "Los dos Arenys están a un paso de Canet: unos diez minutos en coche por la C-32 o dos paradas de la R1 desde Arenys de Mar. Muchas de las consultas que llegan desde aquí tienen que ver con ansiedad anticipatoria y con estrés sostenido por trabajo o cuidados familiares.",
+        },
+        {
+          h3: "Sant Pol de Mar y Calella",
+          p: "Desde Sant Pol y Calella se llega por la N-II bordeando la costa o en tren, con la estación de Canet a pocos minutos a pie de la consulta. Es la zona desde la que más se pregunta por terapia de pareja y por crisis de pánico.",
+        },
+        {
+          h3: "Pineda de Mar y Malgrat de Mar",
+          p: "Pineda y Malgrat quedan al norte de la comarca, a un cuarto de hora largo en coche o directamente en la R1 sin transbordos. Para quien tiene horarios difíciles, combinamos sesiones presenciales con alguna sesión online.",
+        },
+        {
+          h3: "Mataró y el bajo Maresme",
+          p: "Desde Mataró, Argentona o Montgat el trayecto es de unos veinte minutos por la C-32. Si te viene mejor, aquí es habitual alternar la primera visita presencial en Canet de Mar con el seguimiento online.",
+        },
+      ],
+      note: "Atendemos indistintamente en catalán y castellano: pots fer la sessió en català si és la teva llengua. Si vienes desde fuera de la comarca, la terapia online mantiene la misma profundidad que la sesión presencial.",
+    },
     approach: {
       h2: "Psicoanálisis directo, no parches",
       p: "A diferencia de las terapias que solo silencian el síntoma, el psicoanálisis directo trata el conflicto que lo origina. Es un proceso riguroso y personalizado, guiado por más de 30 años de experiencia clínica.",
@@ -133,6 +156,18 @@ const content = {
           a: "Sí. Joan Ramon Soto es completamente bilingüe y atiende indistintamente en catalán y castellano, para que puedas expresarte en tu lengua emocional.",
         },
         {
+          q: "¿Cuánto cuesta una sesión?",
+          a: "La sesión individual son 75 € (50 minutos) y la sesión de pareja 100 € (1 hora). Las tarifas son las mismas en modalidad presencial y online, y están publicadas en el sistema de reservas.",
+        },
+        {
+          q: "¿Qué pasa en la primera sesión?",
+          a: "La primera visita es una conversación clínica extensa, sin cuestionarios ni tests mecánicos. Exploramos tu historia, el momento en que aparecieron los síntomas y qué los sostiene. Al final tendrás una idea clara de cómo sería el proceso.",
+        },
+        {
+          q: "¿Cómo llego en tren o dónde aparco?",
+          a: "La consulta está a pocos minutos a pie de la estación de Canet de Mar, en la línea R1 de Rodalies, que recorre toda la costa del Maresme. En coche, la salida de Canet de Mar de la C-32 deja a un par de minutos, y hay aparcamiento libre en la zona.",
+        },
+        {
           q: "¿Hacéis sesiones online?",
           a: "Sí. Además de la consulta presencial en Canet de Mar, ofrecemos terapia online para quienes viven fuera del Maresme o prefieren la comodidad de la videollamada, con la misma eficacia.",
         },
@@ -150,8 +185,8 @@ const content = {
     waMessage: "Hola, m'agradaria sol·licitar una valoració a la consulta de Canet de Mar.",
     hero: {
       eyebrow: "Consulta presencial a Canet de Mar · Maresme",
-      title: "Psicoanalista a Canet de Mar",
-      titleAccent: "i el Maresme",
+      title: "Psicoanalista al Maresme:",
+      titleAccent: "consulta a Canet de Mar",
       description:
         "Espai psicoanalític dirigit per Joan Ramon Soto. Tractem l'ansietat, la depressió i les crisis de pànic des de l'arrel, amb consulta presencial a Canet de Mar i sessions online per a tot el Maresme.",
       ctaPrimary: "Reservar cita",
@@ -192,6 +227,29 @@ const content = {
         { title: "Teràpia individual", desc: "Un procés personal, confidencial i al teu ritme.", href: "/servicios/terapia-individual" as const },
       ],
     },
+    municipios: {
+      h2: "Des de quins municipis del Maresme atenem",
+      subtitle: "La consulta és a Canet de Mar, al centre del Maresme. Aquests són els trajectes més habituals de qui ve a sessió.",
+      list: [
+        {
+          h3: "Arenys de Mar i Arenys de Munt",
+          p: "Els dos Arenys són a tocar de Canet: uns deu minuts en cotxe per la C-32 o dues parades de la R1 des d'Arenys de Mar. Moltes de les consultes que arriben d'aquí tenen a veure amb ansietat anticipatòria i amb estrès sostingut per feina o cura de familiars.",
+        },
+        {
+          h3: "Sant Pol de Mar i Calella",
+          p: "Des de Sant Pol i Calella s'hi arriba per la N-II vorejant la costa o en tren, amb l'estació de Canet a pocs minuts a peu de la consulta. És la zona des d'on més es pregunta per teràpia de parella i per crisis de pànic.",
+        },
+        {
+          h3: "Pineda de Mar i Malgrat de Mar",
+          p: "Pineda i Malgrat queden al nord de la comarca, a un quart d'hora llarg en cotxe o directament a la R1 sense transbordaments. Per a qui té horaris difícils, combinem sessions presencials amb alguna sessió online.",
+        },
+        {
+          h3: "Mataró i el baix Maresme",
+          p: "Des de Mataró, Argentona o Montgat el trajecte és d'uns vint minuts per la C-32. Si et va millor, aquí és habitual alternar la primera visita presencial a Canet de Mar amb el seguiment online.",
+        },
+      ],
+      note: "Atenem indistintament en català i castellà. Si véns de fora de la comarca, la teràpia online manté la mateixa profunditat que la sessió presencial.",
+    },
     approach: {
       h2: "Psicoanàlisi directe, no pedaços",
       p: "A diferència de les teràpies que només silencien el símptoma, el psicoanàlisi directe tracta el conflicte que l'origina. És un procés rigorós i personalitzat, guiat per més de 30 anys d'experiència clínica.",
@@ -221,6 +279,18 @@ const content = {
         {
           q: "Ateneu en català i castellà?",
           a: "Sí. Joan Ramon Soto és completament bilingüe i atén indistintament en català i castellà, perquè puguis expressar-te en la teva llengua emocional.",
+        },
+        {
+          q: "Quant costa una sessió?",
+          a: "La sessió individual són 75 € (50 minuts) i la sessió de parella 100 € (1 hora). Les tarifes són les mateixes en modalitat presencial i online, i estan publicades al sistema de reserves.",
+        },
+        {
+          q: "Què passa a la primera sessió?",
+          a: "La primera visita és una conversa clínica extensa, sense qüestionaris ni tests mecànics. Explorem la teva història, el moment en què van aparèixer els símptomes i què els sosté. Al final tindràs una idea clara de com seria el procés.",
+        },
+        {
+          q: "Com hi arribo en tren o on aparco?",
+          a: "La consulta és a pocs minuts a peu de l'estació de Canet de Mar, a la línia R1 de Rodalies, que recorre tota la costa del Maresme. En cotxe, la sortida de Canet de Mar de la C-32 deixa a un parell de minuts, i hi ha aparcament lliure a la zona.",
         },
         {
           q: "Feu sessions online?",
@@ -438,6 +508,38 @@ export default function PsicologoMaresmePage() {
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+        </section>
+
+        {/* ===== MUNICIPIOS DEL MARESME (H2 + H3 por zona) ===== */}
+        <section className="py-20 md:py-28 px-4 md:px-8 bg-cream">
+          <div className="container mx-auto max-w-5xl">
+            <motion.div variants={inView} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} className="max-w-2xl mb-12">
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-navy mb-4 leading-tight">{t.municipios.h2}</h2>
+              <p className="text-navy/60 text-lg leading-relaxed">{t.municipios.subtitle}</p>
+            </motion.div>
+
+            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid md:grid-cols-2 gap-5 mb-8">
+              {t.municipios.list.map((m, i) => (
+                <motion.div key={i} variants={inView}>
+                  <Card className="bg-white border border-navy/5 shadow-none h-full">
+                    <CardBody className="p-7">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="grid place-items-center w-9 h-9 rounded-xl bg-gold/10 border border-gold/20 shrink-0">
+                          <MapPin className="w-4 h-4 text-gold" />
+                        </span>
+                        <h3 className="font-serif text-xl font-bold text-navy">{m.h3}</h3>
+                      </div>
+                      <p className="text-navy/70 leading-relaxed">{m.p}</p>
+                    </CardBody>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.p variants={inView} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-navy/60 leading-relaxed border-l-2 border-gold/40 pl-5">
+              {t.municipios.note}
+            </motion.p>
           </div>
         </section>
 

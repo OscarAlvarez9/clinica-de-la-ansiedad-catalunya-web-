@@ -7,7 +7,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-    title: 'Terapia Online Ansiedad | 30 Años de Experiencia Clínica',
+    title: 'Terapia online para la ansiedad | Psicoanalista en Barcelona y toda España',
     description: 'Terapia online especializada en ansiedad desde 1993. Misma eficacia que la terapia presencial. Tratamiento de ansiedad generalizada, crisis de pánico y depresión.',
     path: '/terapia-online',
     keywords: [

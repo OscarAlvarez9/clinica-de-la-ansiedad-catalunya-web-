@@ -93,7 +93,7 @@ const content = {
       chip: "Formato del programa",
       h2: "Cómo se organiza el taller",
       subtitle:
-        "Las sesiones se realizan presencialmente en las instalaciones de la empresa. Si la plantilla es más amplia, pueden organizarse diferentes grupos para mantener el carácter práctico del taller.",
+        "Las sesiones se realizan presencialmente en las instalaciones de la empresa, en el Maresme y Barcelona. Si la plantilla es más amplia, pueden organizarse diferentes grupos para mantener el carácter práctico del taller.",
       rows: [
         { Icon: Building2, label: "Modalidad", value: "Presencial, en las instalaciones de la empresa" },
         { Icon: CalendarDays, label: "Duración", value: "3 sesiones de 1 hora y 30 minutos" },
@@ -157,7 +157,7 @@ const content = {
       audience: {
         Icon: Target,
         title: "¿A quién va dirigido?",
-        text: "A empresas y organizaciones que quieran ofrecer a sus profesionales herramientas concretas para prevenir y gestionar el estrés y la ansiedad. El formato en grupos reducidos facilita la participación activa de todas las personas asistentes.",
+        text: "A empresas y organizaciones del Maresme y Barcelona que quieran ofrecer a sus profesionales herramientas concretas para prevenir y gestionar el estrés y la ansiedad. El formato en grupos reducidos facilita la participación activa de todas las personas asistentes.",
       },
       material: {
         Icon: FileText,
@@ -266,7 +266,7 @@ const content = {
       chip: "Format del programa",
       h2: "Com s'organitza el taller",
       subtitle:
-        "Les sessions es fan presencialment a les instal·lacions de l'empresa. Si la plantilla és més àmplia, es poden organitzar diferents grups per mantenir el caràcter pràctic del taller.",
+        "Les sessions es fan presencialment a les instal·lacions de l'empresa, al Maresme i a Barcelona. Si la plantilla és més àmplia, es poden organitzar diferents grups per mantenir el caràcter pràctic del taller.",
       rows: [
         { Icon: Building2, label: "Modalitat", value: "Presencial, a les instal·lacions de l'empresa" },
         { Icon: CalendarDays, label: "Durada", value: "3 sessions d'1 hora i 30 minuts" },
@@ -330,7 +330,7 @@ const content = {
       audience: {
         Icon: Target,
         title: "A qui va dirigit?",
-        text: "A empreses i organitzacions que vulguin oferir als seus professionals eines concretes per prevenir i gestionar l'estrès i l'ansietat. El format en grups reduïts facilita la participació activa de totes les persones assistents.",
+        text: "A empreses i organitzacions del Maresme i de Barcelona que vulguin oferir als seus professionals eines concretes per prevenir i gestionar l'estrès i l'ansietat. El format en grups reduïts facilita la participació activa de totes les persones assistents.",
       },
       material: {
         Icon: FileText,
@@ -433,6 +433,8 @@ export default function TallerEmpresasPage() {
     },
     areaServed: [
       { "@type": "AdministrativeArea", name: "Catalunya" },
+      { "@type": "AdministrativeArea", name: "Maresme" },
+      { "@type": "City", name: "Canet de Mar" },
       { "@type": "City", name: "Barcelona" },
     ],
     audience: {
@@ -542,7 +544,7 @@ export default function TallerEmpresasPage() {
                   <div className="relative rounded-[2rem] overflow-hidden border-4 border-white shadow-[0_30px_80px_-25px_rgba(26,58,72,0.45)] aspect-[4/3.4]">
                     <Image
                       src="/images/centreclinicansiedad.jpeg"
-                      alt="Clínica de la Ansiedad, centro psicológico en Barcelona"
+                      alt="Clínica de la Ansiedad, centro en Canet de Mar (Maresme)"
                       fill
                       priority
                       sizes="(max-width:1024px) 100vw, 520px"

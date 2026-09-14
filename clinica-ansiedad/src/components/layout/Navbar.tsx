@@ -101,7 +101,7 @@ export default function Navbar({ theme = "light" }: { theme?: "light" | "dark" }
             <NavbarBrand as={Link} href="/" className="flex items-center gap-0 flex-1 sm:flex-none">
                 <img
                     src="/images/logo.png"
-                    alt="Clínica de la Ansiedad Catalunya"
+                    alt="Clínica de la Ansiedad Maresme - Canet de Mar"
                     className={`h-9 sm:h-10 md:h-12 w-auto object-contain ${onDark ? "brightness-0 invert" : "brightness-0"}`}
                 />
             </NavbarBrand>

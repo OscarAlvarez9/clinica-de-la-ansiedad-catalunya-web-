@@ -94,7 +94,7 @@ export default function TerapiaIndividualPage() {
                 ¿Para quién es la Terapia Individual?
               </h2>
               <p className="text-navy/60 text-lg leading-relaxed mb-10 max-w-2xl">
-                Muchas personas acuden a nosotros cuando ya han probado otras vías sin éxito. Si te reconoces en alguna de estas situaciones, podemos ayudarte: Consulta presencial en Barcelona (Canet de Mar, Maresme) y{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</Link> para toda Catalunya.
+                Muchas personas acuden a nosotros cuando ya han probado otras vías sin éxito. Si te reconoces en alguna de estas situaciones, podemos ayudarte: Consulta presencial en Canet de Mar (Maresme) y{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</Link> para toda Catalunya.
               </p>
             </motion.div>
 
@@ -302,10 +302,13 @@ export default function TerapiaIndividualPage() {
               Puede complementarse con{" "}
               <a href="/servicios/terapia-de-pareja" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia de pareja</a> o{" "}
               <a href="/servicios/dimension-familiar" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia familiar</a>.
-              <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">Psicoanalista en Canet de Mar (Maresme)</a> y{" "}
-              <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para toda Catalunya y España.
+              Consulta presencial en Canet de Mar (Maresme) y{" "}
+              <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a>:{" "}
+              <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">psicoanalista en el Maresme</a> para pacientes de toda Catalunya y España.
               Para organizaciones ofrecemos además un{" "}
               <a href="/taller-gestion-estres-empresas" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">taller de gestión del estrés y la ansiedad para empresas</a>.
+              Más sobre la{" "}
+              <a href="/" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">Clínica de la Ansiedad</a>.
             </p>
           </div>
         </section>

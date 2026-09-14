@@ -25,11 +25,11 @@
     "mobile_cta": "Solicitar Valoración"
   },
   "hero": {
-    "eyebrow_1": "Especialistas en Ansiedad",
-    "eyebrow_2": "Barcelona & Online",
-    "h1": "Síntomas de ansiedad: identifícalos y <accent>supéralos</accent>.",
+    "eyebrow_1": "Psicoanalista para la ansiedad",
+    "eyebrow_2": "Canet de Mar · Maresme",
+    "h1": "Psicoanalista para la ansiedad en <accent>Canet de Mar</accent> y el Maresme",
     "h1_sub": "Terapia rigurosa que funciona.",
-    "description": "Desde 1993 resolvemos las <strong_p>causas de la ansiedad</strong_p> con un proceso clínico personalizado dirigido por <strong_p>Joan Ramon Soto</strong_p>. Psicoanalista especialista en ansiedad en Barcelona. Terapia presencial en Canet de Mar (Maresme) y online para toda Catalunya y España.",
+    "description": "Desde 1993 resolvemos las <strong_p>causas de la ansiedad</strong_p> con un proceso clínico personalizado dirigido por <strong_p>Joan Ramon Soto</strong_p>, psicoanalista. Consulta presencial en Ronda Doctor Anglès 74, Canet de Mar (Maresme), junto a la estación de la R1, y terapia online para toda Catalunya y España.",
     "cta_main": "Solicitar Valoración Primera",
     "cta_secondary": "Nuestro Método",
     "patients_label": "Pacientes recuperados",
@@ -48,12 +48,12 @@
   "problem": {
     "h2": "¿Te sientes <accent>atrapado</accent> en alguno de estos escenarios?",
     "situations": [
-        "Sientes una angustia que no puedes explicar con palabras.",
-        "Te invaden miedos irracionales que limitan tu vida diaria.",
-        "Tu cuerpo reacciona con taquicardias o falta de aire sin causa física.",
-        "Te exiges demasiado y el estrés te está pasando factura.",
-        "Sientes que repites siempre los mismos errores en tus relaciones.",
-        "Evitas planes o lugares por miedo a que aparezca la ansiedad."
+      "Sientes una angustia que no puedes explicar con palabras.",
+      "Te invaden miedos irracionales que limitan tu vida diaria.",
+      "Tu cuerpo reacciona con taquicardias o falta de aire sin causa física.",
+      "Te exiges demasiado y el estrés te está pasando factura.",
+      "Sientes que repites siempre los mismos errores en tus relaciones.",
+      "Evitas planes o lugares por miedo a que aparezca la ansiedad."
     ],
     "quote": "La ansiedad no es el enemigo, sino <accent>la señal</accent> de un conflicto que necesita ser escuchado."
   },
@@ -61,11 +61,11 @@
     "eyebrow": "Nuestro Enfoque",
     "h2": "Un enfoque que va a la raíz, <accent>no a los síntomas</accent>",
     "p1": "La <strong_p>psicoterapia psicoanalítica</strong_p> es un espacio para entender qué se esconde detrás de tu ansiedad. Mientras otras terapias buscan silenciar el síntoma rápidamente, nosotros entendemos la ansiedad como una señal de alarma mental.",
-    "p2": "Liderado por <strong_w>Joan Ramon Soto</strong_w>, psicoanalista especialista en ansiedad en Barcelona, este espacio clínico provee un entorno riguroso desde 1993 en Canet de Mar (Maresme). Escuchamos tu historia única para desarticular los conflictos internos que mantienen viva la angustia. Consulta presencial y online para toda Catalunya.",
+    "p2": "Liderado por <strong_w>Joan Ramon Soto</strong_w>, psicoanalista especialista en ansiedad, este espacio clínico provee un entorno riguroso desde 1993 en Canet de Mar (Maresme). Escuchamos tu historia única para desarticular los conflictos internos que mantienen viva la angustia. Consulta presencial en Canet de Mar y online para toda Catalunya.",
     "differentiators": [
-        "Causas profundas, no solo alivio de los síntomas temporales",
-        "Más de 30 años de experiencia clínica especializada",
-        "Proceso terapéutico estrictamente personalizado y continuo"
+      "Causas profundas, no solo alivio de los síntomas temporales",
+      "Más de 30 años de experiencia clínica especializada",
+      "Proceso terapéutico estrictamente personalizado y continuo"
     ],
     "cta": "Conocer más sobre mi metodología",
     "process_title": "El proceso analítico",
@@ -81,8 +81,12 @@
   "services": {
     "title": "¿En qué podemos ayudarte?",
     "specialities": [
-      "Ansiedad", "Depresión", "Crisis de pánico",
-      "Pensamientos obsesivos", "Celos", "Ludopatía"
+      "Ansiedad",
+      "Depresión",
+      "Crisis de pánico",
+      "Pensamientos obsesivos",
+      "Celos",
+      "Ludopatía"
     ],
     "list": [
       {
@@ -135,5 +139,25 @@
         "content": "Sí, Joan Ramon Soto es completamente bilingüe. Atiende indistintamente en catalán y castellano. Es fundamental que te expreses en tu lengua emocional, la que mejor conecta con tu historia de vida, para que la terapia sea lo más profunda y efectiva posible."
       }
     ]
+  },
+  "zonas": {
+    "eyebrow": "Zonas que atendemos",
+    "h2": "Psicoanalista para todo el <accent>Maresme</accent>",
+    "p": "La consulta está en el centro de Canet de Mar, a pocos minutos de la estación de la R1 y con salida directa desde la C-32. Recibimos a personas de toda la comarca.",
+    "towns": [
+      "Canet de Mar",
+      "Arenys de Mar",
+      "Arenys de Munt",
+      "Sant Pol de Mar",
+      "Calella",
+      "Pineda de Mar",
+      "Malgrat de Mar",
+      "Mataró",
+      "Montgat"
+    ],
+    "cta": "Ver la página del Maresme",
+    "address_label": "Dónde estamos",
+    "address": "Ronda Doctor Anglès 74, 08360 Canet de Mar (Barcelona)",
+    "map_title": "Mapa de la consulta en Canet de Mar"
   }
 }

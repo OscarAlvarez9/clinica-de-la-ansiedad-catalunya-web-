@@ -119,10 +119,10 @@ export default function AnsiedadPage() {
               className="space-y-6 text-navy/70 leading-relaxed text-lg"
             >
               <motion.p variants={inView}>
-                No es estar nervioso. No es ser débil. La ansiedad es la forma que tiene tu psiquismo de gritar cuando carga con algo que no puede procesar solo. Es una señal —intensa, molesta, a veces aterradora— pero una señal al fin y al cabo. Y tiene tratamiento. En nuestra clínica de Barcelona, como psicoanalista especialista en ansiedad en Barcelona, llevamos más de tres décadas tratando el trastorno de ansiedad generalizada y sus múltiples manifestaciones en pacientes de toda Catalunya.
+                No es estar nervioso. No es ser débil. La ansiedad es la forma que tiene tu psiquismo de gritar cuando carga con algo que no puede procesar solo. Es una señal —intensa, molesta, a veces aterradora— pero una señal al fin y al cabo. Y tiene tratamiento. En nuestra clínica de Canet de Mar (Maresme), como psicoanalista especialista en ansiedad en el Maresme, llevamos más de tres décadas tratando el trastorno de ansiedad generalizada y sus múltiples manifestaciones en pacientes de toda Catalunya.
               </motion.p>
               <motion.p variants={inView}>
-                En treinta años de consulta en Barcelona —primero en el centro y ahora en nuestra sede de Canet de Mar (Maresme)— he visto a cientos de personas convencidas de que su ansiedad era un defecto de carácter. La realidad es otra: cuando los <a href="/ansiedad" className="text-navy font-semibold hover:text-gold transition-colors underline decoration-gold/30">síntomas de ansiedad</a> invaden tu día a día, hay{" "}
+                En treinta años de consulta —primero en Barcelona y ahora en nuestra sede de Canet de Mar (Maresme)— he visto a cientos de personas convencidas de que su ansiedad era un defecto de carácter. La realidad es otra: cuando los <a href="/ansiedad" className="text-navy font-semibold hover:text-gold transition-colors underline decoration-gold/30">síntomas de ansiedad</a> invaden tu día a día, hay{" "}
                 <strong className="text-navy font-semibold">conflictos emocionales profundos</strong> que están alimentando esa respuesta. Mientras no se aborden, la ansiedad seguirá encontrando la manera de hacerse oír. Cuando la ansiedad escala, puede derivar en{" "}<Link href="/crisis-de-panico" className="text-gold hover:text-gold/80 underline underline-offset-2">crisis de pánico</Link> o coexistir con{" "}<Link href="/depresion" className="text-gold hover:text-gold/80 underline underline-offset-2">depresión</Link>.
               </motion.p>
             </motion.div>
@@ -250,7 +250,7 @@ export default function AnsiedadPage() {
                 Cómo se cura la ansiedad
               </h2>
               <p className="text-navy/60 text-lg leading-relaxed mb-16 max-w-2xl">
-                No con parches. No aprendiendo a «convivir» con ella. Se cura yendo al origen —y el origen siempre es más profundo de lo que parece. Nuestro{" "}<Link href="/enfoque" className="text-gold hover:text-gold/80 underline underline-offset-2">método de psicoanálisis directo</Link> aborda las causas de la ansiedad desde la raíz, en consulta presencial en Barcelona (Canet de Mar, comarca del Maresme) o mediante{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</Link> para pacientes de Lleida, Tarragona, Girona y toda España.
+                No con parches. No aprendiendo a «convivir» con ella. Se cura yendo al origen —y el origen siempre es más profundo de lo que parece. Nuestro{" "}<Link href="/enfoque" className="text-gold hover:text-gold/80 underline underline-offset-2">método de psicoanálisis directo</Link> aborda las causas de la ansiedad desde la raíz, en consulta presencial en Canet de Mar (Maresme) o mediante{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</Link> para pacientes de Lleida, Tarragona, Girona y toda España.
               </p>
             </motion.div>
 
@@ -294,7 +294,7 @@ export default function AnsiedadPage() {
               viewport={{ once: true }}
               className="text-navy/50 text-lg mb-12 leading-relaxed max-w-xl mx-auto"
             >
-              Tres décadas dedicadas exclusivamente al tratamiento de la ansiedad, el pánico y la <a href="/depresion" className="text-navy/70 hover:text-gold transition-colors underline decoration-gold/30">depresión</a> en Barcelona y toda Catalunya —Maresme, Girona, Tarragona, Lleida— presencial y <a href="/terapia-online" className="text-navy/70 hover:text-gold transition-colors underline decoration-gold/30">online para toda España</a>. Psicoanalista especialista en ansiedad en Barcelona, referente en Catalunya.
+              Tres décadas dedicadas exclusivamente al tratamiento de la ansiedad, el pánico y la <a href="/depresion" className="text-navy/70 hover:text-gold transition-colors underline decoration-gold/30">depresión</a> en Canet de Mar (Maresme) y toda Catalunya —Barcelona, Girona, Tarragona, Lleida— presencial y <a href="/terapia-online" className="text-navy/70 hover:text-gold transition-colors underline decoration-gold/30">online para toda España</a>. Psicoanalista especialista en ansiedad en el Maresme, referente en Catalunya.
             </motion.p>
             <motion.div
               variants={stagger}
@@ -386,24 +386,29 @@ export default function AnsiedadPage() {
               <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para pacientes de toda Catalunya y España.
             </p>
             <p className="text-navy/50 text-sm leading-relaxed mt-4">
+              Consulta presencial en Canet de Mar (Maresme) y terapia online para toda Catalunya, con{" "}
+              <LocaleLink href={"/psicologo-maresme" as never} className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">psicoanalista en el Maresme</LocaleLink> en la{" "}
+              <LocaleLink href="/" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">Clínica de la Ansiedad</LocaleLink>.
+            </p>
+            <p className="text-navy/50 text-sm leading-relaxed mt-4">
               ¿Representas a una empresa? Ofrecemos también un{" "}
               <a href="/taller-gestion-estres-empresas" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">taller práctico de gestión del estrés y la ansiedad para empresas</a>: un programa presencial de prevención y entrenamiento de herramientas para equipos.
             </p>
           </div>
         </section>
 
-        {/* ===== LOCAL BARCELONA ===== */}
-        {/* H2 con la keyword exacta: la página ya asoma en pos 8-11 para las
-            búsquedas "psicólogo ansiedad barcelona" / "ansiedad barcelona" sin
-            tener ninguna sección local. Este bloque es la señal on-page. */}
+        {/* ===== LOCAL CANET DE MAR / MARESME ===== */}
+        {/* H2 con la keyword local exacta: la consulta está en Canet de Mar y el
+            área de servicio es el Maresme. Este bloque es la señal on-page.
+            OJO: en texto visible siempre "psicoanalista", nunca "psicólogo". */}
         <section className="py-20 md:py-24 px-4 md:px-8 bg-cream">
           <div className="container mx-auto max-w-4xl">
             <motion.div variants={inView} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
               <Chip size="sm" className="bg-gold/10 text-gold border border-gold/20 text-[10px] font-bold uppercase tracking-widest mb-6">
-                Barcelona
+                Canet de Mar · Maresme
               </Chip>
               <h2 className="font-serif text-3xl md:text-5xl font-semibold text-navy mb-8">
-                ¿Buscas psicólogo para la ansiedad en Barcelona?
+                ¿Buscas psicoanalista para la ansiedad en el Maresme?
               </h2>
             </motion.div>
             <motion.div
@@ -415,7 +420,7 @@ export default function AnsiedadPage() {
             >
               <motion.p variants={inView}>
                 Lo que encontrarás aquí es otra cosa: un{" "}
-                <strong className="text-navy font-semibold">psicoanalista especialista en ansiedad</strong>. La diferencia importa — no trabajamos con técnicas para gestionar el síntoma, sino con el origen que lo produce. Atendemos a pacientes de Barcelona y su área metropolitana desde 1993. La consulta presencial está en{" "}
+                <strong className="text-navy font-semibold">psicoanalista especialista en ansiedad</strong>. La diferencia importa — no trabajamos con técnicas para gestionar el síntoma, sino con el origen que lo produce. Atendemos desde 1993 a pacientes de todo el Maresme —Arenys de Mar, Arenys de Munt, Sant Pol, Calella, Mataró, Pineda, Malgrat, Montgat— y también de Barcelona. La consulta presencial está en{" "}
                 <LocaleLink href={"/psicologo-maresme" as never} className="text-gold hover:text-gold/80 underline underline-offset-2">Canet de Mar (Maresme)</LocaleLink>, a 40 minutos del centro de Barcelona en coche o R1, con la tranquilidad —y la discreción— que no siempre ofrece una consulta en el Eixample. Y para quien prefiere no desplazarse, la{" "}
                 <LocaleLink href={"/terapia-online" as never} className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</LocaleLink> mantiene el mismo método y el mismo terapeuta.
               </motion.p>

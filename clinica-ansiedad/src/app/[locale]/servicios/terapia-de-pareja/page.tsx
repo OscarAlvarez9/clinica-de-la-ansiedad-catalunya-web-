@@ -86,7 +86,7 @@ export default function TerapiaDeParejaPage() {
                 ¿Cuándo acudir a Terapia de Pareja?
               </h2>
               <p className="text-navy/60 text-lg leading-relaxed mb-10 max-w-2xl">
-                Las crisis en las relaciones son dolorosas y desgastantes. La terapia es especialmente efectiva cuando enfrentáis: Consulta de terapia de pareja en Barcelona (Canet de Mar, Maresme) y{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">sesiones online</Link> para parejas de toda Catalunya.
+                Las crisis en las relaciones son dolorosas y desgastantes. La terapia es especialmente efectiva cuando enfrentáis: Consulta de terapia de pareja en Canet de Mar (Maresme) y{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">sesiones online</Link> para parejas de toda Catalunya.
               </p>
             </motion.div>
 
@@ -256,8 +256,11 @@ export default function TerapiaDeParejaPage() {
               Puede complementarse con{" "}
               <a href="/servicios/terapia-individual" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia individual</a> o{" "}
               <a href="/servicios/dimension-familiar" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia familiar</a>.
-              Terapia de pareja en Barcelona (Canet de Mar, Maresme) y{" "}
-              <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para parejas de toda Catalunya.
+              Consulta presencial en Canet de Mar (Maresme) y{" "}
+              <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a>:{" "}
+              <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">psicoanalista en el Maresme</a> para parejas de toda Catalunya.
+              Más sobre la{" "}
+              <a href="/" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">Clínica de la Ansiedad</a>.
             </p>
           </div>
         </section>

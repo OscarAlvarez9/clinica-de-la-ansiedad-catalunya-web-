@@ -211,7 +211,7 @@ export default function LudopatiaPage() {
                 Tratamiento de la ludopatía: ir al origen
               </h2>
               <p className="text-navy/60 text-lg leading-relaxed mb-16 max-w-2xl">
-                No trabajamos solo la conducta adictiva. Trabajamos la estructura psíquica que le dio origen. Sin eso, el ciclo se repite. Tratamiento presencial en Barcelona (Canet de Mar, Maresme) y{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</Link> para pacientes de toda Catalunya: Barcelona, Girona, Lleida y Tarragona.
+                No trabajamos solo la conducta adictiva. Trabajamos la estructura psíquica que le dio origen. Sin eso, el ciclo se repite. Tratamiento presencial en Canet de Mar (Maresme) y{" "}<Link href="/terapia-online" className="text-gold hover:text-gold/80 underline underline-offset-2">terapia online</Link> para pacientes de toda Catalunya: Barcelona, Girona, Lleida y Tarragona.
               </p>
             </motion.div>
 
@@ -310,9 +310,14 @@ export default function LudopatiaPage() {
               La ludopatía frecuentemente coexiste con{" "}
               <a href="/ansiedad" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">ansiedad</a> y{" "}
               <a href="/depresion" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">depresión</a> subyacente.
-              Tratamiento de ludopatía en Barcelona (Canet de Mar, Maresme) con{" "}
+              Tratamiento de ludopatía en Canet de Mar (Maresme) con{" "}
               <a href="/servicios/terapia-individual" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia individual</a> psicoanalítica, también disponible como{" "}
               <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a> para pacientes de toda Catalunya —Barcelona, Girona, Lleida y Tarragona— y España.
+            </p>
+            <p className="text-navy/50 text-sm leading-relaxed mt-4">
+              Consulta presencial en Canet de Mar (Maresme) y terapia online para toda Catalunya, con{" "}
+              <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">psicoanalista en el Maresme</a> en la{" "}
+              <a href="/" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">Clínica de la Ansiedad</a>.
             </p>
           </div>
         </section>

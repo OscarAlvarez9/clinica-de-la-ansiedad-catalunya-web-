@@ -14,8 +14,8 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-      title: 'Terapia Ansiedad, Depresión y TOC | Clínica Ansiedad Catalunya',
-      description: 'Psicoterapia para ansiedad generalizada, depresión, TOC, fobia social y agorafobia. Terapia individual, de pareja y familiar en Barcelona, el Maresme y online.',
+      title: 'Terapia de ansiedad, depresión y TOC en Canet de Mar (Maresme)',
+      description: 'Psicoterapia para ansiedad generalizada, depresión, TOC, fobia social y agorafobia. Terapia individual, de pareja y familiar presencial en Canet de Mar (Maresme) y online.',
       path: '/servicios',
       keywords: [
           'terapia ansiedad', 'trastorno de ansiedad generalizada', 'trastorno obsesivo compulsivo',
@@ -42,6 +42,11 @@ export default function ServiciosPage() {
                         <p className="text-navy/50 text-sm leading-relaxed">
                             Además de la atención individual, de pareja y familiar, trabajamos con empresas a través de un{" "}
                             <a href="/taller-gestion-estres-empresas" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">taller práctico de gestión del estrés y la ansiedad para empresas</a>: un programa presencial de prevención y entrenamiento de herramientas para equipos, en grupos reducidos.
+                            Consulta presencial en Canet de Mar (Maresme) y{" "}
+                            <a href="/terapia-online" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">terapia online</a>:{" "}
+                            <a href="/psicologo-maresme" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">psicoanalista en el Maresme</a>.
+                            Más sobre la{" "}
+                            <a href="/" className="text-navy font-medium hover:text-gold transition-colors underline decoration-gold/30">Clínica de la Ansiedad</a>.
                         </p>
                     </div>
                 </section>

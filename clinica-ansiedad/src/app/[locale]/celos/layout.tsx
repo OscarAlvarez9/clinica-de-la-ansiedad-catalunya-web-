@@ -7,8 +7,8 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-    title: 'Tratamiento de los Celos | Clínica de la Ansiedad Catalunya',
-    description: 'Tratamiento psicoanalítico de celos patológicos en Barcelona y online. Cuando los celos se descontrolan destruyen los vínculos. Tienen origen profundo y solución.',
+    title: 'Celos Patológicos en Canet de Mar (Maresme) | Psicoanalista',
+    description: 'Tratamiento psicoanalítico de los celos patológicos en Canet de Mar (Maresme), presencial y online. Los celos tienen un origen profundo —y tienen solución.',
     path: '/celos',
     keywords: [
       'celos patológicos', 'tratamiento celos', 'celos en pareja', 'psicólogo celos',

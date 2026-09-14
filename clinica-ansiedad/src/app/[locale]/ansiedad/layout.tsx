@@ -7,13 +7,14 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   return buildMetadata({
-    // Barcelona delante: la página ya asoma en pos 8-11 para "ansiedad barcelona",
-    // "psicólogo ansiedad barcelona"... — el title es la señal que faltaba.
-    // OJO: Joan Ramon es PSICOANALISTA, no psicólogo (título protegido) — el
-    // title no puede autodenominarse psicólogo; a esa búsqueda se le responde
-    // en el H2 de la sección Barcelona ("¿Buscas psicólogo...?").
-    title: 'Tratamiento de la Ansiedad en Barcelona | Psicoanalista',
-    description: '¿Buscas psicólogo para la ansiedad en Barcelona? Somos otra cosa: psicoanalista especialista en ansiedad. Tratamiento de raíz, presencial (Barcelona · Maresme) y online.',
+    // Modificador local delante: la consulta está en Canet de Mar (Maresme),
+    // no en la ciudad de Barcelona. Barcelona queda solo como provincia y
+    // como origen de parte de los pacientes.
+    // OJO: Joan Ramon es PSICOANALISTA, no psicólogo (título protegido) — ni el
+    // title ni el texto visible pueden autodenominarse psicólogo; ese término
+    // solo vive en el slug /psicologo-maresme y en las keywords.
+    title: 'Ansiedad en Canet de Mar (Maresme) | Clínica de la Ansiedad',
+    description: 'Tratamiento de la ansiedad de raíz con un psicoanalista especialista. Consulta presencial en Canet de Mar (Maresme) y terapia online para toda Catalunya.',
     path: '/ansiedad',
     keywords: [
       'sintomas de ansiedad', 'ansiedad sintomas', 'que es ansiedad',
