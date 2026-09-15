@@ -5,7 +5,7 @@ import { buildMetadata } from '@/lib/metadata';
 import { blogPostingSchema } from '@/lib/schema';
 import Script from 'next/script';
 import BlogCard from '@/components/blog/BlogCard';
-import { Calendar, Clock, User, ArrowLeft, ArrowRight, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, ArrowRight, Share2, Facebook, Twitter, Linkedin, ChevronDown } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import SafeImage from '@/components/ui/SafeImage';
@@ -84,7 +84,7 @@ const renderOptions = {
             const text = children[0];
             const id = typeof text === 'string' ? text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-') : undefined;
             return (
-                <h2 id={id} className="text-3xl md:text-5xl font-serif text-navy mt-24 mb-12 leading-tight tracking-tight scroll-mt-32">
+                <h2 id={id} className="text-2xl md:text-3xl font-serif text-navy mt-14 mb-5 leading-snug tracking-tight scroll-mt-28">
                     {children}
                 </h2>
             );
@@ -93,30 +93,30 @@ const renderOptions = {
             const text = children[0];
             const id = typeof text === 'string' ? text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-') : undefined;
             return (
-                <h3 id={id} className="text-2xl md:text-3xl font-serif text-navy/90 mt-18 mb-8 leading-snug scroll-mt-32">
+                <h3 id={id} className="text-xl md:text-2xl font-serif text-navy/90 mt-10 mb-4 leading-snug scroll-mt-28">
                     {children}
                 </h3>
             );
         },
         [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
-            <p className="text-navy/80 text-lg md:text-xl leading-[2.2] mb-14 font-light">
+            <p className="text-navy/80 text-[17px] leading-[30px] md:text-lg md:leading-8 mb-7 font-light">
                 {children}
             </p>
         ),
         [BLOCKS.UL_LIST]: (node: any, children: any) => (
-            <ul className="list-none pl-0 mb-14 flex flex-col gap-6">
+            <ul className="list-none pl-0 mb-8 flex flex-col gap-3">
                 {children}
             </ul>
         ),
         [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
-            <li className="relative pl-10 text-navy/80 text-lg md:text-xl leading-relaxed font-light before:content-[''] before:absolute before:left-0 before:top-[0.85rem] before:w-2 before:h-2 before:rounded-full before:bg-gold">
+            <li className="relative pl-7 text-navy/80 text-[17px] leading-[30px] md:text-lg md:leading-8 font-light before:content-[''] before:absolute before:left-0 before:top-[0.7rem] before:w-1.5 before:h-1.5 before:rounded-full before:bg-gold">
                 {children}
             </li>
         ),
         [BLOCKS.QUOTE]: (node: any, children: any) => (
-            <blockquote className="border-l-0 bg-navy/5 p-12 md:p-16 rounded-[40px] italic text-navy/90 text-2xl md:text-3xl font-serif my-20 relative overflow-hidden group">
+            <blockquote className="border-l-0 bg-navy/5 p-8 md:p-10 rounded-[28px] italic text-navy/90 text-lg md:text-xl font-serif my-12 relative overflow-hidden group">
                 <div className="absolute top-0 left-0 w-2 h-full bg-gold/30" />
-                <span className="absolute top-4 left-6 text-6xl text-gold/20 font-serif">"</span>
+                <span className="absolute top-2 left-4 text-4xl text-gold/20 font-serif">"</span>
                 {children}
             </blockquote>
         ),
@@ -297,7 +297,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                                 {post.category}
                             </span>
                             
-                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif text-navy leading-[1.1] tracking-tight mb-10 max-w-5xl">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-navy leading-[1.15] tracking-tight mb-7 max-w-4xl">
                                 {post.title}
                             </h1>
 
@@ -330,9 +330,9 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </section>
 
                 {/* Main Image */}
-                <section className="px-6 -mt-4 mb-24 relative z-20">
-                    <div className="max-w-6xl mx-auto">
-                        <div className="aspect-[16/7] md:aspect-[21/9] rounded-[40px] overflow-hidden shadow-glass-hover bg-white p-2 md:p-4">
+                <section className="px-6 -mt-4 mb-16 relative z-20">
+                    <div className="max-w-3xl mx-auto">
+                        <div className="aspect-[16/9] md:aspect-[21/9] rounded-[32px] overflow-hidden shadow-glass-hover bg-white p-2 md:p-3">
                             <div className="w-full h-full rounded-[32px] overflow-hidden">
                                 <SafeImage
                                     src={post.image}
@@ -351,7 +351,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                         
                         {/* Intro / Excerpt */}
                         {post.excerpt && (
-                            <p className="text-2xl md:text-3xl font-serif text-navy/90 leading-relaxed mb-20 italic border-l-4 border-gold pl-8 py-2 bg-gold/5 rounded-r-3xl">
+                            <p className="text-lg md:text-xl font-serif text-navy/90 leading-relaxed mb-10 italic border-l-4 border-gold pl-6 py-3 bg-gold/5 rounded-r-2xl">
                                 {post.excerpt}
                             </p>
                         )}
@@ -359,21 +359,27 @@ export default async function BlogPostPage({ params }: PageProps) {
                         {/* Article Body */}
                         <article className="relative">
                             {/* Table of Contents (Floating or Top) */}
+                            {/* Índice plegable: abierto ocupaba media pantalla y empujaba
+                                el artículo por debajo del pliegue. Con <details> nativo
+                                no hace falta JS ni convertir esto en componente cliente. */}
                             {headings.length > 0 && (
-                                <div className="mb-16 p-8 bg-gold/5 rounded-[32px] border border-gold/10">
-                                    <h4 className="font-serif text-xl text-navy mb-6">En este artículo</h4>
-                                    <nav className="flex flex-col gap-3">
+                                <details className="group/toc mb-10 rounded-2xl border border-gold/15 bg-gold/5 px-5 py-4">
+                                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[11px] font-bold uppercase tracking-[0.18em] text-navy/50 hover:text-navy transition-colors marker:content-['']">
+                                        En este artículo
+                                        <ChevronDown className="w-4 h-4 shrink-0 transition-transform duration-300 group-open/toc:rotate-180" />
+                                    </summary>
+                                    <nav className="mt-4 flex flex-col gap-2 border-t border-gold/15 pt-4">
                                         {headings.map((heading) => (
-                                            <a 
-                                                key={heading.id} 
+                                            <a
+                                                key={heading.id}
                                                 href={`#${heading.id}`}
-                                                className={`text-navy/70 hover:text-gold transition-colors text-sm ${heading.level === 3 ? 'pl-4' : 'font-medium'}`}
+                                                className={`text-[13px] leading-snug text-navy/70 hover:text-gold transition-colors ${heading.level === 3 ? 'pl-4' : 'font-medium'}`}
                                             >
                                                 {heading.text}
                                             </a>
                                         ))}
                                     </nav>
-                                </div>
+                                </details>
                             )}
 
                             {/* Floating Share Buttons (Destkop Only, Side) */}
