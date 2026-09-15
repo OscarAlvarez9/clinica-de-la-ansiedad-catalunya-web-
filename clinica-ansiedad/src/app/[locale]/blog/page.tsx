@@ -10,6 +10,7 @@ import { Link } from '@/i18n/routing';
 import SafeImage from '@/components/ui/SafeImage';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { slugSegments } from '@/lib/blog-slug';
 
 export async function generateMetadata({
   params,
@@ -162,7 +163,7 @@ export default async function BlogPage({ params, searchParams }: { params: Promi
               {/* Right Side: Floating Featured Post Preview */}
               <div className="lg:col-span-5 relative">
                 {featuredPost && (
-                  <Link href={{ pathname: '/blog/[slug]', params: { slug: featuredPost.slug } }} className="block group">
+                  <Link href={{ pathname: '/blog/[...slug]', params: { slug: slugSegments(featuredPost.slug) } }} className="block group">
                     <div className="relative group overflow-hidden rounded-[2.5rem] shadow-2xl transition-all duration-500 hover:scale-[1.02]">
                       {/* Glassmorphism Card */}
                       <div className="absolute inset-0 bg-navy/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity z-10" />

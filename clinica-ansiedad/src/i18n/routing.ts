@@ -25,7 +25,8 @@ export const routing = defineRouting({
     '/ludopatia': '/ludopatia',
     '/enfoque': '/enfoque',
     '/blog': '/blog',
-    '/blog/[slug]': '/blog/[slug]',
+    // Catch-all: hay entradas con carpeta ("/problemas/ansiedad-generalizada").
+    '/blog/[...slug]': '/blog/[...slug]',
     '/privacidad': '/privacidad',
     '/aviso-legal': '/aviso-legal',
     '/politica-de-cookies': '/politica-de-cookies'

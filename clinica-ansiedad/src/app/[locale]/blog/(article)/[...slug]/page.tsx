@@ -15,9 +15,10 @@ import { BlogPost } from '@/lib/blog-data';
 import { calculateReadingTime, extractHeadings } from '@/lib/blog-utils';
 import OptimizedImage from '@/components/OptimizedImage';
 import { bookingUrl } from '@/lib/constants';
+import { slugSegments, slugPath } from '@/lib/blog-slug';
 
 interface PageProps {
-    params: Promise<{ locale: string, slug: string }>;
+    params: Promise<{ locale: string, slug: string[] }>;
 }
 
 export const revalidate = 3600; // Revalidate every hour
@@ -25,18 +26,18 @@ export const revalidate = 3600; // Revalidate every hour
 export async function generateStaticParams() {
     const entries = await getEntries('blogPost', false, ['-fields.fechaPublicacion']);
     const locales = ['es', 'ca'];
-    
-    return entries.flatMap((entry: any) => 
+
+    return entries.flatMap((entry: any) =>
         locales.map(locale => ({
             locale,
-            slug: (entry.fields.slug || '').replace(/^\/|\/$/g, ''),
+            slug: slugSegments(entry.fields.slug),
         }))
     );
 }
 
 export async function generateMetadata({ params }: PageProps) {
     const { slug: rawSlug, locale } = await params;
-    const slug = (rawSlug || '').replace(/^\/|\/$/g, '');
+    const slug = slugPath(rawSlug);
 
     // Safety guard: if slug is somehow empty or "blog" at this level, 
     // it shouldn't be matching here, but we return early to help Next.js.
@@ -163,7 +164,7 @@ const renderOptions = {
                         <div className="flex-grow text-left">
                             <span className="text-[10px] font-bold uppercase tracking-widest text-gold mb-2 block">Artículo Relacionado</span>
                             <h4 className="font-serif text-2xl text-navy mb-4 leading-tight">{fields.titulo}</h4>
-                            <Link href={{ pathname: '/blog/[slug]', params: { slug: fields.slug || '' } }} className="text-navy font-bold text-xs uppercase tracking-widest hover:text-gold transition-all inline-flex items-center gap-2 group">
+                            <Link href={{ pathname: '/blog/[...slug]', params: { slug: slugSegments(fields.slug) } }} className="text-navy font-bold text-xs uppercase tracking-widest hover:text-gold transition-all inline-flex items-center gap-2 group">
                                 Continuar leyendo <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                             </Link>
                         </div>
@@ -177,7 +178,7 @@ const renderOptions = {
 
 export default async function BlogPostPage({ params }: PageProps) {
     const { slug: rawSlug, locale } = await params;
-    const slug = (rawSlug || '').replace(/^\/|\/$/g, '');
+    const slug = slugPath(rawSlug);
 
     if (!slug || slug === 'blog') notFound();
 
@@ -450,7 +451,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                                 <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-navy/10 pt-16">
                                     {prevEntry ? (
                                         <Link 
-                                            href={{ pathname: '/blog/[slug]', params: { slug: prevEntry.fields.slug || '' } }}
+                                            href={{ pathname: '/blog/[...slug]', params: { slug: slugSegments(prevEntry.fields.slug) } }}
                                             className="group p-8 rounded-[32px] bg-white border border-navy/5 hover:border-gold/30 transition-all text-left flex flex-col gap-2"
                                         >
                                             <span className="text-[10px] font-bold uppercase tracking-widest text-navy/40 flex items-center gap-2">
@@ -462,7 +463,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                                     
                                     {nextEntry ? (
                                         <Link 
-                                            href={{ pathname: '/blog/[slug]', params: { slug: nextEntry.fields.slug || '' } }}
+                                            href={{ pathname: '/blog/[...slug]', params: { slug: slugSegments(nextEntry.fields.slug) } }}
                                             className="group p-8 rounded-[32px] bg-white border border-navy/5 hover:border-gold/30 transition-all text-right flex flex-col items-end gap-2"
                                         >
                                             <span className="text-[10px] font-bold uppercase tracking-widest text-navy/40 flex items-center gap-2">
