@@ -30,11 +30,10 @@ const nextConfig: NextConfig = {
     },
     async redirects() {
         return [
-            // Raíz -> /es con 301 explícito. Sin esta regla el middleware de next-intl
-            // resolvía '/' con un 307 (temporal) y detección por Accept-Language, así
-            // que Google no consolidaba la home. Las redirecciones de next.config se
-            // evalúan ANTES del middleware, de modo que este 301 gana.
-            { source: '/', destination: '/es', statusCode: 301 },
+            // La raíz NO se redirige: el middleware la reescribe a /es y devuelve
+            // 200 con el contenido en castellano. Redirigir sumaba un tercer salto
+            // a los dos que ya pone Vercel (http->https y sin-www->www), que no se
+            // pueden fusionar desde el código.
 
             // El middleware de next-intl solo atiende '/' y '/(es|ca)/...': cualquier
             // ruta sin prefijo de idioma daba 404. Redirección explícita al locale

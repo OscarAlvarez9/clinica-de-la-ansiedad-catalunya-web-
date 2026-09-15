@@ -53,8 +53,11 @@ export async function generateMetadata({ params }: PageProps) {
 
     const fields = entry.fields as any;
 
+    // El sufijo "| Blog Clínica de la Ansiedad" gastaba 28 de los ~60 caracteres
+    // que Google muestra, así que los cinco artículos salían truncados y perdían
+    // justo el final del titular. La marca ya sale en el dominio de la SERP.
     return buildMetadata({
-        title: `${fields.titulo} | Blog Clínica de la Ansiedad`,
+        title: fields.titulo,
         description: fields.metaDescripcion || '',
         path: `/blog/${slug}`,
         keywords: [
