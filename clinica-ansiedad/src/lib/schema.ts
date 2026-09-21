@@ -11,11 +11,12 @@ export const medicalClinicSchema = {
     "@context": "https://schema.org",
     "@type": ["MedicalClinic", "LocalBusiness", "HealthAndBeautyBusiness"],
     "@id": "https://www.clinicadelansiedad.com",
-    // Nombre con "Maresme" para separarse de la Clínica de la Ansiedad homónima de
-    // Barcelona ciudad (clinicadeansiedad.com), que se lleva los clics de esa consulta.
-    "name": "Clínica de la Ansiedad Maresme",
+    // Mismo nombre que la ficha de Google Business Profile (coherencia NAP).
+    // La ubicación (Canet de Mar, Maresme) lo separa de la clínica homónima de Barcelona.
+    "name": "Clínica de la Ansiedad Catalunya",
     "alternateName": [
-        "Clínica de la Ansiedad Catalunya",
+        "Clínica de la Ansiedad Maresme",
+        "Clínica de l'Ansietat Catalunya",
         "Clínica de l'Ansietat Maresme",
         "Joan Ramon Soto - Psicoanalista"
     ],
