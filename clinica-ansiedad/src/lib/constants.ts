@@ -25,3 +25,9 @@ export const GOOGLE_REVIEWS = {
   // había antes abría el mapa, no el listado, así que no llevaba a las reseñas).
   url: 'https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20de%20la%20Ansiedad%20Catalunya%2C%20Ronda%20Doctor%20Angl%C3%A8s%2074%2C%20Canet%20de%20Mar',
 } as const;
+
+// Foto real de Joan Ramon Soto. El blog tiraba de i.pravatar.cc, un generador
+// de caras aleatorias: mostraba a un desconocido firmando los artículos.
+// Centralizada aquí porque al cambiarla hay que renombrar el fichero (si no,
+// la caché del navegador sigue sirviendo la anterior).
+export const AUTHOR_PHOTO = '/images/joanramonsotoimagenweb.webp';

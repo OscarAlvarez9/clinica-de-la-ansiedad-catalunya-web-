@@ -14,7 +14,7 @@ import Footer from '@/components/layout/Footer';
 import { BlogPost } from '@/lib/blog-data';
 import { calculateReadingTime, extractHeadings } from '@/lib/blog-utils';
 import OptimizedImage from '@/components/OptimizedImage';
-import { bookingUrl } from '@/lib/constants';
+import { bookingUrl, AUTHOR_PHOTO } from '@/lib/constants';
 import { slugSegments, slugPath } from '@/lib/blog-slug';
 
 interface PageProps {
@@ -204,7 +204,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         author: {
             name: fields.autor?.fields?.nombre || 'Joan Ramon Soto',
             role: 'Psicoanalista',
-            image: fields.author?.fields?.avatar?.fields?.file?.url ? `https:${fields.author.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
+            image: fields.autor?.fields?.avatar?.fields?.file?.url ? `https:${fields.autor.fields.avatar.fields.file.url}` : AUTHOR_PHOTO,
         },
         slug: (fields.slug || '').replace(/^\/|\/$/g, ''),
     };
@@ -237,7 +237,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 author: {
                     name: f.autor?.fields?.nombre || 'Joan Ramon Soto',
                     role: 'Psicoanalista',
-                    image: f.author?.fields?.avatar?.fields?.file?.url ? `https:${f.author.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
+                    image: f.autor?.fields?.avatar?.fields?.file?.url ? `https:${f.autor.fields.avatar.fields.file.url}` : AUTHOR_PHOTO,
                 },
                 slug: (f.slug || '').replace(/^\/|\/$/g, ''),
                 featured: false,
@@ -304,7 +304,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-navy/70 border-t border-navy/10 pt-10">
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 rounded-full overflow-hidden shadow-md border-2 border-white">
-                                        <SafeImage src={post.author.image} alt={post.author.name} className="w-full h-full object-cover" />
+                                        <SafeImage src={post.author.image} alt={post.author.name} className="w-full h-full object-cover object-top" />
                                     </div>
                                     <div className="text-left">
                                         <p className="text-navy font-bold text-sm leading-none mb-1">{post.author.name}</p>
@@ -436,7 +436,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 group-hover:bg-gold/10 transition-colors" />
                                     
                                     <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shadow-xl border-4 border-white shrink-0">
-                                        <SafeImage src={post.author.image} alt={post.author.name} className="w-full h-full object-cover" />
+                                        <SafeImage src={post.author.image} alt={post.author.name} className="w-full h-full object-cover object-top" />
                                     </div>
                                     
                                     <div className="flex-grow">

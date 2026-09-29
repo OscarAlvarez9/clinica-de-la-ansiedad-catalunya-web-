@@ -62,7 +62,7 @@ export default function BlogCard({ post, index }: BlogCardProps) {
                 <div className="mt-auto pt-6 border-t border-navy/5 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-full overflow-hidden border border-navy/10">
-                            <SafeImage src={post.author.image} alt={post.author.name} className="w-full h-full object-cover" />
+                            <SafeImage src={post.author.image} alt={post.author.name} className="w-full h-full object-cover object-top" />
                         </div>
                         <span className="text-sm font-medium text-navy/80">{post.author.name}</span>
                     </div>

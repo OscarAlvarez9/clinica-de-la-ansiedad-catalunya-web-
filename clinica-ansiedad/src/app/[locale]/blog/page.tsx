@@ -2,6 +2,7 @@ import { buildMetadata } from '@/lib/metadata';
 import { collectionSchema } from '@/lib/schema';
 import { BLOG_POSTS as FALLBACK_POSTS, BlogPost } from '@/lib/blog-data';
 import { getEntries } from '@/lib/contentful';
+import { AUTHOR_PHOTO } from '@/lib/constants';
 import Script from 'next/script';
 import BlogCard from '@/components/blog/BlogCard';
 import CategoryFilter from '@/components/blog/CategoryFilter';
@@ -72,7 +73,7 @@ export default async function BlogPage({ params, searchParams }: { params: Promi
           author: {
             name: fields.autor?.fields?.nombre || 'Joan Ramon Soto',
             role: 'Psicoanalista',
-            image: fields.autor?.fields?.avatar?.fields?.file?.url ? `https:${fields.autor.fields.avatar.fields.file.url}` : 'https://i.pravatar.cc/150?img=11',
+            image: fields.autor?.fields?.avatar?.fields?.file?.url ? `https:${fields.autor.fields.avatar.fields.file.url}` : AUTHOR_PHOTO,
           },
           slug: (fields.slug || '').replace(/^\/|\/$/g, ''),
           featured: false, 
@@ -147,16 +148,10 @@ export default async function BlogPage({ params, searchParams }: { params: Promi
 
                 <div className="flex items-center gap-6">
                    <div className="h-[1px] w-12 bg-navy/20" />
-                   <div className="flex items-center gap-3">
-                      <div className="flex -space-x-2">
-                         {[1,2,3].map(i => (
-                           <div key={i} className="w-8 h-8 rounded-full border-2 border-white overflow-hidden shadow-sm">
-                              <SafeImage src={`https://i.pravatar.cc/100?img=${i+14}`} alt="Lector" className="w-full h-full object-cover" />
-                           </div>
-                         ))}
-                      </div>
-                      <span className="text-[10px] text-navy/60 font-bold uppercase tracking-widest">+5.000 lectores mensuales</span>
-                   </div>
+                   {/* Se retiran tres caras de i.pravatar.cc con alt="Lector": eran
+                       fotos de desconocidos presentados como lectores de la clínica.
+                       El dato de lectores se mantiene tal cual estaba. */}
+                   <span className="text-[10px] text-navy/60 font-bold uppercase tracking-widest">+5.000 lectores mensuales</span>
                 </div>
               </div>
 
